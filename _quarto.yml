@@ -4,6 +4,7 @@ project:
 
 website:
   title: "OTTR <img src='./resources/images/basic_otter_water.PNG' width = 10px>"
+  favicon: resources/images/basic_otter_water.ico
   navbar:
     left:
     - text: ""
