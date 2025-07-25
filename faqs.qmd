@@ -1,0 +1,157 @@
+---
+title: Troubleshooting
+output:
+  html_document
+---
+
+<!---
+Add something here that is like a TOC/overview of the errors that are covered in this doc.
+  --->
+
+## Most Common Errors
+
+This guide will describe the most common OTTR errors and pitfalls and how to address them.
+When you open a pull request, you should see a report like this:
+
+![](https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/gha-actions-error.png)
+
+When you see an ❌ , click on the `Details` button to see the error message. We'll discuss the most common error messages here.
+
+***
+
+### `file is not in PNG format`: Google Slides permissions fail
+
+_Error example:_
+```
+Error in png::readPNG(path, native = TRUE, info = TRUE) :
+  file is not in PNG format
+Calls: local ... lapply -> FUN -> raster_dpi_width -> attr -> <Anonymous>
+Execution halted
+Error in Rscript_render(f, render_args, render_meta, add1, add2) :
+  Failed to compile <file_name>.Rmd
+Calls: local ... <Anonymous> -> render_new_session -> Rscript_render
+Execution halted
+Error: bookdown::render_book() failed to render the output format 'bookdown::gitbook'.
+Execution halted
+```
+_What does this mean?:_
+
+Your Google Slides presentation you have tried to retrieve a slide from with `ottrpal::include_slide()` is not public. Your Google Slide document must be set to `Anyone with a link`. See [this article for more details.](https://support.wix.com/en/article/setting-permissions-for-google-drive-files-and-folders#:~:text=Settings%20Permissions%20for%20a%20Google,edit%20and%20comment%20as%20well.) The renders will fail if this is not set! See the [setting up images and graphics section](https://www.ottrproject.org/writing_content_courses.html#set-up-images) for more details.
+
+***
+
+### `Process completed with exit code 1.`: Spell check/url check/quiz format fail:
+
+Underneath a section that says something like: `**Check spelling/url/quiz errors - fail if too many of them**` you may see something like:
+```
+Run exit 1
+  exit 1
+  shell: sh -e {0}
+Error: Process completed with exit code 1.
+```
+
+This is failing on purpose -- it means that checker has found errors. Return to your pull request page and look for a comment that says something like:
+```
+⚠️ There are <spelling/quiz/url> errors that need to be addressed. Read this guide for more info.
+Download the errors here.
+Comment updated at <some_date> with changes from <commit>
+```
+
+Click on the `Download the errors here` to see the list of errors and which files they were found in. For help in addressing these errors, click on the `Read this guide for more info` button.
+
+***
+
+### `CONFLICT (modify/delete)`: Merge conflict fail:
+
+_Error example:_
+```
+CONFLICT (modify/delete): <file_name> deleted in <branch_name> and modified in HEAD. Version HEAD of <file_name> left in tree.
+```
+
+This will often happen when render-preview's git handling doesn't know which changes you are looking to preview. The easiest way to fix this problem is to create a separate pull request that completely deletes the files lists. To do this, follow these steps:
+
+1) Take note of your pull request's number. Go to the pull request page and see what `#number` is posted there.
+2) On your GitHub repository, go to `Code` and click on `Branches`.
+3) Your pull request's preview is made on a branch named `preview-<number of your pull request> `. Find this branch and click the trash can icon. This will delete the preview branch and hopefully get rid of this error. [Read this](https://www.git-tower.com/learn/git/faq/github-delete-branch) for more info on how to delete a branch.
+4) Re-trigger your GitHub actions run and it should pass.
+
+***
+
+### `Parser error: while parsing a flow sequence`: _bookdown.yml parse error
+
+If you see an error like this:
+```
+Run Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all')"
+Error in yaml::yaml.load(..., eval.expr = TRUE) :
+  Parser error: while parsing a flow sequence at line 4, column 12 did not find expected ',' or ']' at line 11, column 13
+Calls: <Anonymous> ... <Anonymous> -> resolve -> <Anonymous> -> yaml_load -> <Anonymous>
+Execution halted
+Error: Process completed with exit code 1.
+```
+
+It means that the formatting in your `_bookdown.yml` is off. If you forget a comma, or quote, or a `]` this message will appear in the github actions preview run.
+
+Take a careful look at the `_bookdown.yml`. Keep in mind that _bookdown.yml rmd_files spec should look like this (indents, quotes, and commas included in this pattern):
+
+```
+rmd_files: ["index.Rmd",
+            "01-intro.Rmd",
+            "02-chapter_of_course.Rmd",
+            "new_file.Rmd",
+            "About.Rmd",
+            "References.Rmd"]
+```
+Commit the changes to your `_bookdown.yml` and see if the preview GitHub action runs appropriately.
+
+### `404 error`: GitHub Action link to download and preview `.docx` file is returning a 404 error
+
+If you get a 404 error after clicking the link while attempting to download the `.docx` file from the GitHub Action rendered previews, then add the following code to the end of the `_output.yml` file:
+
+```
+bookdown::word_document2:
+  toc: true
+```
+
+Commit the changes to your `_output.yml` and see if the preview GitHub action runs appropriately.
+
+### `Error in if (title == x2) return(head) : the condition has length > 1`: Run bookdown render error
+
+If you observe an error like this:
+
+```
+Error in if (title == x2) return(head) : the condition has length > 1
+Calls: <Anonymous> ... split_chapters -> build -> sub -> is.factor -> prepend_chapter_title
+Execution halted
+Error: Process completed with exit code 1.
+```
+
+Then look at the `GA_Script.Rhtml` file and remove the following `html` frontmatter if it's present:
+
+(at the beginning of the file)
+
+```
+  <html>
+
+  <head>
+  <title>Title</title>
+  </head>
+
+  <body>
+```
+
+(at the end of the file)
+
+```
+  </body>
+  </html>
+```
+## Content not rendering
+
+Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml.
+(be careful to keep your selections for the configuration you would like).
+
+## Contact Info
+
+If you have a question that's not addressed by this website or just wanna chat with us about something else, please email us at itcrtrainingnetwork@gmail.com OR you can [leave a GitHub issue here](https://github.com/ottrproject/OTTR_Template/issues/new) and assign or "at" a team member in the description/a comment (`@carriewright11`, `@kweav`, or `@avahoffman`).
+
+We greatly appreciate any feedback! We are always looking for ways to improve OTTR so more open source courses can be made!
