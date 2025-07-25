@@ -3,24 +3,57 @@ project:
   output-dir: docs
   
 website:
-  title: "OTTR Template Website"
+  title: "OTTR <img src='./resources/images/basic_otter_water.PNG' width = 10px>"
   navbar:
     left:
     - text: ""
       href: index.qmd
       icon: fa-home
-    - text: 1. Setup
-      href: setup.qmd
-    - text: 2. Hosting
-      href: hosting.qmd
-    - text: Editing
-      href: editing.qmd
-    - text: 3. Style
-      href: style.qmd
-    - text: 4. Git Actions
-      href: git_actions.qmd
-    - text: More ottr docs
-      href: https://www.ottrproject.org/
+    - text: "Quick Start"
+      menu:
+        - text: "Getting Started"
+          href: getting_started.qmd
+        - text: "Next Steps"
+          href: next_steps.qmd
+    - text: "Customization"
+      menu:
+        - text: "Customizing checks"
+          href: customize-robots.qmd
+          icon: fa-robot
+        - text: "Customizing style"
+          href: customize-style.qmd
+          icon: fa-palette
+        - text: "Customizing Docker"
+          href: customize-docker.qmd
+          icon: fa-gears
+        - text: "Citing sources"
+          href: more_features_sources.qmd
+          icon: fa-quote-left
+        - text: "Giving credits"
+          href: more_features_credits.qmd
+          icon: fa-award
+        - text: "Borrowing chapters"
+          href: more_features_borrowing.qmd
+          icon: fa-bookmark
+        - text: "Compatibility with Google Docs"
+          href: more_features_gdoc.qmd
+          icon: fa-file
+        - text: "Google Analytics"
+          href: more_features_ganalytic.qmd
+          icon: fa-chart-line
+        - text: "OTTR-fying an existing repository"
+          href: ottr-fy.qmd
+          icon: glyphicon-sunglasses
+        - text: "About OTTR babies"
+          href: examples.qmd
+    - text: "Troubleshooting"
+      href: faqs.qmd
+      icon: fa-handshake
+    
+    - text: ""
+      href: https://github.com/ottrproject/OTTR_Template
+      icon: fa-github
+   
 
 format:
   html:
