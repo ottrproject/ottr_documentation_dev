@@ -1,0 +1,89 @@
+---
+title: "OTTR-fy an existing repository"
+output:
+  html_document
+---
+
+**WARNING** This is in the very early stages of testing. You may feel free to try it, but [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) right away if it does not appear to be working as intended (or if you have other suggestions).
+
+In some cases, if you have R Markdown files, Markdown files, or even better, Bookdown set of files in an existing repository that you would like to OTTR-fy you can do that following these steps.
+This method is a bit trickier and riskier than creating a repository from scratch and is still under some testing. So we recommend generally avoiding this strategy unless its unavoidable.
+
+This set of steps also assumes you are more familiar with GitHub.
+
+
+## Requirements for OTTR-fying a repository:
+
+- Need to have either Markdown or R Markdown documents in the top of your repository that you are seeking to publish.
+- Needs to be a public GitHub repository.
+
+### Step 1: Add OTTR files to your current repository
+
+Navigate to the top of your repository and [download this file](https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R).
+
+You can do this by using wget, or by just using the link above and saving it as `ottr-fy.R` in the top of your repository.
+```
+wget 'https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R'
+```
+
+You've downloaded a script that will download the necessary files to run OTTR in your repository. Take a look at the filenames of what will be downloaded to make sure that you won't accidentally overwrite any of your repository's existing files.
+
+### OTTR-fying files:
+
+#### Files you won't need to edit
+
+- `.github/workflows/pull_request.yml`
+- `.github/workflows/render-all.yml`
+- `.github/workflows/delete-preview.yml`
+- `.github/workflows/docker-build.yml`
+
+#### Files you'll need to edit to customize
+\* These files also will not be downloaded if you already have set up your repository as a bookdown website and specify this in the upcoming command.
+
+- `_bookdown.yml` or `_site.yml` for a website/course respectively
+- `_output.yml`
+- `book.bib`
+- `assets/big-image.html`
+- `assets/footer.html`
+
+#### File you will likely want to edit but don't have to
+
+- `config_automation.yml`
+- `assets/style.css`
+
+Run this this script from your command line if your repository is not already a bookdown website.
+```
+Rscript ottr-fy.R
+```
+If your repository is already configured as a bookdown website, then run this command (aka use the `--bookdown` flag):
+```
+Rscript ottr-fy.R --bookdown
+```
+Note if your GitHub repository is not configured, this script will not work.
+
+This script will automatically:
+
+1. Open a new branch called `robot/ottrfy`.
+2. Add the OTTR files listed above.
+3. Add, commit, and push this branch to an `origin`
+
+After that, you should go to your repository and open up a pull request.
+The OTTR automation checks should happen on this pull request automatically.
+`Render preview` check will almost certainly fail until you complete the next step.
+
+If they do not automatically start running, you may also want to check in your `Settings` > `Actions` that `Allow all actions and reusable workflows` is chosen.
+
+Check your files on this pull request your files and that nothing horrible has happened to your original files (like being overwritten or deleted).
+
+### 2. Add your Rmd or md files to the `_bookdown.yml` or `_site.yml` file
+
+You will almost certainly find that the `Render preview` check will fail (and possibly the spelling and URL checks).
+
+One reason that this will fail is that you will need to edit `_bookdown.yml` `_site.yml` to list your Rmds (or mds) in the order they should appear in the course. ([See this section](https://www.ottrproject.org/customize-robots.html#Pull_request_checks:) for more information about these checks and what they are)
+
+Make sure to commit this to your branch.
+*\ Note! Don't merge this pull request before you finish adding a few settings as described in this next step.
+
+### 3. Set up your repository with the proper settings
+
+From here, you can follow the rest of the steps described in the [Getting Started section](https://www.ottrproject.org/getting_started.html#Starting_a_new_OTTR_websitecourse).
