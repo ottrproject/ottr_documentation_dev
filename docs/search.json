@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact Us",
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Setup",
     "section": "",
-    "text": "If you have questions please contact:\n\nCarrie Wright (cwrigh60@jhu.edu)"
+    "text": "Getting started\nCreate your repository by clicking on the Use this Template button at OTTR_Template_Website repository\n\nYou’ll need to make your repository public.\n\n\nSet your GH_PAT\nTo enable the GitHub actions, your repository needs to be setup in a specific way.\nFor OTTR GitHub actions to run, they need to have credentials through a personal access token.\n\nSet up your own personal access token following these instructions - but create a classic token. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says repo and select all that is underneath that header. No other permissions are necessary.\n\n\n\nClick here for more detailed instructions. The instructions for this step may change with updates to GitHub.\n\nFirst, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.\n\n\n\n\n\n\n\n\n\nNext, scroll all the way down on the far right menu to “Developer Settings”.\n\n\n\n\n\n\n\n\n\nThen select “Personal Access Tokens” and “Tokens (classic)”\n\n\n\n\n\n\n\n\n\nThen click “Generate new token” and confirm that you want classic.\n\n\n\n\n\n\n\n\n\nFinally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.\n\n\n\n\n\n\n\n\n\n\n\nIn your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click New Repository Secret.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn the window opened, name this new secret GH_PAT and paste the personal access token in the box below. (Note that the name GH_PAT is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).\nClick the green button to add the secret.\n\n\n\n\n\n\n\n\n\n\n\nAllow GitHub Actions\nGo to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.\nScroll down to the “Actions” button and click it, then click “General”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.\nFinally, click “save”.\n\n\n\n\n\n\n\n\n\n\n\nProtect branches\nAlthough this isn’t entirely required, its strongly recommended that you use these settings to protect your main branches.\nClick on settings in the far upper right corner:\n\n\n\n\n\n\n\n\n\nClick on branches:\n\n\n\n\n\n\n\n\n\nClick the add rule button.\n\n\n\n\n\n\n\n\n\nType “main” as the branch name pattern:\n\n\n\n\n\n\n\n\n\nClick on the following boxes to require pull requests before merging:\n\n\n\n\n\n\n\n\n\nNote that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!"
   },
   {
     "objectID": "hosting.html",
@@ -19,34 +19,6 @@
     "title": "Hosting",
     "section": "",
     "text": "To host your website on GitHub, you will need to go to settings and click on the pages tab.\nAgain to go to settings click on the far upper right corner:\n\n\n\n\n\n\n\n\n\nClick on Pages:\n\n\n\n\n\n\n\n\n\nSelect the main branch and the root directory and press save. Be sure to also check the “Enforce HTTPS” box. Afterwards your repository should look like this:\n\n\n\n\n\n\n\n\n\nNote that in general, your website will be published to a URL like this:\nhttps://username.github.io/repository_name/\nIf you have multiple websites published underneath your username or organization, this should still publish fine. This website will be a subdirectory that is named whatever you have named this repository.\nIf you’ve published this website underneath a GitHub organization (not your own personal GitHub profile), then in the above example URL the organization name will be where we’ve put username.\nFor more about GitHub pages (including how to personalize your URL) see the GitHub pages documentation here: https://pages.github.com/\nSometimes, GitHub page publishing will take a bit of time. You can click on the Actions tab in your repository and see if there is a pages and deployment action currently running (indicated by a yellow circle next to the action name). If this is the case, you will need to wait until this becomes a green check mark before your GitHub page will be published."
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Setup",
-    "section": "",
-    "text": "Getting started\nCreate your repository by clicking on the Use this Template button at OTTR_Template_Website repository\n\nYou’ll need to make your repository public.\n\n\nSet your GH_PAT\nTo enable the GitHub actions, your repository needs to be setup in a specific way.\nFor OTTR GitHub actions to run, they need to have credentials through a personal access token.\n\nSet up your own personal access token following these instructions - but create a classic token. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says repo and select all that is underneath that header. No other permissions are necessary.\n\n\n\nClick here for more detailed instructions. The instructions for this step may change with updates to GitHub.\n\nFirst, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.\n\n\n\n\n\n\n\n\n\nNext, scroll all the way down on the far right menu to “Developer Settings”.\n\n\n\n\n\n\n\n\n\nThen select “Personal Access Tokens” and “Tokens (classic)”\n\n\n\n\n\n\n\n\n\nThen click “Generate new token” and confirm that you want classic.\n\n\n\n\n\n\n\n\n\nFinally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.\n\n\n\n\n\n\n\n\n\n\n\nIn your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click New Repository Secret.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn the window opened, name this new secret GH_PAT and paste the personal access token in the box below. (Note that the name GH_PAT is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).\nClick the green button to add the secret.\n\n\n\n\n\n\n\n\n\n\n\nAllow GitHub Actions\nGo to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.\nScroll down to the “Actions” button and click it, then click “General”.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nScroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.\nFinally, click “save”.\n\n\n\n\n\n\n\n\n\n\n\nProtect branches\nAlthough this isn’t entirely required, its strongly recommended that you use these settings to protect your main branches.\nClick on settings in the far upper right corner:\n\n\n\n\n\n\n\n\n\nClick on branches:\n\n\n\n\n\n\n\n\n\nClick the add rule button.\n\n\n\n\n\n\n\n\n\nType “main” as the branch name pattern:\n\n\n\n\n\n\n\n\n\nClick on the following boxes to require pull requests before merging:\n\n\n\n\n\n\n\n\n\nNote that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!"
-  },
-  {
-    "objectID": "editing.html",
-    "href": "editing.html",
-    "title": "Editing",
-    "section": "",
-    "text": "Now that your website is alive and hosted, how do you start customizing it to have your content?\nIf you already know how to file pull requests, feel free to start making edits as you see fit using some of the structure points we’ve noted below.\nIf you are not familiar with pull requests, read this guide to get started."
-  },
-  {
-    "objectID": "editing.html#title",
-    "href": "editing.html#title",
-    "title": "Editing",
-    "section": "Title",
-    "text": "Title\nTo change the title of the website, modify the name line of the _site.yml file."
-  },
-  {
-    "objectID": "editing.html#modifying-pages",
-    "href": "editing.html#modifying-pages",
-    "title": "Editing",
-    "section": "Modifying pages",
-    "text": "Modifying pages\nPages are specified in the navigation bar by the lines that say -text: and href: .\nThe -text: specifies what the navigation bar will say for that tab.\nThe href: specifies which rendered Rmd file to use for that tab, it needs to be the html version of this file.\nThe tabs are specified to be aligned to the left (as specified by the left on line 5).\nThe tabs will appear in the order listed.\nYou can also add icons to these tabs using font awesome as is shown for the contact page on line 18.\n\n\n\n\n\n\n\n\n\nOther icon options include Bootstap glyphicons or ion icons. Note that not all icons will work because they are not all set up with the packages that make rendering the website possible, so this may require some trial and error. Here is an example of how you would use all of these icon options to add more:\n\n\n\n\n\n\n\n\n\nThis would result in a navigation bar with these icons:"
   },
   {
     "objectID": "index.html",
@@ -124,5 +96,33 @@
     "title": "Style",
     "section": "Additional changes",
     "text": "Additional changes\nTo make additional changes to the style, you can modify the styles.css file with css code. This website has great information about css code.\nAs an example if you wanted to change the color of the blue line to green you could change where it says lightblue to lightgreen in the styles.css file. You can also use a hex color code like those that can be found at this website, such as #00FF9E to get a specific shade.\n\n\n\n\n\n\n\n\n\nNote that if you change the css file with a new element that is not already defined like body then you would need to do it as done with the banner element. This was then added to the index.Rmd file by using:\n&lt;div class = \"banner\"&gt;\nBanner text!  \n&lt;/div&gt;\nAlso checkout the Quarto docs for more customization of the pages."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Us",
+    "section": "",
+    "text": "If you have questions please contact:\n\nCarrie Wright (cwrigh60@jhu.edu)"
+  },
+  {
+    "objectID": "editing.html",
+    "href": "editing.html",
+    "title": "Editing",
+    "section": "",
+    "text": "Now that your website is alive and hosted, how do you start customizing it to have your content?\nIf you already know how to file pull requests, feel free to start making edits as you see fit using some of the structure points we’ve noted below.\nIf you are not familiar with pull requests, read this guide to get started."
+  },
+  {
+    "objectID": "editing.html#title",
+    "href": "editing.html#title",
+    "title": "Editing",
+    "section": "Title",
+    "text": "Title\nTo change the title of the website, modify the name line of the _site.yml file."
+  },
+  {
+    "objectID": "editing.html#modifying-pages",
+    "href": "editing.html#modifying-pages",
+    "title": "Editing",
+    "section": "Modifying pages",
+    "text": "Modifying pages\nPages are specified in the navigation bar by the lines that say -text: and href: .\nThe -text: specifies what the navigation bar will say for that tab.\nThe href: specifies which rendered Rmd file to use for that tab, it needs to be the html version of this file.\nThe tabs are specified to be aligned to the left (as specified by the left on line 5).\nThe tabs will appear in the order listed.\nYou can also add icons to these tabs using font awesome as is shown for the contact page on line 18.\n\n\n\n\n\n\n\n\n\nOther icon options include Bootstap glyphicons or ion icons. Note that not all icons will work because they are not all set up with the packages that make rendering the website possible, so this may require some trial and error. Here is an example of how you would use all of these icon options to add more:\n\n\n\n\n\n\n\n\n\nThis would result in a navigation bar with these icons:"
   }
 ]
