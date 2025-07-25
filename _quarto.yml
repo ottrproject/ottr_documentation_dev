@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: docs
-  
+
 website:
   title: "OTTR <img src='./resources/images/basic_otter_water.PNG' width = 10px>"
   navbar:
@@ -48,12 +48,14 @@ website:
           href: examples.qmd
     - text: "Troubleshooting"
       href: faqs.qmd
-      icon: fa-handshake
-    
+      icon: fa-tools
+    - text: "Contact"
+      href: contact.qmd
+      icon: fa-envelope
     - text: ""
       href: https://github.com/ottrproject/OTTR_Template
       icon: fa-github
-   
+
 
 format:
   html:
