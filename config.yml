@@ -1,0 +1,13 @@
+default:
+  actions: "<img src='resources/icons/actions.png' alt='actions icon' class = icon width = '200px'>"
+  collab: "<img src='resources/icons/collaborator.png' alt='collaborator icon' class = icon width = '200px'>"
+  copy: "<img src='resources/icons/copy.png' alt='copy icon' class = icon width = '200px'>"
+  dev: "<img src='resources/icons/developer_settings.png' alt='developer settings icon' class = icon width = '200px'>"
+  edit: "<img src='resources/icons/edit.png' alt='edit icon' class = icon width = '200px'>"
+  pages: "<img src='resources/icons/pages.png' alt='pages icon' class = icon width = '200px'>"
+  PR: "<img src='resources/icons/pull_request.png' alt='pull request icon' class = icon width = '200px'>"
+  profile: "<img src='resources/icons/profile_photo.png' alt='profile photo icon' class = icon width = '200px'>"
+  token: "<img src='resources/icons/personal_tokens.png' alt='personal access token icon' class = icon width = '200px'>"
+  search: "<img src='resources/icons/search.png' alt='search icon' class = icon width = '200px'>"
+  secrets: "<img src='resources/icons/secrets_and_variables.png' alt='secrets and variables icon' class = icon width = '200px'>"
+  settings: "<img src='resources/icons/settings_gear.png' alt='settings gear icon' class = icon width = '200px'>"
