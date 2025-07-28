@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Troubleshooting – OTTR </title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./resources/images/basic_otter_water.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">OTTR <img src="./resources/images/basic_otter_water.PNG" width="35px"></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" title="A home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quick-start" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quick Start</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quick-start">    
+        <li>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Getting Started</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./next_steps.html">
+ <span class="dropdown-text">Next Steps</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Customization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_sources.html">
+ <span class="dropdown-text">Citing sources <i class="fa-solid fa-quote-left" title="A left quotation mark" aria-label="quote-left"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_credits.html">
+ <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_borrowing.html">
+ <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fying an existing repository</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">About OTTR babies</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./faqs.html" aria-current="page"> 
+<span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ottrproject/OTTR_Template"> 
+<span class="menu-text"><i class="fa-brands fa-github" title="The GitHub logo" aria-label="github"></i></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#most-common-errors" id="toc-most-common-errors" class="nav-link active" data-scroll-target="#most-common-errors">Most Common Errors</a>
+  <ul class="collapse">
+  <li><a href="#file-is-not-in-png-format-google-slides-permissions-fail" id="toc-file-is-not-in-png-format-google-slides-permissions-fail" class="nav-link" data-scroll-target="#file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</a></li>
+  <li><a href="#process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" id="toc-process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="nav-link" data-scroll-target="#process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</a></li>
+  <li><a href="#conflict-modifydelete-merge-conflict-fail" id="toc-conflict-modifydelete-merge-conflict-fail" class="nav-link" data-scroll-target="#conflict-modifydelete-merge-conflict-fail"><code>CONFLICT (modify/delete)</code>: Merge conflict fail:</a></li>
+  <li><a href="#parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" id="toc-parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" class="nav-link" data-scroll-target="#parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error"><code>Parser error: while parsing a flow sequence</code>: _bookdown.yml parse error</a></li>
+  <li><a href="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" id="toc-error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="nav-link" data-scroll-target="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</a></li>
+  <li><a href="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" id="toc-error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="nav-link" data-scroll-target="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</a></li>
+  </ul></li>
+  <li><a href="#content-not-rendering" id="toc-content-not-rendering" class="nav-link" data-scroll-target="#content-not-rendering">Content not rendering</a></li>
+  <li><a href="#contact-info" id="toc-contact-info" class="nav-link" data-scroll-target="#contact-info">Contact Info</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Troubleshooting</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!---
+Add something here that is like a TOC/overview of the errors that are covered in this doc.
+  --->
+<section id="most-common-errors" class="level2">
+<h2 class="anchored" data-anchor-id="most-common-errors">Most Common Errors</h2>
+<p>This guide will describe the most common OTTR errors and pitfalls and how to address them. When you open a pull request, you should see a report like this:</p>
+<p><img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/gha-actions-error.png" class="img-fluid"></p>
+<p>When you see an ❌ , click on the <code>Details</code> button to see the error message. We’ll discuss the most common error messages here.</p>
+<hr>
+<section id="file-is-not-in-png-format-google-slides-permissions-fail" class="level3">
+<h3 class="anchored" data-anchor-id="file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</h3>
+<p><em>Error example:</em></p>
+<pre><code>Error in png::readPNG(path, native = TRUE, info = TRUE) :
+  file is not in PNG format
+Calls: local ... lapply -&gt; FUN -&gt; raster_dpi_width -&gt; attr -&gt; &lt;Anonymous&gt;
+Execution halted
+Error in Rscript_render(f, render_args, render_meta, add1, add2) :
+  Failed to compile &lt;file_name&gt;.Rmd
+Calls: local ... &lt;Anonymous&gt; -&gt; render_new_session -&gt; Rscript_render
+Execution halted
+Error: bookdown::render_book() failed to render the output format 'bookdown::gitbook'.
+Execution halted</code></pre>
+<p><em>What does this mean?:</em></p>
+<p>Your Google Slides presentation you have tried to retrieve a slide from with <code>ottrpal::include_slide()</code> is not public. Your Google Slide document must be set to <code>Anyone with a link</code>. See <a href="https://support.wix.com/en/article/setting-permissions-for-google-drive-files-and-folders#:~:text=Settings%20Permissions%20for%20a%20Google,edit%20and%20comment%20as%20well.">this article for more details.</a> The renders will fail if this is not set! See the <a href="https://www.ottrproject.org/writing_content_courses.html#set-up-images">setting up images and graphics section</a> for more details.</p>
+<hr>
+</section>
+<section id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="level3">
+<h3 class="anchored" data-anchor-id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</h3>
+<p>Underneath a section that says something like: <code>**Check spelling/url/quiz errors - fail if too many of them**</code> you may see something like:</p>
+<pre><code>Run exit 1
+  exit 1
+  shell: sh -e {0}
+Error: Process completed with exit code 1.</code></pre>
+<p>This is failing on purpose – it means that checker has found errors. Return to your pull request page and look for a comment that says something like:</p>
+<pre><code>⚠️ There are &lt;spelling/quiz/url&gt; errors that need to be addressed. Read this guide for more info.
+Download the errors here.
+Comment updated at &lt;some_date&gt; with changes from &lt;commit&gt;</code></pre>
+<p>Click on the <code>Download the errors here</code> to see the list of errors and which files they were found in. For help in addressing these errors, click on the <code>Read this guide for more info</code> button.</p>
+<hr>
+</section>
+<section id="conflict-modifydelete-merge-conflict-fail" class="level3">
+<h3 class="anchored" data-anchor-id="conflict-modifydelete-merge-conflict-fail"><code>CONFLICT (modify/delete)</code>: Merge conflict fail:</h3>
+<p><em>Error example:</em></p>
+<pre><code>CONFLICT (modify/delete): &lt;file_name&gt; deleted in &lt;branch_name&gt; and modified in HEAD. Version HEAD of &lt;file_name&gt; left in tree.</code></pre>
+<p>This will often happen when render-preview’s git handling doesn’t know which changes you are looking to preview. The easiest way to fix this problem is to create a separate pull request that completely deletes the files lists. To do this, follow these steps:</p>
+<ol type="1">
+<li>Take note of your pull request’s number. Go to the pull request page and see what <code>#number</code> is posted there.</li>
+<li>On your GitHub repository, go to <code>Code</code> and click on <code>Branches</code>.</li>
+<li>Your pull request’s preview is made on a branch named <code>preview-&lt;number of your pull request&gt;</code>. Find this branch and click the trash can icon. This will delete the preview branch and hopefully get rid of this error. <a href="https://www.git-tower.com/learn/git/faq/github-delete-branch">Read this</a> for more info on how to delete a branch.</li>
+<li>Re-trigger your GitHub actions run and it should pass.</li>
+</ol>
+<hr>
+</section>
+<section id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" class="level3">
+<h3 class="anchored" data-anchor-id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error"><code>Parser error: while parsing a flow sequence</code>: _bookdown.yml parse error</h3>
+<p>If you see an error like this:</p>
+<pre><code>Run Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all')"
+Error in yaml::yaml.load(..., eval.expr = TRUE) :
+  Parser error: while parsing a flow sequence at line 4, column 12 did not find expected ',' or ']' at line 11, column 13
+Calls: &lt;Anonymous&gt; ... &lt;Anonymous&gt; -&gt; resolve -&gt; &lt;Anonymous&gt; -&gt; yaml_load -&gt; &lt;Anonymous&gt;
+Execution halted
+Error: Process completed with exit code 1.</code></pre>
+<p>It means that the formatting in your <code>_bookdown.yml</code> is off. If you forget a comma, or quote, or a <code>]</code> this message will appear in the github actions preview run.</p>
+<p>Take a careful look at the <code>_bookdown.yml</code>. Keep in mind that _bookdown.yml rmd_files spec should look like this (indents, quotes, and commas included in this pattern):</p>
+<pre><code>rmd_files: ["index.Rmd",
+            "01-intro.Rmd",
+            "02-chapter_of_course.Rmd",
+            "new_file.Rmd",
+            "About.Rmd",
+            "References.Rmd"]</code></pre>
+<p>Commit the changes to your <code>_bookdown.yml</code> and see if the preview GitHub action runs appropriately.</p>
+</section>
+<section id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="level3">
+<h3 class="anchored" data-anchor-id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</h3>
+<p>If you get a 404 error after clicking the link while attempting to download the <code>.docx</code> file from the GitHub Action rendered previews, then add the following code to the end of the <code>_output.yml</code> file:</p>
+<pre><code>bookdown::word_document2:
+  toc: true</code></pre>
+<p>Commit the changes to your <code>_output.yml</code> and see if the preview GitHub action runs appropriately.</p>
+</section>
+<section id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="level3">
+<h3 class="anchored" data-anchor-id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</h3>
+<p>If you observe an error like this:</p>
+<pre><code>Error in if (title == x2) return(head) : the condition has length &gt; 1
+Calls: &lt;Anonymous&gt; ... split_chapters -&gt; build -&gt; sub -&gt; is.factor -&gt; prepend_chapter_title
+Execution halted
+Error: Process completed with exit code 1.</code></pre>
+<p>Then look at the <code>GA_Script.Rhtml</code> file and remove the following <code>html</code> frontmatter if it’s present:</p>
+<p>(at the beginning of the file)</p>
+<pre><code>  &lt;html&gt;
+
+  &lt;head&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;</code></pre>
+<p>(at the end of the file)</p>
+<pre><code>  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+</section>
+</section>
+<section id="content-not-rendering" class="level2">
+<h2 class="anchored" data-anchor-id="content-not-rendering">Content not rendering</h2>
+<p>Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).</p>
+</section>
+<section id="contact-info" class="level2">
+<h2 class="anchored" data-anchor-id="contact-info">Contact Info</h2>
+<p>If you have a question that’s not addressed by this website or just wanna chat with us about something else, please email us at itcrtrainingnetwork@gmail.com OR you can <a href="https://github.com/ottrproject/OTTR_Template/issues/new">leave a GitHub issue here</a> and assign or “at” a team member in the description/a comment (<code>@carriewright11</code>, <code>@kweav</code>, or <code>@avahoffman</code>).</p>
+<p>We greatly appreciate any feedback! We are always looking for ways to improve OTTR so more open source courses can be made!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Git Actions – OTTR Template Website</title>
+<title>Git Actions – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./resources/images/basic_otter_water.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -39,6 +40,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">OTTR Template Website</span>
+    <span class="navbar-title">OTTR <img src="./resources/images/basic_otter_water.PNG" width="35px"></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -89,33 +92,82 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-fa-home" role="img">
-</i> 
-<span class="menu-text"><strong>Website Name</strong></span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" title="A home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quick-start" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quick Start</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quick-start">    
+        <li>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Getting Started</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./next_steps.html">
+ <span class="dropdown-text">Next Steps</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Customization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_sources.html">
+ <span class="dropdown-text">Citing sources <i class="fa-solid fa-quote-left" title="A left quotation mark" aria-label="quote-left"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_credits.html">
+ <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_borrowing.html">
+ <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fying an existing repository</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">About OTTR babies</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./faqs.html"> 
+<span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./setup.html"> 
-<span class="menu-text">1. Setup</span></a>
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./hosting.html"> 
-<span class="menu-text">2. Hosting</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./editing.html"> 
-<span class="menu-text">Editing</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./style.html"> 
-<span class="menu-text">3. Style</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./git_actions.html" aria-current="page"> 
-<span class="menu-text">4. Git Actions</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://www.ottrproject.org/"> 
-<span class="menu-text">More ottr docs</span></a>
+    <a class="nav-link" href="https://github.com/ottrproject/OTTR_Template"> 
+<span class="menu-text"><i class="fa-brands fa-github" title="The GitHub logo" aria-label="github"></i></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
