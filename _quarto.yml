@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "OTTR <img src='./resources/images/basic_otter_water.PNG' width = 10px>"
+  title: "OTTR <img src='./resources/images/basic_otter_water.PNG' width = 35px>"
   favicon: resources/images/basic_otter_water.ico
   navbar:
     left:
