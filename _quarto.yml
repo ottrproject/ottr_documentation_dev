@@ -7,55 +7,42 @@ website:
   favicon: resources/images/basic_otter_water.ico
   navbar:
     left:
-    - text: ""
-      href: index.qmd
-      icon: fa-home
-    - text: "Quick Start"
-      menu:
-        - text: "Getting Started"
-          href: getting_started.qmd
-        - text: "Next Steps"
-          href: next_steps.qmd
-    - text: "Customization"
-      menu:
-        - text: "Customizing checks"
-          href: customize-robots.qmd
-          icon: fa-robot
-        - text: "Customizing style"
-          href: customize-style.qmd
-          icon: fa-palette
-        - text: "Customizing Docker"
-          href: customize-docker.qmd
-          icon: fa-gears
-        - text: "Citing sources"
-          href: more_features_sources.qmd
-          icon: fa-quote-left
-        - text: "Giving credits"
-          href: more_features_credits.qmd
-          icon: fa-award
-        - text: "Borrowing chapters"
-          href: more_features_borrowing.qmd
-          icon: fa-bookmark
-        - text: "Compatibility with Google Docs"
-          href: more_features_gdoc.qmd
-          icon: fa-file
-        - text: "Google Analytics"
-          href: more_features_ganalytic.qmd
-          icon: fa-chart-line
-        - text: "OTTR-fying an existing repository"
-          href: ottr-fy.qmd
-          icon: glyphicon-sunglasses
-        - text: "About OTTR babies"
-          href: examples.qmd
-    - text: "Troubleshooting"
-      href: faqs.qmd
-      icon: fa-tools
-    - text: "Contact"
-      href: contact.qmd
-      icon: fa-envelope
-    - text: ""
-      href: https://github.com/ottrproject/OTTR_Template
-      icon: fa-github
+      - text: "{{< fa home title='A home' >}}"
+        href: index.qmd
+      - text: "Quick Start"
+        menu:
+          - text: "Getting Started"
+            href: getting_started.qmd
+          - text: "Next Steps"
+            href: next_steps.qmd
+      - text: "Customization"
+        menu:
+          - text: "Customizing checks {{< fa robot title='A robot' >}}"
+            href: customize-robots.qmd
+          - text: "Customizing style {{< fa palette title='A palette' >}}"
+            href: customize-style.qmd
+          - text: "Customizing Docker {{< fa gears title='gears' >}}"
+            href: customize-docker.qmd
+          - text: "Citing sources {{< fa quote-left title='A left quotation mark' >}}"
+            href: more_features_sources.qmd
+          - text: "Giving credits {{< fa award title='An award' >}}"
+            href: more_features_credits.qmd
+          - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
+            href: more_features_borrowing.qmd
+          - text: "Compatibility with Google Docs {{< fa file title='a file folder' >}}"
+            href: more_features_gdoc.qmd
+          - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
+            href: more_features_ganalytic.qmd
+          - text: "OTTR-fying an existing repository"
+            href: ottr-fy.qmd
+          - text: "About OTTR babies"
+            href: examples.qmd
+      - text: "Troubleshooting {{< fa tools title='tools' >}}"
+        href: faqs.qmd
+      - text: "Contact {{< fa envelope title='An envelope' >}}"
+        href: contact.qmd
+      - text: "{{< fa brands github title='The GitHub logo' >}}"
+        href: https://github.com/ottrproject/OTTR_Template
 
 
 format:
