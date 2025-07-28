@@ -1,0 +1,91 @@
+---
+title: "More Features: Borrowing Content"
+output:
+  html_document
+---
+
+## Borrowing Chapters
+
+If you have two courses where the content and topics overlap, you may want to share written material between the two.
+
+However, sharing material by copying and pasting can lead to maintenance issues, as updating one would require remembering to update the other as well! 😱
+
+In OTTR, we try to minimize maintenance pains. To get around this, we use `cow::borrow_chapter()` from the [jhudsl/cow](https://jhudatascience.org/cow/index.html) package.
+The `cow` package is already on the `jhudsl/course_template` Docker image  so you do not need to install it if you are using the Docker image or if you are have GitHub Actions do all the rendering for you.
+
+To borrow a chapter from another course, create an `.Rmd` as you normally would, with a `ottrpal::set_knitr_image_path()` in a chunk at the beginning of the file and a [`H1` title](https://www.markdownguide.org/basic-syntax/).
+
+Then, wherever you would like the borrowed chapter to appear, put an R chunk with this; where `{r, echo = FALSE, results='asis'}` is included in your chunk arguments.
+
+```
+cow::borrow_chapter(
+  doc_path = "02-chapter_of_course.Rmd",
+  repo_name = "ottrproject/OTTR_Template"
+)
+```
+
+The magic of this function is that whenever the course is re-rendered it will knit the latest version of the chapter you are borrowing.
+Note that this chunk cannot be run interactively, just include it in your Rmd and render your course as usual.
+
+### Borrowing from a local file
+
+If for some reason you would like a local file incorporated, just leave off the `repo_name` argument and `cow::borrow_chapter()` will look for the chapter locally.
+
+Have your chunk arguments include `{r, echo = FALSE, results='asis'}`.
+```
+cow::borrow_chapter(
+  doc_path = "02-chapter_of_course.Rmd"
+)
+```
+
+### Borrowing from a private repository
+
+If you are borrowing from a course in a private repository, you will need to supply a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) using a `git_pat` argument like this:
+
+Have your chunk arguments include:`{r, echo = FALSE, results='asis'}`
+
+```
+cow::borrow_chapter(
+  doc_path = "02-chapter_of_course.Rmd",
+  repo_name = "jhudsl/Private_Repo",
+  git_pat = "12345"
+)
+```
+
+### Removing an h1 header
+
+If you want to change the title you can use an option `remove_h1` to remove the title from the incoming borrowed chapter.
+
+![](resources/images/h1_header.png)
+
+### Linking between chapters
+
+If you don't want the material from another chapter completely copied over, you might instead just want to put a link to the Bookdown chapter. You can just use the full URL. A link would look something like this:
+```
+![](https://ottrproject.org/OTTR_Template/a-new-chapter.html)
+```
+
+
+You might want your course available for download as a docx. For example, you might be running a "train-the-trainer" workshop where trainees don't feel comfortable using Github to edit the lessons for their own use.
+
+The following yml in `index.Rmd` allows you to render the docx with a table of contents:
+
+```
+output:
+    bookdown::word_document2:
+      toc: true
+```
+
+You can also incorporate a template docx if you have headers and logos you want to use. To incorporate a template, make sure you add the `reference_docx` argument:
+
+```
+output:
+    bookdown::word_document2:
+      reference_docx: <path/to/template>.docx
+      toc: true
+```
+
+Learn more about templates [here](https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html).
+
+
+<br>

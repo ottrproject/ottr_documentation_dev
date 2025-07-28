@@ -1,0 +1,21 @@
+---
+title: "Next Steps"
+output: html_document
+---
+
+Now that you've setup a shell for your OTTR repository, there are some next steps that you **need** to take, and some steps that we **highly recommend**. Additionally, there are further customizations you may want to consider.
+
+::: {.panel-tabset group="nextStepType"}
+
+## Necessary Next Steps
+
+Tab Content ... Visit here to learn more
+
+## Highly Recommended Next Steps
+
+Tab Content ... Visit here to learn more
+
+## Additional Customizations to Consider
+
+Tab Content ... Visit here to learn more
+:::

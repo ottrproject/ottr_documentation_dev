@@ -1,36 +1,81 @@
 ---
-title: "**Website Name**"
+title: "**<img src='./resources/images/basic_otter_water.PNG' width = 100px> OTTR - Website and Online Course Tools**"
 output:
   html_document
 ---
 
 <div class = "banner_color">
-Banner text!  
+  <br>
 </div>
 
-### **About**
-
-This website was created with the [OTTR_Quarto website template](https://github.com/ottrproject/OTTR_Quarto). 
-
-This enables simpler creation of websites that have automated checks for broken URLs and spelling errors, as well as automated rendering of all html files. No need to worry about git conflicts for html files! See [ottrproject.org](https://www.ottrproject.org/) for more docs and details. 
-
-Here is how you can include images in your website pages (this one is saved in `resources/images` to keep things tidy:
-
-```{r, fig.align='center', fig.alt= "Example image", echo = FALSE, out.width="30%"}
-knitr::include_graphics("resources/images/example_image.png")
+```{r, fig.align='center', fig.alt= "OTTR helps build github based websites with less hassle. Catch potential mistakes before they go live", echo = FALSE, out.width= "40%"}
+knitr::include_graphics("./resources/images/why-ottr.png")
 ```
 
- 
- 
-We will go through the following:
+## What is OTTR:
 
-1. How to set up your repository to enable the GitHub actions of the template. (Setup tab)
-2. How to host your website using GitHub (Hosting tab)
-3. How to modify your website structure (Structure tab)
-4. How to change your website style (Style tab)
-5. More information about GitHub Actions (Git Actions tab)
+OTTR is a set of tools and templates to help you make websites and online courses more easily!
 
-Click on each tab to learn more.
+It helps you use [GitHub](https://github.com/) to publish websites and courses for free.
+
+## Benefits of OTTR:
+
+* OTTR is free!
+* No software installations needed
+* Automatically preview content on GitHub before you publish (not just locally!)
+* Automatically check spelling (and customize it!)
+* Automatically and periodically check for broken links
+* Easily customize branding
+* Easily include code (and avoid version difference issues using Docker containers)
+* Easily format courses for learning platforms like [coursera](https://www.coursera.org/) and [Leanpub](https://leanpub.com/)
+* Easily update courses! (only edit once and it gets propagated to all locations)
+
+<br>
+(*Note that you will need to establish a publishing contract with coursera if you want to publish there)
 
 
+Check out this short video about OTTR:
 
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/oQ8d42fSn0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+## How to use OTTR:
+
+1. Edit and write websites and courses in [R Markdown files](https://rmarkdown.rstudio.com/) or [Quarto](https://quarto.org/docs/output-formats/html-basics.html)
+1. Use GitHub to host your content, we will walk you through how!
+1. Let the GitHub actions in our tools do all the checks and rendering so you don't have too
+1. Update your content as needed based on the errors OTTR finds and the preview
+1. Publish your websites and courses!
+<br>
+
+## How to Cite OTTR:
+
+Please cite our [OTTR manuscript here!](https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646)📝👀
+
+<details>
+  <summary>Click here for the BibTeX formatted citation</summary>
+```
+@article{ottr,
+  author = {Candace Savonen, Carrie Wright, Ava M. Hoffman, John Muschelli, Katherine Cox, Frederick J. Tan and Jeffrey T. Leek},
+  title = {Open-source Tools for Training Resources – OTTR},
+  journal = {Journal of Statistics and Data Science Education},
+  volume = {31},
+  number = {1},
+  pages = {57-65},
+  year = {2023},
+  publisher = {Taylor & Francis},
+  doi = {10.1080/26939169.2022.2118646},
+  URL = {https://doi.org/10.1080/26939169.2022.2118646},
+  eprint = {https://doi.org/10.1080/26939169.2022.2118646}
+}
+```
+</details>
+
+<br>
+
+<center>
+<a href="https://ottrproject.org/getting_started.html">
+  <img src="resources/images/getstarted.png" width = 30%>
+</a>
+</center>
+
+<br>
