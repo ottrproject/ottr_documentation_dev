@@ -14,8 +14,8 @@ Coursera
 coursera
 cheatsheet
 css
-custimization
-custimizations
+customization
+customizations
 cwrigh
 dasl
 DaSL
@@ -33,6 +33,7 @@ fy
 fying
 GH
 GHA
+github
 Github
 GitHub
 HTTPS
