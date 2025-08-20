@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Customizing Docker – OTTR </title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./resources/images/basic_otter_water.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-4df3b0c4fafa0f66eafcead0ee6cff11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">OTTR <img src="./resources/images/basic_otter_water.PNG" width="35px"></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text"><i class="fa-solid fa-home" title="A home" aria-label="home"></i></span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-quick-start" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Quick Start</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-quick-start">    
+        <li>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Getting Started</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./next_steps.html">
+ <span class="dropdown-text">Next Steps</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Customization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_sources.html">
+ <span class="dropdown-text">Citing sources <i class="fa-solid fa-quote-left" title="A left quotation mark" aria-label="quote-left"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_credits.html">
+ <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_borrowing.html">
+ <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fying an existing repository</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">About OTTR babies</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./faqs.html"> 
+<span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/ottrproject/OTTR_Template"> 
+<span class="menu-text"><i class="fa-brands fa-github" title="The GitHub logo" aria-label="github"></i></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#using-the-base_ottr-docker-image" id="toc-using-the-base_ottr-docker-image" class="nav-link active" data-scroll-target="#using-the-base_ottr-docker-image">Using the base_ottr Docker image</a></li>
+  <li><a href="#starting-a-new-docker-image" id="toc-starting-a-new-docker-image" class="nav-link" data-scroll-target="#starting-a-new-docker-image">Starting a new Docker image</a>
+  <ul class="collapse">
+  <li><a href="#set-dockerhub-related-secrets" id="toc-set-dockerhub-related-secrets" class="nav-link" data-scroll-target="#set-dockerhub-related-secrets">Set Dockerhub related secrets</a></li>
+  <li><a href="#updating-workflows-for-new-docker-image" id="toc-updating-workflows-for-new-docker-image" class="nav-link" data-scroll-target="#updating-workflows-for-new-docker-image">Updating workflows for new Docker image</a></li>
+  <li><a href="#modifying-the-dockerfile-for-a-new-image" id="toc-modifying-the-dockerfile-for-a-new-image" class="nav-link" data-scroll-target="#modifying-the-dockerfile-for-a-new-image">Modifying the Dockerfile for a new image</a></li>
+  <li><a href="#testing-a-modified-docker-image" id="toc-testing-a-modified-docker-image" class="nav-link" data-scroll-target="#testing-a-modified-docker-image">Testing a modified Docker image</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Customizing Docker</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>For courses that require running example code, it is strongly advisable to utilize a Docker image during development. This ensures consistent software versions among course developers.</p>
+<section id="using-the-base_ottr-docker-image" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-base_ottr-docker-image">Using the base_ottr Docker image</h2>
+<p>If your course doesn’t require any additional packages to run, then you do not need to set up Docker locally but this Docker image <a href="https://hub.docker.com/repository/docker/jhudsl/base_ottr">jhudsl/base_ottr</a> will run and re-render all of your changes as you add them.</p>
+<p>We recommend using the <code>jhudsl/base_ottr:main</code> tagged image instead of the <code>latest</code> version. The <code>main</code> image is ready for use, while the <code>latest</code> may be under development. All GitHub Actions by default use the <code>jhudsl/base_ottr:main</code>.</p>
+<p>If you are new to Docker, you may find it helpful to read this <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/launching-a-docker-image.html">introduction to Docker</a>.</p>
+<ul>
+<li>If you don’t have one, you will need to <a href="https://hub.docker.com/">sign up with a Docker account</a>.</li>
+<li>If you haven’t installed Docker desktop (or need to update it), you can do so <a href="https://docs.docker.com/get-docker/">here</a>.</li>
+</ul>
+<p>If your Docker desktop is running, you should see a Docker whale in your tool bar. On Macs, this will be on the bar on the top of your screen; in Windows, on the bottom right.</p>
+<p>A Docker image is similar to a virtual machine - it contains preinstalled software in a preconfigured environment. Docker images can be downloaded from DockerHub, or you can create your own.</p>
+<p>We have created the <code>base_ottr:main</code> image as a starting point; you can download it from <code>jhudsl/base_ottr:main</code> on DockerHub using the docker pull command we have below. To pull the docker image associated with this template, you can run this command below in your command line. This may take a while:</p>
+<pre><code>docker pull jhudsl/base_ottr:main</code></pre>
+<p>This pulls the <code>base_ottr:main</code> image from Docker Hub and copies it to your computer. It will be placed in your local collection of Docker images, managed by Docker (not in your working directory). If you get an error, it may be because you forgot to have your Docker desktop running… see above.</p>
+<p>To use the Docker image associated with the course template, first navigate to the the top of this GitHub repository. Now you can start up the Docker container using the command below.</p>
+<p>This runs your local copy of the <code>base_ottr:main</code> image (which you downloaded from DockerHub). The option <code>-v $PWD:/home/rstudio</code> mounts pwd (this repo) and makes it available at <code>/home/rstudio</code> within the container. Replace all of <code>&lt;CHOOSE_PASSWORD&gt;</code> (including the <code>&lt;</code> and <code>&gt;</code>) with a password of your choosing.</p>
+<p><em>On a Mac</em>:</p>
+<pre><code>docker run -it -v $PWD:/home/rstudio -e PASSWORD=&lt;CHOOSE_PASSWORD&gt; -p 8787:8787 jhudsl/base_ottr:main</code></pre>
+<p><em>On a Windows</em>:</p>
+<pre><code>docker run -it -v %CD%:/home/rstudio -e PASSWORD=&lt;CHOOSE_PASSWORD&gt; -p 8787:8787 jhudsl/base_ottr:main</code></pre>
+<p>Do not close this window, but you can minimize it. Open up a new command line window and run the command: <code>docker ps</code>, you should see a container is up and running!</p>
+<p><em>Couple of handy Docker commands:</em></p>
+<ul>
+<li>To stop your Docker container, run <code>docker ps</code> to obtain the docker container ID. Then you can use that ID to run <code>docker stop &lt;CONTAINER_ID&gt;</code>.</li>
+<li>To remove a docker image (which you may need to do from time to time to clear out space), you can run <code>docker image ls</code> to see all your current images. Then you can run either <code>docker image rm &lt;IMAGE_ID&gt;</code>.</li>
+<li>If you really need to clear out space, you can follow this <a href="https://stackoverflow.com/questions/44785585/docker-how-to-delete-all-local-docker-images">StackOverflow post</a> on how to remove all images and all containers.</li>
+</ul>
+<p>To obtain further information on utilizing Docker, you can refer to their comprehensive documentation available <a href="https://docs.docker.com/">here</a>.</p>
+<section id="optionally-run-rstudio-from-the-docker-container" class="level4">
+<h4 class="anchored" data-anchor-id="optionally-run-rstudio-from-the-docker-container">Optionally run RStudio from the Docker container</h4>
+<p>In a web browser navigate to the following to open an RStudio instance that is run from your Docker container.</p>
+<pre><code>localhost:8787</code></pre>
+<p>To log in, you’ll need to use <code>rstudio</code> as the username and whatever password you put for <code>&lt;CHOOSE_PASSWORD&gt;</code> in the above command.</p>
+<p><br></p>
+</section>
+</section>
+<section id="starting-a-new-docker-image" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-new-docker-image">Starting a new Docker image</h2>
+<p>Should you find that your course needs additional packages beyond what’s included in the template, you should probably start a new Docker image and you’ll need to do these steps to get this going:</p>
+<p>There’s a library of ottr-ready docker images that you can see <a href="https://github.com/jhudsl/ottr_docker">here</a>. If you would like to contribute your own customized docker image that works with OTTR, please file a pull request!</p>
+<ol type="1">
+<li>Create a <a href="https://hub.docker.com/signup">Dockerhub account</a> if you don’t have one.</li>
+<li>Create a new Docker image on your Dockerhub account. Follow these <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/launching-a-docker-image.html">instructions</a> if you don’t know how to do that.</li>
+<li><a href="#set-dockerhub-related-secrets">Set up Dockerhub secrets in your repository or organization</a>.</li>
+<li><a href="#updating-workflows-for-new-docker-image">Update the Github actions workflows accordingly</a>.</li>
+<li><a href="#modifying-the-dockerfile-for-a-new-image">Edit the Dockerfile in your repository</a>.</li>
+</ol>
+<section id="set-dockerhub-related-secrets" class="level3">
+<h3 class="anchored" data-anchor-id="set-dockerhub-related-secrets">Set Dockerhub related secrets</h3>
+<p>You only need to do this once as an organization (if this course is under <code>jhudsl</code> you don’t need to do this step).</p>
+<p>To give them permission for all these Docker actions, you need to set a GitHub secret. Go to <code>Settings</code> &gt; <code>Secrets</code> and scroll down to <code>organization secrets</code> or you can set this for each repository by creating a repository secret.</p>
+<ul>
+<li>Click <code>New repository secret</code> button for each of these secrets</li>
+<li>The login information in these GitHub secrets must be from an account that has write permissions to the Docker image you wish to manage).</li>
+</ul>
+<p><em>Name: <code>DOCKERHUB_USERNAME</code></em>: For <code>Secret</code>: put your login username for https://hub.docker.com/</p>
+<p><em>Name: <code>DOCKERHUB_TOKEN</code></em>: For <code>Secret</code>: put an access token for Dockerhub. You can create this by following <a href="https://docs.docker.com/docker-hub/access-tokens/#create-an-access-token">these instructions</a>. Choose the <code>read,write,delete</code> option.</p>
+</section>
+<section id="updating-workflows-for-new-docker-image" class="level3">
+<h3 class="anchored" data-anchor-id="updating-workflows-for-new-docker-image">Updating workflows for new Docker image</h3>
+<p>To make sure that your new Docker image is being used for rendering in the GitHub actions, you need to change the <code>rendering-docker-image:</code> from the default of <code>jhudsl/base_ottr:main</code> and replace it with your docker image tag.</p>
+<p>Then start a new branch so that you can submit a new pull request with your changes.</p>
+<p>Now, when you file a pull request, the Dockerfile build for your docker image will be tested automatically by the <a href="https://www.ottrproject.org/customize-robots.html">GitHub actions</a> if <code>docker-test</code> is set to <code>yes</code>. The default is <code>docker-test: no</code></p>
+</section>
+<section id="modifying-the-dockerfile-for-a-new-image" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-the-dockerfile-for-a-new-image">Modifying the Dockerfile for a new image</h3>
+<p><a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/modifying-a-docker-image.html">Read this chapter for instructions on how to modify Docker images</a></p>
+<p>You will probably want to create your Docker image by using the <code>jhudsl/base_ottr:main</code> as your base – this means that all the packages that are in our <code>jhudsl/base_ottr:main</code> image will be included in the Docker image you build.</p>
+<pre><code>FROM jhudsl/base_ottr:main</code></pre>
+<p>You can take a look at this <a href="https://github.com/ottrproject/OTTR_Template/blob/main/resources/TEMPLATE_Dockerfile">Dockerfile template we’ve set up here</a> (note that the commands would need to be uncommented and real package names put in place of <code>package_name</code>’s).</p>
+<section id="template-commands-for-adding-packages-to-the-dockerfile" class="level4">
+<h4 class="anchored" data-anchor-id="template-commands-for-adding-packages-to-the-dockerfile">Template commands for adding packages to the Dockerfile</h4>
+<p>This section gives you the basics on what it looks like to add new packages to your new Docker image.</p>
+<section id="cran-packages" class="level5">
+<h5 class="anchored" data-anchor-id="cran-packages">CRAN Packages:</h5>
+<p>For R packages installed from CRAN, you can add to the running vector list of R packages.</p>
+</section>
+<section id="bioconductor-packages" class="level5">
+<h5 class="anchored" data-anchor-id="bioconductor-packages">Bioconductor Packages:</h5>
+<p>To add an R package from Bioconductor, you can follow this kind of format:</p>
+<pre><code>RUN Rscript -e "options(warn = 2); BiocManager::install( \
+  c('limma', \
+    'newpackagename')
+</code></pre>
+</section>
+<section id="python-packages" class="level5">
+<h5 class="anchored" data-anchor-id="python-packages">Python Packages:</h5>
+<p>To add a Python package, you will need to add pip3 to install Python packages using this format:</p>
+<pre><code>RUN pip3 install \
+    "somepackage==0.1.0"</code></pre>
+</section>
+</section>
+</section>
+<section id="testing-a-modified-docker-image" class="level3">
+<h3 class="anchored" data-anchor-id="testing-a-modified-docker-image">Testing a modified Docker image</h3>
+<p><a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/modifying-a-docker-image.html">Read this chapter for instructions on how to modify Docker images</a></p>
+<p>When you’ve added a package to the Dockerfile, you may want to check that it builds successfully before it’s added to your repository. You can include changes to your Dockerfile in a pull request which will trigger an automatic testing of building it.</p>
+<p><a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/modifying-a-docker-image.html">Read this chapter for more tips on how to modify Docker images</a></p>
+<p>OR</p>
+<p>If you prefer to test it locally, then you can follow these steps.</p>
+<p>First create a GITHUB token file by making a token and copying a pasting it into a plain text file named <code>docker/git_token.txt</code>. (<em><strong>Make sure you do not push this to github and possibly delete it after testing your docker image build!</strong></em>)</p>
+<p>Then you’ll need to rebuild the Docker image using this command after you move into the <code>docker</code> directory) (But replace the <code>&lt;TAG_FOR_COURSE&gt;</code> with the tag for your new image including dropping the <code>&lt;</code> and <code>&gt;</code>:</p>
+<pre><code>docker build -f Dockerfile . -t &lt;TAG_FOR_COURSE&gt;</code></pre>
+<p>If it fails, often the issue is a missing dependency. Take a look at the error messages and see if you can determine the issue with some Googling. Also be sure that all your directories and files are named correctly.</p>
+<p>Once it builds successfully, run the above command with the new name for your docker image make sure that the tag does not have upper case characters):</p>
+<pre><code>docker build -f Dockerfile . -t jhudsl/&lt;TAG_FOR_COURSE&gt;</code></pre>
+<section id="pushing-the-docker-image" class="level4">
+<h4 class="anchored" data-anchor-id="pushing-the-docker-image">Pushing the Docker image</h4>
+<p>For any changes you make to your Docker image to take effect in your repository’s github actions and workflows, you must push your updated docker image to Dockerhub. There are two different ways you can push your Docker image.</p>
+<p>Locally, you can push your updated image to Dockerhub using (make sure that the tag does not have upper case characters):</p>
+<pre><code>docker push jhudsl/&lt;TAG_FOR_COURSE&gt;</code></pre>
+<p>OR</p>
+<p>You can use GitHub actions to do this by going to your course’s GitHub repository, go to <code>Actions</code> and then to <code>Test build of Dockerfile</code>.</p>
+<p>Click on <code>run workflow</code> type in <code>true</code> underneath <code>Push to Dockerhub?</code>.</p>
+<p>Then click <code>Run</code>. If your Dockerfile builds an image successfully it will automatically be pushed to Dockerhub.</p>
+</section>
+<section id="github-actions-for-handling-your-docker-image" class="level4">
+<h4 class="anchored" data-anchor-id="github-actions-for-handling-your-docker-image">Github actions for handling your Docker image</h4>
+<p>For your personalized docker image, you can store the Dockerfile anywhere. In order for OTTR/GitHub actions to use it, it must be pushed to Dockerhub.</p>
+<p>It may be easiest to store it in the OTTR-made repository you are working from.</p>
+<p>In whichever repository you choose to store your Dockerfile, its recommended you use a GitHub action to automatically test it when you make changes. You can use our Docker handling <a href="https://github.com/ottrproject/ottr-docker/blob/main/.github/workflows/pull_request.yml">GitHub action here as a starting point</a>.</p>
+<p>You will need to modify this GHA for your own purposes:</p>
+<ul>
+<li>The action linked above, as is, will only run on manual trigger and manually specifying the directory the Dockerfile is in. For having the trigger run automatically, we recommend setting up a <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">GitHub action trigger</a>.</li>
+<li>You will definitely need to set up the Dockerhub credentials as described above.</li>
+<li>For other information about how to modify this GitHub action, we recommend looking at the GitHub actions documentation to become more familiar with how to customize it: https://docs.github.com/en/actions.</li>
+</ul>
+<p>If you do choose to use the action manually, then you can use this by going to <code>Actions</code>, clicking on <code>Build Docker Image</code> &gt; <code>run workflow</code> and write in:</p>
+<ul>
+<li><code>directory</code> - Which your Dockerfile is located in this repository</li>
+<li><code>tag</code> - Optionally, what tag you wish the built docker image to have</li>
+<li><code>Push to Dockerhub?</code> TRUE or FALSE whether you wish this docker image to be pushed to Dockerhub.</li>
+</ul>
+<p><img src="resources/images/docker-gha.png" class="img-fluid"></p>
+<p>For more guidance on how to personalize Docker images, we taking our <a href="https://hutchdatascience.org/Containers_for_Scientists/">Containers for Scientist course</a>. Or file a GitHub issue on the relevant repository.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

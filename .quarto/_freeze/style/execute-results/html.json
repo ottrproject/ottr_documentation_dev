@@ -1,0 +1,15 @@
+{
+  "hash": "e527ca5c93515f43edc430cf9a916838",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Style\"\noutput: html_document\n---\n\n## Navigation bar\n\nTo change the part of the navigation bar that says \"OTTR Quarto\", modify the title within the `_quarto.yml` file.\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](resources/images/navbar.png){fig-align='center' fig-alt='Change nav bar' width=40%}\n:::\n:::\n\n\n\n## Overall theme\n\nTo change the color scheme/fonts of the website modify the `theme` in the `_site.yml` file (see [here](https://bookdown.org/yihui/blogdown/themes.html) for options):\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](resources/images/theme.png){fig-align='center' fig-alt='Change theme' width=40%}\n:::\n:::\n\n\n## Change the favicon\n\nThe small image that shows up on the browser can also be changed.\n\nYou can make a small image to replace the existing one by going to https://favicon.io/favicon-converter/ and uploading an image that you would like.\n\nNext, simply replace the image called `favicon.ico` in the `images` directory within the `resources` directory with the image you just created and downloaded from the favicon converter website.\n\n## Additional changes\n\nTo make additional changes to the style, you can modify the `styles.css` file with css code. This [website](https://www.w3schools.com/css/) has great information about css code.\n\nAs an example if you wanted to change the color of the blue line to green you could change where it says `lightblue` to `lightgreen` in the `styles.css` file. You can also use a hex color code like those that can be found at this [website](https://htmlcolorcodes.com/), such as `#00FF9E` to get a specific shade. \n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](resources/images/blue.png){fig-align='center' fig-alt='Change color of line' width=80%}\n:::\n:::\n\n\nNote that if you change the css file with a new element that is not already defined like `body` then you would need to do it as done with the `banner` element. This was then added to the index.Rmd file by using:\n\n```\n<div class = \"banner\">\nBanner text!  \n</div>\n```\n\nAlso checkout the [Quarto docs](https://quarto.org/docs/websites/#workflow) for more customization of the pages.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
