@@ -8,27 +8,30 @@ output:
   <br>
 </div>
 
+
+<p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
+
 ```{r, fig.align='center', fig.alt= "OTTR helps build github based websites with less hassle. Catch potential mistakes before they go live", echo = FALSE, out.width= "40%"}
 knitr::include_graphics("./resources/images/why-ottr.png")
 ```
 
-## What is OTTR:
 
-OTTR is a set of tools and templates to help you make websites and online courses more easily!
 
-It helps you use [GitHub](https://github.com/) to publish websites and courses for free.
+#### Benefits for all OTTR options:
 
-## Benefits of OTTR:
+- No software installations needed
+- Automatically preview content on [GitHub](https://github.com/) before you publish
+- Automatically check spelling (and customize it!)
+- Automatically and periodically check for broken links
+- Easily customize branding
+- Easily include code (and avoid version difference issues using Docker containers)
 
-* OTTR is free!
-* No software installations needed
-* Automatically preview content on GitHub before you publish (not just locally!)
-* Automatically check spelling (and customize it!)
-* Automatically and periodically check for broken links
-* Easily customize branding
-* Easily include code (and avoid version difference issues using Docker containers)
-* Easily format courses for learning platforms like [coursera](https://www.coursera.org/) and [Leanpub](https://leanpub.com/)
-* Easily update courses! (only edit once and it gets propagated to all locations)
+#### Benefits for specific uses:
+
+- Websites can be created using [quarto](https://quarto.org/) or [bookdown](https://bookdown.org/)
+- Courses can be easily formatted for learning platforms like [coursera](https://www.coursera.org/) and [Leanpub](https://leanpub.com/) (only edit once and it gets propagated to all locations - making for **easy updates**!)
+- Metrics can be gathered from a variety of sources for dashboards
+
 
 <br>
 (*Note that you will need to establish a publishing contract with coursera if you want to publish there)
@@ -38,7 +41,7 @@ Check out this short video about OTTR:
 
 <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/oQ8d42fSn0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
-## How to use OTTR:
+#### How to use OTTR:
 
 1. Edit and write websites and courses in [R Markdown files](https://rmarkdown.rstudio.com/) or [Quarto](https://quarto.org/docs/output-formats/html-basics.html)
 1. Use GitHub to host your content, we will walk you through how!
@@ -47,7 +50,7 @@ Check out this short video about OTTR:
 1. Publish your websites and courses!
 <br>
 
-## How to Cite OTTR:
+#### How to Cite OTTR:
 
 Please cite our [OTTR manuscript here!](https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646)📝👀
 
