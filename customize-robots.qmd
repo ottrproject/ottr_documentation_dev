@@ -104,9 +104,6 @@ render-preview: true
 ```
 After you open a pull request, a preview of the renders will be linked in an automatic comment on the pull request. Upon each commit these previews will re-render and edit the comment with the latest render.
 
-```{r, echo = FALSE}
-knitr::include_graphics(here::here(")
-```
 ![]("resources/screenshots/check_results.png")
 
 These Github Actions are located in `render-preview` section of the `pull-request.yml`.
