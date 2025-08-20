@@ -104,7 +104,7 @@ render-preview: true
 ```
 After you open a pull request, a preview of the renders will be linked in an automatic comment on the pull request. Upon each commit these previews will re-render and edit the comment with the latest render.
 
-![]("resources/screenshots/check_results.png")
+![](https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/kweav-actionsDocsUpdate/resources/screenshots/check_results.png)
 
 These Github Actions are located in `render-preview` section of the `pull-request.yml`.
 These previews do NOT incorporate any changes influenced by any changes to the Docker image if the Dockerfile is also updated in the same pull request.
