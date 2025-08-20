@@ -165,7 +165,7 @@ Upon merging changes to any `Rmd` or `assets/` folder to `main`, the course mate
 
 For rendering a website version of the course (or your website), rather than `true` or `false`, the options are `rmd`, `rmd_web`, `quarto` or `quarto_web`.
 
-  * If rendering a course with Rmarkdown files, use `rmd`.
+  * If rendering a course with RMarkdown files, use `rmd`.
   * If rendering a course with quarto files, use `quarto`.
   * If rendering a website with Rmarkdown files, use `rmd_web`.
   * If rendering a website with quarto files, use `quarto_web`.
