@@ -11,11 +11,7 @@ output:
 
 <p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
 
-```{r, fig.align='center', fig.alt= "OTTR helps build github based websites with less hassle. Catch potential mistakes before they go live", echo = FALSE, out.width= "40%"}
-knitr::include_graphics("./resources/images/why-ottr.png")
-```
-
-
+![OTTR Flavors and their uses](https://www.canva.com/design/DAGwn4eF5mk/IZRP8gZSEi4omUZUHGXRLQ/view?utm_content=DAGwn4eF5mk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9df2e9d558)
 
 #### Benefits for all OTTR options:
 
@@ -25,6 +21,10 @@ knitr::include_graphics("./resources/images/why-ottr.png")
 - Automatically and periodically check for broken links
 - Easily customize branding
 - Easily include code (and avoid version difference issues using Docker containers)
+
+```{r, fig.align='center', fig.alt= "OTTR helps build github based websites with less hassle. Catch potential mistakes before they go live", echo = FALSE, out.width= "40%"}
+knitr::include_graphics("./resources/images/why-ottr.png")
+```
 
 #### Benefits for specific uses:
 
