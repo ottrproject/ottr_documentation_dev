@@ -11,7 +11,7 @@ output:
 
 <p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
 
-![OTTR Flavors and their uses](https://www.canva.com/design/DAGwn4eF5mk/IZRP8gZSEi4omUZUHGXRLQ/view?utm_content=DAGwn4eF5mk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9df2e9d558)
+<iframe alt = "OTTR Flavors and their uses" src="https://www.canva.com/design/DAGwn4eF5mk/IZRP8gZSEi4omUZUHGXRLQ/view?utm_content=DAGwn4eF5mk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9df2e9d558">
 
 #### Benefits for all OTTR options:
 
