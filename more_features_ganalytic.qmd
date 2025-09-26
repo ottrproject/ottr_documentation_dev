@@ -43,6 +43,8 @@ Check to make sure that the terms work for you
 1. Go back to [Google Analytics](https://analytics.google.com/analytics) and log in if you need to.
 
 1. Check on the **Reports** button on the top of the far left icon menu. The icon looks like a bar chart. If you open up a browser window to your hosted course online, then you should see yourself as 1 user in the last 30 minutes.
+
+
 ![Google Analytics Reports](resources/images/GA_reports.png)
 ![Check Google Analytics](resources/images/GA_check.png)
 
