@@ -24,7 +24,7 @@ output:
 
 - No software installations needed
 - Automatically preview content on [GitHub](https://github.com/) before you publish
-- Automatically check spelling (and customize it!)
+- Automatically check spelling (and customize your dictionary!)
 - Automatically and periodically check for broken links
 - Easily customize branding
 - Easily include code (and avoid version difference issues using Docker containers)
