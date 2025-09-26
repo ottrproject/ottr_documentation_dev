@@ -58,7 +58,7 @@ There are three main sets of automation steps and checks run:
 
 ## Pull Request Checks:
 
-These actions are triggered upon a pull request being opened. They are set up in the file: `.github/workflows/pull-request.yml`/.
+These actions are triggered upon a pull request being opened. They are set up in this file: `.github/workflows/pull-request.yml`
 
 ### Check Quiz Formatting
 
@@ -76,6 +76,7 @@ Leanpub needs a particular format for it to upload correctly. This action will l
 In the `config_automation.yml` file there are two different URL checkers.
 
 1) One that is run during pull requests. It is set by:
+
 ```
 url-checker: true
 ```
@@ -90,6 +91,7 @@ url_error_min: 0
 ```
 
 2) The other URL check runs on a set interval to see if any URLs referenced are no longer valid. This one is set by:
+
 ```
 url-check-periodically: true
 ```
@@ -99,6 +101,7 @@ If either URL checker is failing on something that isn't really a URL or doesn't
 ### Preview rendering
 
 In the `config_automation.yml` file it is set by:
+
 ```
 render-preview: true
 ```
@@ -113,6 +116,7 @@ These previews do NOT incorporate any changes influenced by any changes to the D
 ### Spell checking
 
 In the `config_automation.yml` file it is set by:
+
 ```
 spell-check: true
 ```
@@ -143,14 +147,17 @@ When all checks pass, the option to download error reports is no longer included
 ### Style code
 
 In the `config_automation.yml` file it is set by:
+
 ```
 style-code: true
 ```
+
 The `styler` package will style R code in all Rmds. Style changes will automatically be committed back to your branch.
 
 ### Docker testing
 
 In the config_automation.yml file it looks like:
+
 ```
 docker-test: false
 ```
