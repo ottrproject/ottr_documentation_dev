@@ -1,0 +1,55 @@
+---
+title: "Examples of OTTR in the Wild"
+output:
+  html_document
+---
+
+# OTTR spinoff babies
+
+We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.
+
+We also noticed that if specific branding or variations of the original template need to be used many times, it's often easier to create a new template.
+
+We affectionately call these spinoff templates OTTR "babies".
+
+If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by filing a GitHub issue and assigning `@cansavvy` and `@carriewright11`). Also please reach out if you have any other interesting ideas or suggestions!
+
+## Quarto spinoff
+
+Maybe you prefer a Quarto website! We have that: https://github.com/ottrproject/OTTR_Quarto
+
+## Jekyll spinoff
+
+TBD: Coming soon
+
+## metric collection
+
+This is a template powered by the `metricminer` R package to allow you to display metrics in a dashboard.
+This template shows basics for how you can display metrics collected from:
+[Github template repo](https://github.com/ottrproject/metricminer-dashboard/tree/main)
+
+- Google Analytics
+- Google Forms
+- GitHub
+- CRAN
+- Calendly
+
+And more websites being added. [See metricminer.org for more details!](https://www.metricminer.org/)
+
+## AnVIL template
+
+This is a template (made from our main OTTR Template) that is used for a set of courses being made for the [AnVIL set of cloud tools](https://anvilproject.org/)
+
+- [GitHub repository and source code](https://github.com/jhudsl/AnVIL_Template)
+
+Courses will look similar to this [link](https://jhudatascience.org/AnVIL_Template/).
+
+## DataTrail template
+
+This is a template (made from our main OTTR Template) that will be used for a set of courses being made for [DataTrail](https://www.datatrail.org/)
+
+- [GitHub repository and source code](https://github.com/datatrail-jhu/DataTrail_Template)
+
+Courses will look similar to this [link](https://datatrail-jhu.github.io/DataTrail_Template/introduction.html).
+
+<br>

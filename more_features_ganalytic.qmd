@@ -1,0 +1,51 @@
+---
+title: "More Features: Google Analytics Integration"
+output:
+  html_document
+---
+
+## Google Analytics
+
+If you would like to add Google Analytics to track traffic to your course, you can do the following:
+
+1. Get a **Google Analytics account** (if you do not already have one): [https://analytics.google.com/analytics](https://analytics.google.com/analytics)
+![](resources/images/GA_account.png)
+Note that in creating an account you will need to agree to some terms. Currently it is free to get Google analytics data as long as your course does not exceed a very high user rate.
+
+Check to make sure that the terms work for you
+![](resources/images/GA_terms.png)
+
+1. If you already have an account or navigated away from where you started - Go to the **Admin tab** (lower left button that looks like a gear)
+
+1. Set up a new **property** (fill out name and details, select options about tracking traffic for how you intend to use Google Analytics)
+![Google Analytics Property creation](resources/images/GA_Create_Property.png)
+![Google Analytics Property](resources/images/GA_Property_setup.png)
+![Google Analytics Property choices](resources/images/GA_property.png)
+
+1. Add a **stream** to your property, choose the **Web** option.
+![Google Analytics stream options](resources/images/GA_web.png)
+
+
+1. Fill in your stream information with the **link** for your course (note you may need to remove https as this is part of a pull down menu to the left of where you paste your link)
+![Google Analytics stream](resources/images/GA_stream_link.png)
+![Google Analytics stream](resources/images/GA_stream_link_correct.png)
+
+
+1. On the resulting page you will see a **Measurement ID**. Copy this ID and paste it in the GA_Script.html file in the template replacing the fields that say {MeasurementID} including the curly brackets.  For example, if your ID was `G-ABC123`, then the line `gtag('config', '{MeasurementID}');` would become `gtag('config', 'G-ABC123');`.
+![](resources/images/GA_ID.png)
+![](resources/images/GA_Script_ID.png)
+
+1. Add a line to the _output.yml file above the line that starts with `before body:` (i.e. nested under `includes`).  This line should be `in_header: GA_Script.html`.  Make sure this line is indented to the same level as the `before body:` line.
+![](resources/images/output_GA.png)
+
+1. **Rerender** your course by making a change to one of your chapter RMD files in a pull request and pushing and merging the pull request. This will cause new html files to be made for each chapter in the `docs` folder. The Google Analytics code should now be in each of the html files - you can check by searching for `Google Analytics`.
+
+1. Go back to [Google Analytics](https://analytics.google.com/analytics) and log in if you need to.
+
+1. Check on the **Reports** button on the top of the far left icon menu. The icon looks like a bar chart. If you open up a browser window to your hosted course online, then you should see yourself as 1 user in the last 30 minutes.
+
+
+![Google Analytics Reports](resources/images/GA_reports.png)
+![Check Google Analytics](resources/images/GA_check.png)
+
+1. Enjoy the data about how people are using your course!

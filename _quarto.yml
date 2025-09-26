@@ -1,26 +1,49 @@
 project:
   type: website
   output-dir: docs
-  
+
 website:
-  title: "OTTR Template Website"
+  title: "OTTR <img src='./resources/images/basic_otter_water.PNG' width = 35px>"
+  favicon: resources/images/basic_otter_water.ico
   navbar:
     left:
-    - text: ""
-      href: index.qmd
-      icon: fa-home
-    - text: 1. Setup
-      href: setup.qmd
-    - text: 2. Hosting
-      href: hosting.qmd
-    - text: Editing
-      href: editing.qmd
-    - text: 3. Style
-      href: style.qmd
-    - text: 4. Git Actions
-      href: git_actions.qmd
-    - text: More ottr docs
-      href: https://www.ottrproject.org/
+      - text: "{{< fa home title='A home' >}}"
+        href: index.qmd
+      - text: "Quick Start"
+        menu:
+          - text: "Getting Started"
+            href: getting_started.qmd
+          - text: "Next Steps"
+            href: next_steps.qmd
+      - text: "Customization"
+        menu:
+          - text: "Customizing checks {{< fa robot title='A robot' >}}"
+            href: customize-robots.qmd
+          - text: "Customizing style {{< fa palette title='A palette' >}}"
+            href: customize-style.qmd
+          - text: "Customizing Docker {{< fa gears title='gears' >}}"
+            href: customize-docker.qmd
+          - text: "Citing sources {{< fa quote-left title='A left quotation mark' >}}"
+            href: more_features_sources.qmd
+          - text: "Giving credits {{< fa award title='An award' >}}"
+            href: more_features_credits.qmd
+          - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
+            href: more_features_borrowing.qmd
+          - text: "Compatibility with Google Docs {{< fa file title='a file folder' >}}"
+            href: more_features_gdoc.qmd
+          - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
+            href: more_features_ganalytic.qmd
+          - text: "OTTR-fying an existing repository"
+            href: ottr-fy.qmd
+          - text: "About OTTR babies"
+            href: examples.qmd
+      - text: "Troubleshooting {{< fa tools title='tools' >}}"
+        href: faqs.qmd
+      - text: "Contact {{< fa envelope title='An envelope' >}}"
+        href: contact.qmd
+      - text: "{{< fa brands github title='The GitHub logo' >}}"
+        href: https://github.com/ottrproject/OTTR_Template
+
 
 format:
   html:

@@ -1,0 +1,39 @@
+---
+title: "Getting Started"
+output: html_document
+---
+
+Select the flavor of OTTR are you using to access setup instructions.
+
+::: {.panel-tabset group="ottrType"}
+
+## OTTR Courses
+
+Tab Content
+
+Example: Provide an example repo
+
+## OTTR Web
+
+Tab Content
+
+Example: Provide an example repo
+
+## OTTR Quarto Courses
+
+Tab Content
+
+Example: Provide an example repo
+
+## OTTR Quarto Web
+
+Tab Content
+
+Example: Provide an example repo
+
+## OTTR Metricminer Dashboard
+
+Tab Content
+
+Example: Provide an example repo
+:::
