@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>Examples of OTTR in the Wild – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#ottr-spinoff-babies" id="toc-ottr-spinoff-babies" class="nav-link active" data-scroll-target="#ottr-spinoff-babies">OTTR spinoff babies</a>
+  <ul class="collapse">
+  <li><a href="#quarto-spinoff" id="toc-quarto-spinoff" class="nav-link" data-scroll-target="#quarto-spinoff">Quarto spinoff</a></li>
+  <li><a href="#jekyll-spinoff" id="toc-jekyll-spinoff" class="nav-link" data-scroll-target="#jekyll-spinoff">Jekyll spinoff</a></li>
+  <li><a href="#metric-collection" id="toc-metric-collection" class="nav-link" data-scroll-target="#metric-collection">metric collection</a></li>
+  <li><a href="#anvil-template" id="toc-anvil-template" class="nav-link" data-scroll-target="#anvil-template">AnVIL template</a></li>
+  <li><a href="#datatrail-template" id="toc-datatrail-template" class="nav-link" data-scroll-target="#datatrail-template">DataTrail template</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Examples of OTTR in the Wild</h1>
 </div>
 
 
@@ -215,197 +219,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
+<section id="ottr-spinoff-babies" class="level1">
+<h1>OTTR spinoff babies</h1>
+<p>We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.</p>
+<p>We also noticed that if specific branding or variations of the original template need to be used many times, it’s often easier to create a new template.</p>
+<p>We affectionately call these spinoff templates OTTR “babies”.</p>
+<p>If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by filing a GitHub issue and assigning <code>@cansavvy</code> and <code>@carriewright11</code>). Also please reach out if you have any other interesting ideas or suggestions!</p>
+<section id="quarto-spinoff" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-spinoff">Quarto spinoff</h2>
+<p>Maybe you prefer a Quarto website! We have that: https://github.com/ottrproject/OTTR_Quarto</p>
 </section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
-<ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
-</ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="jekyll-spinoff" class="level2">
+<h2 class="anchored" data-anchor-id="jekyll-spinoff">Jekyll spinoff</h2>
+<p>TBD: Coming soon</p>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="metric-collection" class="level2">
+<h2 class="anchored" data-anchor-id="metric-collection">metric collection</h2>
+<p>This is a template powered by the <code>metricminer</code> R package to allow you to display metrics in a dashboard. This template shows basics for how you can display metrics collected from: <a href="https://github.com/ottrproject/metricminer-dashboard/tree/main">Github template repo</a></p>
+<ul>
+<li>Google Analytics</li>
+<li>Google Forms</li>
+<li>GitHub</li>
+<li>CRAN</li>
+<li>Calendly</li>
+</ul>
+<p>And more websites being added. <a href="https://www.metricminer.org/">See metricminer.org for more details!</a></p>
 </section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="anvil-template" class="level2">
+<h2 class="anchored" data-anchor-id="anvil-template">AnVIL template</h2>
+<p>This is a template (made from our main OTTR Template) that is used for a set of courses being made for the <a href="https://anvilproject.org/">AnVIL set of cloud tools</a></p>
+<ul>
+<li><a href="https://github.com/jhudsl/AnVIL_Template">GitHub repository and source code</a></li>
+</ul>
+<p>Courses will look similar to this <a href="https://jhudatascience.org/AnVIL_Template/">link</a>.</p>
+</section>
+<section id="datatrail-template" class="level2">
+<h2 class="anchored" data-anchor-id="datatrail-template">DataTrail template</h2>
+<p>This is a template (made from our main OTTR Template) that will be used for a set of courses being made for <a href="https://www.datatrail.org/">DataTrail</a></p>
+<ul>
+<li><a href="https://github.com/datatrail-jhu/DataTrail_Template">GitHub repository and source code</a></li>
+</ul>
+<p>Courses will look similar to this <a href="https://datatrail-jhu.github.io/DataTrail_Template/introduction.html">link</a>.</p>
+<p><br></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>More Features: Giving Credit – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#giving-credits-to-contributors" id="toc-giving-credits-to-contributors" class="nav-link active" data-scroll-target="#giving-credits-to-contributors">Giving credits to contributors</a>
+  <ul class="collapse">
+  <li><a href="#adding-the-credits-table-to-coursera" id="toc-adding-the-credits-table-to-coursera" class="nav-link" data-scroll-target="#adding-the-credits-table-to-coursera">Adding the Credits table to Coursera</a></li>
+  <li><a href="#adding-the-credits-table-to-leanpub" id="toc-adding-the-credits-table-to-leanpub" class="nav-link" data-scroll-target="#adding-the-credits-table-to-leanpub">Adding the Credits table to Leanpub</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">More Features: Giving Credit</h1>
 </div>
 
 
@@ -215,197 +216,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
-</section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
+<section id="giving-credits-to-contributors" class="level2">
+<h2 class="anchored" data-anchor-id="giving-credits-to-contributors">Giving credits to contributors</h2>
+<p>Since so many individuals contribute to our courses in so many ways, we decided to make a table of credits to make it clear who did what.</p>
+<p>Here is an example:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/example_credits.png" class="img-fluid"></p>
+<p>Please see the <a href="https://ottrproject.org/OTTR_Template/about-the-authors.html">About section</a> of the template for descriptions of how credits should be attributed for the course.</p>
+<p>This is generated from the About.Rmd file. An About.Rmd file will already be in your course from using our template. You will need to do the following steps to update it for your course:</p>
 <ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
+<li>Fill out author names for the various roles where applicable.</li>
+<li>Delete lines for roles that are not applicable.</li>
+<li>Make sure roles grammatically match names. If there are multiple people include the “s” in the role name where applicable and remove the parentheses. If only one person is appropriate for a given role remove “(s)” from the role name.</li>
+<li>Ensure that each row has “|” around each cell value.</li>
 </ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><em>Example Table</em>:</p>
+<p>The first row and additional rows based on <a href="https://bit.ly/course-credits-table">this table</a> should be added and filled in using <a href="https://www.markdownguide.org/extended-syntax/">Markdown table format</a>.</p>
+<pre><code>|Credits|Names|
+|-------|-----|
+|Lead Content Instructor|FirstName LastName|</code></pre>
+<p>Links to personal websites can be added below the table to make it easier to read.</p>
+<pre><code>|Credits|Names|
+|-------|-----|
+|Lead Content Instructor|[FirstName LastName]|
+
+&lt;!-- Author information --&gt;
+
+[FirstName LastName]: link to personal website</code></pre>
+<p>These rows should be included for <em>all courses</em>:</p>
+<pre><code>|Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman]|
+|Publishing Maintenance Engineer|[Candace Savonen]|
+|Technical Publishing Stylists|[Carrie Wright], [Ava Hoffman], [Candace Savonen]|
+|Package Developers ([ottrpal]) [Candace Savonen], [Ava Hoffman], [Howard Baek], [Kate Isaac], [Carrie Wright], [John Muschelli]|
+
+&lt;!-- Author information --&gt;
+
+[John Muschelli]: https://johnmuschelli.com/
+[Candace Savonen]: https://www.cansavvy.com/
+[Carrie Wright]: https://carriewright11.github.io/
+[Ava Hoffman]: https://www.avahoffman.com/
+[Howard Baek]: https://www.linkedin.com/in/howard-baik/
+[Kate Isaac]: https://kweav.github.io/
+
+&lt;!-- Links --&gt;
+
+[ottrpal]: https://github.com/ottrproject/ottrpal</code></pre>
+<p>These rows should be added to all <em>Johns Hopkins</em> courses:</p>
+<pre><code>|Content Publisher|[Ira Gooding]|
+|Content Publishing Reviewer|Ira Gooding]|
+
+&lt;!-- Author information --&gt;
+
+[Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding</code></pre>
+<p>Additionally, this row should be added for <em>all ITCR Courses</em>:</p>
+<pre><code>|Content Directors|[Jeff Leek]|
+
+&lt;!-- Author information --&gt;
+
+[Jeff Leek]: https://jtleek.com/</code></pre>
+<section id="adding-the-credits-table-to-coursera" class="level3">
+<h3 class="anchored" data-anchor-id="adding-the-credits-table-to-coursera">Adding the Credits table to Coursera</h3>
+<p>In Coursera, you can add the credits table URL as an ungraded plugin (<a href="https://www.ottrproject.org/course_publishing.html#Navigating_to_your_course_on_Coursera">the same as described here for adding chapter content</a>). This should be added at the beginning of your course, right after the introduction.</p>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="adding-the-credits-table-to-leanpub" class="level3">
+<h3 class="anchored" data-anchor-id="adding-the-credits-table-to-leanpub">Adding the Credits table to Leanpub</h3>
+<p>In Leanpub, make sure that your About.md file in your manuscript folder is listed in your Book.txt file and this Credits table will automatically be incorporated into your Leanpub course.</p>
+<p><br></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

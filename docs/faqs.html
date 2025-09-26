@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>Troubleshooting – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./faqs.html"> 
+    <a class="nav-link active" href="./faqs.html" aria-current="page"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
   </li>  
   <li class="nav-item">
@@ -186,10 +186,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#most-common-errors" id="toc-most-common-errors" class="nav-link active" data-scroll-target="#most-common-errors">Most Common Errors</a>
+  <ul class="collapse">
+  <li><a href="#file-is-not-in-png-format-google-slides-permissions-fail" id="toc-file-is-not-in-png-format-google-slides-permissions-fail" class="nav-link" data-scroll-target="#file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</a></li>
+  <li><a href="#process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" id="toc-process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="nav-link" data-scroll-target="#process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</a></li>
+  <li><a href="#conflict-modifydelete-merge-conflict-fail" id="toc-conflict-modifydelete-merge-conflict-fail" class="nav-link" data-scroll-target="#conflict-modifydelete-merge-conflict-fail"><code>CONFLICT (modify/delete)</code>: Merge conflict fail:</a></li>
+  <li><a href="#parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" id="toc-parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" class="nav-link" data-scroll-target="#parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error"><code>Parser error: while parsing a flow sequence</code>: _bookdown.yml parse error</a></li>
+  <li><a href="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" id="toc-error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="nav-link" data-scroll-target="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</a></li>
+  <li><a href="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" id="toc-error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="nav-link" data-scroll-target="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</a></li>
+  </ul></li>
+  <li><a href="#content-not-rendering" id="toc-content-not-rendering" class="nav-link" data-scroll-target="#content-not-rendering">Content not rendering</a></li>
+  <li><a href="#contact-info" id="toc-contact-info" class="nav-link" data-scroll-target="#contact-info">Contact Info</a></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Troubleshooting</h1>
 </div>
 
 
@@ -215,195 +222,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
+<!---
+Add something here that is like a TOC/overview of the errors that are covered in this doc.
+  --->
+<section id="most-common-errors" class="level2">
+<h2 class="anchored" data-anchor-id="most-common-errors">Most Common Errors</h2>
+<p>This guide will describe the most common OTTR errors and pitfalls and how to address them. When you open a pull request, you should see a report like this:</p>
+<p><img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/gha-actions-error.png" class="img-fluid"></p>
+<p>When you see an ❌ , click on the <code>Details</code> button to see the error message. We’ll discuss the most common error messages here.</p>
+<hr>
+<section id="file-is-not-in-png-format-google-slides-permissions-fail" class="level3">
+<h3 class="anchored" data-anchor-id="file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</h3>
+<p><em>Error example:</em></p>
+<pre><code>Error in png::readPNG(path, native = TRUE, info = TRUE) :
+  file is not in PNG format
+Calls: local ... lapply -&gt; FUN -&gt; raster_dpi_width -&gt; attr -&gt; &lt;Anonymous&gt;
+Execution halted
+Error in Rscript_render(f, render_args, render_meta, add1, add2) :
+  Failed to compile &lt;file_name&gt;.Rmd
+Calls: local ... &lt;Anonymous&gt; -&gt; render_new_session -&gt; Rscript_render
+Execution halted
+Error: bookdown::render_book() failed to render the output format 'bookdown::gitbook'.
+Execution halted</code></pre>
+<p><em>What does this mean?:</em></p>
+<p>Your Google Slides presentation you have tried to retrieve a slide from with <code>ottrpal::include_slide()</code> is not public. Your Google Slide document must be set to <code>Anyone with a link</code>. See <a href="https://support.wix.com/en/article/setting-permissions-for-google-drive-files-and-folders#:~:text=Settings%20Permissions%20for%20a%20Google,edit%20and%20comment%20as%20well.">this article for more details.</a> The renders will fail if this is not set! See the <a href="https://www.ottrproject.org/writing_content_courses.html#set-up-images">setting up images and graphics section</a> for more details.</p>
+<hr>
 </section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
+<section id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="level3">
+<h3 class="anchored" data-anchor-id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</h3>
+<p>Underneath a section that says something like: <code>**Check spelling/url/quiz errors - fail if too many of them**</code> you may see something like:</p>
+<pre><code>Run exit 1
+  exit 1
+  shell: sh -e {0}
+Error: Process completed with exit code 1.</code></pre>
+<p>This is failing on purpose – it means that checker has found errors. Return to your pull request page and look for a comment that says something like:</p>
+<pre><code>⚠️ There are &lt;spelling/quiz/url&gt; errors that need to be addressed. Read this guide for more info.
+Download the errors here.
+Comment updated at &lt;some_date&gt; with changes from &lt;commit&gt;</code></pre>
+<p>Click on the <code>Download the errors here</code> to see the list of errors and which files they were found in. For help in addressing these errors, click on the <code>Read this guide for more info</code> button.</p>
+<hr>
+</section>
+<section id="conflict-modifydelete-merge-conflict-fail" class="level3">
+<h3 class="anchored" data-anchor-id="conflict-modifydelete-merge-conflict-fail"><code>CONFLICT (modify/delete)</code>: Merge conflict fail:</h3>
+<p><em>Error example:</em></p>
+<pre><code>CONFLICT (modify/delete): &lt;file_name&gt; deleted in &lt;branch_name&gt; and modified in HEAD. Version HEAD of &lt;file_name&gt; left in tree.</code></pre>
+<p>This will often happen when render-preview’s git handling doesn’t know which changes you are looking to preview. The easiest way to fix this problem is to create a separate pull request that completely deletes the files lists. To do this, follow these steps:</p>
 <ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
+<li>Take note of your pull request’s number. Go to the pull request page and see what <code>#number</code> is posted there.</li>
+<li>On your GitHub repository, go to <code>Code</code> and click on <code>Branches</code>.</li>
+<li>Your pull request’s preview is made on a branch named <code>preview-&lt;number of your pull request&gt;</code>. Find this branch and click the trash can icon. This will delete the preview branch and hopefully get rid of this error. <a href="https://www.git-tower.com/learn/git/faq/github-delete-branch">Read this</a> for more info on how to delete a branch.</li>
+<li>Re-trigger your GitHub actions run and it should pass.</li>
 </ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<hr>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" class="level3">
+<h3 class="anchored" data-anchor-id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error"><code>Parser error: while parsing a flow sequence</code>: _bookdown.yml parse error</h3>
+<p>If you see an error like this:</p>
+<pre><code>Run Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all')"
+Error in yaml::yaml.load(..., eval.expr = TRUE) :
+  Parser error: while parsing a flow sequence at line 4, column 12 did not find expected ',' or ']' at line 11, column 13
+Calls: &lt;Anonymous&gt; ... &lt;Anonymous&gt; -&gt; resolve -&gt; &lt;Anonymous&gt; -&gt; yaml_load -&gt; &lt;Anonymous&gt;
+Execution halted
+Error: Process completed with exit code 1.</code></pre>
+<p>It means that the formatting in your <code>_bookdown.yml</code> is off. If you forget a comma, or quote, or a <code>]</code> this message will appear in the github actions preview run.</p>
+<p>Take a careful look at the <code>_bookdown.yml</code>. Keep in mind that _bookdown.yml rmd_files spec should look like this (indents, quotes, and commas included in this pattern):</p>
+<pre><code>rmd_files: ["index.Rmd",
+            "01-intro.Rmd",
+            "02-chapter_of_course.Rmd",
+            "new_file.Rmd",
+            "About.Rmd",
+            "References.Rmd"]</code></pre>
+<p>Commit the changes to your <code>_bookdown.yml</code> and see if the preview GitHub action runs appropriately.</p>
 </section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="level3">
+<h3 class="anchored" data-anchor-id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</h3>
+<p>If you get a 404 error after clicking the link while attempting to download the <code>.docx</code> file from the GitHub Action rendered previews, then add the following code to the end of the <code>_output.yml</code> file:</p>
+<pre><code>bookdown::word_document2:
+  toc: true</code></pre>
+<p>Commit the changes to your <code>_output.yml</code> and see if the preview GitHub action runs appropriately.</p>
+</section>
+<section id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="level3">
+<h3 class="anchored" data-anchor-id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</h3>
+<p>If you observe an error like this:</p>
+<pre><code>Error in if (title == x2) return(head) : the condition has length &gt; 1
+Calls: &lt;Anonymous&gt; ... split_chapters -&gt; build -&gt; sub -&gt; is.factor -&gt; prepend_chapter_title
+Execution halted
+Error: Process completed with exit code 1.</code></pre>
+<p>Then look at the <code>GA_Script.Rhtml</code> file and remove the following <code>html</code> frontmatter if it’s present:</p>
+<p>(at the beginning of the file)</p>
+<pre><code>  &lt;html&gt;
+
+  &lt;head&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;</code></pre>
+<p>(at the end of the file)</p>
+<pre><code>  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+</section>
+</section>
+<section id="content-not-rendering" class="level2">
+<h2 class="anchored" data-anchor-id="content-not-rendering">Content not rendering</h2>
+<p>Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).</p>
+</section>
+<section id="contact-info" class="level2">
+<h2 class="anchored" data-anchor-id="contact-info">Contact Info</h2>
+<p>If you have a question that’s not addressed by this website or just wanna chat with us about something else, please email us at itcrtrainingnetwork@gmail.com OR you can <a href="https://github.com/ottrproject/OTTR_Template/issues/new">leave a GitHub issue here</a> and assign or “at” a team member in the description/a comment (<code>@carriewright11</code>, <code>@kweav</code>, or <code>@avahoffman</code>).</p>
+<p>We greatly appreciate any feedback! We are always looking for ways to improve OTTR so more open source courses can be made!</p>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>Customizing Style – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#changing-title" id="toc-changing-title" class="nav-link active" data-scroll-target="#changing-title">Changing title</a></li>
+  <li><a href="#customizing-the-style" id="toc-customizing-the-style" class="nav-link" data-scroll-target="#customizing-the-style">Customizing the Style</a>
+  <ul class="collapse">
+  <li><a href="#using-a-style-set" id="toc-using-a-style-set" class="nav-link" data-scroll-target="#using-a-style-set">Using a style set</a></li>
+  </ul></li>
+  <li><a href="#creating-your-own-style" id="toc-creating-your-own-style" class="nav-link" data-scroll-target="#creating-your-own-style">Creating your own style</a>
+  <ul class="collapse">
+  <li><a href="#changing-the-favicon" id="toc-changing-the-favicon" class="nav-link" data-scroll-target="#changing-the-favicon">Changing the favicon</a></li>
+  <li><a href="#adding-logos" id="toc-adding-logos" class="nav-link" data-scroll-target="#adding-logos">Adding logos</a></li>
+  </ul></li>
+  <li><a href="#adding-sections-that-arent-numbered" id="toc-adding-sections-that-arent-numbered" class="nav-link" data-scroll-target="#adding-sections-that-arent-numbered">Adding sections that aren’t numbered</a></li>
+  <li><a href="#changing-course-text-colors" id="toc-changing-course-text-colors" class="nav-link" data-scroll-target="#changing-course-text-colors">Changing course text colors</a></li>
+  <li><a href="#modifying-the-image-at-the-top-of-the-course" id="toc-modifying-the-image-at-the-top-of-the-course" class="nav-link" data-scroll-target="#modifying-the-image-at-the-top-of-the-course">Modifying the image at the top of the course</a></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Customizing Style</h1>
 </div>
 
 
@@ -215,195 +224,82 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
+<section id="changing-title" class="level3">
+<h3 class="anchored" data-anchor-id="changing-title">Changing title</h3>
+<p>The title is specified on the <code>index.Rmd</code> page in the yml header. Modify the yaml header to change the title for your course.</p>
+<pre><code>---
+title: "Title of Course"
+---</code></pre>
+<p>Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence avoid having yml header titles for the chapter files.</p>
 </section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
+<section id="customizing-the-style" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-the-style">Customizing the Style</h2>
+<p>There are styles/brandings that are available in our library of style sets. However, there are also instructions to customize your own course style following these instructions in the next section.</p>
+<section id="using-a-style-set" class="level3">
+<h3 class="anchored" data-anchor-id="using-a-style-set">Using a style set</h3>
+<p>By default this course template will use the JHU Data Science Lab style. However, you can switch this to another style set by moving some files. Take a look at the <code>style-sets</code> for the other styles available.</p>
+<p>For example, if you are creating an ITCR course, you will need the files in <code>style-sets/itcr</code> or if you are making a DataTrail course, the files in <code>style-sets/data-trail</code>. For these instructions,let’s refer to <code>data-trail</code> or <code>itcr</code> as the <code>&lt;set-name&gt;</code>.</p>
 <ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
+<li>On a new branch, copy the <code>style-sets/&lt;set-name&gt;/index.Rmd</code> and <code>style-sets/&lt;set-name&gt;/_output.yml</code> to the top of the repository to overwrite the default <code>index.Rmd</code> and <code>_output.yml</code>.</li>
+<li>Copy over all the files in the <code>style-sets/&lt;set-name&gt;/copy-to-assets</code> to the <code>assets</code> folder in the top of the repository.</li>
+<li><a href="https://www.ottrproject.org/writing_content_courses.html#about-ottr-and-pull-requests">Create a pull request</a> with these changes, and double check the rendered preview to make sure that the style is what you are looking for.</li>
 </ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><a href="https://bookdown.org/yihui/bookdown/output-formats.html">Read here</a> for more about how to customize your <code>_output.yml</code> file – which is ultimately a part of how bookdown works.</p>
+<p><br></p>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="creating-your-own-style" class="level2">
+<h2 class="anchored" data-anchor-id="creating-your-own-style">Creating your own style</h2>
+<p>Here are the instructions to change the aesthetic aspects about your course if you wish to create a new style for your course.</p>
+<section id="changing-the-favicon" class="level3">
+<h3 class="anchored" data-anchor-id="changing-the-favicon">Changing the favicon</h3>
+<p>Favicons are small icons that appear on your browser tab. To change the favicon, first take the image you would like to use to this <a href="https://favicon.io/favicon-converter/">website</a> to convert it into a favicon. Then save this file in the <code>assets/</code> directory. On the <code>index.Rmd</code> file, make sure that the correct favicon is referenced to in the yaml header, so that the correct favicon will be used.</p>
+<p>Here you can see that by default the Data Science Lab (dasl) favicon will be used.</p>
+<pre><code>---
+title: "Course Name "
+date: "`r format(Sys.time(), '%B, %Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Description about Course/Book."
+favicon: assets/dasl_favicon.ico
+---</code></pre>
+<p>If you are making an <a href="https://www.itcrtraining.org/">ITN</a> course, then the favicon is already set up n the index-itcr.Rmd file. Just delete the existing <code>index.Rmd</code> file and rename the <code>index-itcr.Rmd</code> file to be <code>index.Rmd</code>. This is already part of the set up instructions.</p>
+</section>
+<section id="adding-logos" class="level3">
+<h3 class="anchored" data-anchor-id="adding-logos">Adding logos</h3>
+<p>Logos for the table of contents are added with the <code>_output.yml</code> file. This adds an image above the table of contents when the content is rendered with <code>bookdown</code>.</p>
+<p>If you are creating a general DaSL course: - Please replace the URL in the line 13 of code for the <code>_output.yml</code> file with the URL for the GitHub repo for your course. This will allow people to more easily find how out how you created your course. Otherwise, they will be directed to this template.</p>
+<p>If you are creating a DaSL course for a project other than <a href="https://www.itcrtraining.org/">ITN</a>:</p>
+<ul>
+<li>Delete the <code>_output.yml</code> file and rename the <code>_output-itcr.yml</code> to be <code>_output.yml</code>.</li>
+<li>Please modify the lines that link to the http://jhudatascience.org/ with your own website and logo if you are not part of the <a href="http://jhudatascience.org/">jhuDaSL</a> .</li>
+<li>Please replace the URL in the line 13 of code with the URL for the GitHub repo for your course. This will allow people to more easily find how out how you created your course. Otherwise, they will be directed to this template.</li>
+<li>If you wish to create a different color scheme, the font colors can also be modified along with other aspects in the <code>assets/style.css</code> file. Take a look at the <code>assets/style_ITN.css</code> file to see what was changed for that color scheme from the <code>assets/style.css</code> file.</li>
+<li>You can replace the logo with the appropriate project logo by replacing <code>https://www.itcrtraining.org/</code> with the project website link and <code>"https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/images/logo.png"</code> for the project logo image link in line 11.</li>
+</ul>
+<p><br></p>
+</section>
+</section>
+<section id="adding-sections-that-arent-numbered" class="level2">
+<h2 class="anchored" data-anchor-id="adding-sections-that-arent-numbered">Adding sections that aren’t numbered</h2>
+<p>You may notice that currently the References page and about pages are not numbered like the other chapters. If you want additional sections like this add an Rmd file and type the name of the page after a single hashtag <code>#</code> followed by this: <code>{-}</code>. This will exclude this page from being numbered.</p>
+<p>Thus as example the reference page looks like this:</p>
+<pre><code># References {-}</code></pre>
+<p><br></p>
+</section>
+<section id="changing-course-text-colors" class="level2">
+<h2 class="anchored" data-anchor-id="changing-course-text-colors">Changing course text colors</h2>
+<p>To modify the colors used for the text, take a look at the <code>assets/style.css</code> code.</p>
+<p>If you would like to change the current dark blue color to be a different color, search and replace for <code>#012d72</code>. You can find hex color codes at this <a href="https://htmlcolorcodes.com/color-picker/">website</a> to use as a replacement.</p>
+<p>If you would like to change the current light blue color to be a different color, do the same but search for <code>#68ace5</code>.</p>
+<p><br></p>
+</section>
+<section id="modifying-the-image-at-the-top-of-the-course" class="level2">
+<h2 class="anchored" data-anchor-id="modifying-the-image-at-the-top-of-the-course">Modifying the image at the top of the course</h2>
+<p>If you would like to change the image at the top of the Bookdown version of the course, you need to do the following steps: * Add a new image file to the <code>assets</code> directory * Modify the <code>assets/big-image.html</code> file on line 11. Change out <code>src = "assets/dasl_thin_main_image.png"</code> so that <code>dasl_thin_main_image.png</code> is replaced with the name of your image file.</p>
 
 
 </section>

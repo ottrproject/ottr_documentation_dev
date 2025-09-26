@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>More Features: Citing – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#citing-sources" id="toc-citing-sources" class="nav-link active" data-scroll-target="#citing-sources">Citing sources</a></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">More Features: Citing</h1>
 </div>
 
 
@@ -215,195 +212,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
-</section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
-<ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
-</ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="citing-sources" class="level2">
+<h2 class="anchored" data-anchor-id="citing-sources">Citing sources</h2>
+<p>You can generally follow the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">Bookdown instructions about citations</a>, but you don’t need to add the additional bibliography argument at the top of the Rmd.</p>
+<p>To add a new reference source, add to the <code>book.bib</code> file, keeping your new entry in alphabetical order.</p>
+<p>For articles (or anything with a DOI), go to <a href="https://www.doi2bib.org/">doi2bib.org</a> or <a href="https://zbib.org/">ZoteroBib</a> to get a BibTex-formatted reference that you can copy and paste the reference to the <code>book.bib</code> file.</p>
+<p>You can also use programs like Zotero or Endnote to export a .bib file and either combine with the <code>book.bib</code> or manage your references from there.</p>
+<p>Other sources can be added using this template:</p>
+<pre><code>@website{citekey,
+    author = {First Last},
+    title = {Title},
+    url  = {www.website.com},
+}</code></pre>
+<p>To reference the citations in your writing follow the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">bookdown instructions</a>:</p>
+<blockquote class="blockquote">
+<p>Items can be cited directly within the documentation using the syntax <span class="citation" data-cites="key">@key</span> where key is the citation key in the first line of the entry, e.g., <span class="citation" data-cites="R-base">@R-base</span>. To put citations in parentheses, use <span class="citation" data-cites="key">[@key]</span>. To cite multiple entries, separate the keys by semicolons, e.g., <span class="citation" data-cites="key-1 key-2 key-3">[@key-1; @key-2; @key-3]</span>. To suppress the mention of the author, add a minus sign before @, e.g., <span class="citation" data-cites="R-base">[-@R-base]</span>.</p>
+</blockquote>
+<p>See <a href="https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd">Chapter 2</a> of this template course for examples.</p>
+<p>This will automatically list references at the bottom of each chapter included in your course, as well as at the end of your course. Thus it is important to keep the <code>References.Rmd</code> file and to keep this as the last part of the <code>_bookdown.yml</code> file as it is in the template, so that this full list of references will be listed in a place that makes sense.</p>
+<p><img src="resources/images/references_bookdown.png" class="img-fluid"></p>
+<p>Alternatively, you can add a header for this list of references as the last header in any other Rmd file that is listed as the final file of the <code>_bookdown.yml</code> file.</p>
+<p>If you would like to suppress having references listed at the end of each chapter, you can add a line that says <code>split_bib: false</code> to your <code>_output.yml</code> file.</p>
+<p><img src="resources/images/false_split_ref.png" class="img-fluid"></p>
 
 
 </section>

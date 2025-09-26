@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>Customizing Docker – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#using-the-base_ottr-docker-image" id="toc-using-the-base_ottr-docker-image" class="nav-link active" data-scroll-target="#using-the-base_ottr-docker-image">Using the base_ottr Docker image</a></li>
+  <li><a href="#starting-a-new-docker-image" id="toc-starting-a-new-docker-image" class="nav-link" data-scroll-target="#starting-a-new-docker-image">Starting a new Docker image</a>
+  <ul class="collapse">
+  <li><a href="#set-dockerhub-related-secrets" id="toc-set-dockerhub-related-secrets" class="nav-link" data-scroll-target="#set-dockerhub-related-secrets">Set Dockerhub related secrets</a></li>
+  <li><a href="#updating-workflows-for-new-docker-image" id="toc-updating-workflows-for-new-docker-image" class="nav-link" data-scroll-target="#updating-workflows-for-new-docker-image">Updating workflows for new Docker image</a></li>
+  <li><a href="#modifying-the-dockerfile-for-a-new-image" id="toc-modifying-the-dockerfile-for-a-new-image" class="nav-link" data-scroll-target="#modifying-the-dockerfile-for-a-new-image">Modifying the Dockerfile for a new image</a></li>
+  <li><a href="#testing-a-modified-docker-image" id="toc-testing-a-modified-docker-image" class="nav-link" data-scroll-target="#testing-a-modified-docker-image">Testing a modified Docker image</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Customizing Docker</h1>
 </div>
 
 
@@ -215,197 +219,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
+<p>For courses that require running example code, it is strongly advisable to utilize a Docker image during development. This ensures consistent software versions among course developers.</p>
+<section id="using-the-base_ottr-docker-image" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-base_ottr-docker-image">Using the base_ottr Docker image</h2>
+<p>If your course doesn’t require any additional packages to run, then you do not need to set up Docker locally but this Docker image <a href="https://hub.docker.com/repository/docker/jhudsl/base_ottr">jhudsl/base_ottr</a> will run and re-render all of your changes as you add them.</p>
+<p>We recommend using the <code>jhudsl/base_ottr:main</code> tagged image instead of the <code>latest</code> version. The <code>main</code> image is ready for use, while the <code>latest</code> may be under development. All GitHub Actions by default use the <code>jhudsl/base_ottr:main</code>.</p>
+<p>If you are new to Docker, you may find it helpful to read this <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/launching-a-docker-image.html">introduction to Docker</a>.</p>
+<ul>
+<li>If you don’t have one, you will need to <a href="https://hub.docker.com/">sign up with a Docker account</a>.</li>
+<li>If you haven’t installed Docker desktop (or need to update it), you can do so <a href="https://docs.docker.com/get-docker/">here</a>.</li>
+</ul>
+<p>If your Docker desktop is running, you should see a Docker whale in your tool bar. On Macs, this will be on the bar on the top of your screen; in Windows, on the bottom right.</p>
+<p>A Docker image is similar to a virtual machine - it contains preinstalled software in a preconfigured environment. Docker images can be downloaded from DockerHub, or you can create your own.</p>
+<p>We have created the <code>base_ottr:main</code> image as a starting point; you can download it from <code>jhudsl/base_ottr:main</code> on DockerHub using the docker pull command we have below. To pull the docker image associated with this template, you can run this command below in your command line. This may take a while:</p>
+<pre><code>docker pull jhudsl/base_ottr:main</code></pre>
+<p>This pulls the <code>base_ottr:main</code> image from Docker Hub and copies it to your computer. It will be placed in your local collection of Docker images, managed by Docker (not in your working directory). If you get an error, it may be because you forgot to have your Docker desktop running… see above.</p>
+<p>To use the Docker image associated with the course template, first navigate to the the top of this GitHub repository. Now you can start up the Docker container using the command below.</p>
+<p>This runs your local copy of the <code>base_ottr:main</code> image (which you downloaded from DockerHub). The option <code>-v $PWD:/home/rstudio</code> mounts pwd (this repo) and makes it available at <code>/home/rstudio</code> within the container. Replace all of <code>&lt;CHOOSE_PASSWORD&gt;</code> (including the <code>&lt;</code> and <code>&gt;</code>) with a password of your choosing.</p>
+<p><em>On a Mac</em>:</p>
+<pre><code>docker run -it -v $PWD:/home/rstudio -e PASSWORD=&lt;CHOOSE_PASSWORD&gt; -p 8787:8787 jhudsl/base_ottr:main</code></pre>
+<p><em>On a Windows</em>:</p>
+<pre><code>docker run -it -v %CD%:/home/rstudio -e PASSWORD=&lt;CHOOSE_PASSWORD&gt; -p 8787:8787 jhudsl/base_ottr:main</code></pre>
+<p>Do not close this window, but you can minimize it. Open up a new command line window and run the command: <code>docker ps</code>, you should see a container is up and running!</p>
+<p><em>Couple of handy Docker commands:</em></p>
+<ul>
+<li>To stop your Docker container, run <code>docker ps</code> to obtain the docker container ID. Then you can use that ID to run <code>docker stop &lt;CONTAINER_ID&gt;</code>.</li>
+<li>To remove a docker image (which you may need to do from time to time to clear out space), you can run <code>docker image ls</code> to see all your current images. Then you can run either <code>docker image rm &lt;IMAGE_ID&gt;</code>.</li>
+<li>If you really need to clear out space, you can follow this <a href="https://stackoverflow.com/questions/44785585/docker-how-to-delete-all-local-docker-images">StackOverflow post</a> on how to remove all images and all containers.</li>
+</ul>
+<p>To obtain further information on utilizing Docker, you can refer to their comprehensive documentation available <a href="https://docs.docker.com/">here</a>.</p>
+<section id="optionally-run-rstudio-from-the-docker-container" class="level4">
+<h4 class="anchored" data-anchor-id="optionally-run-rstudio-from-the-docker-container">Optionally run RStudio from the Docker container</h4>
+<p>In a web browser navigate to the following to open an RStudio instance that is run from your Docker container.</p>
+<pre><code>localhost:8787</code></pre>
+<p>To log in, you’ll need to use <code>rstudio</code> as the username and whatever password you put for <code>&lt;CHOOSE_PASSWORD&gt;</code> in the above command.</p>
+<p><br></p>
 </section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
+</section>
+<section id="starting-a-new-docker-image" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-new-docker-image">Starting a new Docker image</h2>
+<p>Should you find that your course needs additional packages beyond what’s included in the template, you should probably start a new Docker image and you’ll need to do these steps to get this going:</p>
+<p>There’s a library of ottr-ready docker images that you can see <a href="https://github.com/jhudsl/ottr_docker">here</a>. If you would like to contribute your own customized docker image that works with OTTR, please file a pull request!</p>
 <ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
+<li>Create a <a href="https://hub.docker.com/signup">Dockerhub account</a> if you don’t have one.</li>
+<li>Create a new Docker image on your Dockerhub account. Follow these <a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/launching-a-docker-image.html">instructions</a> if you don’t know how to do that.</li>
+<li><a href="#set-dockerhub-related-secrets">Set up Dockerhub secrets in your repository or organization</a>.</li>
+<li><a href="#updating-workflows-for-new-docker-image">Update the Github actions workflows accordingly</a>.</li>
+<li><a href="#modifying-the-dockerfile-for-a-new-image">Edit the Dockerfile in your repository</a>.</li>
 </ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="set-dockerhub-related-secrets" class="level3">
+<h3 class="anchored" data-anchor-id="set-dockerhub-related-secrets">Set Dockerhub related secrets</h3>
+<p>You only need to do this once as an organization (if this course is under <code>jhudsl</code> you don’t need to do this step).</p>
+<p>To give them permission for all these Docker actions, you need to set a GitHub secret. Go to <code>Settings</code> &gt; <code>Secrets</code> and scroll down to <code>organization secrets</code> or you can set this for each repository by creating a repository secret.</p>
+<ul>
+<li>Click <code>New repository secret</code> button for each of these secrets</li>
+<li>The login information in these GitHub secrets must be from an account that has write permissions to the Docker image you wish to manage).</li>
+</ul>
+<p><em>Name: <code>DOCKERHUB_USERNAME</code></em>: For <code>Secret</code>: put your login username for https://hub.docker.com/</p>
+<p><em>Name: <code>DOCKERHUB_TOKEN</code></em>: For <code>Secret</code>: put an access token for Dockerhub. You can create this by following <a href="https://docs.docker.com/docker-hub/access-tokens/#create-an-access-token">these instructions</a>. Choose the <code>read,write,delete</code> option.</p>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="updating-workflows-for-new-docker-image" class="level3">
+<h3 class="anchored" data-anchor-id="updating-workflows-for-new-docker-image">Updating workflows for new Docker image</h3>
+<p>To make sure that your new Docker image is being used for rendering in the GitHub actions, you need to change the <code>rendering-docker-image:</code> from the default of <code>jhudsl/base_ottr:main</code> and replace it with your docker image tag.</p>
+<p>Then start a new branch so that you can submit a new pull request with your changes.</p>
+<p>Now, when you file a pull request, the Dockerfile build for your docker image will be tested automatically by the <a href="https://www.ottrproject.org/customize-robots.html">GitHub actions</a> if <code>docker-test</code> is set to <code>yes</code>. The default is <code>docker-test: no</code></p>
 </section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="modifying-the-dockerfile-for-a-new-image" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-the-dockerfile-for-a-new-image">Modifying the Dockerfile for a new image</h3>
+<p><a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/modifying-a-docker-image.html">Read this chapter for instructions on how to modify Docker images</a></p>
+<p>You will probably want to create your Docker image by using the <code>jhudsl/base_ottr:main</code> as your base – this means that all the packages that are in our <code>jhudsl/base_ottr:main</code> image will be included in the Docker image you build.</p>
+<pre><code>FROM jhudsl/base_ottr:main</code></pre>
+<p>You can take a look at this <a href="https://github.com/ottrproject/OTTR_Template/blob/main/resources/TEMPLATE_Dockerfile">Dockerfile template we’ve set up here</a> (note that the commands would need to be uncommented and real package names put in place of <code>package_name</code>’s).</p>
+<section id="template-commands-for-adding-packages-to-the-dockerfile" class="level4">
+<h4 class="anchored" data-anchor-id="template-commands-for-adding-packages-to-the-dockerfile">Template commands for adding packages to the Dockerfile</h4>
+<p>This section gives you the basics on what it looks like to add new packages to your new Docker image.</p>
+<section id="cran-packages" class="level5">
+<h5 class="anchored" data-anchor-id="cran-packages">CRAN Packages:</h5>
+<p>For R packages installed from CRAN, you can add to the running vector list of R packages.</p>
+</section>
+<section id="bioconductor-packages" class="level5">
+<h5 class="anchored" data-anchor-id="bioconductor-packages">Bioconductor Packages:</h5>
+<p>To add an R package from Bioconductor, you can follow this kind of format:</p>
+<pre><code>RUN Rscript -e "options(warn = 2); BiocManager::install( \
+  c('limma', \
+    'newpackagename')
+</code></pre>
+</section>
+<section id="python-packages" class="level5">
+<h5 class="anchored" data-anchor-id="python-packages">Python Packages:</h5>
+<p>To add a Python package, you will need to add pip3 to install Python packages using this format:</p>
+<pre><code>RUN pip3 install \
+    "somepackage==0.1.0"</code></pre>
+</section>
+</section>
+</section>
+<section id="testing-a-modified-docker-image" class="level3">
+<h3 class="anchored" data-anchor-id="testing-a-modified-docker-image">Testing a modified Docker image</h3>
+<p><a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/modifying-a-docker-image.html">Read this chapter for instructions on how to modify Docker images</a></p>
+<p>When you’ve added a package to the Dockerfile, you may want to check that it builds successfully before it’s added to your repository. You can include changes to your Dockerfile in a pull request which will trigger an automatic testing of building it.</p>
+<p><a href="https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/modifying-a-docker-image.html">Read this chapter for more tips on how to modify Docker images</a></p>
+<p>OR</p>
+<p>If you prefer to test it locally, then you can follow these steps.</p>
+<p>First create a GITHUB token file by making a token and copying a pasting it into a plain text file named <code>docker/git_token.txt</code>. (<em><strong>Make sure you do not push this to github and possibly delete it after testing your docker image build!</strong></em>)</p>
+<p>Then you’ll need to rebuild the Docker image using this command after you move into the <code>docker</code> directory) (But replace the <code>&lt;TAG_FOR_COURSE&gt;</code> with the tag for your new image including dropping the <code>&lt;</code> and <code>&gt;</code>:</p>
+<pre><code>docker build -f Dockerfile . -t &lt;TAG_FOR_COURSE&gt;</code></pre>
+<p>If it fails, often the issue is a missing dependency. Take a look at the error messages and see if you can determine the issue with some Googling. Also be sure that all your directories and files are named correctly.</p>
+<p>Once it builds successfully, run the above command with the new name for your docker image make sure that the tag does not have upper case characters):</p>
+<pre><code>docker build -f Dockerfile . -t jhudsl/&lt;TAG_FOR_COURSE&gt;</code></pre>
+<section id="pushing-the-docker-image" class="level4">
+<h4 class="anchored" data-anchor-id="pushing-the-docker-image">Pushing the Docker image</h4>
+<p>For any changes you make to your Docker image to take effect in your repository’s github actions and workflows, you must push your updated docker image to Dockerhub. There are two different ways you can push your Docker image.</p>
+<p>Locally, you can push your updated image to Dockerhub using (make sure that the tag does not have upper case characters):</p>
+<pre><code>docker push jhudsl/&lt;TAG_FOR_COURSE&gt;</code></pre>
+<p>OR</p>
+<p>You can use GitHub actions to do this by going to your course’s GitHub repository, go to <code>Actions</code> and then to <code>Test build of Dockerfile</code>.</p>
+<p>Click on <code>run workflow</code> type in <code>true</code> underneath <code>Push to Dockerhub?</code>.</p>
+<p>Then click <code>Run</code>. If your Dockerfile builds an image successfully it will automatically be pushed to Dockerhub.</p>
+</section>
+<section id="github-actions-for-handling-your-docker-image" class="level4">
+<h4 class="anchored" data-anchor-id="github-actions-for-handling-your-docker-image">Github actions for handling your Docker image</h4>
+<p>For your personalized docker image, you can store the Dockerfile anywhere. In order for OTTR/GitHub actions to use it, it must be pushed to Dockerhub.</p>
+<p>It may be easiest to store it in the OTTR-made repository you are working from.</p>
+<p>In whichever repository you choose to store your Dockerfile, its recommended you use a GitHub action to automatically test it when you make changes. You can use our Docker handling <a href="https://github.com/ottrproject/ottr-docker/blob/main/.github/workflows/pull_request.yml">GitHub action here as a starting point</a>.</p>
+<p>You will need to modify this GHA for your own purposes:</p>
+<ul>
+<li>The action linked above, as is, will only run on manual trigger and manually specifying the directory the Dockerfile is in. For having the trigger run automatically, we recommend setting up a <a href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">GitHub action trigger</a>.</li>
+<li>You will definitely need to set up the Dockerhub credentials as described above.</li>
+<li>For other information about how to modify this GitHub action, we recommend looking at the GitHub actions documentation to become more familiar with how to customize it: https://docs.github.com/en/actions.</li>
+</ul>
+<p>If you do choose to use the action manually, then you can use this by going to <code>Actions</code>, clicking on <code>Build Docker Image</code> &gt; <code>run workflow</code> and write in:</p>
+<ul>
+<li><code>directory</code> - Which your Dockerfile is located in this repository</li>
+<li><code>tag</code> - Optionally, what tag you wish the built docker image to have</li>
+<li><code>Push to Dockerhub?</code> TRUE or FALSE whether you wish this docker image to be pushed to Dockerhub.</li>
+</ul>
+<p><img src="resources/images/docker-gha.png" class="img-fluid"></p>
+<p>For more guidance on how to personalize Docker images, we taking our <a href="https://hutchdatascience.org/Containers_for_Scientists/">Containers for Scientist course</a>. Or file a GitHub issue on the relevant repository.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

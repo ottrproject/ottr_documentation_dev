@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>Customizing Automatic Checks – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#pull-request-checks" id="toc-pull-request-checks" class="nav-link active" data-scroll-target="#pull-request-checks">Pull Request Checks:</a>
+  <ul class="collapse">
+  <li><a href="#check-quiz-formatting" id="toc-check-quiz-formatting" class="nav-link" data-scroll-target="#check-quiz-formatting">Check Quiz Formatting</a></li>
+  <li><a href="#check-for-broken-urls" id="toc-check-for-broken-urls" class="nav-link" data-scroll-target="#check-for-broken-urls">Check for broken URLs</a></li>
+  <li><a href="#preview-rendering" id="toc-preview-rendering" class="nav-link" data-scroll-target="#preview-rendering">Preview rendering</a></li>
+  <li><a href="#spell-checking" id="toc-spell-checking" class="nav-link" data-scroll-target="#spell-checking">Spell checking</a></li>
+  <li><a href="#style-code" id="toc-style-code" class="nav-link" data-scroll-target="#style-code">Style code</a></li>
+  <li><a href="#docker-testing" id="toc-docker-testing" class="nav-link" data-scroll-target="#docker-testing">Docker testing</a></li>
+  </ul></li>
+  <li><a href="#rendering-actions" id="toc-rendering-actions" class="nav-link" data-scroll-target="#rendering-actions">Rendering actions</a></li>
+  <li><a href="#manually-running-rendering-or-checks" id="toc-manually-running-rendering-or-checks" class="nav-link" data-scroll-target="#manually-running-rendering-or-checks">Manually running rendering or checks</a></li>
+  <li><a href="#fixing-broken-github-actions" id="toc-fixing-broken-github-actions" class="nav-link" data-scroll-target="#fixing-broken-github-actions">Fixing broken GitHub Actions</a></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">Customizing Automatic Checks</h1>
 </div>
 
 
@@ -215,195 +223,146 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
+<p>By default, all automation steps and checks will run. Based on the requirements of your course, you have the flexibility to enable or disable specific features by modifying the settings in the <code>config_automation.yml</code> file. Simply adjust the options to “true” or “false” accordingly.</p>
+<p>The <code>config_automation.yml</code> file looks like this:</p>
+<pre><code>### Render preview of content with changes (Rmd's and md's are checked)
+render-preview: true
+
+##### Checks run at pull request #####
+# Check quiz formatting
+check-quizzes: false
+quiz_error_min: 0
+# Check that urls in the content are not broken
+url-checker: true
+url_error_min: 0
+# Spell check Rmds and quizzes
+spell-check: true
+spell_error_min: 0
+
+#### Other options
+# Style any R code
+style-code: true
+# Would you like your markdown files to be checked for formatting
+markdown-linter: true
+# Would you like a readability report on your markdowns?
+readability-report: true
+# Test build the docker image if any docker-relevant files have been changed
+docker-test: false
+# Should URLs be tested periodically?
+url-check-periodically: true
+
+##### Renderings run upon merge to main branch #####
+# Rendering each platform's content
+render-website: rmd
+render-leanpub: true
+render-coursera: true
+
+## Automate the creation of Book.txt file? yes/no
+## This is only relevant if render-leanpub is yes, otherwise it will be ignored
+make-book-txt: true
+
+# What docker image should be used for rendering?
+# The default is jhudsl/base_ottr:main
+rendering-docker-image: 'jhudsl/base_ottr:main'</code></pre>
+<p>There are three main sets of automation steps and checks run:</p>
+<ul>
+<li><code>.github/workflows/pull-request.yml</code> : Run upon opening a pull request</li>
+<li><code>.github/workflows/render-all.yml</code>: Run upon any changes merged to the <code>main</code> branch</li>
+<li><code>.github/workflows/check-url.yml</code>: Run checks of URLs in a OTTR repo periodically to see if any are no longer valid</li>
+</ul>
+<section id="pull-request-checks" class="level2">
+<h2 class="anchored" data-anchor-id="pull-request-checks">Pull Request Checks:</h2>
+<p>These actions are triggered upon a pull request being opened. They are set up in this file: <code>.github/workflows/pull-request.yml</code></p>
+<section id="check-quiz-formatting" class="level3">
+<h3 class="anchored" data-anchor-id="check-quiz-formatting">Check Quiz Formatting</h3>
+<p>In the <code>config_automation.yml</code> file it is set by:</p>
+<pre><code>check-quizzes: false</code></pre>
+<p>By default, it is set to <code>false</code>. But if you wish to <a href="https://www.ottrproject.org/course_publishing.html#publishing-with-leanpub">create quizzes on Leanpub</a>, you should set this to <code>true</code>. This is not necessary if you only want quizzes for Coursera. Leanpub needs a particular format for it to upload correctly. This action will look for quizzes in the <code>quizzes</code> directory and check for these items. The outcome of these quiz checks will be printed to a GitHub comment on your pull request.</p>
 </section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
+<section id="check-for-broken-urls" class="level3">
+<h3 class="anchored" data-anchor-id="check-for-broken-urls">Check for broken URLs</h3>
+<p>In the <code>config_automation.yml</code> file there are two different URL checkers.</p>
 <ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
+<li>One that is run during pull requests. It is set by:</li>
 </ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
+<pre><code>url-checker: true</code></pre>
+<p>GitHub Actions runs a check on all the URLs upon creating a pull request to the <code>main</code> branch. If it fails, you can click on the output comment on your pull request that says “Click here to download detailed error reports”. This will download a zip file containing a list of the broken URLs it found.</p>
+<p>If you don’t set the additional error threshold option in the config_automation file, the check summary may still report that the URL check failed, even if 0 errors were found.</p>
+<pre><code>url_error_min: 0</code></pre>
 <ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
+<li>The other URL check runs on a set interval to see if any URLs referenced are no longer valid. This one is set by:</li>
 </ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<pre><code>url-check-periodically: true</code></pre>
+<p>If either URL checker is failing on something that isn’t really a URL or doesn’t need to be checked, open the <code>resources/ignore-urls.txt</code> file and add that URL exactly as it is specified in the error print out. After committing the changes to <code>resources/ignore-urls.txt</code> on your branch, the url check status check should be successfully passed.</p>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="preview-rendering" class="level3">
+<h3 class="anchored" data-anchor-id="preview-rendering">Preview rendering</h3>
+<p>In the <code>config_automation.yml</code> file it is set by:</p>
+<pre><code>render-preview: true</code></pre>
+<p>After you open a pull request, a preview of the renders will be linked in an automatic comment on the pull request. Upon each commit these previews will re-render and edit the comment with the latest render.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results.png" class="img-fluid"></p>
+<p>These Github Actions are located in <code>render-preview</code> section of the <code>pull-request.yml</code>. These previews do NOT incorporate any changes influenced by any changes to the Docker image if the Dockerfile is also updated in the same pull request.</p>
 </section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="spell-checking" class="level3">
+<h3 class="anchored" data-anchor-id="spell-checking">Spell checking</h3>
+<p>In the <code>config_automation.yml</code> file it is set by:</p>
+<pre><code>spell-check: true</code></pre>
+<p>Github Actions will automatically run a spell check on all Rmds and mds whenever a pull request to the <code>main</code> branch is filed.</p>
+<p>The error threshold option controls how many errors are allowed before the check will fail.</p>
+<pre><code>spell_error_min: 0</code></pre>
+<p>You’ll need to resolve those before being able to merge your pull request. Errors are displayed in much the same way as PR URL check errors with a summary of how many errors are found. Click on the output comment on your pull request that says “Click here to download detailed error reports”. This will download a zip file containing a list of the spelling errors it found.</p>
+<p>Some of these errors may be things that the spell check doesn’t recognize for example: <code>ITCR</code> or <code>DaSL</code>. If it’s a ‘word’ the spell check should recognize, you’ll need to add this to the dictionary.</p>
+<p>Go to the <code>resources/dictionary.txt</code> file. Open the file and add the new ‘word’ to its appropriate place (the words are in alphabetical order). After committing the changes to <code>resources/dictionary.txt</code> on your branch, the spell check status check should be successfully passed.</p>
+<p>The PR comment included below shows an example of a check that passed (spell check), and a check that failed (the URL check) with the option to download detailed error report(s).</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results.png" class="img-fluid"></p>
+<p>When all checks pass, the option to download error reports is no longer included, instead displaying a message that the URL and spell checks passed.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results_pass.png" class="img-fluid"></p>
+</section>
+<section id="style-code" class="level3">
+<h3 class="anchored" data-anchor-id="style-code">Style code</h3>
+<p>In the <code>config_automation.yml</code> file it is set by:</p>
+<pre><code>style-code: true</code></pre>
+<p>The <code>styler</code> package will style R code in all Rmds. Style changes will automatically be committed back to your branch.</p>
+</section>
+<section id="docker-testing" class="level3">
+<h3 class="anchored" data-anchor-id="docker-testing">Docker testing</h3>
+<p>In the config_automation.yml file it looks like:</p>
+<pre><code>docker-test: false</code></pre>
+<p>By default it is set to <code>false</code> which means it won’t run automatically unless you change this to <code>true</code>. This is only relevant if you have <a href="https://www.ottrproject.org/customize-docker.html">your own Docker image you are managing for your course</a>. If changes are made to Docker-relevant files: <code>Dockerfile</code>, <code>install_github.R</code>, or <code>github_package_list.tsv</code>, this will test re-build the Docker image. If it is successfully built, then it makes sense to merge it to <code>main</code> but the Docker Image will not be pushed to <code>Dockerhub</code> automatically. <a href="https://www.ottrproject.org/customize-docker.html#Testing_a_modified_Docker_image">Follow these instructions to push your Docker image to Dockerhub</a>.</p>
+<p><br></p>
+</section>
+</section>
+<section id="rendering-actions" class="level2">
+<h2 class="anchored" data-anchor-id="rendering-actions">Rendering actions</h2>
+<p>Upon merging changes to any <code>Rmd</code> or <code>assets/</code> folder to <code>main</code>, the course material will be automatically re-rendered.</p>
+<p>For rendering a website version of the course (or your website), rather than <code>true</code> or <code>false</code>, the options are <code>rmd</code>, <code>rmd_web</code>, <code>quarto</code> or <code>quarto_web</code>.</p>
+<ul>
+<li>If rendering a course with RMarkdown files, use <code>rmd</code>.</li>
+<li>If rendering a course with quarto files, use <code>quarto</code>.</li>
+<li>If rendering a website with RMarkdown files, use <code>rmd_web</code>.</li>
+<li>If rendering a website with quarto files, use <code>quarto_web</code>.</li>
+</ul>
+<pre><code>render-website: rmd</code></pre>
+<p>By default, all rendering steps will be run. But depending on the needs of your course, you can turn these on and off by going to the <code>config_automation.yml</code> file and switching options to <code>true</code> or <code>false</code>.</p>
+<pre><code>render-leanpub: true
+render-coursera: true</code></pre>
+<p>For publishing to Leanpub, make sure that the render Leanpub option is set to true: <code>render-leanpub: true</code>. See more details about publishing to Leanpub <a href="https://www.ottrproject.org/course_publishing.html#publishing-with-leanpub">here</a>.</p>
+<p>If render-leanpub is true, the <code>make-book-txt</code> option is also relevant. This option controls whether you’d like to manually specify the order of your chapters and quizzes by creating the <a href="https://leanpub.com/lfm/read#leanpub-auto-the-booktxt-file">Book.txt file</a> by hand or whether you’d like this to be <a href="https://ottrproject.org/ottrpal/#about-the-booktxt-file">automatically generated based on file and quiz numbering.</a>. Read more about this <a href="https://www.ottrproject.org/examples.html#Setting_up_quizzes">in the upcoming section</a>.</p>
+<p>By default, <code>make-book-txt: true</code> will use the numbering in the names of the documents for chapters and quizzes to order them, but if you’d like to specify the order for the chapters and quizzes to be different on Leanpub, then set this to <code>make-book-txt: false</code>, so as not to override the book.txt file that you would make manually.</p>
+<pre><code>make-book-txt: true</code></pre>
+<p>For publishing to Coursera, make sure render Coursera option is set to true: <code>render-coursera: true</code>. See more details about publishing to Coursera <a href="https://www.ottrproject.org/course_publishing.html#publishing-with-coursera">here</a>.</p>
+<p><br></p>
+</section>
+<section id="manually-running-rendering-or-checks" class="level2">
+<h2 class="anchored" data-anchor-id="manually-running-rendering-or-checks">Manually running rendering or checks</h2>
+<p>From time to time, it may be useful to manually re-trigger a particular GitHub Action. Most of the GitHub Actions, particularly the rendering ones, can be re-run manually. See this article about <a href="https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow">how to manually re-run a GitHub Action</a>.</p>
+<p><br></p>
+</section>
+<section id="fixing-broken-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="fixing-broken-github-actions">Fixing broken GitHub Actions</h2>
+<p>GitHub action rendering or other GitHub actions may fail sometimes if the input is unexpected or for a number of other reasons. To investigate why a GitHub action has failed, go to <code>Actions</code> and click on the failed action. <a href="https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#viewing-the-workflows-activity">See this article for how to find this information</a>.</p>
+<p>See our <a href="./faqs.html">FAQ’s section</a> for the most commonly encountered errors and how to address them.</p>
+<p>If you are unsure what the error message means and have trouble addressing it, please <a href="https://github.com/ottrproject/OTTR_Template/issues/new?assignees=cansavvy&amp;labels=bug&amp;template=course-template-problem-report.md">file an issue on the OTTR_Template repository to get help</a>.</p>
 
 
 </section>

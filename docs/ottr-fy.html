@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup – OTTR </title>
+<title>OTTR-fy an existing repository – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,10 +186,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
-  <li><a href="#set-your-gh_pat" id="toc-set-your-gh_pat" class="nav-link" data-scroll-target="#set-your-gh_pat">Set your GH_PAT</a></li>
-  <li><a href="#allow-github-actions" id="toc-allow-github-actions" class="nav-link" data-scroll-target="#allow-github-actions">Allow GitHub Actions</a></li>
-  <li><a href="#protect-branches" id="toc-protect-branches" class="nav-link" data-scroll-target="#protect-branches">Protect branches</a></li>
+  <li><a href="#requirements-for-ottr-fying-a-repository" id="toc-requirements-for-ottr-fying-a-repository" class="nav-link active" data-scroll-target="#requirements-for-ottr-fying-a-repository">Requirements for OTTR-fying a repository:</a>
+  <ul class="collapse">
+  <li><a href="#step-1-add-ottr-files-to-your-current-repository" id="toc-step-1-add-ottr-files-to-your-current-repository" class="nav-link" data-scroll-target="#step-1-add-ottr-files-to-your-current-repository">Step 1: Add OTTR files to your current repository</a></li>
+  <li><a href="#ottr-fying-files" id="toc-ottr-fying-files" class="nav-link" data-scroll-target="#ottr-fying-files">OTTR-fying files:</a></li>
+  <li><a href="#add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file" id="toc-add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file" class="nav-link" data-scroll-target="#add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file">2. Add your Rmd or md files to the <code>_bookdown.yml</code> or <code>_site.yml</code> file</a></li>
+  <li><a href="#set-up-your-repository-with-the-proper-settings" id="toc-set-up-your-repository-with-the-proper-settings" class="nav-link" data-scroll-target="#set-up-your-repository-with-the-proper-settings">3. Set up your repository with the proper settings</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -198,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup</h1>
+<h1 class="title">OTTR-fy an existing repository</h1>
 </div>
 
 
@@ -215,197 +218,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
-<p>Create your repository by clicking on the <code>Use this Template</code> button at <a href="https://github.com/ottrproject/OTTR_Template_Website">OTTR_Template_Website repository</a></p>
-<p><img src="resources/images/create-repo.png" class="img-fluid"></p>
-<p>You’ll need to make your repository <code>public</code>.</p>
+<p><strong>WARNING</strong> This is in the very early stages of testing. You may feel free to try it, but <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">file an issue with OTTR</a> right away if it does not appear to be working as intended (or if you have other suggestions).</p>
+<p>In some cases, if you have R Markdown files, Markdown files, or even better, Bookdown set of files in an existing repository that you would like to OTTR-fy you can do that following these steps. This method is a bit trickier and riskier than creating a repository from scratch and is still under some testing. So we recommend generally avoiding this strategy unless its unavoidable.</p>
+<p>This set of steps also assumes you are more familiar with GitHub.</p>
+<section id="requirements-for-ottr-fying-a-repository" class="level2">
+<h2 class="anchored" data-anchor-id="requirements-for-ottr-fying-a-repository">Requirements for OTTR-fying a repository:</h2>
+<ul>
+<li>Need to have either Markdown or R Markdown documents in the top of your repository that you are seeking to publish.</li>
+<li>Needs to be a public GitHub repository.</li>
+</ul>
+<section id="step-1-add-ottr-files-to-your-current-repository" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-add-ottr-files-to-your-current-repository">Step 1: Add OTTR files to your current repository</h3>
+<p>Navigate to the top of your repository and <a href="https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R">download this file</a>.</p>
+<p>You can do this by using wget, or by just using the link above and saving it as <code>ottr-fy.R</code> in the top of your repository.</p>
+<pre><code>wget 'https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R'</code></pre>
+<p>You’ve downloaded a script that will download the necessary files to run OTTR in your repository. Take a look at the filenames of what will be downloaded to make sure that you won’t accidentally overwrite any of your repository’s existing files.</p>
 </section>
-<section id="set-your-gh_pat" class="level3">
-<h3 class="anchored" data-anchor-id="set-your-gh_pat">Set your GH_PAT</h3>
-<p>To enable the GitHub actions, your repository needs to be setup in a specific way.</p>
-<p>For OTTR GitHub actions to run, they need to have credentials through a personal access token.</p>
+<section id="ottr-fying-files" class="level3">
+<h3 class="anchored" data-anchor-id="ottr-fying-files">OTTR-fying files:</h3>
+<section id="files-you-wont-need-to-edit" class="level4">
+<h4 class="anchored" data-anchor-id="files-you-wont-need-to-edit">Files you won’t need to edit</h4>
+<ul>
+<li><code>.github/workflows/pull_request.yml</code></li>
+<li><code>.github/workflows/render-all.yml</code></li>
+<li><code>.github/workflows/delete-preview.yml</code></li>
+<li><code>.github/workflows/docker-build.yml</code></li>
+</ul>
+</section>
+<section id="files-youll-need-to-edit-to-customize" class="level4">
+<h4 class="anchored" data-anchor-id="files-youll-need-to-edit-to-customize">Files you’ll need to edit to customize</h4>
+<p>* These files also will not be downloaded if you already have set up your repository as a bookdown website and specify this in the upcoming command.</p>
+<ul>
+<li><code>_bookdown.yml</code> or <code>_site.yml</code> for a website/course respectively</li>
+<li><code>_output.yml</code></li>
+<li><code>book.bib</code></li>
+<li><code>assets/big-image.html</code></li>
+<li><code>assets/footer.html</code></li>
+</ul>
+</section>
+<section id="file-you-will-likely-want-to-edit-but-dont-have-to" class="level4">
+<h4 class="anchored" data-anchor-id="file-you-will-likely-want-to-edit-but-dont-have-to">File you will likely want to edit but don’t have to</h4>
+<ul>
+<li><code>config_automation.yml</code></li>
+<li><code>assets/style.css</code></li>
+</ul>
+<p>Run this this script from your command line if your repository is not already a bookdown website.</p>
+<pre><code>Rscript ottr-fy.R</code></pre>
+<p>If your repository is already configured as a bookdown website, then run this command (aka use the <code>--bookdown</code> flag):</p>
+<pre><code>Rscript ottr-fy.R --bookdown</code></pre>
+<p>Note if your GitHub repository is not configured, this script will not work.</p>
+<p>This script will automatically:</p>
 <ol type="1">
-<li>Set up your own personal access token <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">following these instructions</a> - but create a <strong>classic token</strong>. Keep this personal access token handy for the next step. When you get to the permissions page, check the box that says <code>repo</code> and select all that is underneath that header. No other permissions are necessary.</li>
+<li>Open a new branch called <code>robot/ottrfy</code>.</li>
+<li>Add the OTTR files listed above.</li>
+<li>Add, commit, and push this branch to an <code>origin</code></li>
 </ol>
-<details>
-<summary>
-Click here for more detailed instructions. The instructions for this step may change with updates to GitHub.
-</summary>
-<p>First, go to your username settings, by clicking on your user icon (upper right corner) and scrolling down to settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/usersettings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Next, scroll all the way down on the far right menu to “Developer Settings”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/developer_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="User settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then select “Personal Access Tokens” and “Tokens (classic)”</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/classic_tokens.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then click “Generate new token” and confirm that you want classic.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/generate_classic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="generate classic token"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Finally, add a name select all the repo scopes and scroll down to the green button to generate the token. Copy this somewhere safe to then paste into your repository settings.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/set_up_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="set up token"></p>
-</figure>
-</div>
-</div>
-</div>
-</details>
-<ol start="2" type="1">
-<li>In your new OTTR_Template_Website derived repository, go to Settings &gt; Secrets and variables &gt; Actions. Click <code>New Repository Secret</code>.</li>
-</ol>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/repo_action_token.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="classic tokens"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/gh_pat_set_up.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="new repository secret"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the window opened, name this new secret <code>GH_PAT</code> and paste the personal access token in the box below. (Note that the name <code>GH_PAT</code> is specific to how OTTR works and other secret names cannot be used and for OTTR to still work).</p>
-<p>Click the green button to add the secret.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/setting_gh_pat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>After that, you should go to your repository and open up a pull request. The OTTR automation checks should happen on this pull request automatically. <code>Render preview</code> check will almost certainly fail until you complete the next step.</p>
+<p>If they do not automatically start running, you may also want to check in your <code>Settings</code> &gt; <code>Actions</code> that <code>Allow all actions and reusable workflows</code> is chosen.</p>
+<p>Check your files on this pull request your files and that nothing horrible has happened to your original files (like being overwritten or deleted).</p>
 </section>
-<section id="allow-github-actions" class="level3">
-<h3 class="anchored" data-anchor-id="allow-github-actions">Allow GitHub Actions</h3>
-<p>Go to the settings menu for your repository that you created from the template. This should be located at the top of GitHub on the right side.</p>
-<p>Scroll down to the “Actions” button and click it, then click “General”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/actions.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/general.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Scroll down to the workflow permissions section and select “Read and write permissions”, then click “Allow GitHub actions to create and approve pull requests.</p>
-<p>Finally, click “save”.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/workflows.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="allowing workflows"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
-<section id="protect-branches" class="level3">
-<h3 class="anchored" data-anchor-id="protect-branches">Protect branches</h3>
-<p>Although this isn’t entirely required, its strongly recommended that you use these settings to protect your <code>main</code> branches.</p>
-<p>Click on settings in the far upper right corner:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on branches:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branches.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Clicking on settings"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click the add rule button.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/add_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Adding rule" width="608"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Type “main” as the branch name pattern:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/main_branch.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="adding main branch rule"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Click on the following boxes to require pull requests before merging:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="resources/images/branch_rule.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="modify branch rules"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Note that if you have admin privileges on this repository, you will likely still be able to override these branch protections so use caution when git pushing!</p>
+<section id="add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file" class="level3">
+<h3 class="anchored" data-anchor-id="add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file">2. Add your Rmd or md files to the <code>_bookdown.yml</code> or <code>_site.yml</code> file</h3>
+<p>You will almost certainly find that the <code>Render preview</code> check will fail (and possibly the spelling and URL checks).</p>
+<p>One reason that this will fail is that you will need to edit <code>_bookdown.yml</code> <code>_site.yml</code> to list your Rmds (or mds) in the order they should appear in the course. (<a href="https://www.ottrproject.org/customize-robots.html#Pull_request_checks:">See this section</a> for more information about these checks and what they are)</p>
+<p>Make sure to commit this to your branch. *&nbsp;Note! Don’t merge this pull request before you finish adding a few settings as described in this next step.</p>
+</section>
+<section id="set-up-your-repository-with-the-proper-settings" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-your-repository-with-the-proper-settings">3. Set up your repository with the proper settings</h3>
+<p>From here, you can follow the rest of the steps described in the <a href="https://www.ottrproject.org/getting_started.html#Starting_a_new_OTTR_websitecourse">Getting Started section</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
