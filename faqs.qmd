@@ -213,3 +213,8 @@ Then look at the `GA_Script.Rhtml` file and remove the following `html` frontmat
   </body>
   </html>
 ```
+## Contact Info
+
+If you have a question that's not addressed by this website or just wanna chat with us about something else, please email us at itcrtrainingnetwork@gmail.com OR you can [leave a GitHub issue here](https://github.com/ottrproject/OTTR_Template/issues/new) and assign or "at" a team member in the description/a comment (`@carriewright11`, `@kweav`, or `@avahoffman`).
+
+We greatly appreciate any feedback! We are always looking for ways to improve OTTR so more open source courses can be made!
