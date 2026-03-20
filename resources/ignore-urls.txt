@@ -1,1 +1,2 @@
 https://username.github.io/repository_name/
+${r.url}

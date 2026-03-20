@@ -1,13 +1,12 @@
 ---
 title: "**<img src='./resources/images/basic_otter_water.PNG' width = 100px> OTTR - Website and Online Course Tools**"
-output:
-  html_document
+toc: false
 ---
 
 <style>
   #ottr-wizard {
     font-family: inherit;
-    max-width: 640px;
+    width: 100%;
     margin: 1.5rem auto;
     text-align: center;
   }
@@ -157,33 +156,33 @@ output:
     ottr_web: {
       name: "OTTR Web",
       description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
-      url: "getting_started.html",
+      url: "getting_started.html#ottr-web",
       recommended: false
     },
     ottr_quarto_web: {
       name: "OTTR Quarto Web",
       description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
-      url: "getting_started.html",
+      url: "getting_started.html#ottr-quarto-web",
       recommended: true,
       fallback: "ottr_web"
     },
     ottr_courses: {
       name: "OTTR Courses",
       description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
-      url: "getting_started.html",
+      url: "getting_started.html#ottr-courses",
       recommended: false
     },
     ottr_quarto_courses: {
       name: "OTTR Quarto Courses",
       description: "A Quarto-based course template. Recommended for new projects.",
-      url: "getting_started.html",
+      url: "getting_started.html#ottr-quarto-courses",
       recommended: true,
       fallback: "ottr_courses"
     },
     ottr_dashboard: {
       name: "OTTR Metricminer Dashboard",
       description: "Collect and display metrics from GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.",
-      url: "getting_started.html",
+      url: "getting_started.html#ottr-metricminer-dashboard",
       recommended: false
     }
   };
@@ -263,6 +262,16 @@ output:
 </script>
 
 
+### Quarto vs. R Markdown
+
+OTTR templates come in two flavors based on which document format you use to write content: **R Markdown** (`.Rmd`) and **Quarto** (`.qmd`).
+
+- **R Markdown** is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have `.Rmd` files or are following older OTTR tutorials.
+- **Quarto** is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects.
+
+If you're starting fresh and have no existing `.Rmd` files, go with a Quarto template. If you have existing `.Rmd` content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.
+
+---
 
 <div style="position: relative; width: 100%; height: 0; padding-top: 77.2727%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
