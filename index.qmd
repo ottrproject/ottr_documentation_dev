@@ -147,7 +147,7 @@ toc: false
       },
       {
         label: "Metrics Dashboard",
-        result: "ottr_dashboard"
+        result: "ottr_metricminer_dashboard"
       }
     ]
   };
@@ -179,7 +179,7 @@ toc: false
       recommended: true,
       fallback: "ottr_courses"
     },
-    ottr_dashboard: {
+    ottr_metricminer_dashboard: {
       name: "OTTR Metricminer Dashboard",
       description: "Collect and display metrics from GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.",
       url: "getting_started.html#ottr-metricminer-dashboard",
