@@ -82,3 +82,9 @@ glyphicons
 repo
 RStudio
 ottrproject
+GitKraken
+JS
+nav
+OTTR's
+Reproducibility
+RStudio's
