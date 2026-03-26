@@ -150,6 +150,26 @@ Then look at the `GA_Script.Rhtml` file and remove the following `html` frontmat
 Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml.
 (be careful to keep your selections for the configuration you would like).
 
+### `could not read Username for 'https://github.com': terminal prompts disabled`: GitHub authentication failure
+
+_Error example:_
+```
+The process '/usr/bin/git' failed with exit code 128
+could not read Username for 'https://github.com': terminal prompts disabled
+could not read Username for 'https://github.com': terminal prompts disabled
+could not read Username for 'https://github.com': terminal prompts disabled
+```
+
+_What does this mean?:_
+
+This error occurs when the GitHub Action workflow does not have the necessary permissions to authenticate with GitHub. This is typically caused by missing or insufficient repository permissions for the workflow's `GITHUB_TOKEN`.
+
+To fix this, see the [OTTR token cheatsheet](https://www.ottrproject.org/cheatsheets/ottr_token.html) for detailed instructions, or follow these steps:
+
+1) Go to your repository's **Settings** > **Actions** > **General**.
+2) Under **Workflow permissions**, select `Read and write permissions`.
+3) Click **Save**, then re-run the failed workflow.
+
 ## Contact Info
 
 If you have a question that's not addressed by this website or just wanna chat with us about something else, please email us at itcrtrainingnetwork@gmail.com OR you can [leave a GitHub issue here](https://github.com/ottrproject/OTTR_Template/issues/new) and assign or "at" a team member in the description/a comment (`@carriewright11`, `@kweav`, or `@avahoffman`).
