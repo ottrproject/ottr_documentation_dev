@@ -13,8 +13,16 @@ website:
         menu:
           - text: "Getting Started"
             href: getting_started.qmd
+          - text: "Courses"
+            href: getting_started.qmd#courses
+          - text: "Websites"
+            href: getting_started.qmd#websites
+          - text: "Dashboards"
+            href: getting_started.qmd#dashboards
           - text: "Next Steps"
             href: next_steps.qmd
+          - text: "Enroll for Sync Updates"
+            href: enroll_sync.qmd
       - text: "Customization"
         menu:
           - text: "Customizing checks {{< fa robot title='A robot' >}}"
@@ -27,12 +35,12 @@ website:
             href: more_features_sources.qmd
           - text: "Giving credits {{< fa award title='An award' >}}"
             href: more_features_credits.qmd
+          - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
+            href: more_features_ganalytic.qmd
           - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
             href: more_features_borrowing.qmd
           - text: "Compatibility with Google Docs {{< fa file title='a file folder' >}}"
             href: more_features_gdoc.qmd
-          - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
-            href: more_features_ganalytic.qmd
           - text: "OTTR-fying an existing repository"
             href: ottr-fy.qmd
           - text: "About OTTR babies"

@@ -1,51 +1,158 @@
 ---
-title: "More Features: Google Analytics Integration"
-output:
-  html_document
+title: "Google Analytics"
 ---
 
-## Google Analytics
+# Set Up Google Analytics
 
-If you would like to add Google Analytics to track traffic to your course, you can do the following:
+Follow these steps to enable traffic tracking for your OTTR course or website.
 
-1. Get a **Google Analytics account** (if you do not already have one): [https://analytics.google.com/analytics](https://analytics.google.com/analytics)
-![](resources/images/GA_account.png)
-Note that in creating an account you will need to agree to some terms. Currently it is free to get Google analytics data as long as your course does not exceed a very high user rate.
+**1. Create a Google Analytics account** (if you do not already have one): <a href="https://analytics.google.com/analytics" target="_blank">https://analytics.google.com/analytics</a>
 
-Check to make sure that the terms work for you
-![](resources/images/GA_terms.png)
+Click on **Start measuring**.
+![](resources/images/GA_start.png)
 
-1. If you already have an account or navigated away from where you started - Go to the **Admin tab** (lower left button that looks like a gear)
+You will need to agree to Google's terms during account creation. Tracking is currently free as long as your course does not exceed a very high user rate.
 
-1. Set up a new **property** (fill out name and details, select options about tracking traffic for how you intend to use Google Analytics)
+**2. Create a new Property** — fill in a name and details, and select the options that reflect how you intend to use Google Analytics.
+
 ![Google Analytics Property creation](resources/images/GA_Create_Property.png)
-![Google Analytics Property](resources/images/GA_Property_setup.png)
+![Google Analytics Property setup](resources/images/GA_Property_setup.png)
 ![Google Analytics Property choices](resources/images/GA_property.png)
 
-1. Add a **stream** to your property, choose the **Web** option.
+**3. Accept Terms**
+
+To use Google Analytics you must first accept the terms of service agreement for your country / region.
+
+**4. Add a Data Stream** to your property — choose the **Web** option.
+
 ![Google Analytics stream options](resources/images/GA_web.png)
 
+**5. Enter the URL** for your course. Note: the `https://` portion is selected from a dropdown to the left of the URL field — do not include it in the text box. Click on _Create and continue_.
 
-1. Fill in your stream information with the **link** for your course (note you may need to remove https as this is part of a pull down menu to the left of where you paste your link)
-![Google Analytics stream](resources/images/GA_stream_link.png)
-![Google Analytics stream](resources/images/GA_stream_link_correct.png)
+![Google Analytics stream link](resources/images/GA_stream_link.png)
+![Google Analytics stream link correct format](resources/images/GA_stream_link_correct.png)
+
+**6. Copy the code chunk** provided on the resulting page. It will look like this (with your unique ID in place of `G-XXXXXXXXXX`):
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+```
+
+<hr>
+
+# Configure Your OTTR Repo
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+## For R Markdown Courses
+
+**Update `GA_Script.html`** — replace the entire contents of the file with the code chunk you copied from Google Analytics:
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+```
+
+![GA_Script.html with ID filled in](resources/images/GA_Script_ID.png)
+
+**`_output.yml` is already configured** in the updated OTTR template — no manual changes needed. It should include:
+
+```yaml
+includes:
+  in_header: GA_Script.html
+  before body: ...
+```
+
+![output.yml with GA included](resources/images/output_GA.png)
+
+:::
+
+::: {.column width="50%"}
+
+## For Quarto Courses
+
+**Update `GA_Script.html`** — replace the entire contents of the file with the code chunk you copied from Google Analytics (same as for R Markdown courses).
+
+The `GA_Script.html` file is included via `include-in-header` in `_quarto.yml`:
+
+```yaml
+format:
+  html:
+    include-in-header: GA_Script.html
+```
+
+The updated template handles this — you only need to paste in your copied code chunk.
+
+:::
+
+::::
+
+<hr>
+
+# Trigger a Re-render
+
+After updating `GA_Script.html`, the GitHub Action will automatically re-render your course because the updated OTTR template watches for changes to `GA_Script.html`:
+
+```yaml
+# In .github/workflows/render-all.yml
+on:
+  push:
+    paths:
+      - '*.Rmd'
+      - 'assets/*'
+      - '*.yml'
+      - 'GA_Script.html'   # <-- triggers render on GA changes
+```
+
+You can verify the Google Analytics code was included by opening any rendered HTML file in `docs/` and searching for `Google Analytics`.
+
+> **Note:** If you are working with an older template, you may need to manually trigger the `render_all` workflow. Make sure both `_output.yml` and `GA_Script.html` are updated with matching file names and the correct code chunk. Occasionally this also requires setting up a `GH_PAT` for the repo (with `actions` and `repo` permissions) — not just the organization.
+
+<hr>
+
+# Verify Traffic Is Being Tracked
+
+1. Log in to <a href="https://analytics.google.com/analytics" target="_blank">Google Analytics</a>.
+
+1. Click the **gear icon** (lower left) → **Data Collection and Modification** → **Data Streams**.
+
+1. Click on your stream — it will indicate whether traffic has been received.
+
+1. To test, click **Test** on the stream page. Even if the test passes, **also open your live course URL** and check Google Analytics to confirm you appear as a visitor.
+
+1. Click the **Home button** in Google Analytics — it should say **"Data collection is active"**.
+
+1. Check the **Reports** tab (bar chart icon, upper left). If you open your course in a browser, you should see yourself counted as 1 user in the last 30 minutes.
+
+![Google Analytics Reports view](resources/images/GA_reports.png)
+![Verifying traffic in Google Analytics](resources/images/GA_check.png)
+
+<hr>
+
+# Troubleshooting
+
+| Issue | What to Check |
+|------------------------------------|----------------------------------------------------|
+| No data showing in GA | Make sure the **code chunk** in `GA_Script.html` was copied correctly from Google Analytics and contains the right ID (`G-XXXXXXXXXX`) |
+| Data stream shows no traffic | Check that the **URL** in the stream matches your course URL — watch for `https` vs `http` |
+| Old template not rendering GA | Manually run the `render_all` workflow; confirm both `_output.yml` and `GA_Script.html` are updated with the correct code chunk, and that the `GA_Script.html` filename is consistent in both files |
+| Render not triggering | Ensure `GH_PAT` is set up for the repo (with `actions` and `repo` permissions), not just the organization |
 
 
-1. On the resulting page you will see a **Measurement ID**. Copy this ID and paste it in the GA_Script.html file in the template replacing the fields that say {MeasurementID} including the curly brackets.  For example, if your ID was `G-ABC123`, then the line `gtag('config', '{MeasurementID}');` would become `gtag('config', 'G-ABC123');`.
-![](resources/images/GA_ID.png)
-![](resources/images/GA_Script_ID.png)
-
-1. Add a line to the _output.yml file above the line that starts with `before body:` (i.e. nested under `includes`).  This line should be `in_header: GA_Script.html`.  Make sure this line is indented to the same level as the `before body:` line.
-![](resources/images/output_GA.png)
-
-1. **Rerender** your course by making a change to one of your chapter RMD files in a pull request and pushing and merging the pull request. This will cause new html files to be made for each chapter in the `docs` folder. The Google Analytics code should now be in each of the html files - you can check by searching for `Google Analytics`.
-
-1. Go back to [Google Analytics](https://analytics.google.com/analytics) and log in if you need to.
-
-1. Check on the **Reports** button on the top of the far left icon menu. The icon looks like a bar chart. If you open up a browser window to your hosted course online, then you should see yourself as 1 user in the last 30 minutes.
-
-
-![Google Analytics Reports](resources/images/GA_reports.png)
-![Check Google Analytics](resources/images/GA_check.png)
-
-1. Enjoy the data about how people are using your course!

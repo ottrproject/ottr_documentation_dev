@@ -130,8 +130,8 @@ toc: false
         next: {
           question: "Do you have existing R Markdown / Bookdown files?",
           options: [
-            { label: "Yes", result: "ottr_web" },
-            { label: "No I'm starting fresh", result: "ottr_quarto_web" }
+            { label: "Yes", result: "rmarkdown_web" },
+            { label: "No I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
@@ -140,49 +140,49 @@ toc: false
         next: {
           question: "Do you have existing R Markdown files?",
           options: [
-            { label: "Yes", result: "ottr_courses" },
-            { label: "No I'm starting fresh", result: "ottr_quarto_courses" }
+            { label: "Yes", result: "rmarkdown_courses" },
+            { label: "No I'm starting fresh", result: "quarto_courses" }
           ]
         }
       },
       {
         label: "Metrics Dashboard",
-        result: "ottr_metricminer_dashboard"
+        result: "dashboards"
       }
     ]
   };
 
   const results = {
-    ottr_web: {
-      name: "OTTR Web",
+    rmarkdown_web: {
+      name: "R Markdown Websites",
       description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
-      url: "getting_started.html#ottr-web",
+      url: "getting_started.html#r-markdown-websites",
       recommended: false
     },
-    ottr_quarto_web: {
-      name: "OTTR Quarto Web",
+    quarto_web: {
+      name: "Quarto Websites",
       description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
-      url: "getting_started.html#ottr-quarto-web",
+      url: "getting_started.html#quarto-websites",
       recommended: true,
-      fallback: "ottr_web"
+      fallback: "rmarkdown_web"
     },
-    ottr_courses: {
-      name: "OTTR Courses",
+    rmarkdown_courses: {
+      name: "R Markdown Courses",
       description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
-      url: "getting_started.html#ottr-courses",
+      url: "getting_started.html#r-markdown-courses",
       recommended: false
     },
-    ottr_quarto_courses: {
-      name: "OTTR Quarto Courses",
+    quarto_courses: {
+      name: "Quarto Courses",
       description: "A Quarto-based course template. Recommended for new projects.",
-      url: "getting_started.html#ottr-quarto-courses",
+      url: "getting_started.html#quarto-courses",
       recommended: true,
-      fallback: "ottr_courses"
+      fallback: "rmarkdown_courses"
     },
-    ottr_metricminer_dashboard: {
-      name: "OTTR Metricminer Dashboard",
+    dashboards: {
+      name: "Dashboards",
       description: "Collect and display metrics from GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.",
-      url: "getting_started.html#ottr-metricminer-dashboard",
+      url: "getting_started.html#dashboards",
       recommended: false
     }
   };
@@ -266,8 +266,8 @@ toc: false
 
 OTTR templates come in two flavors based on which document format you use to write content: **R Markdown** (`.Rmd`) and **Quarto** (`.qmd`).
 
-- **R Markdown** is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have `.Rmd` files or are following older OTTR tutorials.
 - **Quarto** is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects.
+- **R Markdown** is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have `.Rmd` files or are following older OTTR tutorials.
 
 If you're starting fresh and have no existing `.Rmd` files, go with a Quarto template. If you have existing `.Rmd` content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.
 
