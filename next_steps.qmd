@@ -109,9 +109,3 @@ Adding Google Analytics to your OTTR course or website lets you track how people
 3. Paste it into `GA_Script.html` in your repository (replacing the placeholder content).
 4. Push your changes — the GitHub Action will automatically re-render your course and include the tracking code in every page.
 5. Verify in Google Analytics (**Reports** tab) that traffic is being received.
-
----
-
-## Additional Customizations to Consider
-
-Tab Content ... Visit here to learn more
