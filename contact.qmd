@@ -7,3 +7,7 @@ output:
 If you have questions please contact:
 
 -   Carrie Wright (cwright2@fredhutch.org)
+
+---
+
+← [Troubleshooting](faqs.qmd) &emsp; [Home](index.qmd)

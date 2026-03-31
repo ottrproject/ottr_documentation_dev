@@ -51,3 +51,7 @@ Use one of these options:
 <p class="comment">
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
+
+---
+
+← [Next Steps](next_steps.qmd) &emsp; [Customizing Style](customize-style.qmd) →

@@ -220,3 +220,7 @@ If you do choose to use the action manually, then you can use this by going to `
 ![](resources/images/docker-gha.png)
 
 For more guidance on how to personalize Docker images, we taking our [Containers for Scientist course](https://hutchdatascience.org/Containers_for_Scientists/). Or file a GitHub issue on the relevant repository.
+
+---
+
+← [Customizing Checks](customize-robots.qmd) &emsp; [Next Steps](next_steps.qmd) →

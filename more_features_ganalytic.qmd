@@ -156,3 +156,7 @@ You can verify the Google Analytics code was included by opening any rendered HT
 | Render not triggering | Ensure `GH_PAT` is set up for the repo (with `actions` and `repo` permissions), not just the organization |
 
 
+
+---
+
+**← Back to:** [Next Steps](next_steps.qmd) · **Having issues?** [Troubleshooting](faqs.qmd)

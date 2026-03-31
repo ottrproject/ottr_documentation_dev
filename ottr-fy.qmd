@@ -87,3 +87,7 @@ Make sure to commit this to your branch.
 ### 3. Set up your repository with the proper settings
 
 From here, you can follow the rest of the steps described in the [Getting Started section](https://www.ottrproject.org/getting_started.html#Starting_a_new_OTTR_websitecourse).
+
+---
+
+← [Getting Started](getting_started.qmd) &emsp; [Next Steps](next_steps.qmd) →

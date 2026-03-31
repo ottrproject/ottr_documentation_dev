@@ -1,7 +1,8 @@
 ---
 title: "Examples of OTTR in the Wild"
 output:
-  html_document
+  html_document:
+    toc-depth: 3
 ---
 
 # OTTR spinoff babies
@@ -36,6 +37,18 @@ This template shows basics for how you can display metrics collected from:
 
 And more websites being added. [See metricminer.org for more details!](https://www.metricminer.org/)
 
+## DaSEH Instructor Guide
+
+A course instructor guide built with OTTR for the Data Science for the Experience of Health (DaSEH) program.
+
+- [View the course](https://hutchdatascience.org/daseh_instructor_guide/index.html)
+
+## Baltimore Community Course
+
+A community-focused data science course built with OTTR.
+
+- [View the course](https://jhudatascience.org/Baltimore_Community_Course/)
+
 ## AnVIL template
 
 This is a template (made from our main OTTR Template) that is used for a set of courses being made for the [AnVIL set of cloud tools](https://anvilproject.org/)
@@ -53,3 +66,7 @@ This is a template (made from our main OTTR Template) that will be used for a se
 Courses will look similar to this [link](https://datatrail-jhu.github.io/DataTrail_Template/introduction.html).
 
 <br>
+
+---
+
+Ready to build your own? [Get Started](getting_started.qmd) →
