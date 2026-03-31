@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>More Features: Google Analytics Integration – OTTR </title>
+<title>Google Analytics – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -33,14 +68,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./resources/images/basic_otter_water.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-169b6d0432b1a799c6e7691d07d1a7fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -106,27 +142,56 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Getting Started</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./next_steps.html">
- <span class="dropdown-text">Next Steps</span></a>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">Example use cases</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Customization</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Build with OTTR</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-build-with-ottr">    
         <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Templates</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./next_steps.html">
+ <span class="dropdown-text">Setup steps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enroll_sync.html">
+ <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Customize</li>
+        <li>
     <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced--integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Advanced / Integrations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced--integrations">    
+        <li>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_sources.html">
@@ -137,35 +202,30 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Help</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="./more_features_gdoc.html">
- <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+    <a class="dropdown-item" href="./faqs.html">
+ <span class="dropdown-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./more_features_ganalytic.html">
- <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fying an existing repository</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./examples.html">
- <span class="dropdown-text">About OTTR babies</span></a>
+    <a class="dropdown-item" href="./contact.html">
+ <span class="dropdown-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./faqs.html"> 
-<span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/ottrproject/OTTR_Template"> 
 <span class="menu-text"><i class="fa-brands fa-github" title="The GitHub logo" aria-label="github"></i></span></a>
@@ -186,7 +246,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#google-analytics" id="toc-google-analytics" class="nav-link active" data-scroll-target="#google-analytics">Google Analytics</a></li>
+  <li><a href="#set-up-google-analytics" id="toc-set-up-google-analytics" class="nav-link active" data-scroll-target="#set-up-google-analytics">Set Up Google Analytics</a></li>
+  <li><a href="#configure-your-ottr-repo" id="toc-configure-your-ottr-repo" class="nav-link" data-scroll-target="#configure-your-ottr-repo">Configure Your OTTR Repo</a></li>
+  <li><a href="#trigger-a-re-render" id="toc-trigger-a-re-render" class="nav-link" data-scroll-target="#trigger-a-re-render">Trigger a Re-render</a></li>
+  <li><a href="#verify-traffic-is-being-tracked" id="toc-verify-traffic-is-being-tracked" class="nav-link" data-scroll-target="#verify-traffic-is-being-tracked">Verify Traffic Is Being Tracked</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul>
 </nav>
     </div>
@@ -195,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">More Features: Google Analytics Integration</h1>
+<h1 class="title">Google Analytics</h1>
 </div>
 
 
@@ -212,28 +276,148 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="google-analytics" class="level2">
-<h2 class="anchored" data-anchor-id="google-analytics">Google Analytics</h2>
-<p>If you would like to add Google Analytics to track traffic to your course, you can do the following:</p>
+<section id="set-up-google-analytics" class="level1">
+<h1>Set Up Google Analytics</h1>
+<p>Follow these steps to enable traffic tracking for your OTTR course or website.</p>
+<p><strong>1. Create a Google Analytics account</strong> (if you do not already have one): <a href="https://analytics.google.com/analytics" target="_blank">https://analytics.google.com/analytics</a></p>
+<p>Click on <strong>Start measuring</strong>. <img src="resources/images/GA_start.png" class="img-fluid"></p>
+<p>You will need to agree to Google’s terms during account creation. Tracking is currently free as long as your course does not exceed a very high user rate.</p>
+<p><strong>2. Create a new Property</strong> — fill in a name and details, and select the options that reflect how you intend to use Google Analytics.</p>
+<p><img src="resources/images/GA_Create_Property.png" class="img-fluid" alt="Google Analytics Property creation"> <img src="resources/images/GA_Property_setup.png" class="img-fluid" alt="Google Analytics Property setup"> <img src="resources/images/GA_property.png" class="img-fluid" alt="Google Analytics Property choices"></p>
+<p><strong>3. Accept Terms</strong></p>
+<p>To use Google Analytics you must first accept the terms of service agreement for your country / region.</p>
+<p><strong>4. Add a Data Stream</strong> to your property — choose the <strong>Web</strong> option.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/GA_web.png" class="img-fluid figure-img"></p>
+<figcaption>Google Analytics stream options</figcaption>
+</figure>
+</div>
+<p><strong>5. Enter the URL</strong> for your course. Note: the <code>https://</code> portion is selected from a dropdown to the left of the URL field — do not include it in the text box. Click on <em>Create and continue</em>.</p>
+<p><img src="resources/images/GA_stream_link.png" class="img-fluid" alt="Google Analytics stream link"> <img src="resources/images/GA_stream_link_correct.png" class="img-fluid" alt="Google Analytics stream link correct format"></p>
+<p><strong>6. Copy the code chunk</strong> provided on the resulting page. It will look like this (with your unique ID in place of <code>G-XXXXXXXXXX</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Google tag (gtag.js) --&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async src</span><span class="op">=</span><span class="st">"https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">window</span><span class="op">.</span><span class="at">dataLayer</span> <span class="op">=</span> <span class="bu">window</span><span class="op">.</span><span class="at">dataLayer</span> <span class="op">||</span> []<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">gtag</span>(){dataLayer<span class="op">.</span><span class="fu">push</span>(<span class="kw">arguments</span>)<span class="op">;</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtag</span>(<span class="st">'js'</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Date</span>())<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtag</span>(<span class="st">'config'</span><span class="op">,</span> <span class="st">'G-XXXXXXXXXX'</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="configure-your-ottr-repo" class="level1">
+<h1>Configure Your OTTR Repo</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="for-r-markdown-courses" class="level2">
+<h2 class="anchored" data-anchor-id="for-r-markdown-courses">For R Markdown Courses</h2>
+<p><strong>Update <code>GA_Script.html</code></strong> — replace the entire contents of the file with the code chunk you copied from Google Analytics:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Google tag (gtag.js) --&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> async src</span><span class="op">=</span><span class="st">"https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">window</span><span class="op">.</span><span class="at">dataLayer</span> <span class="op">=</span> <span class="bu">window</span><span class="op">.</span><span class="at">dataLayer</span> <span class="op">||</span> []<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">gtag</span>(){dataLayer<span class="op">.</span><span class="fu">push</span>(<span class="kw">arguments</span>)<span class="op">;</span>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtag</span>(<span class="st">'js'</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Date</span>())<span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gtag</span>(<span class="st">'config'</span><span class="op">,</span> <span class="st">'G-XXXXXXXXXX'</span>)<span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/GA_Script_ID.png" class="img-fluid figure-img"></p>
+<figcaption>GA_Script.html with ID filled in</figcaption>
+</figure>
+</div>
+<p><strong><code>_output.yml</code> is already configured</strong> in the updated OTTR template — no manual changes needed. It should include:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">includes</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> GA_Script.html</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">before body</span><span class="kw">:</span><span class="at"> ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/output_GA.png" class="img-fluid figure-img"></p>
+<figcaption>output.yml with GA included</figcaption>
+</figure>
+</div>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="for-quarto-courses" class="level2">
+<h2 class="anchored" data-anchor-id="for-quarto-courses">For Quarto Courses</h2>
+<p><strong>Update <code>GA_Script.html</code></strong> — replace the entire contents of the file with the code chunk you copied from Google Analytics (same as for R Markdown courses).</p>
+<p>The <code>GA_Script.html</code> file is included via <code>include-in-header</code> in <code>_quarto.yml</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> GA_Script.html</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The updated template handles this — you only need to paste in your copied code chunk.</p>
+</section>
+</div>
+</div>
+<hr>
+</section>
+<section id="trigger-a-re-render" class="level1">
+<h1>Trigger a Re-render</h1>
+<p>After updating <code>GA_Script.html</code>, the GitHub Action will automatically re-render your course because the updated OTTR template watches for changes to <code>GA_Script.html</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In .github/workflows/render-all.yml</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'*.Rmd'</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'assets/*'</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'*.yml'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'GA_Script.html'</span><span class="co">   # &lt;-- triggers render on GA changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You can verify the Google Analytics code was included by opening any rendered HTML file in <code>docs/</code> and searching for <code>Google Analytics</code>.</p>
+<blockquote class="blockquote">
+<p><strong>Note:</strong> If you are working with an older template, you may need to manually trigger the <code>render_all</code> workflow. Make sure both <code>_output.yml</code> and <code>GA_Script.html</code> are updated with matching file names and the correct code chunk. Occasionally this also requires setting up a <code>GH_PAT</code> for the repo (with <code>actions</code> and <code>repo</code> permissions) — not just the organization.</p>
+</blockquote>
+<hr>
+</section>
+<section id="verify-traffic-is-being-tracked" class="level1">
+<h1>Verify Traffic Is Being Tracked</h1>
 <ol type="1">
-<li>Get a <strong>Google Analytics account</strong> (if you do not already have one): <a href="https://analytics.google.com/analytics">https://analytics.google.com/analytics</a> <img src="resources/images/GA_account.png" class="img-fluid"> Note that in creating an account you will need to agree to some terms. Currently it is free to get Google analytics data as long as your course does not exceed a very high user rate.</li>
+<li><p>Log in to <a href="https://analytics.google.com/analytics" target="_blank">Google Analytics</a>.</p></li>
+<li><p>Click the <strong>gear icon</strong> (lower left) → <strong>Data Collection and Modification</strong> → <strong>Data Streams</strong>.</p></li>
+<li><p>Click on your stream — it will indicate whether traffic has been received.</p></li>
+<li><p>To test, click <strong>Test</strong> on the stream page. Even if the test passes, <strong>also open your live course URL</strong> and check Google Analytics to confirm you appear as a visitor.</p></li>
+<li><p>Click the <strong>Home button</strong> in Google Analytics — it should say <strong>“Data collection is active”</strong>.</p></li>
+<li><p>Check the <strong>Reports</strong> tab (bar chart icon, upper left). If you open your course in a browser, you should see yourself counted as 1 user in the last 30 minutes.</p></li>
 </ol>
-<p>Check to make sure that the terms work for you <img src="resources/images/GA_terms.png" class="img-fluid"></p>
-<ol type="1">
-<li><p>If you already have an account or navigated away from where you started - Go to the <strong>Admin tab</strong> (lower left button that looks like a gear)</p></li>
-<li><p>Set up a new <strong>property</strong> (fill out name and details, select options about tracking traffic for how you intend to use Google Analytics) <img src="resources/images/GA_Create_Property.png" class="img-fluid" alt="Google Analytics Property creation"> <img src="resources/images/GA_Property_setup.png" class="img-fluid" alt="Google Analytics Property"> <img src="resources/images/GA_property.png" class="img-fluid" alt="Google Analytics Property choices"></p></li>
-<li><p>Add a <strong>stream</strong> to your property, choose the <strong>Web</strong> option. <img src="resources/images/GA_web.png" class="img-fluid" alt="Google Analytics stream options"></p></li>
-<li><p>Fill in your stream information with the <strong>link</strong> for your course (note you may need to remove https as this is part of a pull down menu to the left of where you paste your link) <img src="resources/images/GA_stream_link.png" class="img-fluid" alt="Google Analytics stream"> <img src="resources/images/GA_stream_link_correct.png" class="img-fluid" alt="Google Analytics stream"></p></li>
-<li><p>On the resulting page you will see a <strong>Measurement ID</strong>. Copy this ID and paste it in the GA_Script.html file in the template replacing the fields that say {MeasurementID} including the curly brackets. For example, if your ID was <code>G-ABC123</code>, then the line <code>gtag('config', '{MeasurementID}');</code> would become <code>gtag('config', 'G-ABC123');</code>. <img src="resources/images/GA_ID.png" class="img-fluid"> <img src="resources/images/GA_Script_ID.png" class="img-fluid"></p></li>
-<li><p>Add a line to the _output.yml file above the line that starts with <code>before body:</code> (i.e.&nbsp;nested under <code>includes</code>). This line should be <code>in_header: GA_Script.html</code>. Make sure this line is indented to the same level as the <code>before body:</code> line. <img src="resources/images/output_GA.png" class="img-fluid"></p></li>
-<li><p><strong>Rerender</strong> your course by making a change to one of your chapter RMD files in a pull request and pushing and merging the pull request. This will cause new html files to be made for each chapter in the <code>docs</code> folder. The Google Analytics code should now be in each of the html files - you can check by searching for <code>Google Analytics</code>.</p></li>
-<li><p>Go back to <a href="https://analytics.google.com/analytics">Google Analytics</a> and log in if you need to.</p></li>
-<li><p>Check on the <strong>Reports</strong> button on the top of the far left icon menu. The icon looks like a bar chart. If you open up a browser window to your hosted course online, then you should see yourself as 1 user in the last 30 minutes.</p></li>
-</ol>
-<p><img src="resources/images/GA_reports.png" class="img-fluid" alt="Google Analytics Reports"> <img src="resources/images/GA_check.png" class="img-fluid" alt="Check Google Analytics"></p>
-<ol type="1">
-<li>Enjoy the data about how people are using your course!</li>
-</ol>
+<p><img src="resources/images/GA_reports.png" class="img-fluid" alt="Google Analytics Reports view"> <img src="resources/images/GA_check.png" class="img-fluid" alt="Verifying traffic in Google Analytics"></p>
+<hr>
+</section>
+<section id="troubleshooting" class="level1">
+<h1>Troubleshooting</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 59%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Issue</th>
+<th>What to Check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No data showing in GA</td>
+<td>Make sure the <strong>code chunk</strong> in <code>GA_Script.html</code> was copied correctly from Google Analytics and contains the right ID (<code>G-XXXXXXXXXX</code>)</td>
+</tr>
+<tr class="even">
+<td>Data stream shows no traffic</td>
+<td>Check that the <strong>URL</strong> in the stream matches your course URL — watch for <code>https</code> vs <code>http</code></td>
+</tr>
+<tr class="odd">
+<td>Old template not rendering GA</td>
+<td>Manually run the <code>render_all</code> workflow; confirm both <code>_output.yml</code> and <code>GA_Script.html</code> are updated with the correct code chunk, and that the <code>GA_Script.html</code> filename is consistent in both files</td>
+</tr>
+<tr class="even">
+<td>Render not triggering</td>
+<td>Ensure <code>GH_PAT</code> is set up for the repo (with <code>actions</code> and <code>repo</code> permissions), not just the organization</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>← Back to:</strong> <a href="./next_steps.html">Next Steps</a> · <strong>Having issues?</strong> <a href="./faqs.html">Troubleshooting</a></p>
 
 
 </section>
@@ -290,13 +474,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
