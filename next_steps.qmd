@@ -74,7 +74,87 @@ Once your repository is set up, it's worth updating the visual identity of your 
 
 ## Highly Recommended Next Steps
 
+### Clean out template placeholder files
 
+The OTTR template ships with example content files to show you the structure. Once you're ready to start writing, replace these with your own content.
+
+**Safe to delete:**
+
+- Example chapter files (e.g., `01-intro.Rmd`, `02-chapter_of_course.Rmd`, `03-chapter_of_course.Rmd`)
+- `index.Rmd` placeholder text (edit in place rather than deleting)
+- Any images in `resources/images/` that were part of the example content
+
+**Do NOT delete:**
+
+- Anything inside `.github/workflows/` — these run all the automated checks and rendering
+- `assets/` — contains styling files
+- `resources/` — contains the spell-check dictionary and screenshot helpers
+- Configuration files: `_bookdown.yml`, `_output.yml`, `book.bib`, `_quarto.yml`
+
+### Update the README
+
+The `README.md` in your repository comes with template placeholder text. Update it to describe what your course or website is about, who it's for, and how to contribute or report issues. A clear README helps collaborators and visitors understand your project at a glance.
+
+At minimum, update:
+
+- The title and description
+- Any links that point to the template repository (replace with your own repo URL)
+- Author and contact information
+
+### Add a license
+
+Adding a license to your repository clarifies how others can use and share your content. For open educational resources, [Creative Commons Attribution 4.0 (CC BY 4.0)](https://choosealicense.com/licenses/cc-by-4.0/) is a common choice — it allows reuse with attribution.
+
+To add a license on GitHub:
+
+1. Go to your repository's main page.
+2. Click **Add file** > **Create new file** and name it `LICENSE`.
+3. GitHub will offer a license picker — select your preferred license and commit.
+
+### Add your repository link to the sidebar
+
+Linking your GitHub repository from the sidebar makes it easy for readers to find the source, suggest edits, or file issues.
+
+For **R Markdown courses**, update `_output.yml`:
+
+```yaml
+bookdown::gitbook:
+  config:
+    edit:
+      link: https://github.com/YOUR-ORG/YOUR-REPO/edit/main/%s
+      text: "Suggest an edit"
+    download: no
+    sharing: no
+```
+
+For **Quarto**, update `_quarto.yml`:
+
+```yaml
+website:
+  repo-url: https://github.com/YOUR-ORG/YOUR-REPO
+  repo-actions: [edit, issue]
+```
+
+Replace `YOUR-ORG/YOUR-REPO` with your actual organization and repository name.
+
+### Set up a feedback channel
+
+Making it easy for learners to report problems or leave feedback improves your course over time. Two good approaches:
+
+**GitHub issue templates** — add structured issue forms so readers can report content errors, broken links, or general feedback directly from your repo. You can use [OTTR's example issue templates](https://github.com/ottrproject/OTTR_Template/tree/main/.github/ISSUE_TEMPLATE) as a starting point.
+
+**Google Form link** — for audiences less familiar with GitHub, add a feedback Google Form link to your course. In `_output.yml`, you can surface this in the sharing config:
+
+```yaml
+bookdown::gitbook:
+  config:
+    sharing:
+      facebook: false
+      twitter: false
+      all: []
+```
+
+Then add a direct link to your form in `index.Rmd` or your course footer. For automated responses, [Zapier](https://zapier.com) can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.
 
 ### Giving credits to contributors
 
