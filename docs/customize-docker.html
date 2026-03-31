@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./resources/images/basic_otter_water.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-169b6d0432b1a799c6e7691d07d1a7fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -106,27 +107,56 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Getting Started</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./next_steps.html">
- <span class="dropdown-text">Next Steps</span></a>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">Example use cases</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Customization</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Build with OTTR</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-build-with-ottr">    
         <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Templates</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./next_steps.html">
+ <span class="dropdown-text">Setup steps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enroll_sync.html">
+ <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Customize</li>
+        <li>
     <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced--integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Advanced / Integrations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced--integrations">    
+        <li>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_sources.html">
@@ -137,35 +167,30 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-help" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Help</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-help">    
         <li>
-    <a class="dropdown-item" href="./more_features_gdoc.html">
- <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
+    <a class="dropdown-item" href="./faqs.html">
+ <span class="dropdown-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./more_features_ganalytic.html">
- <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fying an existing repository</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./examples.html">
- <span class="dropdown-text">About OTTR babies</span></a>
+    <a class="dropdown-item" href="./contact.html">
+ <span class="dropdown-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./faqs.html"> 
-<span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact <i class="fa-solid fa-envelope" title="An envelope" aria-label="envelope"></i></span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://github.com/ottrproject/OTTR_Template"> 
 <span class="menu-text"><i class="fa-brands fa-github" title="The GitHub logo" aria-label="github"></i></span></a>
@@ -355,6 +380,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><img src="resources/images/docker-gha.png" class="img-fluid"></p>
 <p>For more guidance on how to personalize Docker images, we taking our <a href="https://hutchdatascience.org/Containers_for_Scientists/">Containers for Scientist course</a>. Or file a GitHub issue on the relevant repository.</p>
+<hr>
+<p>← <a href="./customize-robots.html">Customizing Checks</a>   <a href="./next_steps.html">Next Steps</a> →</p>
 
 
 </section>
@@ -413,13 +440,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
