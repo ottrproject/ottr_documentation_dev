@@ -255,7 +255,7 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
 
 | Template | Best for | Write in | Can also publish to |
 |:---|:---|:---:|:---|
-| [Quarto Courses](getting_started.html#quarto-courses) ⭐ | New courses, starting fresh , existing `.qmd` course filese | `.qmd` | GitHub Pages · Coursera · Leanpub |
+| [Quarto Courses](getting_started.html#quarto-courses) ⭐ | New courses, starting fresh , existing `.qmd` course files | `.qmd` | GitHub Pages · Coursera · Leanpub |
 | [R Markdown Courses](getting_started.html#r-markdown-courses) | Existing `.Rmd` course files | `.Rmd` | GitHub Pages · Coursera · Leanpub |
 | [Quarto Websites](getting_started.html#quarto-websites) ⭐ | New websites, starting fresh , existing `.qmd` course files| `.qmd` | GitHub Pages |
 | [R Markdown Websites](getting_started.html#r-markdown-websites) | Existing `.Rmd` website files | `.Rmd` | GitHub Pages |
