@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> OTTR - Website and Online Course Tools – OTTR &lt;img src='./resources/images/basic_otter_water.PNG' width = 35px&gt;</title>
+<title>Help me choose my template – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text"><i class="fa-solid fa-home" title="A home" aria-label="home"></i></span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./choose_template.html"> 
+    <a class="nav-link active" href="./choose_template.html" aria-current="page"> 
 <span class="menu-text">Help me choose my template</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -210,13 +210,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#key-questions-to-ask-yourself" id="toc-key-questions-to-ask-yourself" class="nav-link" data-scroll-target="#key-questions-to-ask-yourself">Key questions to ask yourself</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong><img src="./resources/images/basic_otter_water.PNG" width="100px"> OTTR - Website and Online Course Tools</strong></h1>
+<h1 class="title">Help me choose my template</h1>
 </div>
 
 
@@ -233,6 +242,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Not sure which OTTR template is right for you? Answer two quick questions and we’ll point you to the right setup guide.</p>
 <style>
   #ottr-wizard {
     font-family: inherit;
@@ -252,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
     gap: 4px;
   }
   .crumb-question { color: #888; }
-  .crumb-answer   { color: #2780e3; font-weight: 600; }
+  .crumb-answer   { color: #5aA8C0; font-weight: 600; }
   .crumb-sep      { color: #bbb; margin: 0 2px; }
   .wizard-question {
     font-size: 1.5rem;
@@ -335,12 +345,6 @@ ul.task-list li input[type="checkbox"] {
   }
   .restart-btn:hover { color: #85C1D4; }
 </style>
-<div class="banner_color">
-<p><br></p>
-</div>
-<p style="font-size: 16px;">
-OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make <strong>websites, online courses, and dashboards</strong> more easily (and for free)!
-</p>
 <div id="ottr-wizard">
 <div id="wizard-breadcrumb">
 
@@ -423,7 +427,6 @@ OTTR (Open-source Tools for Training Resources ) is a set of tools and templates
     const breadcrumb = document.getElementById("wizard-breadcrumb");
     const content    = document.getElementById("wizard-content");
 
-    // Breadcrumb
     if (history.length > 0) {
       breadcrumb.innerHTML =
         history.map(h =>
@@ -436,7 +439,6 @@ OTTR (Open-source Tools for Training Resources ) is a set of tools and templates
       breadcrumb.innerHTML = "";
     }
 
-    // Result
     if (current.result) {
       const r = results[current.result];
       const badge = r.recommended
@@ -456,8 +458,6 @@ OTTR (Open-source Tools for Training Resources ) is a set of tools and templates
           <a href="${r.url}" class="result-link">Get started with ${r.name} →</a>
           ${fallbackBtn}
         </div>`;
-
-    // Question
     } else {
       const btns = current.options.map((opt, i) =>
         `<button class="wizard-btn" onclick="ottrChoose(${i})">${opt.label}</button>`
@@ -489,94 +489,72 @@ OTTR (Open-source Tools for Training Resources ) is a set of tools and templates
   render();
 })();
 </script>
-<section id="quarto-vs.-r-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-vs.-r-markdown">Quarto vs.&nbsp;R Markdown</h3>
-<p>OTTR templates come in two flavors based on which document format you use to write content: <strong>R Markdown</strong> (<code>.Rmd</code>) and <strong>Quarto</strong> (<code>.qmd</code>).</p>
-<ul>
-<li><strong>Quarto</strong> is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects.</li>
-<li><strong>R Markdown</strong> is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have <code>.Rmd</code> files or are following older OTTR tutorials.</li>
-</ul>
-<p>If you’re starting fresh and have no existing <code>.Rmd</code> files, go with a Quarto template. If you have existing <code>.Rmd</code> content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.</p>
 <hr>
-<div style="position: relative; width: 100%; height: 0; padding-top: 77.2727%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-<p><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" alt="OTTR Flavors and their uses"> </iframe></p>
-</div>
-<p><a href="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?utm_content=DAGwn4eF5mk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">OTTR at a Glance</a> by ITN</p>
-<section id="benefits-for-all-ottr-options" class="level4">
-<h4 class="anchored" data-anchor-id="benefits-for-all-ottr-options">Benefits for all OTTR options:</h4>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Template</th>
+<th style="text-align: left;">Best for</th>
+<th style="text-align: center;">Write in</th>
+<th style="text-align: left;">Can also publish to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="getting_started.html#quarto-courses">Quarto Courses</a> ⭐</td>
+<td style="text-align: left;">New courses, starting fresh , existing <code>.qmd</code> course filese</td>
+<td style="text-align: center;"><code>.qmd</code></td>
+<td style="text-align: left;">GitHub Pages · Coursera · Leanpub</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="getting_started.html#r-markdown-courses">R Markdown Courses</a></td>
+<td style="text-align: left;">Existing <code>.Rmd</code> course files</td>
+<td style="text-align: center;"><code>.Rmd</code></td>
+<td style="text-align: left;">GitHub Pages · Coursera · Leanpub</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="getting_started.html#quarto-websites">Quarto Websites</a> ⭐</td>
+<td style="text-align: left;">New websites, starting fresh , existing <code>.qmd</code> course files</td>
+<td style="text-align: center;"><code>.qmd</code></td>
+<td style="text-align: left;">GitHub Pages</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="getting_started.html#r-markdown-websites">R Markdown Websites</a></td>
+<td style="text-align: left;">Existing <code>.Rmd</code> website files</td>
+<td style="text-align: center;"><code>.Rmd</code></td>
+<td style="text-align: left;">GitHub Pages</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="getting_started.html#dashboards">Dashboards</a></td>
+<td style="text-align: left;">Metrics tracking &amp; reporting</td>
+<td style="text-align: center;"><code>.Rmd</code></td>
+<td style="text-align: left;">GitHub Pages</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="key-questions-to-ask-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="key-questions-to-ask-yourself">Key questions to ask yourself</h2>
+<p><strong>Courses vs.&nbsp;Websites</strong></p>
 <ul>
-<li>No software installations needed</li>
-<li>Automatically preview content on <a href="https://github.com/">GitHub</a> before you publish</li>
-<li>Automatically check spelling (and customize your dictionary!)</li>
-<li>Automatically and periodically check for broken links</li>
-<li>Easily customize branding</li>
-<li>Easily include code (and avoid version difference issues using Docker containers)</li>
+<li>Choose a <strong>Course</strong> template if you want a sidebar table of contents, chapter-by-chapter navigation, and the option to publish to Coursera or Leanpub.</li>
+<li>Choose a <strong>Website</strong> template if you want a top navigation bar and a more flexible page structure — like this documentation site.</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./resources/images/why-ottr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="OTTR helps build github based websites with less hassle. Catch potential mistakes before they go live"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="benefits-for-specific-uses" class="level4">
-<h4 class="anchored" data-anchor-id="benefits-for-specific-uses">Benefits for specific uses:</h4>
+<p><strong>Quarto vs.&nbsp;R Markdown</strong></p>
 <ul>
-<li>Websites can be created using <a href="https://quarto.org/">quarto</a> or <a href="https://bookdown.org/">bookdown</a></li>
-<li>Courses can be easily formatted for learning platforms like <a href="https://www.coursera.org/">coursera</a> and <a href="https://leanpub.com/">Leanpub</a> (only edit once and it gets propagated to all locations - making for <strong>easy updates</strong>!)</li>
-<li>Metrics can be gathered from a variety of sources for dashboards</li>
+<li>Choose <strong>Quarto</strong> if you are starting a new project. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.</li>
+<li>Choose <strong>R Markdown</strong> if you already have a set of <code>.Rmd</code> files you want to build on, or if your team is already working in R Markdown and a migration isn’t practical right now.</li>
 </ul>
-<p><br> (*Note that you will need to establish a publishing contract with coursera if you want to publish there)</p>
-<p>Check out this short video about OTTR:</p>
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oQ8d42fSn0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-</iframe>
-</p>
-</section>
-<section id="how-to-use-ottr" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-use-ottr">How to use OTTR:</h4>
-<ol type="1">
-<li>Edit and write websites and courses in <a href="https://rmarkdown.rstudio.com/">R Markdown files</a> or <a href="https://quarto.org/docs/output-formats/html-basics.html">Quarto</a></li>
-<li>Use GitHub to host your content, we will walk you through how!</li>
-<li>Let the GitHub actions in our tools do all the checks and rendering so you don’t have too</li>
-<li>Update your content as needed based on the errors OTTR finds and the preview</li>
-<li>Publish your websites and courses! <br></li>
-</ol>
-</section>
-<section id="how-to-cite-ottr" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-cite-ottr">How to Cite OTTR:</h4>
-<p>Please cite our <a href="https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646">OTTR manuscript here!</a>📝👀</p>
-<details>
-<summary>
-Click here for the BibTeX formatted citation
-</summary>
-<pre><code>@article{ottr,
-  author = {Candace Savonen, Carrie Wright, Ava M. Hoffman, John Muschelli, Katherine Cox, Frederick J. Tan and Jeffrey T. Leek},
-  title = {Open-source Tools for Training Resources – OTTR},
-  journal = {Journal of Statistics and Data Science Education},
-  volume = {31},
-  number = {1},
-  pages = {57-65},
-  year = {2023},
-  publisher = {Taylor &amp; Francis},
-  doi = {10.1080/26939169.2022.2118646},
-  URL = {https://doi.org/10.1080/26939169.2022.2118646},
-  eprint = {https://doi.org/10.1080/26939169.2022.2118646}
-}</code></pre>
-</details>
-<p><br></p>
-<center>
-<a href="getting_started.html"> <img src="resources/images/getstarted.png" width="30%"> </a>
-</center>
-<p><br></p>
+<p><strong>Dashboards</strong></p>
+<ul>
+<li>Choose the <strong>Dashboard</strong> template if your primary goal is to collect and display metrics — number of GitHub stars, Google Analytics traffic, CRAN downloads, Calendly bookings, and more — powered by the <a href="https://www.metricminer.org/"><code>metricminer</code></a> R package.</li>
+</ul>
+<hr>
+<p><a href="./getting_started.html">Get Started</a> →</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

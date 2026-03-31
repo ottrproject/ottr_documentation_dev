@@ -231,6 +231,27 @@
     "text": "If you have questions please contact:\n\nCarrie Wright (cwright2@fredhutch.org)\n\n\n← Troubleshooting   Home"
   },
   {
+    "objectID": "choose_template.html",
+    "href": "choose_template.html",
+    "title": "Help me choose my template",
+    "section": "",
+    "text": "Not sure which OTTR template is right for you? Answer two quick questions and we’ll point you to the right setup guide."
+  },
+  {
+    "objectID": "choose_template.html#at-a-glance",
+    "href": "choose_template.html#at-a-glance",
+    "title": "Help me choose my template",
+    "section": "At a glance",
+    "text": "At a glance\n\n\n\nTemplate\nBest for\nWrite in\nCan also publish to\n\n\n\n\nQuarto Courses ⭐\nNew courses, starting fresh , existing .qmd course filese\n.qmd\nGitHub Pages · Coursera · Leanpub\n\n\nR Markdown Courses\nExisting .Rmd course files\n.Rmd\nGitHub Pages · Coursera · Leanpub\n\n\nQuarto Websites ⭐\nNew websites, starting fresh , existing .qmd course files\n.qmd\nGitHub Pages\n\n\nR Markdown Websites\nExisting .Rmd website files\n.Rmd\nGitHub Pages\n\n\nDashboards\nMetrics tracking & reporting\n.Rmd\nGitHub Pages"
+  },
+  {
+    "objectID": "choose_template.html#key-questions-to-ask-yourself",
+    "href": "choose_template.html#key-questions-to-ask-yourself",
+    "title": "Help me choose my template",
+    "section": "Key questions to ask yourself",
+    "text": "Key questions to ask yourself\nCourses vs. Websites\n\nChoose a Course template if you want a sidebar table of contents, chapter-by-chapter navigation, and the option to publish to Coursera or Leanpub.\nChoose a Website template if you want a top navigation bar and a more flexible page structure — like this documentation site.\n\nQuarto vs. R Markdown\n\nChoose Quarto if you are starting a new project. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.\nChoose R Markdown if you already have a set of .Rmd files you want to build on, or if your team is already working in R Markdown and a migration isn’t practical right now.\n\nDashboards\n\nChoose the Dashboard template if your primary goal is to collect and display metrics — number of GitHub stars, Google Analytics traffic, CRAN downloads, Calendly bookings, and more — powered by the metricminer R package.\n\n\nGet Started →"
+  },
+  {
     "objectID": "examples.html",
     "href": "examples.html",
     "title": "Examples of OTTR in the Wild",

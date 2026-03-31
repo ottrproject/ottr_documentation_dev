@@ -13,14 +13,14 @@ website:
         menu:
           - text: "Getting Started"
             href: getting_started.qmd
+          - text: "Next steps"
+            href: next_steps.qmd
           - text: "Example use cases"
             href: examples.qmd
       - text: "Build with OTTR"
         menu:
-          - text: "Templates"
+          - text: "Template"
             href: getting_started.qmd
-          - text: "Setup steps"
-            href: next_steps.qmd
           - text: "Enroll for sync updates"
             href: enroll_sync.qmd
           - text: "OTTR-fy existing repo"
@@ -33,7 +33,7 @@ website:
             href: customize-robots.qmd
           - text: "Docker {{< fa gears title='gears' >}}"
             href: customize-docker.qmd
-      - text: "Advanced / Integrations"
+      - text: "Advanced Integrations"
         menu:
           - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
             href: more_features_ganalytic.qmd
@@ -45,6 +45,8 @@ website:
             href: more_features_gdoc.qmd
           - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
             href: more_features_borrowing.qmd
+      - text: "Help me choose my template"
+        href: choose_template.qmd
       - text: "Help"
         menu:
           - text: "Troubleshooting {{< fa tools title='tools' >}}"
