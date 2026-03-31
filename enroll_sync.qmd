@@ -54,4 +54,4 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 
 ---
 
-← [Next Steps](next_steps.qmd) &emsp; [Customizing Style](customize-style.qmd) →
+**← Back to:** [Next Steps](next_steps.qmd) · **Continue with:** [Customizing Style](customize-style.qmd)**→**
