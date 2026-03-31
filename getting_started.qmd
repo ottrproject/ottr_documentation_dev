@@ -101,7 +101,7 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
 
 ---
 
-[R Markdown Courses](#r-markdown-courses) →
+[Next Steps](next_steps.qmd) →
 
 ### R Markdown Courses
 
@@ -202,7 +202,7 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 
 ---
 
-← [Quarto Courses](#quarto-courses) &emsp; [Quarto Websites](#quarto-websites) →
+[Next Steps](next_steps.qmd) →
 
 ## Websites
 
@@ -277,7 +277,7 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
 
 ---
 
-← [R Markdown Courses](#r-markdown-courses) &emsp; [R Markdown Websites](#r-markdown-websites) →
+[Next Steps](next_steps.qmd) →
 
 ### R Markdown Websites
 
@@ -359,7 +359,7 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 
 ---
 
-← [Quarto Websites](#quarto-websites) &emsp; [Dashboards](#dashboards) →
+[Next Steps](next_steps.qmd) →
 
 ## Dashboards
 
