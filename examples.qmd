@@ -1,71 +1,143 @@
 ---
 title: "Examples of OTTR in the Wild"
-output:
-  html_document:
-    toc-depth: 3
+toc: false
 ---
 
-# OTTR spinoff babies
+```{=html}
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.gallery-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.2rem 1.3rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.15s ease;
+}
+.gallery-card:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+.gallery-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+.gallery-card-desc {
+  font-size: 0.88rem;
+  color: #555;
+  flex-grow: 1;
+  margin: 0;
+}
+.gallery-card-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+.gallery-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1.5px solid #ADD8E6;
+  color: #2a7a9a;
+  background: #f0fafd;
+  transition: background 0.12s ease;
+}
+.gallery-link:hover {
+  background: #ADD8E6;
+  color: #222;
+}
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 20px;
+  align-self: flex-start;
+}
+.badge-course    { background: #dbeafe; color: #1d4ed8; }
+.badge-template  { background: #dcfce7; color: #166534; }
+.badge-dashboard { background: #f3e8ff; color: #6b21a8; }
+</style>
+```
 
-We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.
+Explore courses, websites, and templates built with OTTR. If you've made something with OTTR and would like it featured here, [let us know](contact.qmd).
 
-We also noticed that if specific branding or variations of the original template need to be used many times, it's often easier to create a new template.
+```{=html}
+<div class="gallery-grid">
 
-We affectionately call these spinoff templates OTTR "babies".
+<div class="gallery-card">
+  <span class="badge badge-course">Course</span>
+  <p class="gallery-card-title">DaSEH Instructor Guide</p>
+  <p class="gallery-card-desc">A course instructor guide for the Data Science for the Experience of Health (DaSEH) program, built with OTTR.</p>
+  <div class="gallery-card-links">
+    <a class="gallery-link" href="https://hutchdatascience.org/daseh_instructor_guide/index.html" target="_blank">View course</a>
+  </div>
+</div>
 
-If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by filing a GitHub issue and assigning `@cansavvy` and `@carriewright11`). Also please reach out if you have any other interesting ideas or suggestions!
+<div class="gallery-card">
+  <span class="badge badge-course">Course</span>
+  <p class="gallery-card-title">Baltimore Community Course</p>
+  <p class="gallery-card-desc">A community-focused data science course built with OTTR for the Baltimore community.</p>
+  <div class="gallery-card-links">
+    <a class="gallery-link" href="https://jhudatascience.org/Baltimore_Community_Course/" target="_blank">View course</a>
+  </div>
+</div>
 
-## Quarto spinoff
+<div class="gallery-card">
+  <span class="badge badge-template">Template</span>
+  <p class="gallery-card-title">AnVIL Template</p>
+  <p class="gallery-card-desc">An OTTR-based template for courses built around the <a href="https://anvilproject.org/" target="_blank">AnVIL</a> cloud computing platform.</p>
+  <div class="gallery-card-links">
+    <a class="gallery-link" href="https://jhudatascience.org/AnVIL_Template/" target="_blank">View example</a>
+    <a class="gallery-link" href="https://github.com/jhudsl/AnVIL_Template" target="_blank">GitHub</a>
+  </div>
+</div>
 
-Maybe you prefer a Quarto website! We have that: https://github.com/ottrproject/OTTR_Quarto
+<div class="gallery-card">
+  <span class="badge badge-template">Template</span>
+  <p class="gallery-card-title">DataTrail Template</p>
+  <p class="gallery-card-desc">An OTTR-based template for <a href="https://www.datatrail.org/" target="_blank">DataTrail</a> courses, with custom branding and structure.</p>
+  <div class="gallery-card-links">
+    <a class="gallery-link" href="https://datatrail-jhu.github.io/DataTrail_Template/introduction.html" target="_blank">View example</a>
+    <a class="gallery-link" href="https://github.com/datatrail-jhu/DataTrail_Template" target="_blank">GitHub</a>
+  </div>
+</div>
 
-## Jekyll spinoff
+<div class="gallery-card">
+  <span class="badge badge-template">Template</span>
+  <p class="gallery-card-title">OTTR Quarto</p>
+  <p class="gallery-card-desc">The Quarto-based OTTR template for building courses and websites using <code>.qmd</code> files. Recommended for all new projects.</p>
+  <div class="gallery-card-links">
+    <a class="gallery-link" href="https://github.com/ottrproject/OTTR_Quarto" target="_blank">GitHub</a>
+  </div>
+</div>
 
-TBD: Coming soon
+<div class="gallery-card">
+  <span class="badge badge-dashboard">Dashboard</span>
+  <p class="gallery-card-title">Metricminer Dashboard</p>
+  <p class="gallery-card-desc">A dashboard template powered by the <a href="https://www.metricminer.org/" target="_blank">metricminer</a> R package. Tracks GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.</p>
+  <div class="gallery-card-links">
+    <a class="gallery-link" href="https://github.com/ottrproject/metricminer-dashboard" target="_blank">GitHub</a>
+    <a class="gallery-link" href="https://www.metricminer.org/" target="_blank">metricminer.org</a>
+  </div>
+</div>
 
-## metric collection
-
-This is a template powered by the `metricminer` R package to allow you to display metrics in a dashboard.
-This template shows basics for how you can display metrics collected from:
-[Github template repo](https://github.com/ottrproject/metricminer-dashboard/tree/main)
-
-- Google Analytics
-- Google Forms
-- GitHub
-- CRAN
-- Calendly
-
-And more websites being added. [See metricminer.org for more details!](https://www.metricminer.org/)
-
-## DaSEH Instructor Guide
-
-A course instructor guide built with OTTR for the Data Science for the Experience of Health (DaSEH) program.
-
-- [View the course](https://hutchdatascience.org/daseh_instructor_guide/index.html)
-
-## Baltimore Community Course
-
-A community-focused data science course built with OTTR.
-
-- [View the course](https://jhudatascience.org/Baltimore_Community_Course/)
-
-## AnVIL template
-
-This is a template (made from our main OTTR Template) that is used for a set of courses being made for the [AnVIL set of cloud tools](https://anvilproject.org/)
-
-- [GitHub repository and source code](https://github.com/jhudsl/AnVIL_Template)
-
-Courses will look similar to this [link](https://jhudatascience.org/AnVIL_Template/).
-
-## DataTrail template
-
-This is a template (made from our main OTTR Template) that will be used for a set of courses being made for [DataTrail](https://www.datatrail.org/)
-
-- [GitHub repository and source code](https://github.com/datatrail-jhu/DataTrail_Template)
-
-Courses will look similar to this [link](https://datatrail-jhu.github.io/DataTrail_Template/introduction.html).
-
-<br>
+</div>
+```
 
 ---
 

@@ -99,6 +99,10 @@ Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collabo
 
 Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
 
+---
+
+[R Markdown Courses](#r-markdown-courses) →
+
 ### R Markdown Courses
 
 <span id="rmarkdown-courses"></span>
@@ -196,6 +200,9 @@ If you're **not** a member of the jhudsl GitHub organization, you can:
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
 
+---
+
+← [Quarto Courses](#quarto-courses) &emsp; [Quarto Websites](#quarto-websites) →
 
 ## Websites
 
@@ -268,9 +275,11 @@ Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collabo
 
 Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
 
-### R Markdown Websites
+---
 
-<span id="rmarkdown-websites"></span>
+← [R Markdown Courses](#r-markdown-courses) &emsp; [R Markdown Websites](#r-markdown-websites) →
+
+### R Markdown Websites
 
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
@@ -349,6 +358,8 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 </p>
 
 ---
+
+← [Quarto Websites](#quarto-websites) &emsp; [Dashboards](#dashboards) →
 
 ## Dashboards
 
