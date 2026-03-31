@@ -37,8 +37,8 @@ toc: false
     justify-content: center;
   }
   .wizard-btn {
-    background-color: #2780e3;
-    color: white;
+    background-color: #ADD8E6;
+    color: #222;
     border: none;
     border-radius: 6px;
     padding: 10px 20px;
@@ -46,15 +46,15 @@ toc: false
     cursor: pointer;
     transition: background-color 0.15s ease;
   }
-  .wizard-btn:hover { background-color: #1a5fb4; }
+  .wizard-btn:hover { background-color: #85C1D4; }
   .result-card {
     border-radius: 8px;
     padding: 1.2rem 1.4rem;
     margin-top: 0.5rem;
   }
   .result-recommended {
-    background-color: #d9eaf7;
-    border-left: 4px solid #2780e3;
+    background-color: #e8f6fa;
+    border-left: 4px solid #ADD8E6;
   }
   .result-standard {
     background-color: #f4f4f4;
@@ -67,8 +67,8 @@ toc: false
     margin-bottom: 0.3rem;
   }
   .badge-recommended {
-    background-color: #2780e3;
-    color: white;
+    background-color: #ADD8E6;
+    color: #222;
     font-size: 0.75rem;
     font-weight: 600;
     padding: 2px 8px;
@@ -83,8 +83,8 @@ toc: false
   }
   .result-link {
     display: inline-block;
-    background-color: #2780e3;
-    color: white !important;
+    background-color: #ADD8E6;
+    color: #222 !important;
     text-decoration: none;
     padding: 8px 18px;
     border-radius: 6px;
@@ -92,18 +92,18 @@ toc: false
     font-weight: 600;
     transition: background-color 0.15s ease;
   }
-  .result-link:hover { background-color: #1a5fb4; }
+  .result-link:hover { background-color: #85C1D4; }
   .restart-btn {
     background: none;
     border: none;
-    color: #2780e3;
+    color: #5aA8C0;
     font-size: 0.85rem;
     cursor: pointer;
     padding: 0;
     margin-left: 10px;
     text-decoration: underline;
   }
-  .restart-btn:hover { color: #1a5fb4; }
+  .restart-btn:hover { color: #85C1D4; }
 </style>
 
 
@@ -345,7 +345,7 @@ Please cite our [OTTR manuscript here!](https://www.tandfonline.com/doi/full/10.
 <br>
 
 <center>
-<a href="https://ottrproject.org/getting_started.html">
+<a href="getting_started.html">
   <img src="resources/images/getstarted.png" width = 30%>
 </a>
 </center>

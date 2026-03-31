@@ -91,3 +91,7 @@ In Coursera, you can add the credits table URL as an ungraded plugin ([the same 
 In Leanpub, make sure that your About.md file in your manuscript folder is listed in your Book.txt file and this Credits table will automatically be incorporated into your Leanpub course.
 
 <br>
+
+---
+
+**← Back to:** [Next Steps](next_steps.qmd) · **Also see:** [Citing Sources](more_features_sources.qmd) · [Customizing Style](customize-style.qmd)

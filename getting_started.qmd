@@ -418,3 +418,7 @@ Edit the `.Rmd` files in the repository to configure which metrics to display an
 ---
 
 If you wish to contribute to OTTR, please take a look at our [Code of Conduct](https://github.com/ottrproject/OTTR_Template/blob/main/code_of_conduct.md).
+
+---
+
+**Now that your repository is set up, see [Next Steps →](next_steps.qmd) for what to do next.**
