@@ -160,4 +160,3 @@ You can verify the Google Analytics code was included by opening any rendered HT
 ---
 
 **← Back to:** [Next Steps](next_steps.qmd) · **Having issues?** [Troubleshooting](faqs.qmd)
-EOF 2>&1

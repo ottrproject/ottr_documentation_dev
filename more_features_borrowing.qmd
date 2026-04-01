@@ -89,3 +89,7 @@ Learn more about templates [here](https://bookdown.org/yihui/rmarkdown-cookbook/
 
 
 <br>
+
+---
+
+← [Next Steps](next_steps.qmd) &emsp; [Troubleshooting](faqs.qmd) →

@@ -99,6 +99,10 @@ Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collabo
 
 Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
 
+---
+
+[Next Steps](next_steps.qmd) →
+
 ### R Markdown Courses
 
 <span id="rmarkdown-courses"></span>
@@ -196,6 +200,9 @@ If you're **not** a member of the jhudsl GitHub organization, you can:
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
 
+---
+
+[Next Steps](next_steps.qmd) →
 
 ## Websites
 
@@ -268,9 +275,11 @@ Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collabo
 
 Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
 
-### R Markdown Websites
+---
 
-<span id="rmarkdown-websites"></span>
+[Next Steps](next_steps.qmd) →
+
+### R Markdown Websites
 
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
@@ -350,6 +359,8 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 
 ---
 
+[Next Steps](next_steps.qmd) →
+
 ## Dashboards
 
 ### Metricminer Dashboard
@@ -421,4 +432,4 @@ If you wish to contribute to OTTR, please take a look at our [Code of Conduct](h
 
 ---
 
-**Now that your repository is set up, see [Next Steps →](next_steps.qmd) for what to do next.**
+**Now that your repository is set up, see [Next Steps](next_steps.qmd) → for what to do next.**
