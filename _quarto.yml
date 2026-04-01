@@ -27,6 +27,8 @@ website:
             href: enroll_sync.qmd
           - text: "OTTR-fy existing repo"
             href: ottr-fy.qmd
+          - text: "Giving credits {{< fa award title='An award' >}}"
+            href: more_features_credits.qmd
           - text: "---"
           - text: "Customize"
           - text: "Style {{< fa palette title='A palette' >}}"
@@ -41,8 +43,6 @@ website:
             href: more_features_ganalytic.qmd
           - text: "Citing sources {{< fa quote-left title='A left quotation mark' >}}"
             href: more_features_sources.qmd
-          - text: "Giving credits {{< fa award title='An award' >}}"
-            href: more_features_credits.qmd
           - text: "Google Docs {{< fa file title='a file folder' >}}"
             href: more_features_gdoc.qmd
           - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
