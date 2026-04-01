@@ -93,3 +93,5 @@ dropdown
 DaSEH
 gcse
 searchbox
+README
+Zapier
