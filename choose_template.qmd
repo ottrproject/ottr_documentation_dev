@@ -261,6 +261,17 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
 | [R Markdown Websites](getting_started.html#r-markdown-websites) | Existing `.Rmd` website files | `.Rmd` | GitHub Pages |
 | [Dashboards](getting_started.html#dashboards) | Metrics tracking & reporting | `.Rmd` | GitHub Pages |
 
+::: {.callout-warning}
+## R Markdown is no longer being actively updated
+
+Posit has shifted its focus to Quarto as the next-generation publishing system for data science. While OTTR's R Markdown templates remain functional, R Markdown **will not receive new features or improvements going forward**. If you have existing `.Rmd` files, they will continue to work but for any new project, we strongly recommend starting with a Quarto template.
+
+**Resources for Quarto-fying your content:**
+
+- [quartify](https://ddotta.github.io/quartify/articles/getting-started.html): an R package that automates conversion of R Markdown files to Quarto
+- [Transitioning from R Markdown to Quarto](https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd): a practical guide from Openscapes
+:::
+
 ## Key questions to ask yourself
 
 **Courses vs. Websites**
