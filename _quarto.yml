@@ -13,34 +13,46 @@ website:
         menu:
           - text: "Getting Started"
             href: getting_started.qmd
-          - text: "Next Steps"
+          - text: "Next steps"
             href: next_steps.qmd
-      - text: "Customization"
+          - text: "Example use cases"
+            href: examples.qmd
+      - text: "Build with OTTR"
         menu:
-          - text: "Customizing checks {{< fa robot title='A robot' >}}"
-            href: customize-robots.qmd
-          - text: "Customizing style {{< fa palette title='A palette' >}}"
+          - text: "Template"
+            href: getting_started.qmd
+          - text: "Enroll for sync updates"
+            href: enroll_sync.qmd
+          - text: "OTTR-fy existing repo"
+            href: ottr-fy.qmd
+          - text: "---"
+          - text: "Customize"
+          - text: "Style {{< fa palette title='A palette' >}}"
             href: customize-style.qmd
-          - text: "Customizing Docker {{< fa gears title='gears' >}}"
+          - text: "Checks {{< fa robot title='A robot' >}}"
+            href: customize-robots.qmd
+          - text: "Docker {{< fa gears title='gears' >}}"
             href: customize-docker.qmd
+      - text: "Advanced Integrations"
+        menu:
+          - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
+            href: more_features_ganalytic.qmd
           - text: "Citing sources {{< fa quote-left title='A left quotation mark' >}}"
             href: more_features_sources.qmd
           - text: "Giving credits {{< fa award title='An award' >}}"
             href: more_features_credits.qmd
+          - text: "Google Docs {{< fa file title='a file folder' >}}"
+            href: more_features_gdoc.qmd
           - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
             href: more_features_borrowing.qmd
-          - text: "Compatibility with Google Docs {{< fa file title='a file folder' >}}"
-            href: more_features_gdoc.qmd
-          - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
-            href: more_features_ganalytic.qmd
-          - text: "OTTR-fying an existing repository"
-            href: ottr-fy.qmd
-          - text: "About OTTR babies"
-            href: examples.qmd
-      - text: "Troubleshooting {{< fa tools title='tools' >}}"
-        href: faqs.qmd
-      - text: "Contact {{< fa envelope title='An envelope' >}}"
-        href: contact.qmd
+      - text: "Help me choose my template"
+        href: choose_template.qmd
+      - text: "Help"
+        menu:
+          - text: "Troubleshooting {{< fa tools title='tools' >}}"
+            href: faqs.qmd
+          - text: "Contact {{< fa envelope title='An envelope' >}}"
+            href: contact.qmd
       - text: "{{< fa brands github title='The GitHub logo' >}}"
         href: https://github.com/ottrproject/OTTR_Template
 

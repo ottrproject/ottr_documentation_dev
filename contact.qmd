@@ -4,8 +4,10 @@ output:
   html_document
 ---
 
-
-
 If you have questions please contact:
 
-* Carrie Wright (cwrigh60@jhu.edu)
+-   Carrie Wright (cwright2@fredhutch.org)
+
+---
+
+← [Troubleshooting](faqs.qmd) &emsp; [Home](index.qmd)

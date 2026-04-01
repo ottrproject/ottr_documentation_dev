@@ -82,3 +82,16 @@ glyphicons
 repo
 RStudio
 ottrproject
+GitKraken
+JS
+nav
+OTTR's
+Reproducibility
+RStudio's
+io
+dropdown
+DaSEH
+gcse
+searchbox
+README
+Zapier

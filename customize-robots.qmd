@@ -216,3 +216,7 @@ To investigate why a GitHub action has failed, go to `Actions` and click on the 
 See our [FAQ's section](./faqs.html) for the most commonly encountered errors and how to address them.
 
 If you are unsure what the error message means and have trouble addressing it, please [file an issue on the OTTR_Template repository to get help](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=cansavvy&labels=bug&template=course-template-problem-report.md).
+
+---
+
+← [Customizing Style](customize-style.qmd) &emsp; [Customizing Docker](customize-docker.qmd) →

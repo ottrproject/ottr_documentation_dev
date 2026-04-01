@@ -39,3 +39,7 @@ Alternatively, you can add a header for this list of references as the last head
 If you would like to suppress having references listed at the end of each chapter, you can add a line that says `split_bib: false`  to your `_output.yml` file.
 
 ![](resources/images/false_split_ref.png)
+
+---
+
+**← Back to:** [Next Steps](next_steps.qmd) · **Also see:** [Giving Credits](more_features_credits.qmd) · [Customizing Style](customize-style.qmd)
