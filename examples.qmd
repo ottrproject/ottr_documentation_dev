@@ -69,6 +69,7 @@ toc: false
   align-self: flex-start;
 }
 .badge-course    { background: #dbeafe; color: #1d4ed8; }
+.badge-website   { background: #ccfbf1; color: #0f766e; }
 .badge-template  { background: #dcfce7; color: #166534; }
 .badge-dashboard { background: #f3e8ff; color: #6b21a8; }
 </style>
@@ -85,15 +86,17 @@ Explore courses, websites, and templates built with OTTR. If you've made somethi
   <p class="gallery-card-desc">A course instructor guide for the Data Science for the Experience of Health (DaSEH) program, built with OTTR.</p>
   <div class="gallery-card-links">
     <a class="gallery-link" href="https://hutchdatascience.org/daseh_instructor_guide/index.html" target="_blank">View course</a>
+    <a class="gallery-link" href="https://github.com/fhdsl/daseh_instructor_guide" target="_blank">GitHub</a>
   </div>
 </div>
 
 <div class="gallery-card">
-  <span class="badge badge-course">Course</span>
+  <span class="badge badge-website">Website</span>
   <p class="gallery-card-title">Baltimore Community Course</p>
   <p class="gallery-card-desc">A community-focused data science course built with OTTR for the Baltimore community.</p>
   <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/Baltimore_Community_Course/" target="_blank">View course</a>
+    <a class="gallery-link" href="https://jhudatascience.org/Baltimore_Community_Course/" target="_blank">View website</a>
+    <a class="gallery-link" href="https://github.com/jhudsl/Baltimore_Community_Course" target="_blank">GitHub</a>
   </div>
 </div>
 
@@ -114,15 +117,6 @@ Explore courses, websites, and templates built with OTTR. If you've made somethi
   <div class="gallery-card-links">
     <a class="gallery-link" href="https://datatrail-jhu.github.io/DataTrail_Template/introduction.html" target="_blank">View example</a>
     <a class="gallery-link" href="https://github.com/datatrail-jhu/DataTrail_Template" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">OTTR Quarto</p>
-  <p class="gallery-card-desc">The Quarto-based OTTR template for building courses and websites using <code>.qmd</code> files. Recommended for all new projects.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://github.com/ottrproject/OTTR_Quarto" target="_blank">GitHub</a>
   </div>
 </div>
 
