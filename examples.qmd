@@ -122,11 +122,11 @@ Explore courses, websites, and templates built with OTTR. If you've made somethi
 
 <div class="gallery-card">
   <span class="badge badge-dashboard">Dashboard</span>
-  <p class="gallery-card-title">Metricminer Dashboard</p>
-  <p class="gallery-card-desc">A dashboard template powered by the <a href="https://www.metricminer.org/" target="_blank">metricminer</a> R package. Tracks GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.</p>
+  <p class="gallery-card-title">Open Case Studies Metrics Dashboard</p>
+  <p class="gallery-card-desc">This website shows metrics related to the Open Case Studies project (OCS). OCS is an educational archive of data analysis guides using real-world data to help learners engage with data science and statistics topics.</p>
   <div class="gallery-card-links">
-    <a class="gallery-link" href="https://github.com/ottrproject/metricminer-dashboard" target="_blank">GitHub</a>
-    <a class="gallery-link" href="https://www.metricminer.org/" target="_blank">metricminer.org</a>
+    <a class="gallery-link" href="https://www.opencasestudies.org/ocs-metrics-dashboard/" target="_blank">View dashboard</a>
+    <a class="gallery-link" href="https://github.com/opencasestudies/ocs-metrics-dashboard" target="_blank">GitHub</a>
   </div>
 </div>
 
