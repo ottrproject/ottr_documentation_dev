@@ -25,6 +25,8 @@ website:
             href: getting_started.qmd
           - text: "Enroll for sync updates"
             href: enroll_sync.qmd
+          - text: "Start writing"
+            href: writing_content_courses.qmd
           - text: "OTTR-fy existing repo"
             href: ottr-fy.qmd
           - text: "Giving credits {{< fa award title='An award' >}}"
@@ -47,6 +49,8 @@ website:
             href: more_features_gdoc.qmd
           - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
             href: more_features_borrowing.qmd
+      - text: "Publishing OTTR courses"
+        href: publishing.qmd
       - text: "Troubleshooting {{< fa tools title='tools' >}}"
         href: faqs.qmd
       - text: "Contact {{< fa envelope title='An envelope' >}}"
