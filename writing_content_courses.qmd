@@ -552,7 +552,7 @@ while the code chunk option `out.width = "100%"` is used to size the image. We g
 recommend going with larger images.
 
 *You must define `fig.alt` in the code chunk options/parameters to pass
-to `knitr`.* You can adjust the size(fig.hight, fig.width, out.width,
+to `knitr`.* You can adjust the size(fig.height, fig.width, out.width,
 out.height), alignment (fig.align), or caption (fig.cap) of the image
 you can use these arguments in the code chunk tag:
 
