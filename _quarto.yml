@@ -11,7 +11,7 @@ website:
         href: index.qmd
       - text: "Quick Start"
         menu:
-          - text: "Getting Started"
+          - text: "Getting started"
             href: getting_started.qmd
           - text: "Next steps"
             href: next_steps.qmd
@@ -23,10 +23,10 @@ website:
         menu:
           - text: "Template"
             href: getting_started.qmd
-          - text: "Enroll for sync updates"
-            href: enroll_sync.qmd
           - text: "Start writing"
             href: writing_content_courses.qmd
+          - text: "Enroll for sync updates"
+            href: enroll_sync.qmd
           - text: "OTTR-fy existing repo"
             href: ottr-fy.qmd
           - text: "Giving credits {{< fa award title='An award' >}}"
@@ -64,3 +64,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    include-after-body: resources/footer.html
