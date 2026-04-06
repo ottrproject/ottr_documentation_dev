@@ -36,7 +36,7 @@ facilitate discussions with others regarding proposed changes.
 The live content is automatically created and stored in the `docs` folder. As our writing process guide will inform you, you **should NOT make direct changes to the `docs` folder**. The automation processes will handle the preparation of these files, and you should refrain from making direct changes to them. To learn how to edit your files and write your course, please review the corresponding section in the writing process guide.
 :::
 
-## About OTTR and Pull Requests
+# About OTTR and Pull Requests
 
 OTTR will not completely break if you don't use pull requests, but you will be missing out on a lot of the main perks of OTTR. OTTR's checks primarily focus on pull requests so you can avoid accidentally making your mistakes in your live courses.
 
@@ -357,7 +357,7 @@ steps.
 ![](resources/images/summary.png)
 </details>
 
-## OTTR Checks on pull requests
+# OTTR Checks on pull requests
 
 Once your pull request is open, the OTTR GitHub Actions checks will begin. These checks will generate reports as comments on your pull request.
 
@@ -395,7 +395,7 @@ If you encounter situations where a spelling report or URL report doesn't look a
 
 <br>
 
-### More resources for learning GitHub
+## More resources for learning GitHub
 
 - [Using version control with GitHub](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/using-version-control-with-github.html)
 - [Happy Git and GitHub for the useR](https://happygitwithr.com/)
@@ -410,7 +410,7 @@ If you encounter situations where a spelling report or URL report doesn't look a
 Adding new chapters to your OTTR course requires some specific steps in
 addition to what we've discussed here.
 
-### Step 1: Add a new chapter Rmd file
+## Step 1: Add a new chapter Rmd file
 
 To add a new file, follow the provided instructions, ensuring that the file is named with a .Rmd extension. Additionally, make sure to add the file to your specific new branch:
 
@@ -421,7 +421,7 @@ To add a new file, follow the provided instructions, ensuring that the file is n
     and push those to your new branch.
 
 
-### Step 2: Add the name of your new chapter to your \_bookdown.yml file
+## Step 2: Add the name of your new chapter to your \_bookdown.yml file
 
 As you modify the names of the chapters of your course and add more
 chapters (using the `.Rmd` files), you need to update the
@@ -453,23 +453,21 @@ Pay attention to the slight difference in just one line, specifically the line t
 :::
 
 
-### Step 3 Commit the \_bookdown.yml file changes to the current branch
+## Step 3: Commit the \_bookdown.yml file changes to the current branch
 
 Follow the steps for how to commit changes and commit the edits to your
 `_bookdown.yml` file to your current branch.
 
 
 
-### Step 4 Go to your pull request to see how the checks turn out
+## Step 4: Go to your pull request to see how the checks turn out
 
 Go to your repository and click on the `Pull Request` button in the
 navbar.
 
 <br>
 
-------------------------------------------------------------------------
-
-## Set up images {#set-up-images}
+# Set up images {#set-up-images}
 
 To ensure consistency in style and attributions for graphics and images, and to facilitate future updates, you have the option to store all your images in a central Google Slide document.
 
@@ -505,9 +503,7 @@ this](https://rmarkdown.rstudio.com/lesson-3.html).
 Next, import the appropriate theme (see [this
 video](https://youtu.be/pNbwF263yY8) for assistance):
 
-
-
-### Accessibility
+# Accessibility
 
 Each slide and image added to the courses should be accessible so every
 member of your audience can use your content.
@@ -523,9 +519,9 @@ There are two things to check for each slide:
     that is friendly to those with color vision deficiencies. You can
     check this using [Color Oracle](https://colororacle.org/).
 
+# Adding media and embedded files in text
 
-
-### Adding images and graphics in text
+## Adding images and graphics in text
 
 All images should be included in your Google Slides with the captions we
 discussed above. To add images in the text in your Rmd, use the
@@ -568,7 +564,7 @@ of the template course for examples.
 
 
 
-### Adding videos in text
+## Adding videos in text
 
 To add a YouTube video to your Rmd files, use the following instructions:
 
@@ -587,7 +583,7 @@ of the template course for examples.
 
 
 
-### Adding embedded files to text
+## Adding embedded files to text
 
 Occasionally, it can be beneficial to embed a website or file directly on a webpage, especially when there is a crucial link that you want learners to access without solely relying on them clicking the link.
 
