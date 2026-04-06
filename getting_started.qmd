@@ -36,6 +36,12 @@ If you choose OTTR Advanced, we recommend installing [GitKraken](https://www.git
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
+<div style="margin: 0.5rem 0 1.5rem;">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
+    Cheatsheet
+  </a>
+</div>
+
 A Quarto-based course template. Recommended for new projects.
 
 #### 1. Create a repository from the template
@@ -108,6 +114,12 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
 <span id="rmarkdown-courses"></span>
 
 **Template repository:** [ottrproject/OTTR_Template](https://github.com/ottrproject/OTTR_Template)
+
+<div style="margin: 0.5rem 0 1.5rem;">
+  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
+    Cheatsheet
+  </a>
+</div>
 
 An R Markdown / Bookdown-based course template with a table of contents on the side. Supports publishing to Coursera and Leanpub. Best choice when you have existing `.Rmd` files to build on.
 
@@ -212,7 +224,13 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
-A Quarto-based website template. The modern standard — recommended for all new projects.
+<div style="margin: 0.5rem 0 1.5rem;">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
+    Cheatsheet
+  </a>
+</div>
+
+A Quarto-based website template. Recommended for all new projects.
 
 #### 1. Create a repository from the template
 
@@ -283,7 +301,13 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
 
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
-An R Markdown / Bookdown-based website template with a nav bar on top — like the site you're looking at now. Best choice if you have existing `.Rmd` files to build on.
+<div style="margin: 0.5rem 0 1.5rem;">
+  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
+    Cheatsheet
+  </a>
+</div>
+
+An R Markdown / Bookdown-based website template with a nav bar on top. Best choice if you have existing `.Rmd` files to build on.
 
 #### 1. Create a repository from the template
 
