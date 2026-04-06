@@ -198,4 +198,4 @@ See the [Customization menu](customize-style.qmd) for options including Docker c
 
 ---
 
-← [Getting Started](getting_started.qmd) &emsp; [Enroll for Sync Updates](enroll_sync.qmd) →
+← [Getting Started](getting_started.qmd) &emsp; [Start writing!](writing_content_courses.qmd) &emsp; [Enroll for Sync Updates](enroll_sync.qmd) →
