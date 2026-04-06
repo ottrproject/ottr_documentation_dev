@@ -7,13 +7,11 @@ Now that you've setup a shell for your OTTR repository, there are some next step
 
 ## Necessary Next Steps
 
-### Enroll for sync updates
-
-The OTTR templates are always a work in progress — new features are added and bugs are smoothed out over time. [Your feedback is greatly appreciated](https://github.com/ottrproject/OTTR_Template/issues/new/choose). When updates are made to non-content files (checks, automation), pull requests are automatically filed to downstream repositories made from the template.
+### Enroll for sync updates 
 
 #### Add `jhudsl-robot` as a collaborator
 
-*You can skip this step if your course is in the `jhudsl` organization.*
+*You can skip this step if your course is in the `jhudsl` or `fhdsl` organization.*
 
 To enable the full functionality of GitHub Actions, add `jhudsl-robot` as a collaborator with write access:
 
@@ -31,7 +29,7 @@ Add your repository name to the `.github/sync.yml` file of the OTTR template you
 - [OTTR_Template_Website sync file](https://github.com/ottrproject/OTTR_Template_Website/blob/main/.github/sync.yml) — for websites
 - [OTTR_Quizzes sync file](https://github.com/ottrproject/OTTR_Quizzes/blob/main/.github/sync.yml) — for quizzes
 
-#### If you are part of the jhudsl GitHub organization
+#### If you are part of the `jhudsl` or `fhdsl` GitHub organization
 
 1. Open the relevant sync file above and click the pencil icon to edit.
 2. Add your repository name where it says `#NEW REPO HERE#`, indented to match the other entries.
@@ -41,7 +39,7 @@ Add your repository name to the `.github/sync.yml` file of the OTTR template you
 3. Click **Commit changes...**, type `Add new repository to sync` as the commit message, and choose **Create a new branch**.
 4. Click **Propose changes**, then open a pull request and request `@kweav` as a reviewer.
 
-#### If you are not part of the jhudsl GitHub organization
+#### If you are not part of the `jhudsl` or `fhdsl` GitHub organization
 
 Use one of these options:
 
@@ -52,15 +50,14 @@ Use one of these options:
 | Repository | Issue Links |
 |:---:|:---|
 | OTTR_Template | [General issue](https://github.com/ottrproject/OTTR_Template/issues/new/choose) · [Add new repo to sync](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&labels=&projects=&template=new-course-add-to-sync.md&title=) · [Update repo info in sync](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&labels=&projects=&template=update-course-info-for-sync.md&title=) |
-| OTTR_Quizzes | [Open an issue](https://github.com/jhudsl/OTTR_Quizzes/issues/new/choose) |
+| OTTR_Quizzes | [Open an issue](https://github.com/ottrproject/OTTR_Quizzes/issues) |
 | OTTR_Template_Website | [General issue](https://github.com/ottrproject/OTTR_Template_Website/issues/new/choose) · [Add new repo to sync](https://github.com/ottrproject/OTTR_Template_Website/issues/new?assignees=kweav&labels=&projects=&template=new-website-add-to-sync.md&title=) |
 
 <p class="comment">
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
 
-
-### Customizing branding and style
+#### Customizing branding and style
 
 Once your repository is set up, it's worth updating the visual identity of your course or website to reflect your project. For full instructions, see the [Customizing Style page](customize-style.qmd).
 
