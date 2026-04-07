@@ -1,5 +1,4 @@
 https://username.github.io/repository_name/
-${r.url}
-getting_started.html
-r.url
-choose_template.html
+https://${r.url}
+https://getting_started.html
+https://choose_template.html
