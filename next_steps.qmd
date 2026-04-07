@@ -41,7 +41,6 @@ The OTTR template ships with example content files to show you the structure. On
 
 - `index.qmd` or `index.Rmd`
 - Anything inside `.github/workflows/` — these run all the automated checks and rendering
-- `assets/` — contains styling files
 - `resources/` — contains the spell-check dictionary and screenshot helpers
 - Configuration files: `_bookdown.yml`, `_output.yml`, `book.bib`, `_quarto.yml`
 
