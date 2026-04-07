@@ -77,6 +77,13 @@ toc: false
 
 Explore courses, websites, and templates built with OTTR. If you've made something with OTTR and would like it featured here, [let us know](contact.qmd).
 
+We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.
+
+We also noticed that if specific branding or variations of the original template need to be used many times, it's often easier to create a new template (like the AnVIL and DataTrail templates below).
+
+If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by [filing a GitHub issue](https://github.com/ottrproject/OTTR_Template/issues/new/choose) and assigning `@cansavvy` and `@carriewright11`). Also please reach out if you have any other interesting ideas or suggestions!
+
+
 ```{=html}
 <div class="gallery-grid">
 
