@@ -35,11 +35,11 @@ The OTTR template ships with example content files to show you the structure. On
 - Example chapter files
   - For Quarto: `setup.qmd`, `hosting.qmd`, `editing.qmd`, etc
   - For RMarkdown: `01-intro.Rmd`, `02-chapter_of_course.Rmd`, `03-chapter_of_course.Rmd`, etc
-- `index.Rmd` placeholder text (edit in place rather than deleting)
 - Any images in `resources/images/` that were part of the example content
 
 **Do NOT delete:**
 
+- `index.qmd` or `index.Rmd`
 - Anything inside `.github/workflows/` — these run all the automated checks and rendering
 - `assets/` — contains styling files
 - `resources/` — contains the spell-check dictionary and screenshot helpers
