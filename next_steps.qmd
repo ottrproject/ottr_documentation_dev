@@ -18,11 +18,11 @@ Once your repository is set up, it's worth updating the visual identity of your 
 
 **Key things to update:**
 
-- **Title** — set in the YAML header of `index.Rmd` (or `index.qmd` for Quarto).
+- **Title** — set in the YAML header of `index.qmd` (or `index.Rmd` for R Markdown).
+- **Colors** — color theming is controlled through CSS variables. Default values live in `assets/style_config_default.css`, and course-specific overrides should go in `assets/style_config_custom.css`. To customize branding, update variables such as `--link-color`, `--accent-color`, and `--highlight-color`. You generally should not edit color hex codes directly in `assets/style.css`.
 - **Style set** — the template defaults to the JHU Data Science Lab style. If you are building an ITN or DataTrail course, copy the relevant files from the `style-sets/` folder to switch styles.
 - **Favicon** — convert your logo to `.ico` format using [favicon.io](https://favicon.io/favicon-converter/), save it in `assets/`, and reference it in the YAML header.
 - **Logo** — logos in the table of contents sidebar are configured via `_output.yml`. Update the image URL and the link to your GitHub repo.
-- **Colors** — text colors can be changed by editing `assets/style.css`. Search for `#012d72` (dark blue) or `#68ace5` (light blue) and replace with your preferred hex codes.
 
 # Highly Recommended Next Steps
 
