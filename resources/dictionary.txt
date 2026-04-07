@@ -110,3 +110,6 @@ src
 uploadable
 useR
 voiceover
+qmd
+theming
+ 
