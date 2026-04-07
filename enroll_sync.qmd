@@ -34,7 +34,7 @@ Add your repository name to the `.github/sync.yml` file of the OTTR template you
 3. Click **Commit changes...**, type `Add new repository to sync` as the commit message, and choose **Create a new branch**.
 4. Click **Propose changes**, then open a pull request and request `@kweav` as a reviewer.
 
-## If you are not part of the `jhudsl` or `fhdsl` GitHub organization
+## If you are **not** part of the `jhudsl` or `fhdsl` GitHub organization
 
 Use one of these options:
 
