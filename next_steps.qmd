@@ -1,63 +1,18 @@
 ---
 title: "Next Steps"
-toc-depth: 5
+format:
+  html:
+    toc: true
+    toc-depth: 5
 ---
 
 Now that you've setup a shell for your OTTR repository, there are some next steps that you **need** to take, and some steps that we **highly recommend**. Additionally, there are further customizations you may want to consider.
 
-## Necessary Next Steps
+# Necessary Next Steps
 
-### Enroll for sync updates 
+{{< include enroll_sync.qmd >}}
 
-#### Add `jhudsl-robot` as a collaborator
-
-*You can skip this step if your course is in the `jhudsl` or `fhdsl` organization.*
-
-To enable the full functionality of GitHub Actions, add `jhudsl-robot` as a collaborator with write access:
-
-1. In your repository, go to **Settings** > **Collaborators & Teams** and click **Add people**.
-2. Search for and add `jhudsl-robot`.
-3. If prompted, choose the **Write** option, then click **Add jhudsl-robot to this repository**.
-
-<img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/add-jhudsl-robot.png" width="400">
-
-#### Which sync file should you edit?
-
-Add your repository name to the `.github/sync.yml` file of the OTTR template you created your repository from:
-
-- [OTTR_Template sync file](https://github.com/ottrproject/OTTR_Template/blob/main/.github/sync.yml) — for R Markdown courses
-- [OTTR_Template_Website sync file](https://github.com/ottrproject/OTTR_Template_Website/blob/main/.github/sync.yml) — for websites
-- [OTTR_Quizzes sync file](https://github.com/ottrproject/OTTR_Quizzes/blob/main/.github/sync.yml) — for quizzes
-
-#### If you are part of the `jhudsl` or `fhdsl` GitHub organization
-
-1. Open the relevant sync file above and click the pencil icon to edit.
-2. Add your repository name where it says `#NEW REPO HERE#`, indented to match the other entries.
-
-![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/edit-sync.yml.png)
-
-3. Click **Commit changes...**, type `Add new repository to sync` as the commit message, and choose **Create a new branch**.
-4. Click **Propose changes**, then open a pull request and request `@kweav` as a reviewer.
-
-#### If you are not part of the `jhudsl` or `fhdsl` GitHub organization
-
-Use one of these options:
-
-- **Google Form** — submit your organization/username and repo name in the [OTTR Feedback Google Form](https://forms.gle/jGQnd5oemHWyuUq28) and we'll make the edit for you.
-- **Open an issue** — use the links in the table below and provide your repo info; we'll update `sync.yml` for you.
-- **Fork and PR** — fork the template repo, edit `sync.yml` on a new branch adding your repo name where it says `#NEW REPO HERE#`, commit, and open a pull request. Add a comment tagging `@kweav` so we see it.
-
-| Repository | Issue Links |
-|:---:|:---|
-| OTTR_Template | [General issue](https://github.com/ottrproject/OTTR_Template/issues/new/choose) · [Add new repo to sync](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&labels=&projects=&template=new-course-add-to-sync.md&title=) · [Update repo info in sync](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&labels=&projects=&template=update-course-info-for-sync.md&title=) |
-| OTTR_Quizzes | [Open an issue](https://github.com/ottrproject/OTTR_Quizzes/issues) |
-| OTTR_Template_Website | [General issue](https://github.com/ottrproject/OTTR_Template_Website/issues/new/choose) · [Add new repo to sync](https://github.com/ottrproject/OTTR_Template_Website/issues/new?assignees=kweav&labels=&projects=&template=new-website-add-to-sync.md&title=) |
-
-<p class="comment">
-_If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
-</p>
-
-#### Customizing branding and style
+## Customizing branding and style
 
 Once your repository is set up, it's worth updating the visual identity of your course or website to reflect your project. For full instructions, see the [Customizing Style page](customize-style.qmd).
 
@@ -69,9 +24,9 @@ Once your repository is set up, it's worth updating the visual identity of your 
 - **Logo** — logos in the table of contents sidebar are configured via `_output.yml`. Update the image URL and the link to your GitHub repo.
 - **Colors** — text colors can be changed by editing `assets/style.css`. Search for `#012d72` (dark blue) or `#68ace5` (light blue) and replace with your preferred hex codes.
 
-## Highly Recommended Next Steps
+# Highly Recommended Next Steps
 
-### Clean out template placeholder files
+## Clean out template placeholder files
 
 The OTTR template ships with example content files to show you the structure. Once you're ready to start writing, replace these with your own content.
 
@@ -88,7 +43,7 @@ The OTTR template ships with example content files to show you the structure. On
 - `resources/` — contains the spell-check dictionary and screenshot helpers
 - Configuration files: `_bookdown.yml`, `_output.yml`, `book.bib`, `_quarto.yml`
 
-### Update the README
+## Update the README
 
 The `README.md` in your repository comes with template placeholder text. Update it to describe what your course or website is about, who it's for, and how to contribute or report issues. A clear README helps collaborators and visitors understand your project at a glance.
 
@@ -98,7 +53,7 @@ At minimum, update:
 - Any links that point to the template repository (replace with your own repo URL)
 - Author and contact information
 
-### Add a license
+## Add a license
 
 Adding a license to your repository clarifies how others can use and share your content. For open educational resources, [Creative Commons Attribution 4.0 (CC BY 4.0)](https://choosealicense.com/licenses/cc-by-4.0/) is a common choice — it allows reuse with attribution.
 
@@ -108,7 +63,7 @@ To add a license on GitHub:
 2. Click **Add file** > **Create new file** and name it `LICENSE`.
 3. GitHub will offer a license picker — select your preferred license and commit.
 
-### Add your repository link to the sidebar
+## Add your repository link to the sidebar
 
 Linking your GitHub repository from the sidebar makes it easy for readers to find the source, suggest edits, or file issues.
 
@@ -134,7 +89,7 @@ website:
 
 Replace `YOUR-ORG/YOUR-REPO` with your actual organization and repository name.
 
-### Set up a feedback channel
+## Set up a feedback channel
 
 Making it easy for learners to report problems or leave feedback improves your course over time. Two good approaches:
 
@@ -153,7 +108,7 @@ bookdown::gitbook:
 
 Then add a direct link to your form in `index.Rmd` or your course footer. For automated responses, [Zapier](https://zapier.com) can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.
 
-### Giving credits to contributors
+## Giving credits to contributors
 
 OTTR courses include a credits table to acknowledge everyone who contributed — instructors, editors, publishers, and template engineers. For full instructions, see the [Giving Credits page](more_features_credits.qmd).
 
@@ -164,7 +119,7 @@ OTTR courses include a credits table to acknowledge everyone who contributed —
 - **Coursera** — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.
 - **Leanpub** — ensure `About.md` is listed in `Book.txt` and it will be included automatically.
 
-### Citing sources
+## Citing sources
 
 OTTR courses use BibTeX-style references managed through a `book.bib` file. For full instructions, see the [Citing Sources page](more_features_sources.qmd).
 
@@ -175,7 +130,7 @@ OTTR courses use BibTeX-style references managed through a `book.bib` file. For 
 - **References list** — keep `References.Rmd` as the last file in `_bookdown.yml` so the full reference list appears at the end of your course.
 - **Suppress per-chapter references** by adding `split_bib: false` to `_output.yml`.
 
-### Setting up Google Analytics
+## Setting up Google Analytics
 
 Adding Google Analytics to your OTTR course or website lets you track how people are finding and using your content. For full setup instructions, see the [Google Analytics Integration page](more_features_ganalytic.qmd).
 
@@ -189,7 +144,7 @@ Adding Google Analytics to your OTTR course or website lets you track how people
 
 ---
 
-## Additional Customizations to Consider
+# Additional Customizations to Consider
 
 See the [Customization menu](customize-style.qmd) for options including Docker configuration, borrowing chapters, Google Docs compatibility, and more.
 

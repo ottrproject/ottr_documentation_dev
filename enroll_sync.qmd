@@ -1,10 +1,12 @@
 ---
-title: "Enroll for Sync Updates"
+toc-depth: 5
 ---
+
+## Enroll for Sync Updates
 
 The OTTR templates are always a work in progress. New features are added and bugs are smoothed out over time. [Your feedback is greatly appreciated](https://github.com/ottrproject/OTTR_Template/issues/new/choose). When updates are made to non-content files (checks, automation), pull requests are automatically filed to downstream repositories made from the template.
 
-## Add `jhudsl-robot` as a collaborator
+### Add `jhudsl-robot` as a collaborator
 
 *You can skip this step if your course is in the `jhudsl` or `fhdsl` organization.*
 
@@ -16,7 +18,7 @@ To enable the full functionality of GitHub Actions, add `jhudsl-robot` as a coll
 
 <img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/add-jhudsl-robot.png" width="400">
 
-## Which sync file should you edit?
+### Which sync file should you edit?
 
 Add your repository name to the `.github/sync.yml` file of the OTTR template you created your repository from:
 
@@ -24,7 +26,18 @@ Add your repository name to the `.github/sync.yml` file of the OTTR template you
 - [OTTR_Template_Website sync file](https://github.com/ottrproject/OTTR_Template_Website/blob/main/.github/sync.yml) — for websites
 - [OTTR_Quizzes sync file](https://github.com/ottrproject/OTTR_Quizzes/blob/main/.github/sync.yml) — for quizzes
 
-## If you are part of the `jhudsl` or `fhdsl` GitHub organization
+### If you are not part of the `jhudsl` or `fhdsl` GitHub organization
+
+Use one of these options:
+
+- **Google Form** — submit your organization/username and repo name in the [OTTR Feedback Google Form](https://forms.gle/jGQnd5oemHWyuUq28) and we'll make the edit for you.
+- **Open an issue** — use the links in the table below and provide your repo info; we'll update `sync.yml` for you.
+- **Fork and PR** — fork the template repo, edit `sync.yml` on a new branch adding your repo name where it says `#NEW REPO HERE#`, commit, and open a pull request. Add a comment tagging `@kweav` so we see it.
+
+<details>
+<summary><strong>
+If you are part of the  <code>jhudsl</code> or <code>fhdsl</code> GitHub organization
+</strong></summary>
 
 1. Open the relevant sync file above and click the pencil icon to edit.
 2. Add your repository name where it says `#NEW REPO HERE#`, indented to match the other entries.
@@ -34,13 +47,7 @@ Add your repository name to the `.github/sync.yml` file of the OTTR template you
 3. Click **Commit changes...**, type `Add new repository to sync` as the commit message, and choose **Create a new branch**.
 4. Click **Propose changes**, then open a pull request and request `@kweav` as a reviewer.
 
-## If you are not part of the `jhudsl` or `fhdsl` GitHub organization
-
-Use one of these options:
-
-- **Google Form** — submit your organization/username and repo name in the [OTTR Feedback Google Form](https://forms.gle/jGQnd5oemHWyuUq28) and we'll make the edit for you.
-- **Open an issue** — use the links in the table below and provide your repo info; we'll update `sync.yml` for you.
-- **Fork and PR** — fork the template repo, edit `sync.yml` on a new branch adding your repo name where it says `#NEW REPO HERE#`, commit, and open a pull request. Add a comment tagging `@kweav` so we see it.
+</details>
 
 | Repository | Issue Links |
 |:---:|:---|
