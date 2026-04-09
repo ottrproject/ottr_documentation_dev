@@ -434,7 +434,9 @@ Name the file with a `.Rmd` extension, e.g. `03-new_chapter_of_course.Rmd`.
 
 Add the new filename to `_quarto.yml` under `chapters:`:
 
-```{yaml}
+```{r}
+#| eval: false
+#| include: true
 project:
   type: book
 book:
@@ -457,7 +459,9 @@ Be cautious with indentation in `_quarto.yml` — YAML is sensitive to spacing a
 
 Add the new filename to `_bookdown.yml` under `rmd_files:`:
 
-```{yaml}
+```{r}
+#| eval: false
+#| include: true
 book_filename: "Course_Name"
 chapter_name: "Chapter "
 repo: https://github.com/ottrproject/OTTR_Template/
