@@ -434,7 +434,7 @@ Name the file with a `.Rmd` extension, e.g. `03-new_chapter_of_course.Rmd`.
 
 Add the new filename to `_quarto.yml` under `chapters:`:
 
-```yaml
+```{yaml}
 project:
   type: book
 book:
@@ -477,8 +477,6 @@ output_dir: "docs"
 ::: {.callout-warning}
 Be cautious with quotation marks (`""`) and commas (`,`) on each line — a small typo here will break the build.
 :::
-
-
 
 :::
 
