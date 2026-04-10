@@ -6,7 +6,126 @@ format:
     toc-depth: 5
 ---
 
-Now that you've setup a shell for your OTTR repository, there are some next steps that you **need** to take, and some steps that we **highly recommend**. Additionally, there are further customizations you may want to consider.
+```{css, echo=FALSE}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.step-card {
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem 1rem 1.5rem;
+  background: var(--bs-body-bg, #fff);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.step-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  border: none;
+  padding: 0;
+}
+
+.step-card p {
+  font-size: 0.875rem;
+  color: var(--bs-secondary-color, #6c757d);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.step-card details {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.step-card details summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--bs-link-color, #0d6efd);
+  list-style: none;
+  padding: 0.25rem 0;
+  user-select: none;
+}
+
+.step-card details summary::-webkit-details-marker {
+  display: none;
+}
+
+.step-card details summary::before {
+  content: "+ ";
+  font-weight: 700;
+}
+
+.step-card details[open] summary::before {
+  content: "- ";
+}
+
+.step-card details .card-detail {
+  padding: 0.75rem 0 0 0;
+  border-top: 1px solid var(--bs-border-color, #dee2e6);
+  margin-top: 0.5rem;
+  line-height: 1.6;
+  color: var(--bs-body-color, #212529);
+}
+
+.step-card details .card-detail ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.step-card details .card-detail li {
+  margin-bottom: 0.35rem;
+}
+
+.step-card details .card-detail code {
+  font-size: 0.8rem;
+}
+
+.step-card details .card-detail pre {
+  font-size: 0.78rem;
+  background: var(--bs-tertiary-bg, #f8f9fa);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 4px;
+  padding: 0.75rem;
+  overflow-x: auto;
+  white-space: pre;
+}
+```
+
+Now that you've set up a shell for your OTTR repository, there are some next steps that you **need** to take, and some steps that we **highly recommend**. Additionally, there are further customizations you may want to consider.
+
+```{=html}
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;">
+  <a href="#necessary-next-steps" style="text-decoration: none;">
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.4rem;">&#10003;</div>
+      <div style="font-weight: bold;">Necessary</div>
+      <div style="font-size: 0.85rem; color: #555;">Required before publishing</div>
+    </div>
+  </a>
+  <a href="#highly-recommended-next-steps" style="text-decoration: none;">
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.4rem;">&#9733;</div>
+      <div style="font-weight: bold;">Highly Recommended</div>
+      <div style="font-size: 0.85rem; color: #555;">Strongly encouraged</div>
+    </div>
+  </a>
+  <a href="#additional-customizations-to-consider" style="text-decoration: none;">
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center;">
+      <div style="font-size: 1.5rem; margin-bottom: 0.4rem;">&#9881;</div>
+      <div style="font-weight: bold;">Optional</div>
+      <div style="font-size: 0.85rem; color: #555;">Further customization</div>
+    </div>
+  </a>
+</div>
+```
+
 
 # Necessary Next Steps
 
@@ -20,134 +139,180 @@ Once your repository is set up, it's worth updating the visual identity of your 
 
 - **Title** — set in the YAML header of `index.qmd` (or `index.Rmd` for R Markdown).
 - **Colors** — color theming is controlled through CSS variables. Default values live in `assets/style_config_default.css`, and course-specific overrides should go in `assets/style_config_custom.css`. To customize branding, update variables such as `--link-color`, `--accent-color`, and `--highlight-color`. You generally should not edit color hex codes directly in `assets/style.css`.
-- **Style set** — the template defaults to the JHU Data Science Lab style. If you are building an ITN or DataTrail course, copy the relevant files from the `style-sets/` folder to switch styles.
 - **Favicon** — convert your logo to `.ico` format using [favicon.io](https://favicon.io/favicon-converter/), save it in `assets/`, and reference it in the YAML header.
 - **Logo** — logos in the table of contents sidebar are configured via `_output.yml`. Update the image URL and the link to your GitHub repo.
+- **Style set** — the template defaults to the JHU Data Science Lab style. If you are building an ITN or DataTrail course, copy the relevant files from the `style-sets/` folder to switch styles.
 
 # Highly Recommended Next Steps
 
-## Clean out template placeholder files
+Click any card to expand full instructions.
 
-The OTTR template ships with example content files to show you the structure. Once you're ready to start writing, replace these with your own content.
-
-**Safe to delete:**
-
-- Example chapter files
-  - For Quarto: `setup.qmd`, `hosting.qmd`, `editing.qmd`, etc
-  - For RMarkdown: `01-intro.Rmd`, `02-chapter_of_course.Rmd`, `03-chapter_of_course.Rmd`, etc
-- Any images in `resources/images/` that were part of the example content
-
-**Do NOT delete:**
-
-- `index.qmd` or `index.Rmd`
-- Anything inside `.github/workflows/` — these run all the automated checks and rendering
-- `resources/` — contains the spell-check dictionary and screenshot helpers
-- Configuration files: `_bookdown.yml`, `_output.yml`, `book.bib`, `_quarto.yml`
-
-## Update the README
-
-The `README.md` in your repository comes with template placeholder text. Update it to describe what your course or website is about, who it's for, and how to contribute or report issues. A clear README helps collaborators and visitors understand your project at a glance.
-
-At minimum, update:
-
-- The title and description
-- Any links that point to the template repository (replace with your own repo URL)
-- Author and contact information
-
-## Add a license
-
-Adding a license to your repository clarifies how others can use and share your content. For open educational resources, [Creative Commons Attribution 4.0 (CC BY 4.0)](https://choosealicense.com/licenses/cc-by-4.0/) is a common choice — it allows reuse with attribution.
-
-To add a license on GitHub:
-
-1. Go to your repository's main page.
-2. Click **Add file** > **Create new file** and name it `LICENSE`.
-3. GitHub will offer a license picker — select your preferred license and commit.
-
-## Add your repository link to the sidebar
-
-Linking your GitHub repository from the sidebar makes it easy for readers to find the source, suggest edits, or file issues.
-
-For **R Markdown courses**, update `_output.yml`:
-
-```yaml
-bookdown::gitbook:
+```{r, echo=FALSE, results='asis'}
+cards <- list(
+  list(
+    title = "Clean out template placeholder files",
+    summary = "Remove example content that comes with the template and replace it with your own.",
+    detail = '
+<p><strong>Safe to delete:</strong></p>
+<ul>
+  <li>Example chapter files
+    <ul>
+      <li>For Quarto: <code>setup.qmd</code>, <code>hosting.qmd</code>, <code>editing.qmd</code>, etc.</li>
+      <li>For RMarkdown: <code>01-intro.Rmd</code>, <code>02-chapter_of_course.Rmd</code>, <code>03-chapter_of_course.Rmd</code>, etc.</li>
+    </ul>
+  </li>
+  <li>Any images in <code>resources/images/</code> that were part of the example content</li>
+</ul>
+<p><strong>Do NOT delete:</strong></p>
+<ul>
+  <li><code>index.qmd</code> or <code>index.Rmd</code></li>
+  <li>Anything inside <code>.github/workflows/</code> — these run all the automated checks and rendering</li>
+  <li><code>resources/</code> — contains the spell-check dictionary and screenshot helpers</li>
+  <li>Configuration files: <code>_bookdown.yml</code>, <code>_output.yml</code>, <code>book.bib</code>, <code>_quarto.yml</code></li>
+</ul>'
+  ),
+  list(
+    title = "Update the README",
+    summary = "Replace template placeholder text with a description of your course, its audience, and how to contribute.",
+    detail = '
+<p>The <code>README.md</code> in your repository comes with template placeholder text. Update it to describe what your course or website is about, who it\'s for, and how to contribute or report issues. A clear README helps collaborators and visitors understand your project at a glance.</p>
+<p>At minimum, update:</p>
+<ul>
+  <li>The title and description</li>
+  <li>Any links that point to the template repository (replace with your own repo URL)</li>
+  <li>Author and contact information</li>
+</ul>'
+  ),
+  list(
+    title = "Add a license",
+    summary = "Clarify how others can use and share your content by adding a license file to your repository.",
+    detail = '
+<p>Adding a license to your repository clarifies how others can use and share your content. For open educational resources, <a href="https://choosealicense.com/licenses/cc-by-4.0/">Creative Commons Attribution 4.0 (CC BY 4.0)</a> is a common choice — it allows reuse with attribution.</p>
+<p>To add a license on GitHub:</p>
+<ol>
+  <li>Go to your repository\'s main page.</li>
+  <li>Click <strong>Add file</strong> &gt; <strong>Create new file</strong> and name it <code>LICENSE</code>.</li>
+  <li>GitHub will offer a license picker — select your preferred license and commit.</li>
+</ol>'
+  ),
+  list(
+    title = "Add your repository link to the sidebar",
+    summary = "Link your GitHub repository from the course sidebar so readers can find the source, suggest edits, or file issues.",
+    detail = '
+<p>For <strong>R Markdown courses</strong>, update <code>_output.yml</code>:</p>
+<pre>bookdown::gitbook:
   config:
     edit:
-      link: https://github.com/YOUR-ORG/YOUR-REPO/edit/main/%s
-      text: "Suggest an edit"
+      link: https://github.com/YOUR-ORG/YOUR-REPO/
+      text: "GitHub Repository"
     download: no
-    sharing: no
-```
-
-For **Quarto**, update `_quarto.yml`:
-
-```yaml
-website:
-  repo-url: https://github.com/YOUR-ORG/YOUR-REPO
-  repo-actions: [edit, issue]
-```
-
-Replace `YOUR-ORG/YOUR-REPO` with your actual organization and repository name.
-
-## Set up a feedback channel
-
-Making it easy for learners to report problems or leave feedback improves your course over time. Two good approaches:
-
-**GitHub issue templates** — add structured issue forms so readers can report content errors, broken links, or general feedback directly from your repo. You can use [OTTR's example issue templates](https://github.com/ottrproject/OTTR_Template/tree/main/.github/ISSUE_TEMPLATE) as a starting point.
-
-**Google Form link** — for audiences less familiar with GitHub, add a feedback Google Form link to your course. In `_output.yml`, you can surface this in the sharing config:
-
-```yaml
-bookdown::gitbook:
+    sharing: no</pre>
+<p>For <strong>Quarto</strong>, update <code>_quarto.yml</code>:</p>
+<pre>book:
+    repo-url: https://github.com/YOUR-ORG/YOUR-REPO</pre>
+<p>Replace <code>YOUR-ORG/YOUR-REPO</code> with your actual organization and repository name.</p>'
+  ),
+  list(
+    title = "Set up a feedback channel",
+    summary = "Make it easy for learners to report problems or leave feedback to improve your course over time.",
+    detail = '
+<p>Two good approaches:</p>
+<br>
+<p><strong>GitHub issue templates</strong> — add structured issue forms so readers can report content errors, broken links, or general feedback directly from your repo. You can use <a href="https://github.com/ottrproject/OTTR_Template/tree/main/.github/ISSUE_TEMPLATE">OTTR\'s example issue templates</a> as a starting point.</p>
+<br>
+<p><strong>Google Form link</strong> — for audiences less familiar with GitHub, add a feedback Google Form link to your course. In <code>_output.yml</code>, you can surface this in the sharing config:</p>
+<pre>bookdown::gitbook:
   config:
     sharing:
       facebook: false
       twitter: false
-      all: []
+      all: []</pre>
+<p>Then add a direct link to your form in <code>index.Rmd</code> or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.</p>'
+  ),
+  list(
+    title = "Give credits to contributors",
+    summary = "Acknowledge everyone who contributed including instructors, editors, publishers, and template engineers.",
+    detail = '
+<p>OTTR courses include a credits table to acknowledge everyone who contributed. For full instructions, see the <a href="more_features_credits.qmd">Giving Credits page</a>.</p>
+<p><strong>Key things to update:</strong></p>
+<ul>
+  <li><strong><code>About.Rmd</code></strong> — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).</li>
+  <li><strong>Required rows</strong> — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the <a href="https://bit.ly/course-credits-table">full credits table reference</a>.</li>
+  <li><strong>Coursera</strong> — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.</li>
+  <li><strong>Leanpub</strong> — ensure <code>About.md</code> is listed in <code>Book.txt</code> and it will be included automatically.</li>
+</ul>'
+  ),
+  list(
+    title = "Cite your sources",
+    summary = "Manage references with a BibTeX file and cite sources inline throughout your course.",
+    detail = '
+<p>OTTR courses use BibTeX-style references managed through a <code>book.bib</code> file. For full instructions, see the <a href="more_features_sources.qmd">Citing Sources page</a>.</p>
+<ul>
+  <li><strong>Add references</strong> to <code>book.bib</code> in alphabetical order. For articles with a DOI, use <a href="https://www.doi2bib.org/">doi2bib.org</a> or <a href="https://zbib.org/">ZoteroBib</a> to generate a BibTeX entry to copy in.</li>
+  <li><strong>Cite in text</strong> using <code>@key</code> (inline) or <code>[@key]</code> (parenthetical). Separate multiple citations with semicolons: <code>[@key-1; @key-2]</code>.</li>
+  <li><strong>References list</strong> — keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code> so the full reference list appears at the end of your course.</li>
+  <li><strong>Suppress per-chapter references</strong> by adding <code>split_bib: false</code> to <code>_output.yml</code>.</li>
+</ul>'
+  ),
+  list(
+    title = "Set up Google Analytics",
+    summary = "Track how people are finding and using your content with Google Analytics.",
+    detail = '
+<p>Adding Google Analytics to your OTTR course or website lets you track how people are finding and using your content. For full setup instructions, see the <a href="more_features_ganalytic.qmd">Google Analytics Integration page</a>.</p>
+<ol>
+  <li>Create a <a href="https://analytics.google.com/analytics">Google Analytics account</a> and set up a new property with a <strong>Web</strong> data stream for your course URL.</li>
+  <li>Copy the <code>&lt;script&gt;</code> code chunk provided by Google Analytics.</li>
+  <li>Paste it into <code>GA_Script.html</code> in your repository (replacing the placeholder content).</li>
+  <li>Push your changes — the GitHub Action will automatically re-render your course and include the tracking code in every page.</li>
+  <li>Verify in Google Analytics (<strong>Reports</strong> tab) that traffic is being received.</li>
+</ol>'
+  )
+)
+
+card_html <- function(card) {
+  paste0(
+    '<div class="step-card">',
+    '<h3>', card$title, '</h3>',
+    '<p>', card$summary, '</p>',
+    '<details><summary>Full instructions</summary>',
+    '<div class="card-detail">', card$detail, '</div>',
+    '</details>',
+    '</div>'
+  )
+}
+
+cat('<div class="steps-grid">\n')
+for (card in cards) {
+  cat(card_html(card), "\n")
+}
+cat('</div>\n')
 ```
-
-Then add a direct link to your form in `index.Rmd` or your course footer. For automated responses, [Zapier](https://zapier.com) can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.
-
-## Giving credits to contributors
-
-OTTR courses include a credits table to acknowledge everyone who contributed — instructors, editors, publishers, and template engineers. For full instructions, see the [Giving Credits page](more_features_credits.qmd).
-
-**Key things to update:**
-
-- **`About.Rmd`** — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).
-- **Required rows** — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the [full credits table reference](https://bit.ly/course-credits-table).
-- **Coursera** — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.
-- **Leanpub** — ensure `About.md` is listed in `Book.txt` and it will be included automatically.
-
-## Citing sources
-
-OTTR courses use BibTeX-style references managed through a `book.bib` file. For full instructions, see the [Citing Sources page](more_features_sources.qmd).
-
-**Key things to know:**
-
-- **Add references** to `book.bib` in alphabetical order. For articles with a DOI, use [doi2bib.org](https://www.doi2bib.org/) or [ZoteroBib](https://zbib.org/) to generate a BibTeX entry to copy in.
-- **Cite in text** using `@key` (inline) or `[@key]` (parenthetical). Separate multiple citations with semicolons: `[@key-1; @key-2]`.
-- **References list** — keep `References.Rmd` as the last file in `_bookdown.yml` so the full reference list appears at the end of your course.
-- **Suppress per-chapter references** by adding `split_bib: false` to `_output.yml`.
-
-## Setting up Google Analytics
-
-Adding Google Analytics to your OTTR course or website lets you track how people are finding and using your content. For full setup instructions, see the [Google Analytics Integration page](more_features_ganalytic.qmd).
-
-**Quick overview:**
-
-1. Create a [Google Analytics account](https://analytics.google.com/analytics) and set up a new property with a **Web** data stream for your course URL.
-2. Copy the `<script>` code chunk provided by Google Analytics.
-3. Paste it into `GA_Script.html` in your repository (replacing the placeholder content).
-4. Push your changes — the GitHub Action will automatically re-render your course and include the tracking code in every page.
-5. Verify in Google Analytics (**Reports** tab) that traffic is being received.
 
 ---
 
 # Additional Customizations to Consider
 
-See the [Customization menu](customize-style.qmd) for options including Docker configuration, borrowing chapters, Google Docs compatibility, and more.
+See the customization menu below for options including Docker configuration, borrowing chapters, Google Docs compatibility, and more.
+
+```{=html}
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0;">
+  <a href="customize-style.html" style="text-decoration: none;">
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center;">
+      <div style="font-weight: bold;">Customize Style</div>
+    </div>
+  </a>
+  <a href="customize-robots.html" style="text-decoration: none;">
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center;">
+      <div style="font-weight: bold;">Customize Robots</div>
+    </div>
+  </a>
+  <a href="customize-docker.html" style="text-decoration: none;">
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; text-align: center;">
+      <div style="font-weight: bold;">Customize Docker</div>
+    </div>
+  </a>
+</div>
+```
 
 ---
 
