@@ -103,3 +103,7 @@ If you would like to change the current light blue color to be a different color
 If you would like to change the image at the top of the Bookdown version of the course, you need to do the following steps:
 * Add a new image file to the `assets` directory
 * Modify the `assets/big-image.html` file on line 11. Change out `src = "assets/dasl_thin_main_image.png"` so that `dasl_thin_main_image.png` is replaced with the name of your image file.
+
+---
+
+← [Next Steps](next_steps.qmd) &emsp; [Customizing Checks](customize-robots.qmd) →

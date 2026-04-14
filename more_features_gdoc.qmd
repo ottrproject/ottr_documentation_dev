@@ -14,3 +14,7 @@ Google Docs can be a great way to get feedback from collaborators who aren't com
 - Then as comments and suggestions trickle in, a lead author who is comfortable with the OTTR process can incorporate those comments into an existing or new pull request which can checked for its rendering and eventually added to the `main` content branch.
 
 <br>
+
+---
+
+← [Next Steps](next_steps.qmd) &emsp; [Troubleshooting](faqs.qmd) →
