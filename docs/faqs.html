@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Troubleshooting – OTTR </title>
+<title>faqs – OTTR &lt;img src='./resources/images/basic_otter_water.PNG' width = 35px&gt;</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./resources/images/basic_otter_water.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-169b6d0432b1a799c6e7691d07d1a7fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -75,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,61 +104,90 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quick-start">    
         <li>
     <a class="dropdown-item" href="./getting_started.html">
- <span class="dropdown-text">Getting Started</span></a>
+ <span class="dropdown-text">Getting started</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./next_steps.html">
- <span class="dropdown-text">Next Steps</span></a>
+ <span class="dropdown-text">Next steps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">Example use cases</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./choose_template.html"> 
+<span class="menu-text">Help me choose my template</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Build with OTTR</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-build-with-ottr">    
+        <li>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Template</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./writing_content_courses.html">
+ <span class="dropdown-text">Start writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enroll_sync.html">
+ <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_credits.html">
+ <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Customize</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Customization</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Advanced Integrations</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
         <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_sources.html">
  <span class="dropdown-text">Citing sources <i class="fa-solid fa-quote-left" title="A left quotation mark" aria-label="quote-left"></i></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./more_features_credits.html">
- <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./more_features_gdoc.html">
- <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./more_features_ganalytic.html">
- <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fying an existing repository</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./examples.html">
- <span class="dropdown-text">About OTTR babies</span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./publishing.html"> 
+<span class="menu-text">Publishing OTTR courses</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./faqs.html" aria-current="page"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -180,13 +210,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#most-common-errors" id="toc-most-common-errors" class="nav-link active" data-scroll-target="#most-common-errors">Most Common Errors</a>
+  <li><a href="#search-on-ottr-docs" id="toc-search-on-ottr-docs" class="nav-link active" data-scroll-target="#search-on-ottr-docs">Search on OTTR docs</a></li>
+  <li><a href="#most-common-errors" id="toc-most-common-errors" class="nav-link" data-scroll-target="#most-common-errors">Most Common Errors</a>
+  <ul>
+  <li><a href="#content-not-rendering-or-updating" id="toc-content-not-rendering-or-updating" class="nav-link" data-scroll-target="#content-not-rendering-or-updating">Content not rendering or updating</a>
+  <ul class="collapse">
+  <li><a href="#you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image." id="toc-you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image." class="nav-link" data-scroll-target="#you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image.">You observe the code for <code>include_slide()</code> or <code>&lt;img src="...", ... &gt;</code> rather than the Google Slide image.</a></li>
+  </ul></li>
+  <li><a href="#errors-for-pull-request-check-failures" id="toc-errors-for-pull-request-check-failures" class="nav-link" data-scroll-target="#errors-for-pull-request-check-failures">Errors for pull request check failures</a>
   <ul class="collapse">
   <li><a href="#file-is-not-in-png-format-google-slides-permissions-fail" id="toc-file-is-not-in-png-format-google-slides-permissions-fail" class="nav-link" data-scroll-target="#file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</a></li>
   <li><a href="#process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" id="toc-process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="nav-link" data-scroll-target="#process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</a></li>
@@ -195,44 +231,81 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" id="toc-error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="nav-link" data-scroll-target="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</a></li>
   <li><a href="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" id="toc-error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="nav-link" data-scroll-target="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</a></li>
   </ul></li>
-  <li><a href="#content-not-rendering" id="toc-content-not-rendering" class="nav-link" data-scroll-target="#content-not-rendering">Content not rendering</a></li>
+  </ul></li>
+  <li><a href="#content-not-rendering" id="toc-content-not-rendering" class="nav-link" data-scroll-target="#content-not-rendering">Content not rendering</a>
+  <ul>
+  <li><a href="#could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure" id="toc-could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure" class="nav-link" data-scroll-target="#could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure"><code>could not read Username for 'https://github.com': terminal prompts disabled</code>: GitHub authentication failure</a></li>
+  </ul></li>
   <li><a href="#contact-info" id="toc-contact-info" class="nav-link" data-scroll-target="#contact-info">Contact Info</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Troubleshooting</h1>
+
+
+
+<section id="search-on-ottr-docs" class="level2">
+<h2 class="anchored" data-anchor-id="search-on-ottr-docs">Search on OTTR docs</h2>
+<p>Search on the OTTR docs for what you are looking for. Note that first few entries are sponsored, the actually helpful stuff will be below that.</p>
+<script async="" src="https://cse.google.com/cse.js?cx=22c03a049bf7a472a">
+</script>
+<div class="gcse-searchbox-only">
+
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!---
-Add something here that is like a TOC/overview of the errors that are covered in this doc.
-  --->
+</section>
 <section id="most-common-errors" class="level2">
 <h2 class="anchored" data-anchor-id="most-common-errors">Most Common Errors</h2>
-<p>This guide will describe the most common OTTR errors and pitfalls and how to address them. When you open a pull request, you should see a report like this:</p>
+<p>This guide will describe the most common OTTR errors and pitfalls and how to address them.</p>
+<section id="content-not-rendering-or-updating" class="level3">
+<h3 class="anchored" data-anchor-id="content-not-rendering-or-updating">Content not rendering or updating</h3>
+<p>This may be a quiet error where the content just doesn’t update and you are not warned that there is a problem.</p>
+<ul>
+<li><p>Check that the GitHub repository <code>GH_PAT</code> is up to date. (An associated GitHub Actions error that suggests the <code>GH_PAT</code> needs to be updated is an <code>exit code 128</code>)</p>
+<ul>
+<li>Use this <a href="https://www.ottrproject.org/cheatsheets/ottr_token.html">cheatsheet on updating your GH_PAT</a> if you need help.</li>
+</ul></li>
+<li><p>Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).</p></li>
+<li><p>Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.</p></li>
+</ul>
+<section id="you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image." class="level4">
+<h4 class="anchored" data-anchor-id="you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image.">You observe the code for <code>include_slide()</code> or <code>&lt;img src="...", ... &gt;</code> rather than the Google Slide image.</h4>
+<p>Check the formatting of the code chunk, particularly paying attention to the <code>fig.alt</code> argument.</p>
+<p>Make sure there are:</p>
+<ul>
+<li>no line breaks</li>
+<li>only <strong>one type</strong> of quotation marks used in <code>fig.alt</code> (either all single or all double quotes)</li>
+</ul>
+<p>Examples:</p>
+<p><code>fig.alt = "This is an example sentence where I want to bring attention to "this specific phrase" and not the rest of it."</code></p>
+<p>or</p>
+<p><code>fig.alt = 'This is an example sentence where I want to bring attention to 'this specific phrase' and not the rest of it.'</code></p>
+<details>
+<summary>
+Click for more information
+</summary>
+<p>Options for correct formatting of quotation marks within the <code>fig.alt</code> text argument:</p>
+<pre><code>    - Double quotation marks surrounding the whole argument with double quotation marks around any specific phrases within the argument
+    - Single quotation marks surround the whole argument with single quotation marks around any specific phrases within the argument
+    - Double quotation marks surrounding the whole argument with single quotation marks around any specific phrases within the argument (this will also work)</code></pre>
+<p>Note: Single quotation marks surrounding the whole argument with double quotation marks around specific phrases within the argument will cause issues that may be not be as obvious at first. It will cause the images to not be properly rendered.</p>
+</details>
+<hr>
+</section>
+</section>
+<section id="errors-for-pull-request-check-failures" class="level3">
+<h3 class="anchored" data-anchor-id="errors-for-pull-request-check-failures">Errors for pull request check failures</h3>
+<p>When you open a pull request, you should see a report like this:</p>
 <p><img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/gha-actions-error.png" class="img-fluid"></p>
 <p>When you see an ❌ , click on the <code>Details</code> button to see the error message. We’ll discuss the most common error messages here.</p>
 <hr>
-<section id="file-is-not-in-png-format-google-slides-permissions-fail" class="level3">
-<h3 class="anchored" data-anchor-id="file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</h3>
+<section id="file-is-not-in-png-format-google-slides-permissions-fail" class="level4">
+<h4 class="anchored" data-anchor-id="file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</h4>
 <p><em>Error example:</em></p>
 <pre><code>Error in png::readPNG(path, native = TRUE, info = TRUE) :
   file is not in PNG format
@@ -248,8 +321,8 @@ Execution halted</code></pre>
 <p>Your Google Slides presentation you have tried to retrieve a slide from with <code>ottrpal::include_slide()</code> is not public. Your Google Slide document must be set to <code>Anyone with a link</code>. See <a href="https://support.wix.com/en/article/setting-permissions-for-google-drive-files-and-folders#:~:text=Settings%20Permissions%20for%20a%20Google,edit%20and%20comment%20as%20well.">this article for more details.</a> The renders will fail if this is not set! See the <a href="https://www.ottrproject.org/writing_content_courses.html#set-up-images">setting up images and graphics section</a> for more details.</p>
 <hr>
 </section>
-<section id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="level3">
-<h3 class="anchored" data-anchor-id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</h3>
+<section id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail" class="level4">
+<h4 class="anchored" data-anchor-id="process-completed-with-exit-code-1.-spell-checkurl-checkquiz-format-fail"><code>Process completed with exit code 1.</code>: Spell check/url check/quiz format fail:</h4>
 <p>Underneath a section that says something like: <code>**Check spelling/url/quiz errors - fail if too many of them**</code> you may see something like:</p>
 <pre><code>Run exit 1
   exit 1
@@ -262,8 +335,8 @@ Comment updated at &lt;some_date&gt; with changes from &lt;commit&gt;</code></pr
 <p>Click on the <code>Download the errors here</code> to see the list of errors and which files they were found in. For help in addressing these errors, click on the <code>Read this guide for more info</code> button.</p>
 <hr>
 </section>
-<section id="conflict-modifydelete-merge-conflict-fail" class="level3">
-<h3 class="anchored" data-anchor-id="conflict-modifydelete-merge-conflict-fail"><code>CONFLICT (modify/delete)</code>: Merge conflict fail:</h3>
+<section id="conflict-modifydelete-merge-conflict-fail" class="level4">
+<h4 class="anchored" data-anchor-id="conflict-modifydelete-merge-conflict-fail"><code>CONFLICT (modify/delete)</code>: Merge conflict fail:</h4>
 <p><em>Error example:</em></p>
 <pre><code>CONFLICT (modify/delete): &lt;file_name&gt; deleted in &lt;branch_name&gt; and modified in HEAD. Version HEAD of &lt;file_name&gt; left in tree.</code></pre>
 <p>This will often happen when render-preview’s git handling doesn’t know which changes you are looking to preview. The easiest way to fix this problem is to create a separate pull request that completely deletes the files lists. To do this, follow these steps:</p>
@@ -275,8 +348,8 @@ Comment updated at &lt;some_date&gt; with changes from &lt;commit&gt;</code></pr
 </ol>
 <hr>
 </section>
-<section id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" class="level3">
-<h3 class="anchored" data-anchor-id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error"><code>Parser error: while parsing a flow sequence</code>: _bookdown.yml parse error</h3>
+<section id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error" class="level4">
+<h4 class="anchored" data-anchor-id="parser-error-while-parsing-a-flow-sequence-_bookdown.yml-parse-error"><code>Parser error: while parsing a flow sequence</code>: _bookdown.yml parse error</h4>
 <p>If you see an error like this:</p>
 <pre><code>Run Rscript -e "bookdown::render_book('index.Rmd', output_format = 'all')"
 Error in yaml::yaml.load(..., eval.expr = TRUE) :
@@ -294,15 +367,15 @@ Error: Process completed with exit code 1.</code></pre>
             "References.Rmd"]</code></pre>
 <p>Commit the changes to your <code>_bookdown.yml</code> and see if the preview GitHub action runs appropriately.</p>
 </section>
-<section id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="level3">
-<h3 class="anchored" data-anchor-id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</h3>
+<section id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="level4">
+<h4 class="anchored" data-anchor-id="error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</h4>
 <p>If you get a 404 error after clicking the link while attempting to download the <code>.docx</code> file from the GitHub Action rendered previews, then add the following code to the end of the <code>_output.yml</code> file:</p>
 <pre><code>bookdown::word_document2:
   toc: true</code></pre>
 <p>Commit the changes to your <code>_output.yml</code> and see if the preview GitHub action runs appropriately.</p>
 </section>
-<section id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="level3">
-<h3 class="anchored" data-anchor-id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</h3>
+<section id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="level4">
+<h4 class="anchored" data-anchor-id="error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</h4>
 <p>If you observe an error like this:</p>
 <pre><code>Error in if (title == x2) return(head) : the condition has length &gt; 1
 Calls: &lt;Anonymous&gt; ... split_chapters -&gt; build -&gt; sub -&gt; is.factor -&gt; prepend_chapter_title
@@ -322,19 +395,52 @@ Error: Process completed with exit code 1.</code></pre>
   &lt;/html&gt;</code></pre>
 </section>
 </section>
+</section>
 <section id="content-not-rendering" class="level2">
 <h2 class="anchored" data-anchor-id="content-not-rendering">Content not rendering</h2>
 <p>Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).</p>
+<section id="could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure" class="level3">
+<h3 class="anchored" data-anchor-id="could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure"><code>could not read Username for 'https://github.com': terminal prompts disabled</code>: GitHub authentication failure</h3>
+<p><em>Error example:</em></p>
+<pre><code>The process '/usr/bin/git' failed with exit code 128
+could not read Username for 'https://github.com': terminal prompts disabled
+could not read Username for 'https://github.com': terminal prompts disabled
+could not read Username for 'https://github.com': terminal prompts disabled</code></pre>
+<p><em>What does this mean?:</em></p>
+<p>This error occurs when the GitHub Action workflow does not have the necessary permissions to authenticate with GitHub. This is typically caused by missing or insufficient repository permissions for the workflow’s <code>GITHUB_TOKEN</code>.</p>
+<p>To fix this, see the <a href="https://www.ottrproject.org/cheatsheets/ottr_token.html">OTTR token cheatsheet</a> for detailed instructions, or follow these steps:</p>
+<ol type="1">
+<li>Go to your repository’s <strong>Settings</strong> &gt; <strong>Actions</strong> &gt; <strong>General</strong>.</li>
+<li>Under <strong>Workflow permissions</strong>, select <code>Read and write permissions</code>.</li>
+<li>Click <strong>Save</strong>, then re-run the failed workflow.</li>
+</ol>
+</section>
 </section>
 <section id="contact-info" class="level2">
 <h2 class="anchored" data-anchor-id="contact-info">Contact Info</h2>
-<p>If you have a question that’s not addressed by this website or just wanna chat with us about something else, please email us at itcrtrainingnetwork@gmail.com OR you can <a href="https://github.com/ottrproject/OTTR_Template/issues/new">leave a GitHub issue here</a> and assign or “at” a team member in the description/a comment (<code>@carriewright11</code>, <code>@kweav</code>, or <code>@avahoffman</code>).</p>
+<p>If you have a question that’s not addressed by this website or just wanna chat with us about OTTR, please email us at itcrtrainingnetwork@gmail.com OR you can <a href="https://github.com/ottrproject/OTTR_Template/issues/new">leave a GitHub issue here</a> and assign or “at” a team member in the description/a comment (<code>@carriewright11</code>, <code>@kweav</code>, or <code>@avahoffman</code>).</p>
 <p>We greatly appreciate any feedback! We are always looking for ways to improve OTTR so more open source courses can be made!</p>
+<hr>
+<p><strong>Still need help?</strong> <a href="./contact.html">Contact us</a> →</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<hr>
+
+<center>
+  <img src="resources/images/basic_otter_circle.PNG" width="120">
+  <br>
+  Your feedback is greatly appreciated! You can fill out <a href="https://forms.gle/jvFjnhqt5V1E9LbQ9">this form </a>
+  <br>
+  or <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">file a GitHub issue</a>.
+    <br>
+  <br><font size="1">Otter images by <a href="https://www.linkedin.com/in/jimin-hwang-549835142/">Jimin Hwang</a>.</font>
+  <br>
+  <br>
+</center></div>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -386,13 +492,14 @@ Error: Process completed with exit code 1.</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -734,7 +841,7 @@ Error: Process completed with exit code 1.</code></pre>
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./resources/images/basic_otter_water.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-169b6d0432b1a799c6e7691d07d1a7fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -75,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,61 +104,90 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-quick-start">    
         <li>
     <a class="dropdown-item" href="./getting_started.html">
- <span class="dropdown-text">Getting Started</span></a>
+ <span class="dropdown-text">Getting started</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./next_steps.html">
- <span class="dropdown-text">Next Steps</span></a>
+ <span class="dropdown-text">Next steps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./examples.html">
+ <span class="dropdown-text">Example use cases</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./choose_template.html"> 
+<span class="menu-text">Help me choose my template</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Build with OTTR</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-build-with-ottr">    
+        <li>
+    <a class="dropdown-item" href="./getting_started.html">
+ <span class="dropdown-text">Template</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./writing_content_courses.html">
+ <span class="dropdown-text">Start writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enroll_sync.html">
+ <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./more_features_credits.html">
+ <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Customize</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-customization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Customization</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Advanced Integrations</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-customization">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
         <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Customizing checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Customizing style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Customizing Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+    <a class="dropdown-item" href="./more_features_ganalytic.html">
+ <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_sources.html">
  <span class="dropdown-text">Citing sources <i class="fa-solid fa-quote-left" title="A left quotation mark" aria-label="quote-left"></i></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./more_features_credits.html">
- <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
+    <a class="dropdown-item" href="./more_features_gdoc.html">
+ <span class="dropdown-text">Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./more_features_gdoc.html">
- <span class="dropdown-text">Compatibility with Google Docs <i class="fa-solid fa-file" title="a file folder" aria-label="file"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./more_features_ganalytic.html">
- <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fying an existing repository</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./examples.html">
- <span class="dropdown-text">About OTTR babies</span></a>
-  </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./publishing.html"> 
+<span class="menu-text">Publishing OTTR courses</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="./faqs.html"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -181,9 +211,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -206,12 +234,292 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<style>
+  #ottr-wizard {
+    font-family: inherit;
+    width: 100%;
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+  #wizard-breadcrumb {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    min-height: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  .crumb-question { color: #888; }
+  .crumb-answer   { color: #2780e3; font-weight: 600; }
+  .crumb-sep      { color: #bbb; margin: 0 2px; }
+  .wizard-question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 1rem;
+  }
+  .wizard-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .wizard-btn {
+    background-color: #ADD8E6;
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+  .wizard-btn:hover { background-color: #85C1D4; }
+  .result-card {
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin-top: 0.5rem;
+  }
+  .result-recommended {
+    background-color: #e8f6fa;
+    border-left: 4px solid #ADD8E6;
+  }
+  .result-standard {
+    background-color: #f4f4f4;
+    border-left: 4px solid #aaa;
+  }
+  .result-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.3rem;
+  }
+  .badge-recommended {
+    background-color: #ADD8E6;
+    color: #222;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .result-desc {
+    font-size: 0.92rem;
+    color: #444;
+    margin: 0.5rem 0 1rem;
+  }
+  .result-link {
+    display: inline-block;
+    background-color: #ADD8E6;
+    color: #222 !important;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.15s ease;
+  }
+  .result-link:hover { background-color: #85C1D4; }
+  .restart-btn {
+    background: none;
+    border: none;
+    color: #5aA8C0;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    text-decoration: underline;
+  }
+  .restart-btn:hover { color: #85C1D4; }
+</style>
 <div class="banner_color">
 <p><br></p>
 </div>
 <p style="font-size: 16px;">
 OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make <strong>websites, online courses, and dashboards</strong> more easily (and for free)!
 </p>
+<div id="ottr-wizard">
+<div id="wizard-breadcrumb">
+
+</div>
+<div id="wizard-content">
+
+</div>
+</div>
+<script>
+(function () {
+  const tree = {
+    question: "What do you want to create?",
+    options: [
+      {
+        label: "Website",
+        next: {
+          question: "Do you have existing R Markdown / Bookdown files?",
+          options: [
+            { label: "Yes", result: "rmarkdown_web" },
+            { label: "No I'm starting fresh", result: "quarto_web" }
+          ]
+        }
+      },
+      {
+        label: "Online Course",
+        next: {
+          question: "Do you have existing R Markdown files?",
+          options: [
+            { label: "Yes", result: "rmarkdown_courses" },
+            { label: "No I'm starting fresh", result: "quarto_courses" }
+          ]
+        }
+      },
+      {
+        label: "Metrics Dashboard",
+        result: "dashboards"
+      }
+    ]
+  };
+
+  const results = {
+    rmarkdown_web: {
+      name: "R Markdown Websites",
+      description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
+      url: "getting_started.html#r-markdown-websites",
+      recommended: false
+    },
+    quarto_web: {
+      name: "Quarto Websites",
+      description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
+      url: "getting_started.html#quarto-websites",
+      recommended: true,
+      fallback: "rmarkdown_web"
+    },
+    rmarkdown_courses: {
+      name: "R Markdown Courses",
+      description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
+      url: "getting_started.html#r-markdown-courses",
+      recommended: false
+    },
+    quarto_courses: {
+      name: "Quarto Courses",
+      description: "A Quarto-based course template. Recommended for new projects.",
+      url: "getting_started.html#quarto-courses",
+      recommended: true,
+      fallback: "rmarkdown_courses"
+    },
+    dashboards: {
+      name: "Dashboards",
+      description: "Collect and display metrics from GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.",
+      url: "getting_started.html#dashboards",
+      recommended: false
+    }
+  };
+
+  let history = [];
+  let current = tree;
+
+  function render() {
+    const breadcrumb = document.getElementById("wizard-breadcrumb");
+    const content    = document.getElementById("wizard-content");
+
+    // Breadcrumb
+    if (history.length > 0) {
+      breadcrumb.innerHTML =
+        history.map(h =>
+          `<span class="crumb-question">${h.question}</span>` +
+          `<span class="crumb-sep"> › </span>` +
+          `<span class="crumb-answer">${h.label}</span>`
+        ).join('<span class="crumb-sep"> &nbsp;·&nbsp; </span>') +
+        `<button class="restart-btn" onclick="ottrRestart()">↺ Start over</button>`;
+    } else {
+      breadcrumb.innerHTML = "";
+    }
+
+    // Result
+    if (current.result) {
+      const r = results[current.result];
+      const badge = r.recommended
+        ? `<span class="badge-recommended">⭐ Recommended</span>`
+        : "";
+      const fallbackBtn = r.fallback
+        ? `<div style="margin-top:1rem">
+             <button class="restart-btn" onclick="ottrUseFallback('${r.fallback}')">
+               I want to use R Markdown instead
+             </button>
+           </div>`
+        : "";
+      content.innerHTML = `
+        <div class="result-card ${r.recommended ? "result-recommended" : "result-standard"}">
+          <div class="result-name">${r.name}${badge}</div>
+          <p class="result-desc">${r.description}</p>
+          <a href="${r.url}" class="result-link">Get started with ${r.name} →</a>
+          ${fallbackBtn}
+        </div>`;
+
+    // Question
+    } else {
+      const btns = current.options.map((opt, i) =>
+        `<button class="wizard-btn" onclick="ottrChoose(${i})">${opt.label}</button>`
+      ).join("");
+      content.innerHTML = `
+        <div class="wizard-question">${current.question}</div>
+        <div class="wizard-options">${btns}</div>`;
+    }
+  }
+
+  window.ottrChoose = function (i) {
+    const opt = current.options[i];
+    history.push({ question: current.question, label: opt.label });
+    current = opt.result ? { result: opt.result } : opt.next;
+    render();
+  };
+
+  window.ottrUseFallback = function (resultKey) {
+    current = { result: resultKey };
+    render();
+  };
+
+  window.ottrRestart = function () {
+    history = [];
+    current = tree;
+    render();
+  };
+
+  render();
+})();
+</script>
+<div style="text-align: center; margin: 0.5rem 0 1.5rem;">
+<p><a href="choose_template.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;"> Not sure? Help me choose → </a></p>
+</div>
+<section id="quarto-vs.-r-markdown" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-vs.-r-markdown">Quarto vs.&nbsp;R Markdown</h3>
+<p>OTTR templates come in two flavors based on which document format you use to write content: <strong>R Markdown</strong> (<code>.Rmd</code>) and <strong>Quarto</strong> (<code>.qmd</code>).</p>
+<ul>
+<li><strong>Quarto</strong> is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects.</li>
+<li><strong>R Markdown</strong> is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have <code>.Rmd</code> files or are following older OTTR tutorials.</li>
+</ul>
+<p>If you’re starting fresh and have no existing <code>.Rmd</code> files, go with a Quarto template. If you have existing <code>.Rmd</code> content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>R Markdown is no longer being actively updated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Posit has shifted its focus to Quarto as the next-generation publishing system. R Markdown remains functional but <strong>will not receive new features</strong>. For any new project, start with a Quarto template.</p>
+<p><strong>Resources for Quarto-fying your content:</strong></p>
+<ul>
+<li><a href="https://ddotta.github.io/quartify/articles/getting-started.html">quartify</a>: an R package that automates conversion of R Markdown files to Quarto</li>
+<li><a href="https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd">Transitioning from R Markdown to Quarto</a>: a practical guide from Openscapes</li>
+</ul>
+</div>
+</div>
+<hr>
 <div style="position: relative; width: 100%; height: 0; padding-top: 77.2727%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
@@ -285,14 +593,29 @@ Click here for the BibTeX formatted citation
 </details>
 <p><br></p>
 <center>
-<a href="https://ottrproject.org/getting_started.html"> <img src="resources/images/getstarted.png" width="30%"> </a>
+<a href="getting_started.html"> <img src="resources/images/getstarted.png" width="30%"> </a>
 </center>
 <p><br></p>
 
 
 </section>
+</section>
 
 </main> <!-- /main -->
+<hr>
+
+<center>
+  <img src="resources/images/basic_otter_circle.PNG" width="120">
+  <br>
+  Your feedback is greatly appreciated! You can fill out <a href="https://forms.gle/jvFjnhqt5V1E9LbQ9">this form </a>
+  <br>
+  or <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">file a GitHub issue</a>.
+    <br>
+  <br><font size="1">Otter images by <a href="https://www.linkedin.com/in/jimin-hwang-549835142/">Jimin Hwang</a>.</font>
+  <br>
+  <br>
+</center></div>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -344,13 +667,14 @@ Click here for the BibTeX formatted citation
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -692,7 +1016,7 @@ Click here for the BibTeX formatted citation
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 
