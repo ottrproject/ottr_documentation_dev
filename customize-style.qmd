@@ -94,7 +94,7 @@ Color theming is controlled through CSS variables. Default values live in `asset
 
 For example, within your `assets/style_config_custom.css` file, you would add: 
 
-```{css}
+```
 /*
 any variables listed in style_config_default.css can be overridden by giving them a new value in this file
 - add additional variable on new lines inside the :root element
