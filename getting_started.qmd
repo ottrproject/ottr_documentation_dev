@@ -25,8 +25,6 @@ We offer two suggested approaches based on your comfort with Git and GitHub:
 
 If you choose OTTR Advanced, we recommend installing [GitKraken](https://www.gitkraken.com/) as a Git client to facilitate branch management.
 
----
-
 ## Courses
 <span id="courses"></span>
 
@@ -36,11 +34,27 @@ If you choose OTTR Advanced, we recommend installing [GitKraken](https://www.git
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
-<div style="margin: 0.5rem 0 1.5rem;">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
-    Cheatsheet
-  </a>
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_quarto_course.html"
+    width="100%" 
+    height="600px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Quarto Course Cheatsheet">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
 </div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  Full setup guide with screenshots
+</summary>
+
 
 A Quarto-based course template. Recommended for new projects.
 
@@ -105,9 +119,10 @@ Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collabo
 
 Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
 
----
+</details>
 
 [Next Steps](next_steps.qmd) →
+
 
 ### R Markdown Courses
 
@@ -115,11 +130,27 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
 
 **Template repository:** [ottrproject/OTTR_Template](https://github.com/ottrproject/OTTR_Template)
 
-<div style="margin: 0.5rem 0 1.5rem;">
-  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
-    Cheatsheet
-  </a>
+
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_course.html"
+    width="100%" 
+    height="600px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Quarto Course Cheatsheet">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
 </div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  Full setup guide with screenshots
+</summary>
 
 An R Markdown / Bookdown-based course template with a table of contents on the side. Supports publishing to Coursera and Leanpub. Best choice when you have existing `.Rmd` files to build on.
 
@@ -212,6 +243,8 @@ If you're **not** a member of the jhudsl GitHub organization, you can:
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
 
+</details>
+
 ---
 
 [Next Steps](next_steps.qmd) →
@@ -224,11 +257,27 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
-<div style="margin: 0.5rem 0 1.5rem;">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
-    Cheatsheet
-  </a>
+
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_quarto_website.html"
+    width="100%" 
+    height="600px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Quarto Course Cheatsheet">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
 </div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  Full setup guide with screenshots
+</summary>
 
 A Quarto-based website template. Recommended for all new projects.
 
@@ -293,6 +342,8 @@ Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collabo
 
 Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
 
+</details>
+
 ---
 
 [Next Steps](next_steps.qmd) →
@@ -301,11 +352,26 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
 
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
-<div style="margin: 0.5rem 0 1.5rem;">
-  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;" target="_blank">
-    Cheatsheet
-  </a>
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_website.html"
+    width="100%" 
+    height="600px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Quarto Course Cheatsheet">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
 </div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  Full setup guide with screenshots
+</summary>
 
 An R Markdown / Bookdown-based website template with a nav bar on top. Best choice if you have existing `.Rmd` files to build on.
 
@@ -380,6 +446,8 @@ If you're **not** a member of the jhudsl GitHub organization, you can:
 <p class="comment">
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
+
+</details>
 
 ---
 
