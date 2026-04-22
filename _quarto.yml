@@ -49,10 +49,13 @@ website:
           - text: "Docker {{< fa gears title='gears' >}}"
             href: customize-docker.qmd
       - text: "Publishing OTTR courses"
-        href: publishing.qmd
-      - text: "Cheatsheets"
-        href: https://www.ottrproject.org/cheatsheets/#ottr
-        target: _blank
+        menu:
+          - text: "Bookdown"
+            href: publishing_bookdown.qmd
+          - text: "Coursera"
+            href: publishing_coursera.qmd
+          - text: "Leanpub"
+            href: publishing_coursera.qmd
       - text: "Troubleshooting {{< fa tools title='tools' >}}"
         href: faqs.qmd
       - text: "Contact {{< fa envelope title='An envelope' >}}"
