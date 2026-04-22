@@ -112,4 +112,6 @@ useR
 voiceover
 qmd
 theming
- 
+ColorBuddy
+Venngage
+WCAG

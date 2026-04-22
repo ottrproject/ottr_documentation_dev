@@ -128,7 +128,7 @@ ColorBuddy is a tool that helps you create and test color palettes for accessibi
 
 Link: <https://venngage.com/tools/accessible-color-palette-generator>
 
-Venngage offers a free tool that creates accesible color, ensuring you meet the Web Content Accessibility Guidelines (WCAG) standards.
+Venngage offers a free tool that creates accessible color, ensuring you meet the Web Content Accessibility Guidelines (WCAG) standards.
 
 <br>
 
