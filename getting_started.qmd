@@ -38,7 +38,7 @@ If you choose OTTR Advanced, we recommend installing [GitKraken](https://www.git
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_quarto_course.html"
     width="100%" 
-    height="600px" 
+    height="2820px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Quarto Course Cheatsheet">
   </iframe>
@@ -135,7 +135,7 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_course.html"
     width="100%" 
-    height="600px" 
+    height="2820px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Quarto Course Cheatsheet">
   </iframe>
@@ -262,7 +262,7 @@ _If you have any questions about these updates or files, please tag `@kweav` or 
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_quarto_website.html"
     width="100%" 
-    height="600px" 
+    height="2820px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Quarto Course Cheatsheet">
   </iframe>
@@ -356,7 +356,7 @@ Content is written in `.qmd` files using standard [Quarto syntax](https://quarto
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_website.html"
     width="100%" 
-    height="600px" 
+    height="2820px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Quarto Course Cheatsheet">
   </iframe>
