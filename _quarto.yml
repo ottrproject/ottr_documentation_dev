@@ -70,3 +70,4 @@ format:
     css: styles.css
     toc: true
     include-after-body: resources/footer.html
+    page-layout: article

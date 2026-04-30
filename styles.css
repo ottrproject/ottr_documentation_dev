@@ -5,11 +5,20 @@
   margin-top: 100px;
 }
 
+:root {
+  --ottr-soft: lightblue;
+  --ottr-accent: #1f2d3d;
+  --ottr-accent-dark: RoyalBlue;
+  --ottr-border: #ADD8E6;
+  --ottr-link: #2a7a9a;
+  --ottr-text: #1f2d3d;
+}
+
 
 /* add some color - if you want color behind a major point on your website */
 
 .banner_color {
-  background-color: lightblue;
+  background-color: var(--ottr-soft);
   font-weight:bold;
 
 }
@@ -23,7 +32,7 @@
 
 /* Style buttons - if you want to have a button */
 .btn {
-  background-color: DodgerBlue;
+  background-color: var(--ottr-accent);
   border: none;
   color: white;
   padding: 8px 20px;
@@ -33,7 +42,273 @@
 
 /* Darker background on mouse-over */
 .btn:hover {
-  background-color: RoyalBlue;
+  background-color: var(--ottr-accent-dark);
 }
 
+/* Indent nested items in the Quarto table of contents. */
+#TOC ul {
+  margin-left: 0;
+  padding-left: 0;
+}
 
+#TOC li {
+  margin-left: 0;
+}
+
+#TOC .nav-link {
+  padding-left: 0.25rem;
+}
+
+#TOC ul ul {
+  margin-left: 0.35rem;
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#TOC ul ul .nav-link {
+  padding-left: 0.35rem;
+}
+
+#TOC ul ul ul {
+  margin-left: 0.2rem;
+  padding-left: 0.85rem;
+}
+
+#TOC ul ul ul .nav-link {
+  font-size: 0.95em;
+}
+
+/* Top-level chooser for the Getting Started page. */
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(340px, 1.15fr);
+  gap: 2rem;
+  align-items: start;
+  margin: 1.5rem 0 2.75rem;
+}
+
+.intro-prereqs,
+.template-chooser {
+  min-width: 0;
+}
+
+.intro-prereqs h2,
+.template-chooser h2 {
+  margin-top: 0;
+}
+
+.intro-prereqs ul {
+  padding-left: 1.1rem;
+}
+
+.intro-prereqs li {
+  margin-bottom: 0.55rem;
+}
+
+.chooser-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.chooser-card {
+  display: flex;
+  height: 100%;
+  min-height: 13rem;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1rem;
+  color: var(--ottr-text);
+  text-decoration: none;
+  background: white;
+  border: 1px solid var(--ottr-border);
+  border-radius: 8px;
+}
+
+.chooser-card:hover,
+.chooser-card:focus {
+  color: var(--ottr-text);
+  text-decoration: none;
+  background: var(--ottr-soft);
+  border-color: var(--ottr-accent);
+}
+
+.chooser-kicker {
+  width: fit-content;
+  padding: 0.1rem 0.45rem;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--ottr-accent);
+  border: 1px solid var(--ottr-accent);
+  border-radius: 999px;
+}
+
+.chooser-title {
+  color: var(--ottr-text);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.chooser-copy {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* Template path sections. */
+.path-header,
+.setup-checklist {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.25rem;
+  color: var(--ottr-text);
+  background: #f8fbfc;
+  border-left: 5px solid var(--ottr-accent);
+  border-radius: 8px;
+}
+
+.path-header p:last-child,
+.setup-checklist ol:last-child {
+  margin-bottom: 0;
+}
+
+.setup-checklist li {
+  margin-bottom: 0.45rem;
+}
+
+h3.toc-anchor-heading {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  scroll-margin-top: 7rem;
+}
+
+h3.toc-anchor-heading .anchorjs-link {
+  display: none;
+}
+
+.template-choice {
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--ottr-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.template-choice summary {
+  display: grid;
+  grid-template-columns: max-content minmax(10rem, 1fr) max-content;
+  gap: 0.25rem 0.75rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  color: var(--ottr-text);
+  cursor: pointer;
+  background: #f8fbfc;
+}
+
+.template-choice summary:hover,
+.template-choice summary:focus {
+  background: var(--ottr-soft);
+}
+
+.template-choice[open] summary {
+  border-bottom: 1px solid var(--ottr-border);
+}
+
+.template-choice summary::after {
+  grid-row: span 2;
+  color: var(--ottr-text);
+  content: "Show";
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.template-choice[open] summary::after {
+  content: "Hide";
+}
+
+.choice-badge {
+  grid-row: span 2;
+  width: fit-content;
+  padding: 0.15rem 0.5rem;
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--ottr-accent);
+  border-radius: 999px;
+}
+
+.choice-title {
+  color: var(--ottr-text);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.choice-note {
+  font-size: 0.92rem;
+}
+
+.template-choice > p,
+.template-choice > ul,
+.template-choice > ol,
+.template-choice > div,
+.template-choice > .cheatsheet-frame {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.template-choice > p:first-of-type {
+  margin-top: 1rem;
+}
+
+.cheatsheet-frame {
+  margin: 1.25rem 0 1rem;
+}
+
+.cheatsheet-frame iframe {
+  width: 100%;
+  height: 2820px;
+  border: 1.5px solid var(--ottr-border);
+  border-radius: 8px;
+}
+
+.cheatsheet-link {
+  margin-top: 0.25rem;
+  text-align: right;
+}
+
+.cheatsheet-link a {
+  color: var(--ottr-link);
+  font-size: 1rem;
+}
+
+.template-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin-top: 0.75rem;
+}
+
+.template-actions p {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chooser-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .chooser-card {
+    min-height: 0;
+  }
+
+  .template-choice summary {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-badge {
+    grid-row: auto;
+  }
+}

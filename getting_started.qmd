@@ -1,190 +1,223 @@
 ---
 title: "Getting Started"
 toc-depth: 4
+page-layout: full
+toc-location: left
 ---
 
-## Prerequisites for using OTTR
+:::: {.intro-grid}
 
-OTTR relies on R Markdown/Quarto and GitHub Actions. You do not need to be an expert in either to get started. We will guide you through the process! However, we recommend spending a few minutes familiarizing yourself with both before diving in.
+::: {.intro-prereqs}
 
-Please check out these resources if you are not familiar with R Markdown/Quarto. Note that OTTR is also compatible with regular Markdown websites.
+## Prerequisites for using OTTR 
 
-- If you aren't familiar with **Quarto**, you can get started [here](https://quarto.org/docs/get-started/).
-- If you aren't familiar with **R Markdown**, you can find RStudio's lessons [here](https://rmarkdown.rstudio.com/lesson-1.html).
-- If you aren't familiar with **Markdown**, this [site](https://www.markdownguide.org/getting-started/) is a nice introduction.
+You do not need to be an expert to get started. A few basics will help:
 
-If you are not familiar with **Git and GitHub**, we recommend going through these chapters from our Reproducibility courses:
+- **Writing:** basic [Markdown](https://www.markdownguide.org/getting-started/) plus [Quarto](https://quarto.org/docs/get-started/) or [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html), depending on your template.
+- **GitHub:** an account and enough comfort to create repositories, update settings, and read GitHub Actions results.
+- **Workflow:** use the browser-only entry path if you are new to Git, or install Git/[GitKraken](https://www.gitkraken.com/) for local editing.
 
-- [Making your project open source with GitHub](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/making-your-project-open-source-with-github.html)
-- [Using version control with GitHub](https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/using-version-control-with-github.html)
+:::
 
-We offer two suggested approaches based on your comfort with Git and GitHub:
+::: {.template-chooser}
 
-- **OTTR Entry Level**: Conducted entirely through the GitHub web browser — no local Git setup needed.
-- **OTTR Advanced**: For those familiar with (or interested in learning) Git. Involves some additional learning but is highly beneficial for version control beyond OTTR.
+## Choose what you want to build
 
-If you choose OTTR Advanced, we recommend installing [GitKraken](https://www.gitkraken.com/) as a Git client to facilitate branch management.
+```{=html}
+<div class="chooser-gallery" aria-label="Choose an OTTR template type">
+  <a class="chooser-card" href="#courses">
+    <span class="chooser-title">Courses</span>
+    <span class="chooser-copy">Chaptered learning materials with navigation, publishing options, and course-specific setup guides.</span>
+  </a>
+  <a class="chooser-card" href="#websites">
+    <span class="chooser-title">Websites</span>
+    <span class="chooser-copy">Documentation, project sites, and public resources that do not need course-style structure.</span>
+  </a>
+  <a class="chooser-card" href="#dashboards">
+    <span class="chooser-title">Dashboards</span>
+    <span class="chooser-copy">Metric dashboards for GitHub, analytics, forms, package stats, and other project signals.</span>
+  </a>
+</div>
+```
+
+:::
+
+::::
 
 ## Courses
-<span id="courses"></span>
 
-### Quarto Courses
+::: {.path-header}
+**Use this path when:** you are building chaptered learning materials, modules, or a course website.
+:::
 
-<span id="quarto-courses"></span>
+### Quarto Courses {.toc-anchor-heading}
+
+<details class="template-choice" open>
+<summary>
+  <span class="choice-title">Quarto Courses</span>
+  <span class="choice-note">Best for new course builds</span>
+</summary>
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
-<div style="margin: 1.5rem 0;">
+<div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_quarto_course.html"
-    width="100%" 
-    height="2820px" 
-    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Quarto Course Cheatsheet">
   </iframe>
   
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank">↗ Open in new tab</a>
   </div>
   
 </div>
 
+::: {.template-actions}
 [Full setup guide with screenshots](quarto-course.qmd)
 
 [Next Steps](next_steps.qmd) →
+:::
 
-### R Markdown Courses
+</details>
 
-<span id="rmarkdown-courses"></span>
+### R Markdown Courses {.toc-anchor-heading}
+
+<details class="template-choice">
+<summary>
+  <span class="choice-title">R Markdown Courses</span>
+  <span class="choice-note">Best for `.Rmd` or Bookdown courses</span>
+</summary>
 
 **Template repository:** [ottrproject/OTTR_Template](https://github.com/ottrproject/OTTR_Template)
 
-
-<div style="margin: 1.5rem 0;">
+<div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_course.html"
-    width="100%" 
-    height="2820px" 
-    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
-    title="OTTR Quarto Course Cheatsheet">
+    title="OTTR R Markdown Course Cheatsheet">
   </iframe>
   
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank">↗ Open in new tab</a>
   </div>
   
 </div>
 
+::: {.template-actions}
 [Full setup guide with screenshots](rmd-course.qmd)
 
----
-
 [Next Steps](next_steps.qmd) →
+:::
+
+</details>
 
 ## Websites
 
-### Quarto Websites
+::: {.path-header}
+**Use this path when:** you want a project website, documentation site, resource hub, or public-facing guide without course-style chapters.
+:::
 
-<span id="quarto-websites"></span>
+### Quarto Websites {.toc-anchor-heading}
+
+<details class="template-choice" open>
+<summary>
+  <span class="choice-title">Quarto Websites</span>
+  <span class="choice-note">Best for new websites</span>
+</summary>
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
-
-<div style="margin: 1.5rem 0;">
+<div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_quarto_website.html"
-    width="100%" 
-    height="2820px" 
-    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
-    title="OTTR Quarto Course Cheatsheet">
+    title="OTTR Quarto Website Cheatsheet">
   </iframe>
   
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank">↗ Open in new tab</a>
   </div>
   
 </div>
 
+::: {.template-actions}
 [Full setup guide with screenshots](quarto-website.qmd)
 
----
-
 [Next Steps](next_steps.qmd) →
+:::
 
-### R Markdown Websites
+</details>
+
+### R Markdown Websites {.toc-anchor-heading}
+
+<details class="template-choice">
+<summary>
+  <span class="choice-title">R Markdown Websites</span>
+  <span class="choice-note">Best for existing `.Rmd` sites</span>
+</summary>
 
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
-<div style="margin: 1.5rem 0;">
+<div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_website.html"
-    width="100%" 
-    height="2820px" 
-    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
-    title="OTTR Quarto Course Cheatsheet">
+    title="OTTR R Markdown Website Cheatsheet">
   </iframe>
   
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank">↗ Open in new tab</a>
   </div>
   
 </div>
 
+::: {.template-actions}
 [Full setup guide with screenshots](rmd-website.qmd)
 
----
-
 [Next Steps](next_steps.qmd) →
+:::
+
+</details>
 
 ## Dashboards
 
 ### Metricminer Dashboard
 
+::: {.path-header}
+**Use this path when:** you want a dashboard that reports project metrics from GitHub, Google Analytics, Google Forms, CRAN, Calendly, and other sources.
+
 **Template repository:** [ottrproject/metricminer-dashboard](https://github.com/ottrproject/metricminer-dashboard)
+:::
 
-A dashboard template powered by the [`metricminer`](https://www.metricminer.org/) R package. Displays metrics from GitHub, Google Analytics, Google Forms, CRAN, Calendly, and more.
+1. Create a new repository from the [metricminer-dashboard template](https://github.com/ottrproject/metricminer-dashboard).
+2. Make the repository public, then enable GitHub Actions **Read and write permissions** and **Allow GitHub Actions to create and approve pull requests**.
+3. Add a repository secret named `GH_PAT` using a classic personal access token with `repo` and `workflow` scopes.
+4. Add credentials for the metric sources you want to collect from.
+5. Deploy from the `main` branch and `/docs` folder in GitHub Pages, then enable HTTPS.
 
-#### 1. Create a repository from the template
+
+<details class="template-choice">
+<summary>
+  <span class="choice-title">Dashboard setup notes</span>
+  <span class="choice-note">Settings, secrets, and first deploy</span>
+</summary>
 
 On the [landing page of the metricminer-dashboard repository](https://github.com/ottrproject/metricminer-dashboard), locate the green **Use this template** button in the upper right corner. Click it, then select **Create a new repository** and follow the instructions.
 
 ![](resources/screenshots/template_button.png)
 
-#### 2. Name your repository and fill in a short description
+After creating your repository, go to **Settings** > **Actions** > **General**. Make sure you have:
 
-Enter a name in the **Repository name** field and provide a brief description in the **Description** box.
-
-#### 3. Ensure your repository is set to `public`
-
-Make sure to set it [to a public repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility).
-
-#### 4. Click `Create repository from template` to proceed
-
-After creating your repository, navigate to the **Issues** tab and follow any automatically filed setup instructions.
-
-#### 5. Check your GitHub Actions settings
-
-Go to **Settings** > **Actions** > **General**. Make sure you have:
-
-1. Given **Read and write permissions**
-2. Checked **Allow GitHub Actions to create and approve pull requests**
+1. Given **Read and write permissions**.
+2. Checked **Allow GitHub Actions to create and approve pull requests**.
 
 Then click **Save**.
 
 <img src="resources/images/workflow-permissions.png" width="500">
 
-#### 6. Set up your GitHub personal access token
-
-Go to **Settings** > **Secrets and variables** > **Actions** > **Repository secrets** and click **New repository secret**.
+Go to **Settings** > **Secrets and variables** > **Actions** > **Repository secrets** and click **New repository secret**. Add:
 
 - **Name**: `GH_PAT` (this exact name is required)
 - **Secret**: create a [classic personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with `repo` and `workflow` scopes checked.
 
-#### 7. Configure your data source credentials
-
 Set up credentials for whichever metric sources you want to collect from. Each source requires its own repository secret — see the [metricminer documentation](https://www.metricminer.org/) for the specific tokens needed (Google Analytics, GitHub, etc.).
-
-#### 8. Set up GitHub Pages
 
 In your repository, go to **Settings** > **Pages** and configure:
 
@@ -197,9 +230,9 @@ Click **Save**, then check **Enforce HTTPS** at the bottom of the page.
 **Warning**: If you visit your URL before pushing any file changes, you may see a 404 error. Check after filing your first pull request.
 </p>
 
-#### Start customizing!
-
 Edit the `.Rmd` files in the repository to configure which metrics to display and how to arrange them. See [metricminer.org](https://www.metricminer.org/) for full documentation.
+
+</details>
 
 ---
 
