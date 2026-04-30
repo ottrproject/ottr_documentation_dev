@@ -1,0 +1,69 @@
+---
+title: "Getting started: Quarto Courses"
+---
+
+
+A Quarto-based course template. Recommended for new projects.
+
+#### 1. Create a repository from the template
+
+On the [landing page of the OTTR_Quarto repository](https://github.com/ottrproject/OTTR_Quarto), locate the green **Use this template** button in the upper right corner. Click it, then select **Create a new repository** and follow the instructions.
+
+![](resources/screenshots/template_button.png)
+
+#### 2. Name your repository and fill in a short description
+
+Enter a name in the **Repository name** field and provide a brief description in the **Description** box.
+
+![](resources/screenshots/creating_new_course_repo.png)
+
+#### 3. Ensure your repository is set to `public`
+
+Make sure to set it [to a public repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility). The rendered pull request preview won't work on private repositories.
+
+#### 4. Click `Create repository from template` to proceed
+
+After creating your repository, issues with setup instructions will be automatically filed. Navigate to the **Issues** tab and follow the instructions there.
+
+#### 5. Check your GitHub Actions settings
+
+Go to **Settings** > **Actions** > **General**. Make sure you have:
+
+1. Given **Read and write permissions**
+2. Checked **Allow GitHub Actions to create and approve pull requests**
+
+Then click **Save**.
+
+<img src="resources/images/workflow-permissions.png" width="500">
+
+#### 6. Set up your GitHub personal access token
+
+Go to **Settings** > **Secrets and variables** > **Actions** > **Repository secrets** and click **New repository secret**.
+
+- **Name**: `GH_PAT` (this exact name is required)
+- **Secret**: create a [classic personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with `repo` and `workflow` scopes checked.
+
+#### 7. Set up GitHub Pages
+
+In your repository, go to **Settings** > **Pages** and configure:
+
+- **Source**: Deploy from a branch
+- **Branch**: `main`, folder `/docs`
+
+Click **Save**, then check **Enforce HTTPS** at the bottom of the page.
+
+![](resources/screenshots/change_https.png)
+
+<p class="comment">
+**Warning**: If you visit your URL before pushing any file changes, you may see a 404 error. Check after filing your first pull request.
+</p>
+
+#### 8. Enroll for updates (recommended)
+
+Add `jhudsl-robot` as a collaborator with write access (**Settings** > **Collaborators & Teams**), then add your repository name to the relevant sync file. [See full instructions here](https://www.ottrproject.org/getting_started.html#which-sync-file-should-you-edit).
+
+#### Start writing!
+
+Content is written in `.qmd` files using standard [Quarto syntax](https://quarto.org/docs/authoring/markdown-basics.html).
+
+[Next Steps](next_steps.qmd) →
