@@ -6,7 +6,7 @@ output:
 
 If you have questions please contact:
 
--   Carrie Wright (cwright2@fredhutch.org)
+-   Carrie Wright (cwright2@fredhutch.org) 
 -   Ava Hoffman (ahoffma2@fredhutch.org)
 -   Kate Isaac (kisaac@fredhutch.org)
 
