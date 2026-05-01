@@ -2,8 +2,7 @@
 title: "Getting Started"
 toc-depth: 4
 page-layout: full
-toc-location: left
----
+--- 
 
 :::: {.intro-grid}
 
@@ -35,7 +34,7 @@ You do not need to be an expert to get started. A few basics will help:
   </a>
   <a class="chooser-card" href="#dashboards">
     <span class="chooser-title">Dashboards</span>
-    <span class="chooser-copy">Metric dashboards for GitHub, analytics, forms, package stats, and other project signals.</span>
+    <span class="chooser-copy">Metric dashboards for GitHub, analytics, forms, and package stats.</span>
   </a>
 </div>
 ```

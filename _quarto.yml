@@ -69,5 +69,8 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    toc-location: left
     include-after-body: resources/footer.html
     page-layout: article
+    
+
