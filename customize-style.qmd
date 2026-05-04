@@ -92,7 +92,7 @@ Thus as example the reference page looks like this:
 
 Color theming is controlled through CSS variables. Default values live in `assets/style_config_default.css`, and course-specific overrides should go in `assets/style_config_custom.css`. To customize branding, update variables such as `--link-color`, `--accent-color`, and `--highlight-color`. You generally should not edit color hex codes directly in `assets/style.css`.
 
-For example, within your `assets/style_config_custom.css` file, you would add: 
+For example, within your `assets/style_config_custom.css` file, you would add:  
 
 ```
 /*
