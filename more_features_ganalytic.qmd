@@ -2,6 +2,27 @@
 title: "Google Analytics"
 ---
 
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/google_analytics.html"
+    width="100%" 
+    height="2820px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Google Analytics Cheatsheet">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/google_analytics.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
+</div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  Full setup guide with screenshots
+</summary>
+
 # Set Up Google Analytics
 
 Follow these steps to enable traffic tracking for your OTTR course or website.
@@ -155,7 +176,7 @@ You can verify the Google Analytics code was included by opening any rendered HT
 | Old template not rendering GA | Manually run the `render_all` workflow; confirm both `_output.yml` and `GA_Script.html` are updated with the correct code chunk, and that the `GA_Script.html` filename is consistent in both files |
 | Render not triggering | Ensure `GH_PAT` is set up for the repo (with `actions` and `repo` permissions), not just the organization |
 
-
+</details>
 
 ---
 

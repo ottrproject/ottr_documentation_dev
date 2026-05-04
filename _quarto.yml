@@ -17,8 +17,6 @@ website:
             href: next_steps.qmd
           - text: "Example use cases"
             href: examples.qmd
-      - text: "Help me choose my template"
-        href: choose_template.qmd
       - text: "Build with OTTR"
         menu:
           - text: "Template"
@@ -32,15 +30,7 @@ website:
           - text: "Giving credits {{< fa award title='An award' >}}"
             href: more_features_credits.qmd
           - text: "---"
-          - text: "Customize"
-          - text: "Style {{< fa palette title='A palette' >}}"
-            href: customize-style.qmd
-          - text: "Checks {{< fa robot title='A robot' >}}"
-            href: customize-robots.qmd
-          - text: "Docker {{< fa gears title='gears' >}}"
-            href: customize-docker.qmd
-      - text: "Advanced Integrations"
-        menu:
+          - text: "Highly Recommended Steps"
           - text: "Google Analytics {{< fa chart-line title='a line chart' >}}"
             href: more_features_ganalytic.qmd
           - text: "Citing sources {{< fa quote-left title='A left quotation mark' >}}"
@@ -49,8 +39,23 @@ website:
             href: more_features_gdoc.qmd
           - text: "Borrowing chapters {{< fa bookmark title='A bookmark' >}}"
             href: more_features_borrowing.qmd
+          - text: ""
+          - text: "---"
+          - text: "Additional Customizations"
+          - text: "Style {{< fa palette title='A palette' >}}"
+            href: customize-style.qmd
+          - text: "Checks {{< fa robot title='A robot' >}}"
+            href: customize-robots.qmd
+          - text: "Docker {{< fa gears title='gears' >}}"
+            href: customize-docker.qmd
       - text: "Publishing OTTR courses"
-        href: publishing.qmd
+        menu:
+          - text: "Bookdown"
+            href: publishing_bookdown.qmd
+          - text: "Coursera"
+            href: publishing_coursera.qmd
+          - text: "Leanpub"
+            href: publishing_coursera.qmd
       - text: "Troubleshooting {{< fa tools title='tools' >}}"
         href: faqs.qmd
       - text: "Contact {{< fa envelope title='An envelope' >}}"
@@ -64,4 +69,8 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    toc-location: left
     include-after-body: resources/footer.html
+    page-layout: article
+    
+
