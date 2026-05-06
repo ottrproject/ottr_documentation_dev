@@ -117,4 +117,4 @@ Venngage
 WCAG
 toc
 prereqs
-Chaptered
+chaptered
