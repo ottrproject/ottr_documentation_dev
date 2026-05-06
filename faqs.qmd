@@ -99,7 +99,7 @@ Execution halted
 
 *What does this mean?:*
 
-Your Google Slides presentation you have tried to retrieve a slide from with `ottrpal::include_slide()` is not public. Your Google Slide document must be set to `Anyone with a link`. See [this article for more details.](https://support.wix.com/en/article/setting-permissions-for-google-drive-files-and-folders#:~:text=Settings%20Permissions%20for%20a%20Google,edit%20and%20comment%20as%20well.) The renders will fail if this is not set! See the [setting up images and graphics section](https://www.ottrproject.org/writing_content_courses.html#set-up-images) for more details.
+Your Google Slides presentation you have tried to retrieve a slide from with `ottrpal::include_slide()` is not public. Your Google Slide document must be set to `Anyone with a link`. See [this article for more details.](https://support.wix.com/en/article/adding-and-setting-up-the-google-drive-app-9434397) The renders will fail if this is not set! See the [setting up images and graphics section](https://www.ottrproject.org/writing_content_courses.html#set-up-images) for more details.
 
 ------------------------------------------------------------------------
 
