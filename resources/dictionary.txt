@@ -115,3 +115,6 @@ theming
 ColorBuddy
 Venngage
 WCAG
+toc
+prereqs
+Chaptered
