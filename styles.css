@@ -155,6 +155,30 @@
   line-height: 1.35;
 }
 
+.chapter-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.chapter-links a {
+  padding: 0.35rem 0.65rem;
+  color: var(--ottr-text);
+  text-decoration: none;
+  background: white;
+  border: 1px solid var(--ottr-border);
+  border-radius: 8px;
+}
+
+.chapter-links a:hover,
+.chapter-links a:focus {
+  color: var(--ottr-text);
+  text-decoration: none;
+  background: var(--ottr-soft);
+  border-color: var(--ottr-accent);
+}
+
 /* Template path sections. */
 .path-header,
 .setup-checklist {
@@ -175,19 +199,8 @@
   margin-bottom: 0.45rem;
 }
 
-h3.toc-anchor-heading {
-  height: 0;
-  margin: 0;
-  overflow: hidden;
-  scroll-margin-top: 7rem;
-}
-
-h3.toc-anchor-heading .anchorjs-link {
-  display: none;
-}
-
 .template-choice {
-  margin: 1rem 0 1.5rem;
+  margin: 0.4rem 0 1.5rem;
   border: 1px solid var(--ottr-border);
   border-radius: 8px;
   overflow: hidden;
@@ -195,7 +208,7 @@ h3.toc-anchor-heading .anchorjs-link {
 
 .template-choice summary {
   display: grid;
-  grid-template-columns: max-content minmax(10rem, 1fr) max-content;
+  grid-template-columns: minmax(10rem, 1fr) max-content;
   gap: 0.25rem 0.75rem;
   align-items: center;
   padding: 0.85rem 1rem;
@@ -214,7 +227,6 @@ h3.toc-anchor-heading .anchorjs-link {
 }
 
 .template-choice summary::after {
-  grid-row: span 2;
   color: var(--ottr-text);
   content: "Show";
   font-size: 0.85rem;
@@ -223,23 +235,6 @@ h3.toc-anchor-heading .anchorjs-link {
 
 .template-choice[open] summary::after {
   content: "Hide";
-}
-
-.choice-badge {
-  grid-row: span 2;
-  width: fit-content;
-  padding: 0.15rem 0.5rem;
-  color: white;
-  font-size: 0.78rem;
-  font-weight: 700;
-  background: var(--ottr-accent);
-  border-radius: 999px;
-}
-
-.choice-title {
-  color: var(--ottr-text);
-  font-size: 1.05rem;
-  font-weight: 700;
 }
 
 .choice-note {

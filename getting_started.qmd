@@ -37,6 +37,7 @@ You do not need to be an expert to get started. A few basics will help:
     <span class="chooser-copy">Metric dashboards for GitHub, analytics, forms, and package stats.</span>
   </a>
 </div>
+
 ```
 
 :::
@@ -49,11 +50,10 @@ You do not need to be an expert to get started. A few basics will help:
 **Use this path when:** you are building chaptered learning materials, modules, or a course website.
 :::
 
-### Quarto Courses {.toc-anchor-heading}
+### Quarto Courses
 
 <details class="template-choice" open>
 <summary>
-  <span class="choice-title">Quarto Courses</span>
   <span class="choice-note">Best for new course builds</span>
 </summary>
 
@@ -71,19 +71,20 @@ You do not need to be an expert to get started. A few basics will help:
   
 </div>
 
-::: {.template-actions}
-[Full setup guide with screenshots](quarto-course.qmd)
+::: {.callout-tip}
+Need more help? Check out the [full setup guide here](quarto-course.qmd).
+:::
 
+::: {.template-actions}
 [Next Steps](next_steps.qmd) →
 :::
 
 </details>
 
-### R Markdown Courses {.toc-anchor-heading}
+### R Markdown Courses
 
 <details class="template-choice">
 <summary>
-  <span class="choice-title">R Markdown Courses</span>
   <span class="choice-note">Best for `.Rmd` or Bookdown courses</span>
 </summary>
 
@@ -101,9 +102,11 @@ You do not need to be an expert to get started. A few basics will help:
   
 </div>
 
-::: {.template-actions}
-[Full setup guide with screenshots](rmd-course.qmd)
+::: {.callout-tip}
+Need more help? Check out the [full setup guide here](rmd-course.qmd).
+:::
 
+::: {.template-actions}
 [Next Steps](next_steps.qmd) →
 :::
 
@@ -115,11 +118,10 @@ You do not need to be an expert to get started. A few basics will help:
 **Use this path when:** you want a project website, documentation site, resource hub, or public-facing guide without course-style chapters.
 :::
 
-### Quarto Websites {.toc-anchor-heading}
+### Quarto Websites
 
 <details class="template-choice" open>
 <summary>
-  <span class="choice-title">Quarto Websites</span>
   <span class="choice-note">Best for new websites</span>
 </summary>
 
@@ -137,19 +139,20 @@ You do not need to be an expert to get started. A few basics will help:
   
 </div>
 
-::: {.template-actions}
-[Full setup guide with screenshots](quarto-website.qmd)
+::: {.callout-tip}
+Need more help? Check out the [full setup guide here](quarto-website.qmd).
+:::
 
+::: {.template-actions}
 [Next Steps](next_steps.qmd) →
 :::
 
 </details>
 
-### R Markdown Websites {.toc-anchor-heading}
+### R Markdown Websites
 
 <details class="template-choice">
 <summary>
-  <span class="choice-title">R Markdown Websites</span>
   <span class="choice-note">Best for existing `.Rmd` sites</span>
 </summary>
 
@@ -167,9 +170,11 @@ You do not need to be an expert to get started. A few basics will help:
   
 </div>
 
-::: {.template-actions}
-[Full setup guide with screenshots](rmd-website.qmd)
+::: {.callout-tip}
+Need more help? Check out the [full setup guide here](rmd-website.qmd).
+:::
 
+::: {.template-actions}
 [Next Steps](next_steps.qmd) →
 :::
 
