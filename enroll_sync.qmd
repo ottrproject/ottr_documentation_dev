@@ -2,6 +2,10 @@
 toc-depth: 5
 ---
 
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
 
 <div style="margin: 1.5rem 0;">
   <iframe 
@@ -11,10 +15,6 @@ toc-depth: 5
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Enroll in Sync Updates Cheatsheet">
   </iframe>
-  
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-  </div>
   
 </div>
 
