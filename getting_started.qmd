@@ -59,15 +59,16 @@ You do not need to be an expert to get started. A few basics will help:
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
+
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank">↗ Open in new tab</a>
+  </div>
+  
 <div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_quarto_course.html"
     title="OTTR Quarto Course Cheatsheet">
   </iframe>
-  
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank">↗ Open in new tab</a>
-  </div>
   
 </div>
 
@@ -90,15 +91,17 @@ Need more help? Check out the [full setup guide here](quarto-course.qmd).
 
 **Template repository:** [ottrproject/OTTR_Template](https://github.com/ottrproject/OTTR_Template)
 
+
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank">↗ Open in new tab</a>
+  </div>
+  
 <div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_course.html"
     title="OTTR R Markdown Course Cheatsheet">
   </iframe>
   
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank">↗ Open in new tab</a>
-  </div>
   
 </div>
 
@@ -127,15 +130,17 @@ Need more help? Check out the [full setup guide here](rmd-course.qmd).
 
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
+
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank">↗ Open in new tab</a>
+  </div>
+  
 <div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_quarto_website.html"
     title="OTTR Quarto Website Cheatsheet">
   </iframe>
   
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank">↗ Open in new tab</a>
-  </div>
   
 </div>
 
@@ -158,15 +163,17 @@ Need more help? Check out the [full setup guide here](quarto-website.qmd).
 
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
+
+  <div class="cheatsheet-link">
+  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank">↗ Open in new tab</a>
+  </div>
+  
+
 <div class="cheatsheet-frame">
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_website.html"
     title="OTTR R Markdown Website Cheatsheet">
   </iframe>
-  
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank">↗ Open in new tab</a>
-  </div>
   
 </div>
 
