@@ -112,7 +112,7 @@ toc: false
 </div>
 
 
-<p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
+<p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
 
 
 <div id="ottr-wizard">
