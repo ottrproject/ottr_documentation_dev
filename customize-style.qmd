@@ -90,45 +90,22 @@ Thus as example the reference page looks like this:
 
 ## Changing course text colors
 
-Color theming is controlled through CSS variables. Default values live in `assets/style_config_default.css`, and course-specific overrides should go in `assets/style_config_custom.css`. To customize branding, update variables such as `--link-color`, `--accent-color`, and `--highlight-color`. You generally should not edit color hex codes directly in `assets/style.css`.
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_style.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_style.html"
+    width="100%" 
+    height="2050px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR CSS Cheatsheet">
+  </iframe>
+  
+  
+</div>
 
-For example, within your `assets/style_config_custom.css` file, you would add:  
-
-```
-/*
-any variables listed in style_config_default.css can be overridden by giving them a new value in this file
-- add additional variable on new lines inside the :root element
-- don't forget the semicolon at the end of the line
-*/
-
-:root {
-    --link-color: #a1005a;              /* deep magenta for links */
-    --accent-color: #6e0040;            /* dark rose (headings, emphasis) */
-    --highlight-color: #e754a6;         /* vibrant pink for UI highlights */
-    --caption-color: #4a4a4a;           /* neutral dark gray */
-    --background-color: #ffffff;
-    --callout-background-color: #f6e9f1; /* soft pink-tinted gray */
-  }
-```
-
-### Accessible Color Palettes
-
-It’s crucial to ensure that the color palettes you use are accessible to all viewers, including those with color vision deficiencies. Thoughtfully choosing color schemes enhances readability and helps convey information more effectively. This section covers tips for using accessible color palettes and introduces tools like **ColorBuddy**, and **Venngage** for designing visualizations that everyone can interpret.
-
-#### Recommended Resources
-
-**1. ColorBuddy**
-
-Link: <https://color-buddy.netlify.app/>
-
-ColorBuddy is a tool that helps you create and test color palettes for accessibility. It helps you make excellent color palettes for data visualization via a direct manipulation environment that evaluates your color palettes as you go.
-
-
-**2. Venngage Color Accessibility Tool**
-
-Link: <https://venngage.com/tools/accessible-color-palette-generator>
-
-Venngage offers a free tool that creates accessible color, ensuring you meet the Web Content Accessibility Guidelines (WCAG) standards.
 
 <br>
 
