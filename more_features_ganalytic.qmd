@@ -11,7 +11,7 @@ title: "Google Analytics"
   <iframe 
     src="https://ottrproject.org/cheatsheets/google_analytics.html"
     width="100%" 
-    height="2820px" 
+    height="2960px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Google Analytics Cheatsheet">
   </iframe>
