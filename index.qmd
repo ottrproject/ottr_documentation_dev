@@ -309,7 +309,7 @@ Posit has shifted its focus to Quarto as the next-generation publishing system. 
 ::: {.benefit-item}
 **No software installation**
 
-Work in GitHub without installing a local publishing toolchain.
+Work in GitHub without installing a local publishing tool.
 :::
 
 ::: {.benefit-item}
