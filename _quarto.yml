@@ -55,7 +55,7 @@ website:
           - text: "Coursera"
             href: publishing_coursera.qmd
           - text: "Leanpub"
-            href: publishing_coursera.qmd
+            href: publishing_leanpub.qmd
       - text: "Troubleshooting {{< fa tools title='tools' >}}"
         href: faqs.qmd
       - text: "Contact {{< fa envelope title='An envelope' >}}"
