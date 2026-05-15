@@ -72,5 +72,5 @@ format:
     toc-location: left
     include-after-body: resources/footer.html
     page-layout: article
-    
+    link-external-newwindow: true
 
