@@ -337,49 +337,6 @@ Customize branding, include code, and avoid version differences with Docker cont
 :::
 :::
 
-#### Benefits for specific uses
-
-::: {.benefit-grid .use-case-grid}
-::: {.benefit-item}
-::: {.benefit-kicker}
-Websites
-:::
-::: {.benefit-title}
-Publish with Quarto or bookdown
-:::
-::: {.benefit-copy}
-Create websites using [Quarto](https://quarto.org/) or [bookdown](https://bookdown.org/), depending on the content format your project needs.
-:::
-:::
-
-::: {.benefit-item}
-::: {.benefit-kicker}
-Courses
-:::
-::: {.benefit-title}
-Format once, update everywhere
-:::
-::: {.benefit-copy}
-Prepare courses for learning platforms like [Coursera](https://www.coursera.org/) and [Leanpub](https://leanpub.com/) while keeping updates easier to manage.
-:::
-:::
-
-::: {.benefit-item}
-::: {.benefit-kicker}
-Dashboards
-:::
-::: {.benefit-title}
-Gather metrics in one place
-:::
-::: {.benefit-copy}
-Pull metrics from a variety of sources into dashboards that help you understand how your materials are being used.
-:::
-:::
-:::
-
-::: {.callout-note}
-You will need to establish a publishing contract with Coursera if you want to publish there.
-:::
 
 ### OTTR in Action
 
