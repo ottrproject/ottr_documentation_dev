@@ -129,19 +129,40 @@ Now that you've set up a shell for your OTTR repository, there are some next ste
 
 # Necessary Next Steps
 
-{{< include enroll_sync.qmd >}}
+## Changing the title
+
+The title is specified on the `index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
+
+```
+---
+title: "Title of Course"
+---
+```
+
+Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.
 
 ## Customizing branding and style
 
 Once your repository is set up, it's worth updating the visual identity of your course or website to reflect your project. For full instructions, see the [Customizing Style page](customize-style.qmd).
 
-**Key things to update:**
+Key things to update:
 
-- **Title** — set in the YAML header of `index.qmd` (or `index.Rmd` for R Markdown).
 - **Colors** — color theming is controlled through CSS variables. Default values live in `assets/style_config_default.css`, and course-specific overrides should go in `assets/style_config_custom.css`. To customize branding, update variables such as `--link-color`, `--accent-color`, and `--highlight-color`. You generally should not edit color hex codes directly in `assets/style.css`.
 - **Favicon** — convert your logo to `.ico` format using [favicon.io](https://favicon.io/favicon-converter/), save it in `assets/`, and reference it in the YAML header.
 - **Logo** — logos in the table of contents sidebar are configured via `_output.yml`. Update the image URL and the link to your GitHub repo.
 - **Style set** — the template defaults to the JHU Data Science Lab style. If you are building an ITN or DataTrail course, copy the relevant files from the `style-sets/` folder to switch styles.
+
+
+## Give credits to contributors
+
+OTTR courses include a credits table to acknowledge everyone who contributed. For full instructions, see the [Giving Credits page](more_features_credits.qmd).
+
+Key things to update:
+
+- **About.Rmd** — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).
+- **Required rows** — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the [full credits table reference](more_features_credits.html#credit-role-reference).
+- **Coursera** — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.
+- **Leanpub** — ensure `About.md` is listed in `Book.txt` and it will be included automatically.
 
 # Highly Recommended Next Steps
 
@@ -149,6 +170,17 @@ Click any card to expand full instructions.
 
 ```{r, echo=FALSE, results='asis'}
 cards <- list(
+  list(
+    title = "Enroll for sync updates",
+    summary = "Stay up to date with template updates",
+    detail = '<ol>
+  <li>Add <code>jhudsl-robot</code> as a Collaborator.</li>
+  <li>Add your repository name to the <code>.github/sync.yml</code> file of the OTTR template you created your repository from.</li>
+  <li>Submit your repo name via <a href="https://forms.gle/jGQnd5oemHWyuUq28">a Google Form</a>, an Issue, or a PR</li>
+</ol>
+  <p>For more details about enrolling for sync updates, click <a href="enroll_sync.html">here</a>.
+  '
+  ),
   list(
     title = "Clean out template placeholder files",
     summary = "Remove example content that comes with the template and replace it with your own.",
@@ -228,19 +260,6 @@ cards <- list(
       twitter: false
       all: []</pre>
 <p>Then add a direct link to your form in <code>index.Rmd</code> or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.</p>'
-  ),
-  list(
-    title = "Give credits to contributors",
-    summary = "Acknowledge everyone who contributed including instructors, editors, publishers, and template engineers.",
-    detail = '
-<p>OTTR courses include a credits table to acknowledge everyone who contributed. For full instructions, see the <a href="more_features_credits.qmd">Giving Credits page</a>.</p>
-<p><strong>Key things to update:</strong></p>
-<ul>
-  <li><strong><code>About.Rmd</code></strong> — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).</li>
-  <li><strong>Required rows</strong> — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the <a href="https://bit.ly/course-credits-table">full credits table reference</a>.</li>
-  <li><strong>Coursera</strong> — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.</li>
-  <li><strong>Leanpub</strong> — ensure <code>About.md</code> is listed in <code>Book.txt</code> and it will be included automatically.</li>
-</ul>'
   ),
   list(
     title = "Cite your sources",

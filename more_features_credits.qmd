@@ -41,7 +41,21 @@ Links to personal websites can be added below the table to make it easier to rea
 [FirstName LastName]: link to personal website
 ```
 
+### Required credit rows to add
+
+Use these row sets as a checklist. Start with the rows for all courses, then add the Johns Hopkins or ITCR rows if they apply to your course.
+
+<details id="all-course-credit-rows" class="template-choice" open>
+<summary>
+  <span class="choice-note">1. All courses</span>
+</summary>
+
 These rows should be included for _all courses_:
+
+<button class="btn copy-credit-snippet" type="button" data-copy-target="#all-course-credit-rows-code code">Copy rows</button>
+<span class="copy-credit-status" aria-live="polite"></span>
+
+::: {#all-course-credit-rows-code}
 ```
 |Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman]|
 |Publishing Maintenance Engineer|[Candace Savonen]|
@@ -61,8 +75,21 @@ These rows should be included for _all courses_:
 
 [ottrpal]: https://github.com/ottrproject/ottrpal
 ```
+:::
+
+</details>
+
+<details id="johns-hopkins-credit-rows" class="template-choice">
+<summary>
+  <span class="choice-note">2. Johns Hopkins courses</span>
+</summary>
 
 These rows should be added to all _Johns Hopkins_ courses:
+
+<button class="btn copy-credit-snippet" type="button" data-copy-target="#johns-hopkins-credit-rows-code code">Copy rows</button>
+<span class="copy-credit-status" aria-live="polite"></span>
+
+::: {#johns-hopkins-credit-rows-code}
 ```
 |Content Publisher|[Ira Gooding]|
 |Content Publishing Reviewer|Ira Gooding]|
@@ -71,8 +98,21 @@ These rows should be added to all _Johns Hopkins_ courses:
 
 [Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
 ```
+:::
+
+</details>
+
+<details id="itcr-credit-rows" class="template-choice">
+<summary>
+  <span class="choice-note">3. ITCR courses</span>
+</summary>
 
 Additionally, this row should be added for _all ITCR Courses_:
+
+<button class="btn copy-credit-snippet" type="button" data-copy-target="#itcr-credit-rows-code code">Copy rows</button>
+<span class="copy-credit-status" aria-live="polite"></span>
+
+::: {#itcr-credit-rows-code}
 ```
 |Content Directors|[Jeff Leek]|
 
@@ -80,6 +120,151 @@ Additionally, this row should be added for _all ITCR Courses_:
 
 [Jeff Leek]: https://jtleek.com/
 ```
+:::
+
+</details>
+
+<details id="credit-role-reference" class="template-choice">
+<summary>
+  <span class="choice-note">Credit role reference</span>
+</summary>
+
+Use this table to choose contributor credit labels and categories for your course website.
+
+<button id="copy-credit-role-table" class="btn" type="button">Copy table</button>
+<span id="copy-credit-role-status" aria-live="polite"></span>
+
+::: {#credit-role-table}
+| Credit Label | Order | Role Description | Credit Category |
+|:---|:---:|:---|:---|
+| Production Organization | 1A | Johns Hopkins DaSL | No category |
+| Lead Content Instructor | 2B | This person contributes to several roles and takes on a lion's share of the overall effort. | Pedagogy |
+| Lecturer | 2C | This person delivers the course online. | Pedagogy |
+| Content Author | 2D | This person writes content but is not a lead developer. Authors are listed based on the amount of content they write, otherwise they are listed in alphabetical order. If someone wrote less than a chapter's worth of content, then they are a contributor. | Pedagogy |
+| Content Contributor | 2E | This person writes some content, but less than the amount of a chapter; otherwise they are an author. | Pedagogy |
+| Content Consultant | 2F | This person provides specialized feedback about specific aspects of content and makes high-level suggestions, but does not write or edit the content. If they do, they are listed as an editor and/or contributor. | Pedagogy |
+| Content Idea Contributor | 2G | This person helps come up with the idea for the content. | Pedagogy |
+| Content Editor | 2H | This person edits but does not otherwise contribute to content. | Pedagogy |
+| Content Director | 2I | This person helps guide the direction of the course development. | Pedagogy |
+| Content Publisher | 3A | This person helps with the publishing platform work. | Production |
+| Content Reviewer | 3B | This person checks the overall content and aesthetics. | Production |
+| Course Publishing Engineer | 4A | This person helps with the code for the technical aspects related to the specific course generation. | Technical |
+| Template Publishing Engineer | 4B | This person helped create the template. | Technical |
+| Publishing Maintenance Engineer | 4C | This person helped with GitHub Actions and technical processes over time. | Technical |
+| Technical Publishing Stylist | 4D | This person assisted with technical design elements, like CSS code. | Technical |
+| Packages | 4E | This person helps create packages used to create the course. | Technical |
+| Illustrator | 5A | This person helps create graphics for the course. | Art and Design |
+| Figure Artist | 5B | This person helps create figures or plots for the course using code. | Art and Design |
+| Videographer | 5C | This person helps film videos for the course. | Art and Design |
+| Videography Editor | 5D | This person helps edit video files for the course. | Art and Design |
+| Funder | 6A | This is where grant funding and similar funding sources can be indicated. | Funding |
+| Funding Staff Member | 6C | This person helps manage the money needed to produce the content. | Funding |
+| Support Staff Member | 7A | This person assists in some official way but does not fit other categories. | Support |
+| Acknowledgements | 8 | This person makes minimal but helpful contributions that do not fit other categories, such as inspiration. | Acknowledgements |
+| In Memory | 9 | For content James Taylor worked on or helped start. | In Memory |
+:::
+
+</details>
+
+<script>
+(function () {
+  const tableButton = document.getElementById("copy-credit-role-table");
+  const tableStatus = document.getElementById("copy-credit-role-status");
+  const table = document.querySelector("#credit-role-table table");
+
+  function cellText(cell) {
+    return cell.textContent.trim().replace(/\s+/g, " ").replace(/\|/g, "\\|");
+  }
+
+  function tableToMarkdown(tableElement) {
+    const headers = Array.from(tableElement.querySelectorAll("thead th")).map(cellText);
+    const rows = Array.from(tableElement.querySelectorAll("tbody tr")).map((row) =>
+      Array.from(row.querySelectorAll("td")).map(cellText)
+    );
+    const alignment = headers.map((header) => header === "Order" ? ":---:" : ":---");
+    const markdownRows = [headers, alignment, ...rows];
+
+    return markdownRows.map((row) => `| ${row.join(" | ")} |`).join("\n");
+  }
+
+  function fallbackCopy(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        fallbackCopy(text);
+      }
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function showCopyStatus(statusElement, didCopy) {
+    if (!statusElement) {
+      return;
+    }
+
+    statusElement.textContent = didCopy
+      ? " Copied!"
+      : " Copy failed. Select and copy manually.";
+
+    if (didCopy) {
+      window.setTimeout(() => { statusElement.textContent = ""; }, 2000);
+    }
+  }
+
+  if (tableButton && table) {
+    tableButton.addEventListener("click", async () => {
+      const didCopy = await copyText(tableToMarkdown(table));
+      showCopyStatus(tableStatus, didCopy);
+    });
+  }
+
+  document.querySelectorAll(".copy-credit-snippet").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const target = document.querySelector(button.dataset.copyTarget);
+      const status = button.nextElementSibling;
+
+      if (!target) {
+        showCopyStatus(status, false);
+        return;
+      }
+
+      const didCopy = await copyText(target.textContent.trim());
+      showCopyStatus(status, didCopy);
+    });
+  });
+
+  function openLinkedDetails() {
+    if (!window.location.hash) {
+      return;
+    }
+
+    const target = document.querySelector(window.location.hash);
+    const details = target && (target.tagName === "DETAILS" ? target : target.closest("details"));
+
+    if (details) {
+      details.open = true;
+    }
+  }
+
+  openLinkedDetails();
+  window.addEventListener("hashchange", openLinkedDetails);
+})();
+</script>
 
 
 ### Adding the Credits table to Coursera

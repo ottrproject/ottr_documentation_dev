@@ -45,6 +45,18 @@
   background-color: var(--ottr-accent-dark);
 }
 
+.copy-credit-snippet,
+#copy-credit-role-table {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.copy-credit-status,
+#copy-credit-role-status {
+  margin-left: 0.5rem;
+  color: var(--ottr-link);
+  font-weight: 700;
+}
+
 /* Indent nested items in the Quarto table of contents. */
 #TOC ul {
   margin-left: 0;
