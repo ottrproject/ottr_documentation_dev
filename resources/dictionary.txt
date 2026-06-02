@@ -118,3 +118,7 @@ WCAG
 toc
 prereqs
 chaptered
+Acknowledgements
+Funder
+Videographer
+Videography
