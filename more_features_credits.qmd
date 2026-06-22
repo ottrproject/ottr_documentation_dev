@@ -11,7 +11,9 @@ Since so many individuals contribute to our courses in so many ways, we decided 
 Here is an example:
 
 ![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/example_credits.png)
-::: {.callout-tip}
+
+:::{.callout-tip}
+
 Please see the [About section](https://ottrproject.org/OTTR_Template/about-the-authors.html) of the template for descriptions of how credits should be attributed for the course.
 
 This is generated from the About.Rmd file. **An About.Rmd file will already be in your course from using our template**. You will need to do the following steps to update it for your course:
