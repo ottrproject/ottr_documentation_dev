@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,10 +116,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./choose_template.html"> 
-<span class="menu-text">Help me choose my template</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Build with OTTR</span>
@@ -146,26 +142,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Customize</li>
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Advanced Integrations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
+        <li class="dropdown-header">Highly Recommended Steps</li>
         <li>
     <a class="dropdown-item" href="./more_features_ganalytic.html">
  <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
@@ -182,12 +159,41 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Additional Customizations</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./publishing.html"> 
-<span class="menu-text">Publishing OTTR courses</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publishing-ottr-courses" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publishing OTTR courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-publishing-ottr-courses">    
+        <li>
+    <a class="dropdown-item" href="./publishing_bookdown.html">
+ <span class="dropdown-text">Bookdown</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_coursera.html">
+ <span class="dropdown-text">Coursera</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_leanpub.html">
+ <span class="dropdown-text">Leanpub</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./faqs.html"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -210,9 +216,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -222,6 +227,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#completing-a-pull-request" id="toc-completing-a-pull-request" class="nav-link" data-scroll-target="#completing-a-pull-request">Completing a Pull Request</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -449,6 +458,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

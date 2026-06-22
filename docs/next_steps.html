@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,10 +116,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./choose_template.html"> 
-<span class="menu-text">Help me choose my template</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Build with OTTR</span>
@@ -146,26 +142,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Customize</li>
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Advanced Integrations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
+        <li class="dropdown-header">Highly Recommended Steps</li>
         <li>
     <a class="dropdown-item" href="./more_features_ganalytic.html">
  <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
@@ -182,12 +159,41 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Additional Customizations</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./publishing.html"> 
-<span class="menu-text">Publishing OTTR courses</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publishing-ottr-courses" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publishing OTTR courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-publishing-ottr-courses">    
+        <li>
+    <a class="dropdown-item" href="./publishing_bookdown.html">
+ <span class="dropdown-text">Bookdown</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_coursera.html">
+ <span class="dropdown-text">Coursera</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_leanpub.html">
+ <span class="dropdown-text">Leanpub</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./faqs.html"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -210,26 +216,24 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#necessary-next-steps" id="toc-necessary-next-steps" class="nav-link active" data-scroll-target="#necessary-next-steps">Necessary Next Steps</a>
   <ul>
-  <li><a href="#enroll-for-sync-updates" id="toc-enroll-for-sync-updates" class="nav-link" data-scroll-target="#enroll-for-sync-updates">Enroll for Sync Updates</a>
-  <ul>
-  <li><a href="#add-jhudsl-robot-as-a-collaborator" id="toc-add-jhudsl-robot-as-a-collaborator" class="nav-link" data-scroll-target="#add-jhudsl-robot-as-a-collaborator">Add <code>jhudsl-robot</code> as a collaborator</a></li>
-  <li><a href="#which-sync-file-should-you-edit" id="toc-which-sync-file-should-you-edit" class="nav-link" data-scroll-target="#which-sync-file-should-you-edit">Which sync file should you edit?</a></li>
-  <li><a href="#if-you-are-not-part-of-the-jhudsl-or-fhdsl-github-organization" id="toc-if-you-are-not-part-of-the-jhudsl-or-fhdsl-github-organization" class="nav-link" data-scroll-target="#if-you-are-not-part-of-the-jhudsl-or-fhdsl-github-organization">If you are not part of the <code>jhudsl</code> or <code>fhdsl</code> GitHub organization</a></li>
-  </ul></li>
+  <li><a href="#changing-the-title" id="toc-changing-the-title" class="nav-link" data-scroll-target="#changing-the-title">Changing the title</a></li>
   <li><a href="#customizing-branding-and-style" id="toc-customizing-branding-and-style" class="nav-link" data-scroll-target="#customizing-branding-and-style">Customizing branding and style</a></li>
+  <li><a href="#give-credits-to-contributors" id="toc-give-credits-to-contributors" class="nav-link" data-scroll-target="#give-credits-to-contributors">Give credits to contributors</a></li>
   </ul></li>
   <li><a href="#highly-recommended-next-steps" id="toc-highly-recommended-next-steps" class="nav-link" data-scroll-target="#highly-recommended-next-steps">Highly Recommended Next Steps</a></li>
-  <li><a href="#additional-customizations-to-consider" id="toc-additional-customizations-to-consider" class="nav-link" data-scroll-target="#additional-customizations-to-consider">Additional Customizations to Consider</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -372,90 +376,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="necessary-next-steps" class="level1">
 <h1>Necessary Next Steps</h1>
-<section id="enroll-for-sync-updates" class="level2">
-<h2 class="anchored" data-anchor-id="enroll-for-sync-updates">Enroll for Sync Updates</h2>
-<p>The OTTR templates are always a work in progress. New features are added and bugs are smoothed out over time. <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">Your feedback is greatly appreciated</a>. When updates are made to non-content files (checks, automation), pull requests are automatically filed to downstream repositories made from the template.</p>
-<section id="add-jhudsl-robot-as-a-collaborator" class="level3">
-<h3 class="anchored" data-anchor-id="add-jhudsl-robot-as-a-collaborator">Add <code>jhudsl-robot</code> as a collaborator</h3>
-<p><em>You can skip this step if your course is in the <code>jhudsl</code> or <code>fhdsl</code> organization.</em></p>
-<p>To enable the full functionality of GitHub Actions, add <code>jhudsl-robot</code> as a collaborator with write access:</p>
-<ol type="1">
-<li>In your repository, go to <strong>Settings</strong> &gt; <strong>Collaborators &amp; Teams</strong> and click <strong>Add people</strong>.</li>
-<li>Search for and add <code>jhudsl-robot</code>.</li>
-<li>If prompted, choose the <strong>Write</strong> option, then click <strong>Add jhudsl-robot to this repository</strong>.</li>
-</ol>
-<p><img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/add-jhudsl-robot.png" width="400"></p>
-</section>
-<section id="which-sync-file-should-you-edit" class="level3">
-<h3 class="anchored" data-anchor-id="which-sync-file-should-you-edit">Which sync file should you edit?</h3>
-<p>Add your repository name to the <code>.github/sync.yml</code> file of the OTTR template you created your repository from:</p>
-<ul>
-<li><a href="https://github.com/ottrproject/OTTR_Template/blob/main/.github/sync.yml">OTTR_Template sync file</a> — for R Markdown courses</li>
-<li><a href="https://github.com/ottrproject/OTTR_Template_Website/blob/main/.github/sync.yml">OTTR_Template_Website sync file</a> — for websites</li>
-<li><a href="https://github.com/ottrproject/OTTR_Quizzes/blob/main/.github/sync.yml">OTTR_Quizzes sync file</a> — for quizzes</li>
-</ul>
-</section>
-<section id="if-you-are-not-part-of-the-jhudsl-or-fhdsl-github-organization" class="level3">
-<h3 class="anchored" data-anchor-id="if-you-are-not-part-of-the-jhudsl-or-fhdsl-github-organization">If you are not part of the <code>jhudsl</code> or <code>fhdsl</code> GitHub organization</h3>
-<p>Use one of these options:</p>
-<ul>
-<li><strong>Google Form</strong> — submit your organization/username and repo name in the <a href="https://forms.gle/jGQnd5oemHWyuUq28">OTTR Feedback Google Form</a> and we’ll make the edit for you.</li>
-<li><strong>Open an issue</strong> — use the links in the table below and provide your repo info; we’ll update <code>sync.yml</code> for you.</li>
-<li><strong>Fork and PR</strong> — fork the template repo, edit <code>sync.yml</code> on a new branch adding your repo name where it says <code>#NEW REPO HERE#</code>, commit, and open a pull request. Add a comment tagging <code>@kweav</code> so we see it.</li>
-</ul>
-<details>
-<summary>
-<strong> If you are part of the <code>jhudsl</code> or <code>fhdsl</code> GitHub organization </strong>
-</summary>
-<ol type="1">
-<li>Open the relevant sync file above and click the pencil icon to edit.</li>
-<li>Add your repository name where it says <code>#NEW REPO HERE#</code>, indented to match the other entries.</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/edit-sync.yml.png" class="img-fluid"></p>
-<ol start="3" type="1">
-<li>Click <strong>Commit changes…</strong>, type <code>Add new repository to sync</code> as the commit message, and choose <strong>Create a new branch</strong>.</li>
-<li>Click <strong>Propose changes</strong>, then open a pull request and request <code>@kweav</code> as a reviewer.</li>
-</ol>
-</details>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Repository</th>
-<th style="text-align: left;">Issue Links</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">OTTR_Template</td>
-<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">General issue</a> · <a href="https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&amp;labels=&amp;projects=&amp;template=new-course-add-to-sync.md&amp;title=">Add new repo to sync</a> · <a href="https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&amp;labels=&amp;projects=&amp;template=update-course-info-for-sync.md&amp;title=">Update repo info in sync</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">OTTR_Quizzes</td>
-<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Quizzes/issues">Open an issue</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">OTTR_Template_Website</td>
-<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Template_Website/issues/new/choose">General issue</a> · <a href="https://github.com/ottrproject/OTTR_Template_Website/issues/new?assignees=kweav&amp;labels=&amp;projects=&amp;template=new-website-add-to-sync.md&amp;title=">Add new repo to sync</a></td>
-</tr>
-</tbody>
-</table>
-<p class="comment">
-<em>If you have any questions about these updates or files, please tag <code>@kweav</code> or <code>@carriewright11</code>.</em>
-</p>
-<hr>
-<p><strong>← Back to:</strong> <a href="./next_steps.html">Next Steps</a> · <strong>Continue with:</strong> <a href="./customize-style.html">Customizing Style</a><strong>→</strong></p>
-</section>
+<section id="changing-the-title" class="level2">
+<h2 class="anchored" data-anchor-id="changing-the-title">Changing the title</h2>
+<p>The title is specified on the <code>index.Rmd</code> page in the yml header. Modify the yaml header to change the title for your course.</p>
+<pre><code>---
+title: "Title of Course"
+---</code></pre>
+<p>Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.</p>
 </section>
 <section id="customizing-branding-and-style" class="level2">
 <h2 class="anchored" data-anchor-id="customizing-branding-and-style">Customizing branding and style</h2>
 <p>Once your repository is set up, it’s worth updating the visual identity of your course or website to reflect your project. For full instructions, see the <a href="./customize-style.html">Customizing Style page</a>.</p>
-<p><strong>Key things to update:</strong></p>
+<p>Key things to update:</p>
 <ul>
-<li><strong>Title</strong> — set in the YAML header of <code>index.qmd</code> (or <code>index.Rmd</code> for R Markdown).</li>
 <li><strong>Colors</strong> — color theming is controlled through CSS variables. Default values live in <code>assets/style_config_default.css</code>, and course-specific overrides should go in <code>assets/style_config_custom.css</code>. To customize branding, update variables such as <code>--link-color</code>, <code>--accent-color</code>, and <code>--highlight-color</code>. You generally should not edit color hex codes directly in <code>assets/style.css</code>.</li>
 <li><strong>Favicon</strong> — convert your logo to <code>.ico</code> format using <a href="https://favicon.io/favicon-converter/">favicon.io</a>, save it in <code>assets/</code>, and reference it in the YAML header.</li>
 <li><strong>Logo</strong> — logos in the table of contents sidebar are configured via <code>_output.yml</code>. Update the image URL and the link to your GitHub repo.</li>
 <li><strong>Style set</strong> — the template defaults to the JHU Data Science Lab style. If you are building an ITN or DataTrail course, copy the relevant files from the <code>style-sets/</code> folder to switch styles.</li>
+</ul>
+</section>
+<section id="give-credits-to-contributors" class="level2">
+<h2 class="anchored" data-anchor-id="give-credits-to-contributors">Give credits to contributors</h2>
+<p>OTTR courses include a credits table to acknowledge everyone who contributed. For full instructions, see the <a href="./more_features_credits.html">Giving Credits page</a>.</p>
+<p>Key things to update:</p>
+<ul>
+<li><strong>About.Rmd</strong> — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs.&nbsp;plural).</li>
+<li><strong>Required rows</strong> — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the <a href="more_features_credits.html#credit-role-reference">full credits table reference</a>.</li>
+<li><strong>Coursera</strong> — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.</li>
+<li><strong>Leanpub</strong> — ensure <code>About.md</code> is listed in <code>Book.txt</code> and it will be included automatically.</li>
 </ul>
 </section>
 </section>
@@ -465,6 +413,34 @@ ul.task-list li input[type="checkbox"] {
 <div class="steps-grid">
 <div class="step-card">
 <h3 class="anchored" data-anchor-id="highly-recommended-next-steps">
+Enroll for sync updates
+</h3>
+<p>
+Stay up to date with template updates
+</p>
+<details>
+<summary>
+Full instructions
+</summary>
+<div class="card-detail">
+<ol>
+<li>
+Add <code>jhudsl-robot</code> as a Collaborator.
+</li>
+<li>
+Add your repository name to the <code>.github/sync.yml</code> file of the OTTR template you created your repository from.
+</li>
+<li>
+Submit your repo name via <a href="https://forms.gle/jGQnd5oemHWyuUq28">a Google Form</a>, an Issue, or a PR
+</li>
+</ol>
+<p>
+For more details about enrolling for sync updates, click <a href="enroll_sync.html">here</a>.
+</p></div>
+</details>
+</div>
+<div class="step-card">
+<h3 class="anchored">
 Clean out template placeholder files
 </h3>
 <p>
@@ -648,41 +624,6 @@ Then add a direct link to your form in <code>index.Rmd</code> or your course foo
 </div>
 <div class="step-card">
 <h3 class="anchored">
-Give credits to contributors
-</h3>
-<p>
-Acknowledge everyone who contributed including instructors, editors, publishers, and template engineers.
-</p>
-<details>
-<summary>
-Full instructions
-</summary>
-<div class="card-detail">
-<p>
-OTTR courses include a credits table to acknowledge everyone who contributed. For full instructions, see the <a href="./more_features_credits.html">Giving Credits page</a>.
-</p>
-<p>
-<strong>Key things to update:</strong>
-</p>
-<ul>
-<li>
-<strong><code>About.Rmd</code></strong> — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs.&nbsp;plural).
-</li>
-<li>
-<strong>Required rows</strong> — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the <a href="https://bit.ly/course-credits-table">full credits table reference</a>.
-</li>
-<li>
-<strong>Coursera</strong> — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.
-</li>
-<li>
-<strong>Leanpub</strong> — ensure <code>About.md</code> is listed in <code>Book.txt</code> and it will be included automatically.
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class="step-card">
-<h3 class="anchored">
 Cite your sources
 </h3>
 <p>
@@ -750,7 +691,6 @@ Verify in Google Analytics (<strong>Reports</strong> tab) that traffic is being 
 </div>
 </div>
 <hr>
-</section>
 <section id="additional-customizations-to-consider" class="level1">
 <h1>Additional Customizations to Consider</h1>
 <p>See the customization menu below for options including Docker configuration, borrowing chapters, Google Docs compatibility, and more.</p>
@@ -776,8 +716,12 @@ Verify in Google Analytics (<strong>Reports</strong> tab) that traffic is being 
 
 
 </section>
+</section></main></div>
 
-</main> <!-- /main -->
+
+
+
+ <!-- /main -->
 <hr>
 
 <center>
@@ -790,8 +734,8 @@ Verify in Google Analytics (<strong>Reports</strong> tab) that traffic is being 
   <br><font size="1">Otter images by <a href="https://www.linkedin.com/in/jimin-hwang-549835142/">Jimin Hwang</a>.</font>
   <br>
   <br>
-</center></div>
 
+</center>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -879,6 +823,11 @@ Verify in Google Analytics (<strong>Reports</strong> tab) that traffic is being 
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

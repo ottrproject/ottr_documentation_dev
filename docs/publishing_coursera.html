@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Examples of OTTR in the Wild – OTTR </title>
+<title>Publishing with Coursera – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -216,18 +216,35 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setting-up-your-coursera-course" id="toc-setting-up-your-coursera-course" class="nav-link active" data-scroll-target="#setting-up-your-coursera-course">Setting up your Coursera course</a></li>
+  <li><a href="#converting-your-files-for-coursera" id="toc-converting-your-files-for-coursera" class="nav-link" data-scroll-target="#converting-your-files-for-coursera">Converting your files for Coursera</a></li>
+  <li><a href="#navigating-to-your-course-on-coursera" id="toc-navigating-to-your-course-on-coursera" class="nav-link" data-scroll-target="#navigating-to-your-course-on-coursera">Navigating to your course on Coursera</a>
+  <ul>
+  <li><a href="#adding-chapters-to-coursera" id="toc-adding-chapters-to-coursera" class="nav-link" data-scroll-target="#adding-chapters-to-coursera">Adding chapters to Coursera</a></li>
+  <li><a href="#adding-quizzes-to-coursera" id="toc-adding-quizzes-to-coursera" class="nav-link" data-scroll-target="#adding-quizzes-to-coursera">Adding quizzes to Coursera</a></li>
+  </ul></li>
+  <li><a href="#programmed-messages" id="toc-programmed-messages" class="nav-link" data-scroll-target="#programmed-messages">Programmed messages</a></li>
+  <li><a href="#grading-formula" id="toc-grading-formula" class="nav-link" data-scroll-target="#grading-formula">Grading formula</a></li>
+  <li><a href="#content-schedule" id="toc-content-schedule" class="nav-link" data-scroll-target="#content-schedule">Content schedule</a></li>
+  <li><a href="#module-descriptions" id="toc-module-descriptions" class="nav-link" data-scroll-target="#module-descriptions">Module descriptions</a></li>
+  <li><a href="#landing-page" id="toc-landing-page" class="nav-link" data-scroll-target="#landing-page">Landing page</a></li>
+  <li><a href="#multiple-reading-formats" id="toc-multiple-reading-formats" class="nav-link" data-scroll-target="#multiple-reading-formats">Multiple reading formats</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Examples of OTTR in the Wild</h1>
+<h1 class="title">Publishing with Coursera</h1>
 </div>
 
 
@@ -244,136 +261,161 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
-  margin: 1.5rem 0;
-}
-.gallery-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1.2rem 1.3rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  transition: box-shadow 0.15s ease;
-}
-.gallery-card:hover {
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-}
-.gallery-card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #222;
-  margin: 0;
-}
-.gallery-card-desc {
-  font-size: 0.88rem;
-  color: #555;
-  flex-grow: 1;
-  margin: 0;
-}
-.gallery-card-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 0.4rem;
-}
-.gallery-link {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1.5px solid #ADD8E6;
-  color: #2a7a9a;
-  background: #f0fafd;
-  transition: background 0.12s ease;
-}
-.gallery-link:hover {
-  background: #ADD8E6;
-  color: #222;
-}
-.badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 9px;
-  border-radius: 20px;
-  align-self: flex-start;
-}
-.badge-course    { background: #dbeafe; color: #1d4ed8; }
-.badge-website   { background: #ccfbf1; color: #0f766e; }
-.badge-template  { background: #dcfce7; color: #166534; }
-.badge-dashboard { background: #f3e8ff; color: #6b21a8; }
-</style>
-<p>Explore courses, websites, and templates built with OTTR. If you’ve made something with OTTR and would like it featured here, <a href="./contact.html">let us know</a>.</p>
-<p>We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.</p>
-<p>We also noticed that if specific branding or variations of the original template need to be used many times, it’s often easier to create a new template (like the AnVIL and DataTrail templates below).</p>
-<p>If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">filing a GitHub issue</a> and assigning <code>@cansavvy</code> and <code>@carriewright11</code>). Also please reach out if you have any other interesting ideas or suggestions!</p>
-<div class="gallery-grid">
-
-<div class="gallery-card">
-  <span class="badge badge-course">Course</span>
-  <p class="gallery-card-title">DaSEH Instructor Guide</p>
-  <p class="gallery-card-desc">A course instructor guide for the Data Science for the Experience of Health (DaSEH) program, built with OTTR.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://hutchdatascience.org/daseh_instructor_guide/index.html" target="_blank">View course</a>
-    <a class="gallery-link" href="https://github.com/fhdsl/daseh_instructor_guide" target="_blank">GitHub</a>
-  </div>
+<p>Once your content is extensively developed, consider publishing on Coursera.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-website">Website</span>
-  <p class="gallery-card-title">Baltimore Community Course</p>
-  <p class="gallery-card-desc">A community-focused data science course built with OTTR for the Baltimore community.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/Baltimore_Community_Course/" target="_blank">View website</a>
-    <a class="gallery-link" href="https://github.com/jhudsl/Baltimore_Community_Course" target="_blank">GitHub</a>
-  </div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">AnVIL Template</p>
-  <p class="gallery-card-desc">An OTTR-based template for courses built around the <a href="https://anvilproject.org/" target="_blank">AnVIL</a> cloud computing platform.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/AnVIL_Template/" target="_blank">View example</a>
-    <a class="gallery-link" href="https://github.com/jhudsl/AnVIL_Template" target="_blank">GitHub</a>
-  </div>
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">DataTrail Template</p>
-  <p class="gallery-card-desc">An OTTR-based template for <a href="https://www.datatrail.org/" target="_blank">DataTrail</a> courses, with custom branding and structure.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://datatrail-jhu.github.io/DataTrail_Template/introduction.html" target="_blank">View example</a>
-    <a class="gallery-link" href="https://github.com/datatrail-jhu/DataTrail_Template" target="_blank">GitHub</a>
-  </div>
+<div class="callout-body-container callout-body">
+<p>This guide was prepared for <a href="https://www.itcrtraining.org/">ITN project</a> developers at Johns Hopkins University or other Coursera partner institutions. Coursera’s Educator Resource Center is the authoritative source for platform documentation.</p>
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-dashboard">Dashboard</span>
-  <p class="gallery-card-title">Open Case Studies Metrics Dashboard</p>
-  <p class="gallery-card-desc">This website shows metrics related to the Open Case Studies project (OCS). OCS is an educational archive of data analysis guides using real-world data to help learners engage with data science and statistics topics.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://www.opencasestudies.org/ocs-metrics-dashboard/" target="_blank">View dashboard</a>
-    <a class="gallery-link" href="https://github.com/opencasestudies/ocs-metrics-dashboard" target="_blank">GitHub</a>
-  </div>
 </div>
+<section id="setting-up-your-coursera-course" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-your-coursera-course">Setting up your Coursera course</h2>
+<p><strong>If you are from Johns Hopkins:</strong> Follow <a href="https://docs.google.com/document/d/1aZeOSFLkK4hZne4Vb1iaP_0H4zyhIwvbnw9sbdCFq1Y/edit?usp=sharing">this document</a> and contact Ira Gooding (iragooding@jhu.edu) to create a course shell.</p>
+<p><strong>If you are not from Johns Hopkins:</strong> Set up your educator profile and course shell through your own institution.</p>
+</section>
+<section id="converting-your-files-for-coursera" class="level2">
+<h2 class="anchored" data-anchor-id="converting-your-files-for-coursera">Converting your files for Coursera</h2>
+<p>GitHub Actions (in <code>render-all.yml</code>) renders your course in a Coursera-compatible format — identical to the standard version but without the left-side table of contents. These files are available in the <code>docs/no_toc</code> folder. A preview link is posted as a GitHub comment by <code>render-preview.yml</code>.</p>
+<p>If quizzes were written in Leanpub format, <code>pull-request.yml</code> converts them automatically for Coursera upload. Alternatively, you can write quizzes directly on Coursera’s website and download them as YAML for storage in your repository.</p>
+</section>
+<section id="navigating-to-your-course-on-coursera" class="level2">
+<h2 class="anchored" data-anchor-id="navigating-to-your-course-on-coursera">Navigating to your course on Coursera</h2>
+<p>Go to <strong>My Courses</strong> in your Coursera profile. Your course will appear in the list. Click <strong>Go to Course</strong>, then <strong>Edit Course</strong> in the upper right corner.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/profile.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/my-courses.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/edit-course-nav.png" class="img-fluid"></p>
+<p>Select your version (initially Version 1):</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/versions.png" class="img-fluid"></p>
+<p>You are now on the Edit content page:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/edit-content.png" class="img-fluid"></p>
+<p>Each lesson should contain at least one chapter and one quiz. Each module represents approximately one week of learner work — plan one or two lessons per module accordingly.</p>
+<p>Click <code>+ Add Lesson</code> to add a new lesson:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-lesson.png" class="img-fluid"></p>
+<section id="adding-chapters-to-coursera" class="level3">
+<h3 class="anchored" data-anchor-id="adding-chapters-to-coursera">Adding chapters to Coursera</h3>
+<p>Chapter URLs follow this pattern, using your GitHub Pages URL with <code>/no_toc/</code> inserted before the filename:</p>
+<pre><code>&lt;main-github-pages-url&gt;/no_toc/&lt;html_filename&gt;</code></pre>
+<p>Find your GitHub Pages URL under <code>Settings</code> &gt; <code>Pages</code>. For example:</p>
+<pre><code>https://ottrproject.org/OTTR_Template/no_toc/introduction.html</code></pre>
+<p>To add a chapter: in a lesson, click <code>+ More</code> and choose <strong>Ungraded Plugin</strong>.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-1.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-2.png" class="img-fluid"></p>
+<p>Click the edit button on the new Ungraded Plugin:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-3.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-4.png" class="img-fluid"></p>
+<p>Scroll down and click <strong>Edit Configuration</strong>:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-5.png" class="img-fluid"></p>
+<p>Replace the example URL with your chapter URL:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-6.png" class="img-fluid"></p>
+<p>Click <strong>Save Configuration</strong>:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/new-add-chapter-7.png" class="img-fluid"></p>
+<p>Adjust the time estimate for your content. If the URL is correct, a preview of your chapter appears:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-8.png" class="img-fluid"></p>
+<p>Edit the title if needed, then click <strong>Publish</strong> to save. Coursera will ask you to confirm — click <strong>Publish</strong> again.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-9.png" class="img-fluid"></p>
+</section>
+<section id="adding-quizzes-to-coursera" class="level3">
+<h3 class="anchored" data-anchor-id="adding-quizzes-to-coursera">Adding quizzes to Coursera</h3>
+<p>From the <strong>Edit content</strong> page, click <code>+ Quiz</code> on the lesson where you want to add it:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-1.png" class="img-fluid"></p>
+<p>Click <strong>Edit</strong> on the new quiz:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-2.png" class="img-fluid"></p>
+<p>To import a converted Leanpub quiz, click <strong>Import Questions</strong> and choose your converted YAML file. (If not yet converted, <a href="#converting-quizzes-from-leanpub-to-coursera-format">see the conversion section</a>.)</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-3.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-4.png" class="img-fluid"></p>
+<p>Click <strong>Upload</strong>:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-5.png" class="img-fluid"></p>
+<p>If the upload fails, <a href="https://github.com/ottrproject/OTTR_Quizzes/issues">file an issue</a> with the file and a description of the failure. Note that images, links, and colons in prompts or answers are not supported.</p>
+<p>After a successful upload, click <strong>Continue</strong>. Change the quiz type from <code>Practice Quiz</code> to <code>Graded Quiz</code> as needed using the dropdown on the left. Update the time estimate as well.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/quiz-settings.png" class="img-fluid"></p>
+<p>Assign learning objectives by clicking the plus sign under the title, selecting applicable objectives, and clicking <strong>Save</strong>:</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/learning-obj-assigned.png" class="img-fluid"></p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/assign-learning-obj.png" class="img-fluid"></p>
+<p>Edit the title if needed, then click <strong>Publish</strong> to save.</p>
+</section>
+</section>
+<section id="programmed-messages" class="level2">
+<h2 class="anchored" data-anchor-id="programmed-messages">Programmed messages</h2>
+<p>From <strong>Edit Course</strong>, navigate to <code>Content</code> &gt; <code>Programmed Messages</code> in the left sidebar. At minimum, add a <strong>Welcome</strong> and a <strong>Completion</strong> message. Click <strong>Preview</strong> then <strong>Publish</strong> to save each.</p>
+<p><strong>Welcome message template:</strong></p>
+<pre><code>Welcome to {Course Name}
 
-</div>
-<hr>
-<p>Ready to build your own? <a href="./getting_started.html">Get Started</a> →</p>
+We hope this course will {What will they learn?}
+
+To get the most out of the course {What do you advise?}
+
+If you ever encounter any problems with the course, have questions or ideas, please let us know using this feedback form.</code></pre>
+<p><strong>Completion message template:</strong></p>
+<pre><code>Congratulations and thank you for completing {name of course}!
+
+We hope this course has {What do you hope they learned}.
+
+If you have feedback about our course we would greatly appreciate you filling out this form.</code></pre>
+<p>Add a link to your feedback form using the link icon in both messages.</p>
+</section>
+<section id="grading-formula" class="level2">
+<h2 class="anchored" data-anchor-id="grading-formula">Grading formula</h2>
+<p>From <strong>Edit Course</strong>, navigate to your version page. Set the percentage each module’s assignments contribute to the final grade.</p>
+<p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/grading-formula.png" class="img-fluid"></p>
+</section>
+<section id="content-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="content-schedule">Content schedule</h2>
+<p>Found under the <code>Content</code> tab. Assign modules to weeks of your course here.</p>
+</section>
+<section id="module-descriptions" class="level2">
+<h2 class="anchored" data-anchor-id="module-descriptions">Module descriptions</h2>
+<p>Located just before learning objectives when editing content. Descriptions help learners know what to expect from each module.</p>
+</section>
+<section id="landing-page" class="level2">
+<h2 class="anchored" data-anchor-id="landing-page">Landing page</h2>
+<p>Add a course image and consider including:</p>
+<ul>
+<li>Estimated workload</li>
+<li>Skills covered</li>
+<li>Recommended background</li>
+<li>What students will learn</li>
+</ul>
+</section>
+<section id="multiple-reading-formats" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-reading-formats">Multiple reading formats</h2>
+<p>Because Coursera uses plug-ins and there are accessibility concerns, add a reading at the very start of your course directing students to alternative formats. Create a reading using the <strong>Add Reading</strong> button (next to <strong>Add Quiz</strong>) and move it to the top of the first module by dragging the three-line icon on the left.</p>
+<p>Title the reading:</p>
+<pre><code>Multiple Lesson Formats</code></pre>
+<p>Paste and modify the following:</p>
+<pre><code>Like many of our other courses, the content of this course is available in multiple formats.
+You can also find the lessons for this course at [insert Bookdown link here]. This format might be most appropriate for you if you rely on screen-reader technology.
+Our courses are open source, so you can also find all the source material on GitHub by visiting [insert GitHub link here].
+These resources are used throughout this Coursera course in the form of ungraded plug-ins. You are welcome to use those plug-ins here on Coursera or connect to the content in other formats through the links above. Please select the format that most suits your needs.
+Note about links in the plug-ins: The plug-ins used throughout the course feature links to other resources. To follow these links, right-click on them and open in a new tab or window.
+Regardless of the format you choose for the instructional content, you must take and pass the quizzes here on Coursera if you want to earn a Coursera certificate.</code></pre>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Below are some examples of courses created using the <a href="https://github.com/ottrproject/OTTR_Template">OTTR Template</a> and published:</p>
+<p><em>Introduction to Reproducibility in Cancer Informatics:</em></p>
+<ul>
+<li><a href="https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics">GitHub repository and source code</a>
+<ul>
+<li><a href="https://www.coursera.org/learn/intro-reproducibility-cancer-informatics">Coursera course</a></li>
+</ul></li>
+</ul>
+<p><em>Computing for Cancer Informatics:</em></p>
+<ul>
+<li><a href="https://github.com/jhudsl/Computing_for_Cancer_Informatics">GitHub repository and source code</a>
+<ul>
+<li><a href="https://www.coursera.org/learn/computing-for-cancer-informatics">Coursera course</a></li>
+</ul></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <hr>
