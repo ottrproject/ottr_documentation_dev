@@ -11,19 +11,22 @@ Since so many individuals contribute to our courses in so many ways, we decided 
 Here is an example:
 
 ![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/example_credits.png)
-
+::: {.callout-tip}
 Please see the [About section](https://ottrproject.org/OTTR_Template/about-the-authors.html) of the template for descriptions of how credits should be attributed for the course.
 
-This is generated from the About.Rmd file. An About.Rmd file will already be in your course from using our template. You will need to do the following steps to update it for your course:
+This is generated from the About.Rmd file. **An About.Rmd file will already be in your course from using our template**. You will need to do the following steps to update it for your course:
 
 1) Fill out author names for the various roles where applicable.
 2) Delete lines for roles that are not applicable.
 3) Make sure roles grammatically match names. If there are multiple people include the "s" in the role name where applicable and remove the parentheses. If only one person is appropriate for a given role remove "(s)" from the role name.
 4) Ensure that each row has "|" around each cell value.
 
+:::
+
 *Example Table*:
 
-The first row and additional rows based on [this table](https://bit.ly/course-credits-table) should be added and filled in using [Markdown table format](https://www.markdownguide.org/extended-syntax/).
+The table should be added and filled in using [Markdown table format](https://www.markdownguide.org/extended-syntax/).
+
 ```
 |Credits|Names|
 |-------|-----|
@@ -51,9 +54,6 @@ Use these row sets as a checklist. Start with the rows for all courses, then add
 </summary>
 
 These rows should be included for _all courses_:
-
-<button class="btn copy-credit-snippet" type="button" data-copy-target="#all-course-credit-rows-code code">Copy rows</button>
-<span class="copy-credit-status" aria-live="polite"></span>
 
 ::: {#all-course-credit-rows-code}
 ```
@@ -86,9 +86,6 @@ These rows should be included for _all courses_:
 
 These rows should be added to all _Johns Hopkins_ courses:
 
-<button class="btn copy-credit-snippet" type="button" data-copy-target="#johns-hopkins-credit-rows-code code">Copy rows</button>
-<span class="copy-credit-status" aria-live="polite"></span>
-
 ::: {#johns-hopkins-credit-rows-code}
 ```
 |Content Publisher|[Ira Gooding]|
@@ -109,9 +106,6 @@ These rows should be added to all _Johns Hopkins_ courses:
 
 Additionally, this row should be added for _all ITCR Courses_:
 
-<button class="btn copy-credit-snippet" type="button" data-copy-target="#itcr-credit-rows-code code">Copy rows</button>
-<span class="copy-credit-status" aria-live="polite"></span>
-
 ::: {#itcr-credit-rows-code}
 ```
 |Content Directors|[Jeff Leek]|
@@ -130,9 +124,6 @@ Additionally, this row should be added for _all ITCR Courses_:
 </summary>
 
 Use this table to choose contributor credit labels and categories for your course website.
-
-<button id="copy-credit-role-table" class="btn" type="button">Copy table</button>
-<span id="copy-credit-role-status" aria-live="polite"></span>
 
 ::: {#credit-role-table}
 | Credit Label | Order | Role Description | Credit Category |
@@ -165,106 +156,6 @@ Use this table to choose contributor credit labels and categories for your cours
 :::
 
 </details>
-
-<script>
-(function () {
-  const tableButton = document.getElementById("copy-credit-role-table");
-  const tableStatus = document.getElementById("copy-credit-role-status");
-  const table = document.querySelector("#credit-role-table table");
-
-  function cellText(cell) {
-    return cell.textContent.trim().replace(/\s+/g, " ").replace(/\|/g, "\\|");
-  }
-
-  function tableToMarkdown(tableElement) {
-    const headers = Array.from(tableElement.querySelectorAll("thead th")).map(cellText);
-    const rows = Array.from(tableElement.querySelectorAll("tbody tr")).map((row) =>
-      Array.from(row.querySelectorAll("td")).map(cellText)
-    );
-    const alignment = headers.map((header) => header === "Order" ? ":---:" : ":---");
-    const markdownRows = [headers, alignment, ...rows];
-
-    return markdownRows.map((row) => `| ${row.join(" | ")} |`).join("\n");
-  }
-
-  function fallbackCopy(text) {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.setAttribute("readonly", "");
-    textarea.style.position = "absolute";
-    textarea.style.left = "-9999px";
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-  }
-
-  async function copyText(text) {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-      } else {
-        fallbackCopy(text);
-      }
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  function showCopyStatus(statusElement, didCopy) {
-    if (!statusElement) {
-      return;
-    }
-
-    statusElement.textContent = didCopy
-      ? " Copied!"
-      : " Copy failed. Select and copy manually.";
-
-    if (didCopy) {
-      window.setTimeout(() => { statusElement.textContent = ""; }, 2000);
-    }
-  }
-
-  if (tableButton && table) {
-    tableButton.addEventListener("click", async () => {
-      const didCopy = await copyText(tableToMarkdown(table));
-      showCopyStatus(tableStatus, didCopy);
-    });
-  }
-
-  document.querySelectorAll(".copy-credit-snippet").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const target = document.querySelector(button.dataset.copyTarget);
-      const status = button.nextElementSibling;
-
-      if (!target) {
-        showCopyStatus(status, false);
-        return;
-      }
-
-      const didCopy = await copyText(target.textContent.trim());
-      showCopyStatus(status, didCopy);
-    });
-  });
-
-  function openLinkedDetails() {
-    if (!window.location.hash) {
-      return;
-    }
-
-    const target = document.querySelector(window.location.hash);
-    const details = target && (target.tagName === "DETAILS" ? target : target.closest("details"));
-
-    if (details) {
-      details.open = true;
-    }
-  }
-
-  openLinkedDetails();
-  window.addEventListener("hashchange", openLinkedDetails);
-})();
-</script>
 
 
 ### Adding the Credits table to Coursera
