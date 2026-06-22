@@ -2,7 +2,32 @@
 toc-depth: 5
 ---
 
+
 ## Enroll for Sync Updates
+
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
+
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_sync.html"
+    width="100%" 
+    height="1940px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Enroll in Sync Updates Cheatsheet">
+  </iframe>
+  
+</div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  Full setup guide with screenshots
+</summary>
+
+
 
 The OTTR templates are always a work in progress. New features are added and bugs are smoothed out over time. [Your feedback is greatly appreciated](https://github.com/ottrproject/OTTR_Template/issues/new/choose). When updates are made to non-content files (checks, automation), pull requests are automatically filed to downstream repositories made from the template.
 
@@ -58,6 +83,8 @@ If you are part of the  <code>jhudsl</code> or <code>fhdsl</code> GitHub organiz
 <p class="comment">
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._
 </p>
+
+</details>
 
 ---
 

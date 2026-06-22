@@ -4,12 +4,15 @@ choose_template.html
 ./choose_template.html
 /choose_template.html
 choose_template.html/
+"choose_template.html"
 getting_started.html
 customize-style.html
 customize-robots.html
 more_features_ganalytic.qmd
 more_features_sources.qmd
 more_features_credits.qmd
-choose_template.html
 customize-docker.html
 https://github.com/YOUR-ORG/YOUR-REPO</pre>
+https://ottrproject.org/cheatsheets/ottr_sync.html
+https://ottrproject.org/cheatsheets/google_analytics.html
+https://ottrproject.org/cheatsheets/ottr_pr.html

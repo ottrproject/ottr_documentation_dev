@@ -255,9 +255,9 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
 
 | Template | Best for | Write in | Can also publish to |
 |:---|:---|:---:|:---|
-| [Quarto Courses](getting_started.html#quarto-courses) ⭐ | New courses, starting fresh , existing `.qmd` course files | `.qmd` | GitHub Pages · Coursera · Leanpub |
+| [Quarto Courses](getting_started.html#quarto-courses) ⭐ | New courses, starting fresh, existing `.qmd` course files | `.qmd` | GitHub Pages · Coursera · Leanpub |
 | [R Markdown Courses](getting_started.html#r-markdown-courses) | Existing `.Rmd` course files | `.Rmd` | GitHub Pages · Coursera · Leanpub |
-| [Quarto Websites](getting_started.html#quarto-websites) ⭐ | New websites, starting fresh , existing `.qmd` course files| `.qmd` | GitHub Pages |
+| [Quarto Websites](getting_started.html#quarto-websites) ⭐ | New websites, starting fresh, existing `.qmd` website files | `.qmd` | GitHub Pages |
 | [R Markdown Websites](getting_started.html#r-markdown-websites) | Existing `.Rmd` website files | `.Rmd` | GitHub Pages |
 | [Dashboards](getting_started.html#dashboards) | Metrics tracking & reporting | `.Rmd` | GitHub Pages |
 
@@ -272,21 +272,50 @@ Posit has shifted its focus to Quarto as the next-generation publishing system f
 - [Transitioning from R Markdown to Quarto](https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd): a practical guide from Openscapes
 :::
 
-## Key questions to ask yourself
 
-**Courses vs. Websites**
+## Choose by goal
 
-- Choose a **Course** template if you want a sidebar table of contents, chapter-by-chapter navigation, and the option to publish to Coursera or Leanpub.
-- Choose a **Website** template if you want a top navigation bar and a more flexible page structure — like this documentation site.
+::: {.benefit-grid .use-case-grid}
+::: {.benefit-item}
+::: {.benefit-kicker}
+Websites
+:::
+::: {.benefit-title}
+Flexible pages with top navigation
+:::
+::: {.benefit-copy}
+Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use [Quarto](https://quarto.org/) for new projects, or R Markdown/bookdown if you already have `.Rmd` files.
+:::
+:::
 
-**Quarto vs. R Markdown**
+::: {.benefit-item}
+::: {.benefit-kicker}
+Courses
+:::
+::: {.benefit-title}
+Chapter-based learning content
+:::
+::: {.benefit-copy}
+Choose a course template when you need a sidebar table of contents, chapter-by-chapter navigation, and optional publishing to [Coursera](https://www.coursera.org/) or [Leanpub](https://leanpub.com/). Use Quarto for new courses, or R Markdown for existing `.Rmd` course files.
+:::
+:::
 
-- Choose **Quarto** if you are starting a new project. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.
-- Choose **R Markdown** if you already have a set of `.Rmd` files you want to build on, or if your team is already working in R Markdown and a migration isn't practical right now.
+::: {.benefit-item}
+::: {.benefit-kicker}
+Dashboards
+:::
+::: {.benefit-title}
+Metrics tracking and reporting
+:::
+::: {.benefit-copy}
+Choose the dashboard template when your main goal is to collect and display metrics such as GitHub stars, Google Analytics traffic, CRAN downloads, Calendly bookings, and more with [`metricminer`](https://www.metricminer.org/).
+:::
+:::
+:::
 
-**Dashboards**
-
-- Choose the **Dashboard** template if your primary goal is to collect and display metrics — number of GitHub stars, Google Analytics traffic, CRAN downloads, Calendly bookings, and more — powered by the [`metricminer`](https://www.metricminer.org/) R package.
+::: {.callout-note}
+You will need to establish a publishing contract with Coursera if you want to publish there.
+:::
 
 ---
 

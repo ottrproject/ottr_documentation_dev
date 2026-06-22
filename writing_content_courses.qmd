@@ -408,6 +408,28 @@ If you encounter situations where a spelling report or URL report doesn't look a
 # Adding new chapters
 Adding new chapters to your OTTR course requires a few specific steps depending on whether you are using Quarto or R Markdown.
 
+
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_pr.html"
+    width="100%" 
+    height="2820px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Pull Request Cheatsheet">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_pr.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
+</div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  More details
+</summary>
+
 ## Step 1: Add a new chapter file
 
 Create a new file on your working branch:
@@ -481,6 +503,8 @@ Commit the updated `_quarto.yml` (Quarto) or `_bookdown.yml` (R Markdown) to you
 
 Go to your repository and click the **Pull Requests** tab to review the automated check results for your new chapter.
 
+</details>
+
 # Set up images {#set-up-images}
 
 To ensure consistency in style and attributions for graphics and images, and to facilitate future updates, you have the option to store all your images in a central Google Slide document.
@@ -515,7 +539,8 @@ If you are unfamiliar with [how R Markdown code chunks work, read
 this](https://rmarkdown.rstudio.com/lesson-3.html).
 
 Next, import the appropriate theme (see [this
-video](https://youtu.be/pNbwF263yY8) for assistance):
+video](https://youtu.be/pNbwF263yY8) for assistance).
+
 
 # Accessibility
 

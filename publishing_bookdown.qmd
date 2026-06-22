@@ -1,0 +1,49 @@
+---
+title: "Publishing with Bookdown"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right 
+---
+
+To publish your content using Bookdown, utilize GitHub Pages by following the [repository setup instructions](getting_started.html). Note that Bookdown is a prerequisite for Coursera and Leanpub publishing. You must publish with Bookdown before using those platforms.
+
+As you add or rename chapters, update `_bookdown.yml` accordingly. For example, after adding `03-new_chapter_of_course.Rmd`:
+
+```{r, eval=FALSE}
+book_filename: "Course_Name"
+chapter_name: "Chapter "
+repo: https://github.com/ottrproject/OTTR_Template/ ##Make sure you update this to your GitHub Repo!!
+rmd_files: ["index.Rmd",
+            "01-intro.Rmd",
+            "02-chapter_of_course.Rmd",
+            "03-new_chapter_of_course.Rmd",  ## This is the only new line!
+            "about.Rmd"]
+new_session: yes
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+output_dir: "docs"
+```
+
+Only a single line changes. Be careful with quotation marks (`""`) and commas (`,`).
+
+Preview the book by running `bookdown::serve_book()` in the RStudio Console. This generates an `.rds` file you can ignore. The live preview will appear in your RStudio Viewer.
+
+When a pull request is merged to main, [GitHub Actions](#github-actions) will re-run `bookdown::render_book()` and add the results to `main`.
+
+## Examples 
+
+Below are some examples of courses created using the [OTTR Template](https://github.com/ottrproject/OTTR_Template) and published:
+
+*Introduction to Reproducibility in Cancer Informatics:*
+
+- [GitHub repository and source code](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics)
+  - [Bookdown website](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html)
+
+*Computing for Cancer Informatics:*
+
+- [GitHub repository and source code](https://github.com/jhudsl/Computing_for_Cancer_Informatics)
+  - [Bookdown website](https://jhudatascience.org/Computing_for_Cancer_Informatics/)

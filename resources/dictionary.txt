@@ -112,4 +112,13 @@ useR
 voiceover
 qmd
 theming
- 
+ColorBuddy
+Venngage
+WCAG
+toc
+prereqs
+chaptered
+Acknowledgements
+Funder
+Videographer
+Videography

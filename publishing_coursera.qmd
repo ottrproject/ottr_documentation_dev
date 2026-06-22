@@ -1,0 +1,216 @@
+---
+title: "Publishing with Coursera"
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-location: right 
+---
+
+Once your content is extensively developed, consider publishing on Coursera.
+
+::: {.callout-note}
+This guide was prepared for [ITN project](https://www.itcrtraining.org/) developers at Johns Hopkins University or other Coursera partner institutions. Coursera's Educator Resource Center is the authoritative source for platform documentation.
+:::
+
+## Setting up your Coursera course
+
+**If you are from Johns Hopkins:** Follow [this document](https://docs.google.com/document/d/1aZeOSFLkK4hZne4Vb1iaP_0H4zyhIwvbnw9sbdCFq1Y/edit?usp=sharing) and contact Ira Gooding (iragooding@jhu.edu) to create a course shell.
+
+**If you are not from Johns Hopkins:** Set up your educator profile and course shell through your own institution.
+
+## Converting your files for Coursera
+
+GitHub Actions (in `render-all.yml`) renders your course in a Coursera-compatible format — identical to the standard version but without the left-side table of contents. These files are available in the `docs/no_toc` folder. A preview link is posted as a GitHub comment by `render-preview.yml`.
+
+If quizzes were written in Leanpub format, `pull-request.yml` converts them automatically for Coursera upload. Alternatively, you can write quizzes directly on Coursera's website and download them as YAML for storage in your repository.
+
+## Navigating to your course on Coursera
+
+Go to **My Courses** in your Coursera profile. Your course will appear in the list. Click **Go to Course**, then **Edit Course** in the upper right corner.
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/profile.png)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/my-courses.png)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/edit-course-nav.png)
+
+Select your version (initially Version 1):
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/versions.png)
+
+You are now on the Edit content page:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/edit-content.png)
+
+Each lesson should contain at least one chapter and one quiz. Each module represents approximately one week of learner work — plan one or two lessons per module accordingly.
+
+Click `+ Add Lesson` to add a new lesson:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-lesson.png)
+
+### Adding chapters to Coursera
+
+Chapter URLs follow this pattern, using your GitHub Pages URL with `/no_toc/` inserted before the filename:
+
+```
+<main-github-pages-url>/no_toc/<html_filename>
+```
+
+Find your GitHub Pages URL under `Settings` > `Pages`. For example:
+
+```
+https://ottrproject.org/OTTR_Template/no_toc/introduction.html
+```
+
+To add a chapter: in a lesson, click `+ More` and choose **Ungraded Plugin**.
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-1.png)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-2.png)
+
+Click the edit button on the new Ungraded Plugin:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-3.png)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-4.png)
+
+Scroll down and click **Edit Configuration**:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-5.png)
+
+Replace the example URL with your chapter URL:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-6.png)
+
+Click **Save Configuration**:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/new-add-chapter-7.png)
+
+Adjust the time estimate for your content. If the URL is correct, a preview of your chapter appears:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-8.png)
+
+Edit the title if needed, then click **Publish** to save. Coursera will ask you to confirm — click **Publish** again.
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-chapter-9.png)
+
+### Adding quizzes to Coursera
+
+From the **Edit content** page, click `+ Quiz` on the lesson where you want to add it:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-1.png)
+
+Click **Edit** on the new quiz:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-2.png)
+
+To import a converted Leanpub quiz, click **Import Questions** and choose your converted YAML file. (If not yet converted, [see the conversion section](#converting-quizzes-from-leanpub-to-coursera-format).)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-3.png)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-4.png)
+
+Click **Upload**:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/add-quiz-5.png)
+
+If the upload fails, [file an issue](https://github.com/ottrproject/OTTR_Quizzes/issues) with the file and a description of the failure. Note that images, links, and colons in prompts or answers are not supported.
+
+After a successful upload, click **Continue**. Change the quiz type from `Practice Quiz` to `Graded Quiz` as needed using the dropdown on the left. Update the time estimate as well.
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/quiz-settings.png)
+
+Assign learning objectives by clicking the plus sign under the title, selecting applicable objectives, and clicking **Save**:
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/learning-obj-assigned.png)
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/assign-learning-obj.png)
+
+Edit the title if needed, then click **Publish** to save.
+
+## Programmed messages
+
+From **Edit Course**, navigate to `Content` > `Programmed Messages` in the left sidebar. At minimum, add a **Welcome** and a **Completion** message. Click **Preview** then **Publish** to save each.
+
+**Welcome message template:**
+
+```
+Welcome to {Course Name}
+
+We hope this course will {What will they learn?}
+
+To get the most out of the course {What do you advise?}
+
+If you ever encounter any problems with the course, have questions or ideas, please let us know using this feedback form.
+```
+
+**Completion message template:**
+
+```
+Congratulations and thank you for completing {name of course}!
+
+We hope this course has {What do you hope they learned}.
+
+If you have feedback about our course we would greatly appreciate you filling out this form.
+```
+
+Add a link to your feedback form using the link icon in both messages.
+
+## Grading formula
+
+From **Edit Course**, navigate to your version page. Set the percentage each module's assignments contribute to the final grade.
+
+![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/coursera_screenshots/grading-formula.png)
+
+## Content schedule
+
+Found under the `Content` tab. Assign modules to weeks of your course here.
+
+## Module descriptions
+
+Located just before learning objectives when editing content. Descriptions help learners know what to expect from each module.
+
+## Landing page
+
+Add a course image and consider including:
+
+- Estimated workload
+- Skills covered
+- Recommended background
+- What students will learn
+
+## Multiple reading formats
+
+Because Coursera uses plug-ins and there are accessibility concerns, add a reading at the very start of your course directing students to alternative formats. Create a reading using the **Add Reading** button (next to **Add Quiz**) and move it to the top of the first module by dragging the three-line icon on the left.
+
+Title the reading:
+
+```
+Multiple Lesson Formats
+```
+
+Paste and modify the following:
+
+```
+Like many of our other courses, the content of this course is available in multiple formats.
+You can also find the lessons for this course at [insert Bookdown link here]. This format might be most appropriate for you if you rely on screen-reader technology.
+Our courses are open source, so you can also find all the source material on GitHub by visiting [insert GitHub link here].
+These resources are used throughout this Coursera course in the form of ungraded plug-ins. You are welcome to use those plug-ins here on Coursera or connect to the content in other formats through the links above. Please select the format that most suits your needs.
+Note about links in the plug-ins: The plug-ins used throughout the course feature links to other resources. To follow these links, right-click on them and open in a new tab or window.
+Regardless of the format you choose for the instructional content, you must take and pass the quizzes here on Coursera if you want to earn a Coursera certificate.
+```
+ 
+## Examples
+
+Below are some examples of courses created using the [OTTR Template](https://github.com/ottrproject/OTTR_Template) and published:
+
+*Introduction to Reproducibility in Cancer Informatics:*
+
+- [GitHub repository and source code](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics)
+  - [Coursera course](https://www.coursera.org/learn/intro-reproducibility-cancer-informatics)
+
+*Computing for Cancer Informatics:*
+
+- [GitHub repository and source code](https://github.com/jhudsl/Computing_for_Cancer_Informatics)
+  - [Coursera course](https://www.coursera.org/learn/computing-for-cancer-informatics)
