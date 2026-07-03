@@ -81,45 +81,6 @@ These rows should be included for _all courses_:
 
 </details>
 
-<details id="johns-hopkins-credit-rows" class="template-choice">
-<summary>
-  <span class="choice-note">2. Johns Hopkins courses</span>
-</summary>
-
-These rows should be added to all _Johns Hopkins_ courses:
-
-::: {#johns-hopkins-credit-rows-code}
-```
-|Content Publisher|[Ira Gooding]|
-|Content Publishing Reviewer|Ira Gooding]|
-
-<!-- Author information -->
-
-[Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
-```
-:::
-
-</details>
-
-<details id="itcr-credit-rows" class="template-choice">
-<summary>
-  <span class="choice-note">3. ITCR courses</span>
-</summary>
-
-Additionally, this row should be added for _all ITCR Courses_:
-
-::: {#itcr-credit-rows-code}
-```
-|Content Directors|[Jeff Leek]|
-
-<!-- Author information -->
-
-[Jeff Leek]: https://jtleek.com/
-```
-:::
-
-</details>
-
 <details id="credit-role-reference" class="template-choice">
 <summary>
   <span class="choice-note">Credit role reference</span>
