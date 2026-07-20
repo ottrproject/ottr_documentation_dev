@@ -50,6 +50,20 @@ This may be a quiet error where the content just doesn't update and you are not 
 
 -   Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.
 
+<div class="cheatsheet-frame">
+  <iframe 
+    width="100%" 
+    height="1900px" 
+    src="https://www.ottrproject.org/cheatsheets/ottr_sync.html"
+    title="OTTR Enroll for Sync">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  <br>
+</div>
+
 #### You observe the code for `include_slide()` or `<img src="...", ... >` rather than the Google Slide image.
 
 Check the formatting of the code chunk, particularly paying attention to the `fig.alt` argument.
@@ -228,30 +242,6 @@ Then look at the `GA_Script.Rhtml` file and remove the following `html` frontmat
   </body>
   </html>
 ```
-## Content not rendering
-
-Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml.
-(be careful to keep your selections for the configuration you would like).
-
-### `could not read Username for 'https://github.com': terminal prompts disabled`: GitHub authentication failure
-
-_Error example:_
-```
-The process '/usr/bin/git' failed with exit code 128
-could not read Username for 'https://github.com': terminal prompts disabled
-could not read Username for 'https://github.com': terminal prompts disabled
-could not read Username for 'https://github.com': terminal prompts disabled
-```
-
-_What does this mean?:_
-
-This error occurs when the GitHub Action workflow does not have the necessary permissions to authenticate with GitHub. This is typically caused by missing or insufficient repository permissions for the workflow's `GITHUB_TOKEN`.
-
-To fix this, see the [OTTR token cheatsheet](https://www.ottrproject.org/cheatsheets/ottr_token.html) for detailed instructions, or follow these steps:
-
-1) Go to your repository's **Settings** > **Actions** > **General**.
-2) Under **Workflow permissions**, select `Read and write permissions`.
-3) Click **Save**, then re-run the failed workflow.
 
 ## Help me choose my template
 
