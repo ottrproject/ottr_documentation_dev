@@ -413,7 +413,7 @@ Adding new chapters to your OTTR course requires a few specific steps depending 
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_pr.html"
     width="100%" 
-    height="2820px" 
+    height="2250px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Pull Request Cheatsheet">
   </iframe>

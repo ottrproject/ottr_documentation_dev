@@ -29,7 +29,22 @@ This may be a quiet error where the content just doesn't update and you are not 
 
 -   Check that the GitHub repository `GH_PAT` is up to date. (An associated GitHub Actions error that suggests the `GH_PAT` needs to be updated is an `exit code 128`)
 
-    -   Use this [cheatsheet on updating your GH_PAT](https://www.ottrproject.org/cheatsheets/ottr_token.html) if you need help.
+
+  
+<div class="cheatsheet-frame">
+  <iframe 
+    width="100%" 
+    height="1900px" 
+    src="https://ottrproject.org/cheatsheets/ottr_token.html"
+    title="OTTR Token Set Up/Update">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  <br>
+</div>
+
 
 -   Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).
 

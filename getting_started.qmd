@@ -60,8 +60,8 @@ You do not need to be an expert to get started. A few basics will help:
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
 
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank">↗ Open in new tab</a>
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
   </div>
   
 <div class="cheatsheet-frame">
@@ -92,8 +92,8 @@ Need more help? Check out the [full setup guide here](quarto-course.qmd).
 **Template repository:** [ottrproject/OTTR_Template](https://github.com/ottrproject/OTTR_Template)
 
 
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank">↗ Open in new tab</a>
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
   </div>
   
 <div class="cheatsheet-frame">
@@ -131,8 +131,8 @@ Need more help? Check out the [full setup guide here](rmd-course.qmd).
 **Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
 
 
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank">↗ Open in new tab</a>
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
   </div>
   
 <div class="cheatsheet-frame">
@@ -164,8 +164,8 @@ Need more help? Check out the [full setup guide here](quarto-website.qmd).
 **Template repository:** [ottrproject/OTTR_Template_Website](https://github.com/ottrproject/OTTR_Template_Website)
 
 
-  <div class="cheatsheet-link">
-  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank">↗ Open in new tab</a>
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
   </div>
   
 
