@@ -54,11 +54,9 @@ toc: false
   }
   .result-recommended {
     background-color: #e8f6fa;
-    border-left: 4px solid #ADD8E6;
   }
   .result-standard {
     background-color: #f4f4f4;
-    border-left: 4px solid #aaa;
   }
   .result-name {
     font-size: 1.1rem;
