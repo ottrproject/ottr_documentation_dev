@@ -64,7 +64,7 @@ This may be a quiet error where the content just doesn't update and you are not 
   <br>
 </div>
 
-#### You observe the code for `include_slide()` or `<img src="...", ... >` rather than the Google Slide image.
+### Google Slide image not showing
 
 Check the formatting of the code chunk, particularly paying attention to the `fig.alt` argument.
 
