@@ -13,7 +13,11 @@ However, sharing material by copying and pasting can lead to maintenance issues,
 In OTTR, we try to minimize maintenance pains. To get around this, we use `cow::borrow_chapter()` from the [jhudsl/cow](https://jhudatascience.org/cow/index.html) package.
 The `cow` package is already on the `jhudsl/course_template` Docker image  so you do not need to install it if you are using the Docker image or if you are have GitHub Actions do all the rendering for you.
 
-To borrow a chapter from another course, create an `.Rmd` as you normally would, with a `ottrpal::set_knitr_image_path()` in a chunk at the beginning of the file and a [`H1` title](https://www.markdownguide.org/basic-syntax/).
+To borrow a chapter from another course, create an `.qmd` or `.Rmd` as you normally would, with a `ottrpal::set_knitr_image_path()` in a chunk at the beginning of the file and a [`H1` title](https://www.markdownguide.org/basic-syntax/).
+
+:::{.callout-tip}
+By default, borrow the source `.qmd` or `.Rmd` file rather than the rendered file from `docs/`, such as an `.html` or `.md` file.
+:::
 
 Then, wherever you would like the borrowed chapter to appear, put an R chunk with this; where `{r, echo = FALSE, results='asis'}` is included in your chunk arguments.
 
@@ -40,17 +44,8 @@ cow::borrow_chapter(
 
 ### Borrowing from a private repository
 
-If you are borrowing from a course in a private repository, you will need to supply a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) using a `git_pat` argument like this:
-
-Have your chunk arguments include:`{r, echo = FALSE, results='asis'}`
-
-```
-cow::borrow_chapter(
-  doc_path = "02-chapter_of_course.Rmd",
-  repo_name = "jhudsl/Private_Repo",
-  git_pat = "12345"
-)
-```
+Borrowing from a private repository is not supported and will not be supported.
+Only borrow content from public repositories or from local files that are already available to the course.
 
 ### Removing an h1 header
 
