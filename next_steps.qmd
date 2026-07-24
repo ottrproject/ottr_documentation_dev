@@ -131,7 +131,7 @@ Now that you've set up a shell for your OTTR repository, there are some next ste
 
 ## Changing the title
 
-The title is specified on the `index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
+The title is specified on the `index.qmd`/`index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
 
 ```
 ---
@@ -159,7 +159,7 @@ OTTR courses include a credits table to acknowledge everyone who contributed. Fo
 
 Key things to update:
 
-- **About.Rmd** — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).
+- **About.qmd**/**About.Rmd** — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).
 - **Required rows** — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the [full credits table reference](more_features_credits.html#credit-role-reference).
 - **Coursera** — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.
 - **Leanpub** — ensure `About.md` is listed in `Book.txt` and it will be included automatically.
