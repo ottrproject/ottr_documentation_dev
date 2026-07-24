@@ -75,6 +75,31 @@ Citations will automatically create reference lists:
 - at the bottom of each chapter included in your course
 - at the end of your course
 
+
+#### For Quarto courses
+
+:::{.callout-important}
+Keep the `references.qmd` file, and keep it as the **last part** of the  `_quarto.yml` file, just as it appears in the [template](https://github.com/ottrproject/OTTR_Quarto/blob/main/_quarto.yml). 
+:::
+
+Make sure your `_quarto.yml` includes:
+
+```yaml
+bibliography: references.bib
+```
+
+The `references.qmd` file should include a references header. For example:
+
+```md
+# References {.unnumbered}
+
+Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27(3), 379–423. [https://ieeexplore.ieee.org/document/6773024](https://ieeexplore.ieee.org/document/6773024)
+
+Turing, A. M. (1950). Computing Machinery and Intelligence. Mind, 59(236), 433–460. [https://mind.oxfordjournals.org/content/LIX/236/433](https://mind.oxfordjournals.org/content/LIX/236/433)
+```
+
+#### For Bookdown courses
+
 :::{.callout-important}
 Keep the `References.Rmd` file, and keep it as the **last part** of the `_bookdown.yml` file, just as it appears in the template. This ensures that the full reference list appears in a place that makes sense.
 :::
