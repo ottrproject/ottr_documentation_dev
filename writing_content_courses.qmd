@@ -563,7 +563,7 @@ There are two things to check for each slide:
 ## Adding images and graphics in text
 
 All images should be included in your Google Slides with the captions we
-discussed above. To add images in the text in your Rmd, use the
+discussed above. To add images in the text in your qmd/Rmd, use the
 `ottrpal::include_slide()` within an [R code
 chunk](https://bookdown.org/yihui/rmarkdown/r-code.html).
 
@@ -598,14 +598,14 @@ on the internet with this link can view". Note that "Private" is the
 default setting when you make a new presentation.
 
 See [Chapter
-2](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd)
+2](https://www.ottrproject.org/OTTR_Quarto/first-section-new-chapter.html#image-example)
 of the template course for examples.
 
 
 
 ## Adding videos in text
 
-To add a YouTube video to your Rmd files, use the following instructions:
+To add a YouTube video to your qmd/Rmd files, use the following instructions:
 
 To get the appropriate YouTube URL do the following: 1) Click on the
 **SHARE** button on the lower right corner of the video on YouTube 2)
@@ -617,7 +617,7 @@ Again, it is important to use the `echo=FALSE` option so that only the
 video is shown and not the code to generate it.
 
 See [Chapter
-2](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd)
+2](https://www.ottrproject.org/OTTR_Quarto/first-section-new-chapter.html#video-examples)
 of the template course for examples.
 
 
@@ -637,7 +637,7 @@ course material.
 If you want to include a file that is not hosted online, consider
 hosting it on GitHub using the method described for hosting your
 Bookdown version of the course. See the [Set up GitHub
-pages](https://www.ottrproject.org/getting_started.html#7_Set_up_GitHub_Pages)
+pages](https://www.ottrproject.org/getting_started.html#set-up-github-pages)
 section.
 
 Then you would do the following, where the url is that of your hosted
@@ -646,5 +646,5 @@ file:
 <img src="resources/images/include_url_3.png" width="600"/>
 
 See [Chapter
-2](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd)
+2](https://github.com/ottrproject/OTTR_Quarto/blob/main/first-section-new-chapter.qmd)
 of the template course for examples.
