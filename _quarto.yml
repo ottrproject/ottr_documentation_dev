@@ -13,12 +13,12 @@ website:
         menu:
           - text: "Getting started"
             href: getting_started.qmd
-          - text: "Cheatsheet gallery"
-            href: cheatsheet_gallery.qmd
           - text: "Next steps"
             href: next_steps.qmd
           - text: "Example use cases"
             href: examples.qmd
+          - text: "Cheatsheet gallery"
+            href: cheatsheet_gallery.qmd
       - text: "Build with OTTR"
         menu:
           - text: "Template"

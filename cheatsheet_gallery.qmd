@@ -1,0 +1,109 @@
+---
+title: "Cheatsheet Gallery"
+toc: false
+page-layout: full
+---
+
+Browse the OTTR cheatsheet gallery for quick references on OTTR templates, GitHub workflows, Google Analytics, sync updates, and customizing colors and style.
+
+```{=html}
+<div class="cheatsheet-link">
+  <a href="https://www.ottrproject.org/cheatsheets/#ottr" target="_blank">Open gallery in a new tab</a>
+</div>
+
+<div class="ottr-cheatsheet-grid">
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_quarto_course.png" alt="OTTR Quarto Course cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_quarto_course.html" target="_blank">OTTR Quarto Course</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_quarto_website.png" alt="OTTR Quarto Website cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_quarto_website.html" target="_blank">OTTR Quarto Website</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_course.png" alt="OTTR R Markdown Course cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_course.html" target="_blank">OTTR R Markdown Course</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_website.png" alt="OTTR R Markdown Website cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_website.html" target="_blank">OTTR R Markdown Website</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_token.png" alt="Update Token/Secret cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank">Update Token/Secret</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_pr.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_pr.png" alt="Creating Pull Requests cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_pr.html" target="_blank">Creating Pull Requests</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/google_analytics.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/google_analytics.png" alt="Google Analytics Integration cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/google_analytics.html" target="_blank">Google Analytics Integration</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_sync.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_sync.png" alt="OTTR Sync cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_sync.html" target="_blank">OTTR Sync</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_style.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_style.png" alt="OTTR CSS cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_style.html" target="_blank">OTTR CSS</a></h2>
+    </div>
+  </article>
+
+  <article class="ottr-cheatsheet-card">
+    <a class="ottr-cheatsheet-thumb" href="https://ottrproject.org/cheatsheets/ottr_giving_credits.html" target="_blank">
+      <img src="https://www.ottrproject.org/cheatsheets/pngs/ottr_giving_credits.png" alt="OTTR Giving Credits cheatsheet preview">
+    </a>
+    <div class="ottr-cheatsheet-card-body">
+      <h2><a href="https://ottrproject.org/cheatsheets/ottr_giving_credits.html" target="_blank">OTTR Giving Credits</a></h2>
+    </div>
+  </article>
+</div>
+```
+
+::: {.template-actions}
+[Getting Started](getting_started.qmd) &emsp; [Next Steps](next_steps.qmd) →
+:::
