@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Examples of OTTR in the Wild – OTTR </title>
+<title>Getting Started: R Markdown Websites – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed fullcontent quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -221,13 +221,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Examples of OTTR in the Wild</h1>
+<h1 class="title">Getting Started: R Markdown Websites</h1>
 </div>
 
 
@@ -244,136 +245,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
-  margin: 1.5rem 0;
-}
-.gallery-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1.2rem 1.3rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  transition: box-shadow 0.15s ease;
-}
-.gallery-card:hover {
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-}
-.gallery-card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #222;
-  margin: 0;
-}
-.gallery-card-desc {
-  font-size: 0.88rem;
-  color: #555;
-  flex-grow: 1;
-  margin: 0;
-}
-.gallery-card-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 0.4rem;
-}
-.gallery-link {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1.5px solid #ADD8E6;
-  color: #2a7a9a;
-  background: #f0fafd;
-  transition: background 0.12s ease;
-}
-.gallery-link:hover {
-  background: #ADD8E6;
-  color: #222;
-}
-.badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 9px;
-  border-radius: 20px;
-  align-self: flex-start;
-}
-.badge-course    { background: #dbeafe; color: #1d4ed8; }
-.badge-website   { background: #ccfbf1; color: #0f766e; }
-.badge-template  { background: #dcfce7; color: #166534; }
-.badge-dashboard { background: #f3e8ff; color: #6b21a8; }
-</style>
-<p>Explore courses, websites, and templates built with OTTR. If you’ve made something with OTTR and would like it featured here, <a href="./contact.html">let us know</a>.</p>
-<p>We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.</p>
-<p>We also noticed that if specific branding or variations of the original template need to be used many times, it’s often easier to create a new template (like the AnVIL and DataTrail templates below).</p>
-<p>If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">filing a GitHub issue</a> and assigning <code>@cansavvy</code> and <code>@carriewright11</code>). Also please reach out if you have any other interesting ideas or suggestions!</p>
-<div class="gallery-grid">
-
-<div class="gallery-card">
-  <span class="badge badge-course">Course</span>
-  <p class="gallery-card-title">DaSEH Instructor Guide</p>
-  <p class="gallery-card-desc">A course instructor guide for the Data Science for the Experience of Health (DaSEH) program, built with OTTR.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://hutchdatascience.org/daseh_instructor_guide/index.html" target="_blank">View course</a>
-    <a class="gallery-link" href="https://github.com/fhdsl/daseh_instructor_guide" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<div class="gallery-card">
-  <span class="badge badge-website">Website</span>
-  <p class="gallery-card-title">Baltimore Community Course</p>
-  <p class="gallery-card-desc">A community-focused data science course built with OTTR for the Baltimore community.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/Baltimore_Community_Course/" target="_blank">View website</a>
-    <a class="gallery-link" href="https://github.com/jhudsl/Baltimore_Community_Course" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">AnVIL Template</p>
-  <p class="gallery-card-desc">An OTTR-based template for courses built around the <a href="https://anvilproject.org/" target="_blank">AnVIL</a> cloud computing platform.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/AnVIL_Template/" target="_blank">View example</a>
-    <a class="gallery-link" href="https://github.com/jhudsl/AnVIL_Template" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">DataTrail Template</p>
-  <p class="gallery-card-desc">An OTTR-based template for <a href="https://www.datatrail.org/" target="_blank">DataTrail</a> courses, with custom branding and structure.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://datatrail-jhu.github.io/DataTrail_Template/introduction.html" target="_blank">View example</a>
-    <a class="gallery-link" href="https://github.com/datatrail-jhu/DataTrail_Template" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<div class="gallery-card">
-  <span class="badge badge-dashboard">Dashboard</span>
-  <p class="gallery-card-title">Open Case Studies Metrics Dashboard</p>
-  <p class="gallery-card-desc">This website shows metrics related to the Open Case Studies project (OCS). OCS is an educational archive of data analysis guides using real-world data to help learners engage with data science and statistics topics.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://www.opencasestudies.org/ocs-metrics-dashboard/" target="_blank">View dashboard</a>
-    <a class="gallery-link" href="https://github.com/opencasestudies/ocs-metrics-dashboard" target="_blank">GitHub</a>
-  </div>
-</div>
-
-</div>
-<hr>
-<p>Ready to build your own? <a href="./getting_started.html">Get Started</a> →</p>
+<p>An R Markdown / Bookdown-based website template with a nav bar on top. Best choice if you have existing <code>.Rmd</code> files to build on.</p>
+<section id="create-a-repository-from-the-template" class="level4">
+<h4 class="anchored" data-anchor-id="create-a-repository-from-the-template">1. Create a repository from the template</h4>
+<p>On the <a href="https://github.com/ottrproject/OTTR_Template_Website">landing page of the OTTR_Template_Website repository</a>, locate the green <strong>Use this template</strong> button in the upper right corner. Click it, then select <strong>Create a new repository</strong> and follow the instructions.</p>
+<p><img src="resources/screenshots/template_button.png" class="img-fluid"></p>
+</section>
+<section id="name-your-repository-and-fill-in-a-short-description" class="level4">
+<h4 class="anchored" data-anchor-id="name-your-repository-and-fill-in-a-short-description">2. Name your repository and fill in a short description</h4>
+<p>Enter a name in the <strong>Repository name</strong> field and provide a brief description in the <strong>Description</strong> box.</p>
+<p><img src="resources/screenshots/creating_new_course_repo.png" class="img-fluid"></p>
+</section>
+<section id="ensure-your-repository-is-set-to-public" class="level4">
+<h4 class="anchored" data-anchor-id="ensure-your-repository-is-set-to-public">3. Ensure your repository is set to <code>public</code></h4>
+<p>Make sure to set it <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-visibility">to a public repository</a>. The rendered pull request preview won’t work on private repositories.</p>
+</section>
+<section id="click-create-repository-from-template-to-proceed" class="level4">
+<h4 class="anchored" data-anchor-id="click-create-repository-from-template-to-proceed">4. Click <code>Create repository from template</code> to proceed</h4>
+<p>After creating your repository, issues with setup instructions will be automatically filed. Navigate to the <strong>Issues</strong> tab and follow the instructions there.</p>
+</section>
+<section id="check-your-github-actions-settings" class="level4">
+<h4 class="anchored" data-anchor-id="check-your-github-actions-settings">5. Check your GitHub Actions settings</h4>
+<p>Go to <strong>Settings</strong> &gt; <strong>Actions</strong> &gt; <strong>General</strong>. Make sure you have:</p>
+<ol type="1">
+<li>Given <strong>Read and write permissions</strong></li>
+<li>Checked <strong>Allow GitHub Actions to create and approve pull requests</strong></li>
+</ol>
+<p>Then click <strong>Save</strong>.</p>
+<p><img src="resources/images/workflow-permissions.png" width="500"></p>
+</section>
+<section id="set-up-your-github-personal-access-token" class="level4">
+<h4 class="anchored" data-anchor-id="set-up-your-github-personal-access-token">6. Set up your GitHub personal access token</h4>
+<p>Go to <strong>Settings</strong> &gt; <strong>Secrets and variables</strong> &gt; <strong>Actions</strong> &gt; <strong>Repository secrets</strong> and click <strong>New repository secret</strong>.</p>
+<ul>
+<li><strong>Name</strong>: <code>GH_PAT</code> (this exact name is required)</li>
+<li><strong>Secret</strong>: create a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic">classic personal access token</a> with <code>repo</code> and <code>workflow</code> scopes checked.</li>
+</ul>
+<p>If you encounter any problems, <a href="https://github.com/ottrproject/OTTR_Template_Website/issues/new/choose">report an issue here</a>.</p>
+</section>
+<section id="set-up-github-pages" class="level4">
+<h4 class="anchored" data-anchor-id="set-up-github-pages">7. Set up GitHub Pages</h4>
+<p>In your repository, go to <strong>Settings</strong> &gt; <strong>Pages</strong> and configure:</p>
+<ul>
+<li><strong>Source</strong>: Deploy from a branch</li>
+<li><strong>Branch</strong>: <code>main</code>, folder <code>/docs</code></li>
+</ul>
+<p>Click <strong>Save</strong>, then check <strong>Enforce HTTPS</strong> at the bottom of the page.</p>
+<p><img src="resources/screenshots/change_https.png" class="img-fluid"></p>
+<p class="comment">
+<strong>Warning</strong>: If you visit your URL before pushing any file changes, you may see a 404 error. Check after filing your first pull request.
+</p>
+</section>
+<section id="enroll-for-updates-recommended" class="level4">
+<h4 class="anchored" data-anchor-id="enroll-for-updates-recommended">8. Enroll for updates (recommended)</h4>
+<p>Add <code>jhudsl-robot</code> as a collaborator with write access (<strong>Settings</strong> &gt; <strong>Collaborators &amp; Teams</strong>), then add your repository name to the <a href="https://github.com/ottrproject/OTTR_Template_Website/blob/main/.github/sync.yml">OTTR_Template_Website sync file</a>.</p>
+<p>If you’re <strong>not</strong> a member of the jhudsl GitHub organization, you can:</p>
+<ul>
+<li>Submit your repo info via the <a href="https://forms.gle/jGQnd5oemHWyuUq28">OTTR Feedback Google Form</a></li>
+<li><a href="https://github.com/ottrproject/OTTR_Template_Website/issues/new?assignees=kweav&amp;labels=&amp;projects=&amp;template=new-website-add-to-sync.md&amp;title=">Open an issue</a> with your repo name and we’ll add it</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Repository</th>
+<th style="text-align: left;">Issue Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">OTTR_Template_Website</td>
+<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Template_Website/issues/new/choose">General issue</a> · <a href="https://github.com/ottrproject/OTTR_Template_Website/issues/new?assignees=kweav&amp;labels=&amp;projects=&amp;template=new-website-add-to-sync.md&amp;title=">Add new repo to sync</a></td>
+</tr>
+</tbody>
+</table>
+<p class="comment">
+<em>If you have any questions about these updates or files, please tag <code>@kweav</code> or <code>@carriewright11</code>.</em>
+</p>
+<p><a href="./next_steps.html">Next Steps</a> →</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <hr>

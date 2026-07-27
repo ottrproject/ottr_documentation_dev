@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,10 +116,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="./choose_template.html" aria-current="page"> 
-<span class="menu-text">Help me choose my template</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Build with OTTR</span>
@@ -146,26 +142,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Customize</li>
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Advanced Integrations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
+        <li class="dropdown-header">Highly Recommended Steps</li>
         <li>
     <a class="dropdown-item" href="./more_features_ganalytic.html">
  <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
@@ -182,12 +159,41 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Additional Customizations</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./publishing.html"> 
-<span class="menu-text">Publishing OTTR courses</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publishing-ottr-courses" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publishing OTTR courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-publishing-ottr-courses">    
+        <li>
+    <a class="dropdown-item" href="./publishing_bookdown.html">
+ <span class="dropdown-text">Bookdown</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_coursera.html">
+ <span class="dropdown-text">Coursera</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_leanpub.html">
+ <span class="dropdown-text">Leanpub</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./faqs.html"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -210,16 +216,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
-  <li><a href="#key-questions-to-ask-yourself" id="toc-key-questions-to-ask-yourself" class="nav-link" data-scroll-target="#key-questions-to-ask-yourself">Key questions to ask yourself</a></li>
+  <li><a href="#choose-by-goal" id="toc-choose-by-goal" class="nav-link" data-scroll-target="#choose-by-goal">Choose by goal</a></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -505,7 +514,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><a href="getting_started.html#quarto-courses">Quarto Courses</a> ⭐</td>
-<td style="text-align: left;">New courses, starting fresh , existing <code>.qmd</code> course files</td>
+<td style="text-align: left;">New courses, starting fresh, existing <code>.qmd</code> course files</td>
 <td style="text-align: center;"><code>.qmd</code></td>
 <td style="text-align: left;">GitHub Pages · Coursera · Leanpub</td>
 </tr>
@@ -517,7 +526,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="getting_started.html#quarto-websites">Quarto Websites</a> ⭐</td>
-<td style="text-align: left;">New websites, starting fresh , existing <code>.qmd</code> course files</td>
+<td style="text-align: left;">New websites, starting fresh, existing <code>.qmd</code> website files</td>
 <td style="text-align: center;"><code>.qmd</code></td>
 <td style="text-align: left;">GitHub Pages</td>
 </tr>
@@ -554,22 +563,56 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="key-questions-to-ask-yourself" class="level2">
-<h2 class="anchored" data-anchor-id="key-questions-to-ask-yourself">Key questions to ask yourself</h2>
-<p><strong>Courses vs.&nbsp;Websites</strong></p>
-<ul>
-<li>Choose a <strong>Course</strong> template if you want a sidebar table of contents, chapter-by-chapter navigation, and the option to publish to Coursera or Leanpub.</li>
-<li>Choose a <strong>Website</strong> template if you want a top navigation bar and a more flexible page structure — like this documentation site.</li>
-</ul>
-<p><strong>Quarto vs.&nbsp;R Markdown</strong></p>
-<ul>
-<li>Choose <strong>Quarto</strong> if you are starting a new project. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.</li>
-<li>Choose <strong>R Markdown</strong> if you already have a set of <code>.Rmd</code> files you want to build on, or if your team is already working in R Markdown and a migration isn’t practical right now.</li>
-</ul>
-<p><strong>Dashboards</strong></p>
-<ul>
-<li>Choose the <strong>Dashboard</strong> template if your primary goal is to collect and display metrics — number of GitHub stars, Google Analytics traffic, CRAN downloads, Calendly bookings, and more — powered by the <a href="https://www.metricminer.org/"><code>metricminer</code></a> R package.</li>
-</ul>
+<section id="choose-by-goal" class="level2">
+<h2 class="anchored" data-anchor-id="choose-by-goal">Choose by goal</h2>
+<div class="benefit-grid use-case-grid">
+<div class="benefit-item">
+<div class="benefit-kicker">
+<p>Websites</p>
+</div>
+<div class="benefit-title">
+<p>Flexible pages with top navigation</p>
+</div>
+<div class="benefit-copy">
+<p>Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use <a href="https://quarto.org/">Quarto</a> for new projects, or R Markdown/bookdown if you already have <code>.Rmd</code> files.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-kicker">
+<p>Courses</p>
+</div>
+<div class="benefit-title">
+<p>Chapter-based learning content</p>
+</div>
+<div class="benefit-copy">
+<p>Choose a course template when you need a sidebar table of contents, chapter-by-chapter navigation, and optional publishing to <a href="https://www.coursera.org/">Coursera</a> or <a href="https://leanpub.com/">Leanpub</a>. Use Quarto for new courses, or R Markdown for existing <code>.Rmd</code> course files.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-kicker">
+<p>Dashboards</p>
+</div>
+<div class="benefit-title">
+<p>Metrics tracking and reporting</p>
+</div>
+<div class="benefit-copy">
+<p>Choose the dashboard template when your main goal is to collect and display metrics such as GitHub stars, Google Analytics traffic, CRAN downloads, Calendly bookings, and more with <a href="https://www.metricminer.org/"><code>metricminer</code></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to establish a publishing contract with Coursera if you want to publish there.</p>
+</div>
+</div>
 <hr>
 <p><a href="./getting_started.html">Get Started</a> →</p>
 
@@ -678,6 +721,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

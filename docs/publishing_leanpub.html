@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Examples of OTTR in the Wild – OTTR </title>
+<title>Publishing with Leanpub – OTTR </title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -76,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -216,18 +251,34 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#leanpub-rendering" id="toc-leanpub-rendering" class="nav-link active" data-scroll-target="#leanpub-rendering">Leanpub Rendering</a>
+  <ul>
+  <li><a href="#setting-up-leanpub-related-github-actions" id="toc-setting-up-leanpub-related-github-actions" class="nav-link" data-scroll-target="#setting-up-leanpub-related-github-actions">Setting up Leanpub-related GitHub Actions</a></li>
+  </ul></li>
+  <li><a href="#hosting-your-course-on-leanpub" id="toc-hosting-your-course-on-leanpub" class="nav-link" data-scroll-target="#hosting-your-course-on-leanpub">Hosting your course on Leanpub</a></li>
+  <li><a href="#setting-up-quizzes" id="toc-setting-up-quizzes" class="nav-link" data-scroll-target="#setting-up-quizzes">Setting up quizzes</a>
+  <ul>
+  <li><a href="#leanpub-quiz-question-types" id="toc-leanpub-quiz-question-types" class="nav-link" data-scroll-target="#leanpub-quiz-question-types">Leanpub quiz question types</a></li>
+  <li><a href="#leanpub-quiz-format-rules" id="toc-leanpub-quiz-format-rules" class="nav-link" data-scroll-target="#leanpub-quiz-format-rules">Leanpub quiz format rules</a></li>
+  </ul></li>
+  <li><a href="#converting-quizzes-from-leanpub-to-coursera-format" id="toc-converting-quizzes-from-leanpub-to-coursera-format" class="nav-link" data-scroll-target="#converting-quizzes-from-leanpub-to-coursera-format">Converting quizzes from Leanpub to Coursera format</a></li>
+  <li><a href="#quizzes-repository-checklist" id="toc-quizzes-repository-checklist" class="nav-link" data-scroll-target="#quizzes-repository-checklist"><code>_Quizzes</code> repository checklist</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Examples of OTTR in the Wild</h1>
+<h1 class="title">Publishing with Leanpub</h1>
 </div>
 
 
@@ -244,136 +295,157 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
-  margin: 1.5rem 0;
-}
-.gallery-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1.2rem 1.3rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  transition: box-shadow 0.15s ease;
-}
-.gallery-card:hover {
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-}
-.gallery-card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #222;
-  margin: 0;
-}
-.gallery-card-desc {
-  font-size: 0.88rem;
-  color: #555;
-  flex-grow: 1;
-  margin: 0;
-}
-.gallery-card-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 0.4rem;
-}
-.gallery-link {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1.5px solid #ADD8E6;
-  color: #2a7a9a;
-  background: #f0fafd;
-  transition: background 0.12s ease;
-}
-.gallery-link:hover {
-  background: #ADD8E6;
-  color: #222;
-}
-.badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 9px;
-  border-radius: 20px;
-  align-self: flex-start;
-}
-.badge-course    { background: #dbeafe; color: #1d4ed8; }
-.badge-website   { background: #ccfbf1; color: #0f766e; }
-.badge-template  { background: #dcfce7; color: #166534; }
-.badge-dashboard { background: #f3e8ff; color: #6b21a8; }
-</style>
-<p>Explore courses, websites, and templates built with OTTR. If you’ve made something with OTTR and would like it featured here, <a href="./contact.html">let us know</a>.</p>
-<p>We are actively working on developing additional versions of our original template to cater to specific needs. These variations can range from technical modifications that simplify the template, to tangential adaptations, or even more complex versions compared to the original OTTR template.</p>
-<p>We also noticed that if specific branding or variations of the original template need to be used many times, it’s often easier to create a new template (like the AnVIL and DataTrail templates below).</p>
-<p>If you find yourself making a full set of courses and multiple repositories from OTTR, you may want to make a template from our template (If you need to go this route, we recommend reaching out to the OTTR maintainers by <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">filing a GitHub issue</a> and assigning <code>@cansavvy</code> and <code>@carriewright11</code>). Also please reach out if you have any other interesting ideas or suggestions!</p>
-<div class="gallery-grid">
-
-<div class="gallery-card">
-  <span class="badge badge-course">Course</span>
-  <p class="gallery-card-title">DaSEH Instructor Guide</p>
-  <p class="gallery-card-desc">A course instructor guide for the Data Science for the Experience of Health (DaSEH) program, built with OTTR.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://hutchdatascience.org/daseh_instructor_guide/index.html" target="_blank">View course</a>
-    <a class="gallery-link" href="https://github.com/fhdsl/daseh_instructor_guide" target="_blank">GitHub</a>
-  </div>
+<p>OTTR includes everything needed to publish to <a href="https://leanpub.com/">Leanpub</a>. The <a href="https://github.com/ottrproject/ottrpal"><code>ottrpal</code> package</a> handles converting content into a Leanpub-ready format, storing output in the <code>manuscript</code> folder.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-website">Website</span>
-  <p class="gallery-card-title">Baltimore Community Course</p>
-  <p class="gallery-card-desc">A community-focused data science course built with OTTR for the Baltimore community.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/Baltimore_Community_Course/" target="_blank">View website</a>
-    <a class="gallery-link" href="https://github.com/jhudsl/Baltimore_Community_Course" target="_blank">GitHub</a>
-  </div>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">AnVIL Template</p>
-  <p class="gallery-card-desc">An OTTR-based template for courses built around the <a href="https://anvilproject.org/" target="_blank">AnVIL</a> cloud computing platform.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://jhudatascience.org/AnVIL_Template/" target="_blank">View example</a>
-    <a class="gallery-link" href="https://github.com/jhudsl/AnVIL_Template" target="_blank">GitHub</a>
-  </div>
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-template">Template</span>
-  <p class="gallery-card-title">DataTrail Template</p>
-  <p class="gallery-card-desc">An OTTR-based template for <a href="https://www.datatrail.org/" target="_blank">DataTrail</a> courses, with custom branding and structure.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://datatrail-jhu.github.io/DataTrail_Template/introduction.html" target="_blank">View example</a>
-    <a class="gallery-link" href="https://github.com/datatrail-jhu/DataTrail_Template" target="_blank">GitHub</a>
-  </div>
+<div class="callout-body-container callout-body">
+<p>Do not manually edit files in the <code>manuscript</code> folder. It is auto-generated by <code>ottrpal</code> and will be overwritten.</p>
 </div>
-
-<div class="gallery-card">
-  <span class="badge badge-dashboard">Dashboard</span>
-  <p class="gallery-card-title">Open Case Studies Metrics Dashboard</p>
-  <p class="gallery-card-desc">This website shows metrics related to the Open Case Studies project (OCS). OCS is an educational archive of data analysis guides using real-world data to help learners engage with data science and statistics topics.</p>
-  <div class="gallery-card-links">
-    <a class="gallery-link" href="https://www.opencasestudies.org/ocs-metrics-dashboard/" target="_blank">View dashboard</a>
-    <a class="gallery-link" href="https://github.com/opencasestudies/ocs-metrics-dashboard" target="_blank">GitHub</a>
-  </div>
 </div>
-
+<p>If you want quizzes and answers hidden, you will need a separate private OTTR_Quizzes repository. <a href="publishing.html#quizzes-repository-checklist">Start with these instructions</a> before proceeding.</p>
+<section id="leanpub-rendering" class="level2">
+<h2 class="anchored" data-anchor-id="leanpub-rendering">Leanpub Rendering</h2>
+<p>The <code>ottrpal</code> package handles most formatting for links and other elements, as long as you have followed the <a href="writing_content_courses.html#set-up-images">image formatting instructions</a>.</p>
+<p>GitHub Actions will attempt to convert Bookdown to Leanpub by running <code>ottrpal::bookdown_to_leanpub()</code> at the top of the repository.</p>
+<section id="setting-up-leanpub-related-github-actions" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-leanpub-related-github-actions">Setting up Leanpub-related GitHub Actions</h3>
+<p>When ready to publish to Leanpub, enable the following in your <a href="customize-robots.html"><code>config_automation.yml</code></a>:</p>
+<ul>
+<li><code>render-leanpub: yes</code></li>
+<li><code>check-quizzes: yes</code></li>
+</ul>
+<p>You may also configure chapter and quiz ordering. By default, <code>make-book-txt: TRUE</code> orders content by filename numbering. Set <code>make-book-txt: FALSE</code> if you want to specify ordering manually via a <code>Book.txt</code> file. Read more in the <a href="#setting-up-quizzes">quizzes section</a>.</p>
+<p>After updating <code>config_automation.yml</code>, file and merge a pull request. Quiz formatting will be checked automatically and reported in a pull request comment.</p>
+<p>File issues with the <code>ottrpal</code> package in its <a href="https://github.com/ottrproject/ottrpal/issues">GitHub repository</a>.</p>
+</section>
+</section>
+<section id="hosting-your-course-on-leanpub" class="level2">
+<h2 class="anchored" data-anchor-id="hosting-your-course-on-leanpub">Hosting your course on Leanpub</h2>
+<p>Finalizing a course on Leanpub can be tricky. The <a href="https://hutchdatascience.org/Using_Leanpub/index.html">Using Leanpub</a> guide provides detailed help.</p>
+<ol type="1">
+<li><p>Create a <a href="https://leanpub.com/">Leanpub account</a> if you do not have one.</p></li>
+<li><p>Start a course:</p>
+<ul>
+<li>Click the three-line button at the far right of the top bar.</li>
+<li>Click the <strong>Author</strong> tab, then <strong>Courses</strong>.</li>
+<li>Verify your email address if prompted.</li>
+<li>Click <code>create a new course</code>, then <strong>A Course</strong>.</li>
+<li>Provide a title (the Course URL fills automatically).</li>
+<li>Select <strong>Using Git and GitHub</strong>.
+<ul>
+<li>JHU developers: follow <a href="https://docs.google.com/document/d/18UQicXwf8d25ayKGF2BrinvRgB_R2ToVn5EDOUcxyoc/edit?usp=sharing">this additional setup document</a>.</li>
+</ul></li>
+<li>Press <code>add to plan</code>.</li>
+</ul></li>
+<li><p>Preview a new version:</p>
+<ul>
+<li>Click the three-line menu, then the <strong>Author</strong> tab, then <strong>Courses</strong>.</li>
+<li>Click your course name or icon.</li>
+<li>Click <strong>Preview New Version</strong>, then <code>Create Preview</code>.</li>
+</ul></li>
+</ol>
+<p>If the render fails, it is typically due to a quiz formatting error. Occasional failures may also occur due to sync lag between GitHub and Leanpub — try again if it fails once.</p>
+</section>
+<section id="setting-up-quizzes" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-quizzes">Setting up quizzes</h2>
+<p>Store quizzes in the <code>quizzes/</code> directory. Use the <a href="https://github.com/ottrproject/OTTR_Quizzes/blob/main/quizzes/quiz_ch1.md">template quiz</a> as a starting point. All quizzes must be written in <a href="https://leanpub.com/markua/read#leanpub-auto-quizzes-and-exercises">Markua format</a>.</p>
+<p>After adding each quiz, add its filename to the <code>Book.txt</code> file at the top of the repository (not the one in <code>manuscript</code>) in the correct position. For example, with two quizzes interleaved between three chapters:</p>
+<pre><code>01-intro.md
+02-chapter_of_course.md
+quiz_1.md
+03-chapter_of_course.md
+quiz_2.md
+about.md</code></pre>
+<p>Files listed with a <code>#</code> prefix in <code>Book.txt</code> are ignored by Leanpub.</p>
+<p>You cannot have two quizzes with the same <code>quiz_id</code>. See an <a href="https://github.com/ottrproject/OTTR_Quizzes/blob/main/quizzes/quiz_ch1.md">example quiz here</a>.</p>
+<section id="leanpub-quiz-question-types" class="level3">
+<h3 class="anchored" data-anchor-id="leanpub-quiz-question-types">Leanpub quiz question types</h3>
+<p><strong>Standard multiple choice</strong> — answer choices are not randomized:</p>
+<pre><code>? A question is here
+a) A wrong answer
+B) A correct answer has a capital letter
+c) A wrong answer
+d) A wrong answer</code></pre>
+<p><strong>Choose answers</strong> — randomizes choices using <code>C)</code> for correct, <code>m)</code> for mandatory incorrect, and <code>o)</code> for optional incorrect. The number of answers must be at least equal to the count of correct and mandatory incorrect answers.</p>
+<pre><code>{choose-answers: 4}
+? A question is here
+C) The correct answer is signified with a capital C
+m) A mandatory incorrect answer
+m) A mandatory incorrect answer
+o) An optional incorrect answer
+o) An optional incorrect answer</code></pre>
+<p>Upon merging to <code>main</code>, the <code>check-quizzes.yml</code> GitHub Action validates quiz formatting and reports errors on the pull request.</p>
+</section>
+<section id="leanpub-quiz-format-rules" class="level3">
+<h3 class="anchored" data-anchor-id="leanpub-quiz-format-rules">Leanpub quiz format rules</h3>
+<ul>
+<li>Quizzes start and end with <code>{quiz}</code> and <code>{\quiz}</code> tags.</li>
+<li>No exclamation points or colons in answers.</li>
+<li>At least one correct answer per question.</li>
+<li>All question and quiz attributes must be recognized by Leanpub.</li>
+<li>All quizzes must be listed in <code>Book.txt</code>.</li>
+<li>The <code>choose-answers</code> count must be at least as large as the number of mandatory and correct answers.</li>
+</ul>
+</section>
+</section>
+<section id="converting-quizzes-from-leanpub-to-coursera-format" class="level2">
+<h2 class="anchored" data-anchor-id="converting-quizzes-from-leanpub-to-coursera-format">Converting quizzes from Leanpub to Coursera format</h2>
+<p>Convert quizzes to a Coursera-uploadable YAML file by running:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">convert_quizzes</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<hr>
-<p>Ready to build your own? <a href="./getting_started.html">Get Started</a> →</p>
+<p>Note that images and links are not currently supported by the conversion script and must be added manually. Colons (<code>:</code>) are not allowed in prompts or answers.</p>
+<p><a href="course_publishing.html#publishing-with-coursera">See full Coursera publishing instructions</a>.</p>
+</section>
+<section id="quizzes-repository-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="quizzes-repository-checklist"><code>_Quizzes</code> repository checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">A <a href="https://www.ottrproject.org/getting_started.html#6_Set_up_your_GitHub_personal_access_token"><code>GH_PAT</code> has been set</a> in both the main Template and the <code>_Quizzes</code> repository.</label></li>
+<li><label><input type="checkbox"><a href="#hosting-your-course-on-leanpub">Leanpub course has been created</a>.</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Writing mode is set to <code>GitHub</code> and linked to your main OTTR_Template repository.</label></li>
+</ul></li>
+<li><label><input type="checkbox"><code>_Quizzes</code> repository is set to <code>private</code>.</label>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>main</code> branch protection is configured:</label>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>Require pull request reviews before merging</code> is checked.</label></li>
+<li><label><input type="checkbox"><code>Require status checks to pass before merging</code> is checked.</label></li>
+<li><label><input type="checkbox"><code>Require branches to be up to date before merging</code> is checked.</label></li>
+</ul></li>
+</ul></li>
+<li><label><input type="checkbox">Repository is <a href="enroll_sync.html">enrolled in automatic updates</a>.</label></li>
+<li><label><input type="checkbox"><code>Book.txt</code> is up to date.</label></li>
+<li><label><input type="checkbox"><a href="#leanpub-rendering"><code>ottrpal::bookdown_to_leanpub()</code> ran successfully</a>.</label></li>
+</ul>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>Below are some examples of courses created using the <a href="https://github.com/ottrproject/OTTR_Template">OTTR Template</a> and published:</p>
+<p><em>Introduction to Reproducibility in Cancer Informatics:</em></p>
+<ul>
+<li><a href="https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics">GitHub repository and source code</a>
+<ul>
+<li><a href="https://leanpub.com/universities/courses/jhu/cancer-informatics-for-research-leaders">Leanpub course</a></li>
+</ul></li>
+</ul>
+<p><em>Computing for Cancer Informatics:</em></p>
+<ul>
+<li><a href="https://github.com/jhudsl/Computing_for_Cancer_Informatics">GitHub repository and source code</a>
+<ul>
+<li><a href="https://leanpub.com/universities/courses/jhu/cancer-informatics-computing">Leanpub course</a></li>
+</ul></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <hr>
