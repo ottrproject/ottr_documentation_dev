@@ -269,8 +269,8 @@ cards <- list(
 <ul>
   <li><strong>Add references</strong> to <code>book.bib</code> in alphabetical order. For articles with a DOI, use <a href="https://www.doi2bib.org/">doi2bib.org</a> or <a href="https://zbib.org/">ZoteroBib</a> to generate a BibTeX entry to copy in.</li>
   <li><strong>Cite in text</strong> using <code>@key</code> (inline) or <code>[@key]</code> (parenthetical). Separate multiple citations with semicolons: <code>[@key-1; @key-2]</code>.</li>
-  <li><strong>References list</strong> — keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code> so the full reference list appears at the end of your course.</li>
-  <li><strong>Suppress per-chapter references</strong> by adding <code>split_bib: false</code> to <code>_output.yml</code>.</li>
+  <li><strong>References list</strong> — for Bookdown, keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code>. For Quarto books, keep <code>references.qmd</code> as the last chapter in <code>_quarto.yml</code>.</li>
+  <li><strong>Suppress per-chapter references</strong> in Bookdown by adding <code>split_bib: false</code> to <code>_output.yml</code>. Quarto books should use the <code>#refs</code> div in <code>references.qmd</code> for the end-of-book bibliography.</li>
 </ul>'
   ),
   list(
