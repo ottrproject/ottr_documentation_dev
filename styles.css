@@ -371,6 +371,10 @@
   border-radius: 8px;
 }
 
+.cheatsheet-gallery-frame iframe {
+  height: 1850px;
+}
+
 .cheatsheet-link {
   margin-top: 0.25rem;
   text-align: right;

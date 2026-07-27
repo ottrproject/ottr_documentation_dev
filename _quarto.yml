@@ -13,6 +13,8 @@ website:
         menu:
           - text: "Getting started"
             href: getting_started.qmd
+          - text: "Cheatsheet gallery"
+            href: cheatsheet_gallery.qmd
           - text: "Next steps"
             href: next_steps.qmd
           - text: "Example use cases"
@@ -73,4 +75,3 @@ format:
     include-after-body: resources/footer.html
     page-layout: article
     link-external-newwindow: true
-
