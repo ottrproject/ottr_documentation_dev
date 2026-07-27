@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,10 +116,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./choose_template.html"> 
-<span class="menu-text">Help me choose my template</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Build with OTTR</span>
@@ -146,26 +142,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Customize</li>
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Advanced Integrations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
+        <li class="dropdown-header">Highly Recommended Steps</li>
         <li>
     <a class="dropdown-item" href="./more_features_ganalytic.html">
  <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
@@ -182,12 +159,41 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Additional Customizations</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./publishing.html"> 
-<span class="menu-text">Publishing OTTR courses</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publishing-ottr-courses" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publishing OTTR courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-publishing-ottr-courses">    
+        <li>
+    <a class="dropdown-item" href="./publishing_bookdown.html">
+ <span class="dropdown-text">Bookdown</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_coursera.html">
+ <span class="dropdown-text">Coursera</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_leanpub.html">
+ <span class="dropdown-text">Leanpub</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./faqs.html"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -210,19 +216,23 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#giving-credits-to-contributors" id="toc-giving-credits-to-contributors" class="nav-link active" data-scroll-target="#giving-credits-to-contributors">Giving credits to contributors</a>
   <ul class="collapse">
+  <li><a href="#required-credit-rows-to-add" id="toc-required-credit-rows-to-add" class="nav-link" data-scroll-target="#required-credit-rows-to-add">Required credit rows to add</a></li>
   <li><a href="#adding-the-credits-table-to-coursera" id="toc-adding-the-credits-table-to-coursera" class="nav-link" data-scroll-target="#adding-the-credits-table-to-coursera">Adding the Credits table to Coursera</a></li>
   <li><a href="#adding-the-credits-table-to-leanpub" id="toc-adding-the-credits-table-to-leanpub" class="nav-link" data-scroll-target="#adding-the-credits-table-to-leanpub">Adding the Credits table to Leanpub</a></li>
   </ul></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -251,16 +261,28 @@ ul.task-list li input[type="checkbox"] {
 <p>Since so many individuals contribute to our courses in so many ways, we decided to make a table of credits to make it clear who did what.</p>
 <p>Here is an example:</p>
 <p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/example_credits.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Please see the <a href="https://ottrproject.org/OTTR_Template/about-the-authors.html">About section</a> of the template for descriptions of how credits should be attributed for the course.</p>
-<p>This is generated from the About.Rmd file. An About.Rmd file will already be in your course from using our template. You will need to do the following steps to update it for your course:</p>
+<p>This is generated from the About.Rmd file. <strong>An About.Rmd file will already be in your course from using our template</strong>. You will need to do the following steps to update it for your course:</p>
 <ol type="1">
 <li>Fill out author names for the various roles where applicable.</li>
 <li>Delete lines for roles that are not applicable.</li>
 <li>Make sure roles grammatically match names. If there are multiple people include the “s” in the role name where applicable and remove the parentheses. If only one person is appropriate for a given role remove “(s)” from the role name.</li>
 <li>Ensure that each row has “|” around each cell value.</li>
 </ol>
+</div>
+</div>
 <p><em>Example Table</em>:</p>
-<p>The first row and additional rows based on <a href="https://bit.ly/course-credits-table">this table</a> should be added and filled in using <a href="https://www.markdownguide.org/extended-syntax/">Markdown table format</a>.</p>
+<p>The table should be added and filled in using <a href="https://www.markdownguide.org/extended-syntax/">Markdown table format</a>.</p>
 <pre><code>|Credits|Names|
 |-------|-----|
 |Lead Content Instructor|FirstName LastName|</code></pre>
@@ -272,7 +294,15 @@ ul.task-list li input[type="checkbox"] {
 &lt;!-- Author information --&gt;
 
 [FirstName LastName]: link to personal website</code></pre>
+<section id="required-credit-rows-to-add" class="level3">
+<h3 class="anchored" data-anchor-id="required-credit-rows-to-add">Required credit rows to add</h3>
+<p>Use these row sets as a checklist. Start with the rows for all courses, then add the Johns Hopkins or ITCR rows if they apply to your course.</p>
+<details id="all-course-credit-rows" class="template-choice" open="">
+<summary>
+<span class="choice-note">1. All courses</span>
+</summary>
 <p>These rows should be included for <em>all courses</em>:</p>
+<div id="all-course-credit-rows-code">
 <pre><code>|Template Publishing Engineers|[Candace Savonen], [Carrie Wright], [Ava Hoffman]|
 |Publishing Maintenance Engineer|[Candace Savonen]|
 |Technical Publishing Stylists|[Carrie Wright], [Ava Hoffman], [Candace Savonen]|
@@ -290,19 +320,185 @@ ul.task-list li input[type="checkbox"] {
 &lt;!-- Links --&gt;
 
 [ottrpal]: https://github.com/ottrproject/ottrpal</code></pre>
-<p>These rows should be added to all <em>Johns Hopkins</em> courses:</p>
-<pre><code>|Content Publisher|[Ira Gooding]|
-|Content Publishing Reviewer|Ira Gooding]|
-
-&lt;!-- Author information --&gt;
-
-[Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding</code></pre>
-<p>Additionally, this row should be added for <em>all ITCR Courses</em>:</p>
-<pre><code>|Content Directors|[Jeff Leek]|
-
-&lt;!-- Author information --&gt;
-
-[Jeff Leek]: https://jtleek.com/</code></pre>
+</div>
+</details>
+<details id="credit-role-reference" class="template-choice">
+<summary>
+<span class="choice-note">Credit role reference</span>
+</summary>
+<p>Use this table to choose contributor credit labels and categories for your course website.</p>
+<div id="credit-role-table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 29%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Credit Label</th>
+<th style="text-align: center;">Order</th>
+<th style="text-align: left;">Role Description</th>
+<th style="text-align: left;">Credit Category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Production Organization</td>
+<td style="text-align: center;">1A</td>
+<td style="text-align: left;">Johns Hopkins DaSL</td>
+<td style="text-align: left;">No category</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lead Content Instructor</td>
+<td style="text-align: center;">2B</td>
+<td style="text-align: left;">This person contributes to several roles and takes on a lion’s share of the overall effort.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lecturer</td>
+<td style="text-align: center;">2C</td>
+<td style="text-align: left;">This person delivers the course online.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Content Author</td>
+<td style="text-align: center;">2D</td>
+<td style="text-align: left;">This person writes content but is not a lead developer. Authors are listed based on the amount of content they write, otherwise they are listed in alphabetical order. If someone wrote less than a chapter’s worth of content, then they are a contributor.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Content Contributor</td>
+<td style="text-align: center;">2E</td>
+<td style="text-align: left;">This person writes some content, but less than the amount of a chapter; otherwise they are an author.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Content Consultant</td>
+<td style="text-align: center;">2F</td>
+<td style="text-align: left;">This person provides specialized feedback about specific aspects of content and makes high-level suggestions, but does not write or edit the content. If they do, they are listed as an editor and/or contributor.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Content Idea Contributor</td>
+<td style="text-align: center;">2G</td>
+<td style="text-align: left;">This person helps come up with the idea for the content.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Content Editor</td>
+<td style="text-align: center;">2H</td>
+<td style="text-align: left;">This person edits but does not otherwise contribute to content.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Content Director</td>
+<td style="text-align: center;">2I</td>
+<td style="text-align: left;">This person helps guide the direction of the course development.</td>
+<td style="text-align: left;">Pedagogy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Content Publisher</td>
+<td style="text-align: center;">3A</td>
+<td style="text-align: left;">This person helps with the publishing platform work.</td>
+<td style="text-align: left;">Production</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Content Reviewer</td>
+<td style="text-align: center;">3B</td>
+<td style="text-align: left;">This person checks the overall content and aesthetics.</td>
+<td style="text-align: left;">Production</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Course Publishing Engineer</td>
+<td style="text-align: center;">4A</td>
+<td style="text-align: left;">This person helps with the code for the technical aspects related to the specific course generation.</td>
+<td style="text-align: left;">Technical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Template Publishing Engineer</td>
+<td style="text-align: center;">4B</td>
+<td style="text-align: left;">This person helped create the template.</td>
+<td style="text-align: left;">Technical</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Publishing Maintenance Engineer</td>
+<td style="text-align: center;">4C</td>
+<td style="text-align: left;">This person helped with GitHub Actions and technical processes over time.</td>
+<td style="text-align: left;">Technical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Technical Publishing Stylist</td>
+<td style="text-align: center;">4D</td>
+<td style="text-align: left;">This person assisted with technical design elements, like CSS code.</td>
+<td style="text-align: left;">Technical</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Packages</td>
+<td style="text-align: center;">4E</td>
+<td style="text-align: left;">This person helps create packages used to create the course.</td>
+<td style="text-align: left;">Technical</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Illustrator</td>
+<td style="text-align: center;">5A</td>
+<td style="text-align: left;">This person helps create graphics for the course.</td>
+<td style="text-align: left;">Art and Design</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Figure Artist</td>
+<td style="text-align: center;">5B</td>
+<td style="text-align: left;">This person helps create figures or plots for the course using code.</td>
+<td style="text-align: left;">Art and Design</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Videographer</td>
+<td style="text-align: center;">5C</td>
+<td style="text-align: left;">This person helps film videos for the course.</td>
+<td style="text-align: left;">Art and Design</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Videography Editor</td>
+<td style="text-align: center;">5D</td>
+<td style="text-align: left;">This person helps edit video files for the course.</td>
+<td style="text-align: left;">Art and Design</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Funder</td>
+<td style="text-align: center;">6A</td>
+<td style="text-align: left;">This is where grant funding and similar funding sources can be indicated.</td>
+<td style="text-align: left;">Funding</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Funding Staff Member</td>
+<td style="text-align: center;">6C</td>
+<td style="text-align: left;">This person helps manage the money needed to produce the content.</td>
+<td style="text-align: left;">Funding</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Support Staff Member</td>
+<td style="text-align: center;">7A</td>
+<td style="text-align: left;">This person assists in some official way but does not fit other categories.</td>
+<td style="text-align: left;">Support</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Acknowledgements</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">This person makes minimal but helpful contributions that do not fit other categories, such as inspiration.</td>
+<td style="text-align: left;">Acknowledgements</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">In Memory</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">For content James Taylor worked on or helped start.</td>
+<td style="text-align: left;">In Memory</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</section>
 <section id="adding-the-credits-table-to-coursera" class="level3">
 <h3 class="anchored" data-anchor-id="adding-the-credits-table-to-coursera">Adding the Credits table to Coursera</h3>
 <p>In Coursera, you can add the credits table URL as an ungraded plugin (<a href="https://www.ottrproject.org/course_publishing.html#Navigating_to_your_course_on_Coursera">the same as described here for adding chapter content</a>). This should be added at the beginning of your course, right after the introduction.</p>
@@ -420,6 +616,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

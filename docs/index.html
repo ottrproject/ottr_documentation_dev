@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-618ece6ff6c2cd7781e4e628b6cc2456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -76,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="floating nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,10 +151,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./choose_template.html"> 
-<span class="menu-text">Help me choose my template</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-build-with-ottr" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Build with OTTR</span>
@@ -146,26 +177,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
-        <li class="dropdown-header">Customize</li>
-        <li>
-    <a class="dropdown-item" href="./customize-style.html">
- <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-robots.html">
- <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./customize-docker.html">
- <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-advanced-integrations" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Advanced Integrations</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-advanced-integrations">    
+        <li class="dropdown-header">Highly Recommended Steps</li>
         <li>
     <a class="dropdown-item" href="./more_features_ganalytic.html">
  <span class="dropdown-text">Google Analytics <i class="fa-solid fa-chart-line" title="a line chart" aria-label="chart-line"></i></span></a>
@@ -182,12 +194,41 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./more_features_borrowing.html">
  <span class="dropdown-text">Borrowing chapters <i class="fa-solid fa-bookmark" title="A bookmark" aria-label="bookmark"></i></span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Additional Customizations</li>
+        <li>
+    <a class="dropdown-item" href="./customize-style.html">
+ <span class="dropdown-text">Style <i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-robots.html">
+ <span class="dropdown-text">Checks <i class="fa-solid fa-robot" title="A robot" aria-label="robot"></i></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./customize-docker.html">
+ <span class="dropdown-text">Docker <i class="fa-solid fa-gears" title="gears" aria-label="gears"></i></span></a>
+  </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./publishing.html"> 
-<span class="menu-text">Publishing OTTR courses</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-publishing-ottr-courses" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Publishing OTTR courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-publishing-ottr-courses">    
+        <li>
+    <a class="dropdown-item" href="./publishing_bookdown.html">
+ <span class="dropdown-text">Bookdown</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_coursera.html">
+ <span class="dropdown-text">Coursera</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./publishing_leanpub.html">
+ <span class="dropdown-text">Leanpub</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./faqs.html"> 
 <span class="menu-text">Troubleshooting <i class="fa-solid fa-tools" title="tools" aria-label="tools"></i></span></a>
@@ -210,6 +251,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -340,7 +385,7 @@ ul.task-list li input[type="checkbox"] {
 <p><br></p>
 </div>
 <p style="font-size: 16px;">
-OTTR (Open-source Tools for Training Resources ) is a set of tools and templates to help you make <strong>websites, online courses, and dashboards</strong> more easily (and for free)!
+OTTR (Open-source Tools for Training Resources) is a set of tools and templates to help you make <strong>websites, online courses, and dashboards</strong> more easily (and for free)!
 </p>
 <div id="ottr-wizard">
 <div id="wizard-breadcrumb">
@@ -526,70 +571,68 @@ OTTR (Open-source Tools for Training Resources ) is a set of tools and templates
 <p><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" alt="OTTR Flavors and their uses"> </iframe></p>
 </div>
 <p><a href="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?utm_content=DAGwn4eF5mk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">OTTR at a Glance</a> by ITN</p>
-<section id="benefits-for-all-ottr-options" class="level4">
-<h4 class="anchored" data-anchor-id="benefits-for-all-ottr-options">Benefits for all OTTR options:</h4>
-<ul>
-<li>No software installations needed</li>
-<li>Automatically preview content on <a href="https://github.com/">GitHub</a> before you publish</li>
-<li>Automatically check spelling (and customize your dictionary!)</li>
-<li>Automatically and periodically check for broken links</li>
-<li>Easily customize branding</li>
-<li>Easily include code (and avoid version difference issues using Docker containers)</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+</section>
+<section id="why-use-ottr" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-ottr">Why Use OTTR?</h3>
+<div class="ottr-feature-section">
+<section id="benefits-for-all-ottr-options" class="level4 ottr-feature-copy">
+<h4 class="anchored" data-anchor-id="benefits-for-all-ottr-options">Benefits for all OTTR options</h4>
+<div class="benefit-grid">
+<div class="benefit-item">
+<p><strong>No software installation</strong></p>
+<p>Work in GitHub without installing a local publishing tool.</p>
+</div>
+<div class="benefit-item">
+<p><strong>Preview before publishing</strong></p>
+<p>Automatically preview content on <a href="https://github.com/">GitHub</a> before it goes live.</p>
+</div>
+<div class="benefit-item">
+<p><strong>Built-in checks</strong></p>
+<p>Automatically check spelling, customize your dictionary, and periodically check for broken links.</p>
+</div>
+<div class="benefit-item">
+<p><strong>Flexible publishing</strong></p>
+<p>Customize branding, include code, and avoid version differences with Docker containers.</p>
+</div>
+</div>
+</section>
+<div class="ottr-feature-image">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./resources/images/why-ottr.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="OTTR helps build github based websites with less hassle. Catch potential mistakes before they go live"></p>
+<p><img src="./resources/images/why-ottr.png" class="img-fluid figure-img"></p>
+<figcaption>OTTR helps build GitHub-based websites with less hassle. Catch potential mistakes before they go live.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="benefits-for-specific-uses" class="level4">
-<h4 class="anchored" data-anchor-id="benefits-for-specific-uses">Benefits for specific uses:</h4>
-<ul>
-<li>Websites can be created using <a href="https://quarto.org/">quarto</a> or <a href="https://bookdown.org/">bookdown</a></li>
-<li>Courses can be easily formatted for learning platforms like <a href="https://www.coursera.org/">coursera</a> and <a href="https://leanpub.com/">Leanpub</a> (only edit once and it gets propagated to all locations - making for <strong>easy updates</strong>!)</li>
-<li>Metrics can be gathered from a variety of sources for dashboards</li>
-</ul>
-<p><br> (*Note that you will need to establish a publishing contract with coursera if you want to publish there)</p>
-<p>Check out this short video about OTTR:</p>
-<p align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oQ8d42fSn0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+<section id="ottr-in-action" class="level3">
+<h3 class="anchored" data-anchor-id="ottr-in-action">OTTR in Action</h3>
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/oQ8d42fSn0o" title="Short video about OTTR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
 </iframe>
-</p>
+</div>
 </section>
-<section id="how-to-use-ottr" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-use-ottr">How to use OTTR:</h4>
-<ol type="1">
-<li>Edit and write websites and courses in <a href="https://rmarkdown.rstudio.com/">R Markdown files</a> or <a href="https://quarto.org/docs/output-formats/html-basics.html">Quarto</a></li>
-<li>Use GitHub to host your content, we will walk you through how!</li>
-<li>Let the GitHub actions in our tools do all the checks and rendering so you don’t have too</li>
-<li>Update your content as needed based on the errors OTTR finds and the preview</li>
-<li>Publish your websites and courses! <br></li>
-</ol>
-</section>
-<section id="how-to-cite-ottr" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-cite-ottr">How to Cite OTTR:</h4>
-<p>Please cite our <a href="https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646">OTTR manuscript here!</a>📝👀</p>
-<details>
+<section id="how-to-cite-ottr" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-cite-ottr">How to Cite OTTR</h3>
+<p>Please cite the <a href="https://www.tandfonline.com/doi/full/10.1080/26939169.2022.2118646">OTTR manuscript</a>.</p>
+<details class="template-choice citation-choice">
 <summary>
-Click here for the BibTeX formatted citation
+<span> <strong>BibTeX formatted citation</strong><br> </span>
 </summary>
-<pre><code>@article{ottr,
-  author = {Candace Savonen, Carrie Wright, Ava M. Hoffman, John Muschelli, Katherine Cox, Frederick J. Tan and Jeffrey T. Leek},
-  title = {Open-source Tools for Training Resources – OTTR},
-  journal = {Journal of Statistics and Data Science Education},
-  volume = {31},
-  number = {1},
-  pages = {57-65},
-  year = {2023},
-  publisher = {Taylor &amp; Francis},
-  doi = {10.1080/26939169.2022.2118646},
-  URL = {https://doi.org/10.1080/26939169.2022.2118646},
-  eprint = {https://doi.org/10.1080/26939169.2022.2118646}
-}</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@article</span>{<span class="ot">ottr</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span> = {Candace Savonen, Carrie Wright, Ava M. Hoffman, John Muschelli, Katherine Cox, Frederick J. Tan and Jeffrey T. Leek},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span> = {Open-source Tools for Training Resources – OTTR},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">journal</span> = {Journal of Statistics and Data Science Education},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">volume</span> = {31},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">number</span> = {1},</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pages</span> = {57-65},</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> = {2023},</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Taylor &amp; Francis},</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span> = {10.1080/26939169.2022.2118646},</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">URL</span> = {https://doi.org/10.1080/26939169.2022.2118646},</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">eprint</span> = {https://doi.org/10.1080/26939169.2022.2118646}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <p><br></p>
 <center>
@@ -598,7 +641,6 @@ Click here for the BibTeX formatted citation
 <p><br></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -703,6 +745,11 @@ Click here for the BibTeX formatted citation
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
