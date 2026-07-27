@@ -13,6 +13,10 @@ However, sharing material by copying and pasting can lead to maintenance issues,
 In OTTR, we try to minimize maintenance pains. To get around this, we use `cow::borrow_chapter()` from the [jhudsl/cow](https://jhudatascience.org/cow/index.html) package.
 The `cow` package is already on the `jhudsl/course_template` Docker image  so you do not need to install it if you are using the Docker image or if you are have GitHub Actions do all the rendering for you.
 
+:::{.callout-warning}
+The `cow` package may be deprecated in the future. For now, use `cow::borrow_chapter()`, but watch for deprecation warnings during rendering and update your course if a replacement helper is announced.
+:::
+
 To borrow a chapter from another course, create an `.qmd` or `.Rmd` as you normally would, with a `ottrpal::set_knitr_image_path()` in a chunk at the beginning of the file and a [`H1` title](https://www.markdownguide.org/basic-syntax/).
 
 :::{.callout-tip}
