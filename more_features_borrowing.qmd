@@ -10,7 +10,7 @@ If you have two courses where the content and topics overlap, you may want to sh
 
 However, sharing material by copying and pasting can lead to maintenance issues, as updating one would require remembering to update the other as well! 😱
 
-In OTTR, we try to minimize maintenance pains. To get around this, we use `ottrpal::borrow_chapter()` from the [jhudsl/ottrpal](https://jhudatascience.org/ottrpal/) package.
+In OTTR, we try to minimize maintenance pains. To get around this, we use `ottrpal::borrow_chapter()` from the [jhudsl/ottrpal](https://ottrproject.org/ottrpal/) package.
 The `ottrpal` package is already on the `jhudsl/base_otter` Docker image  so you do not need to install it if you are using the Docker image or if you are have GitHub Actions do all the rendering for you.
 
 :::{.callout-warning}
