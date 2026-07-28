@@ -17,8 +17,6 @@ The `ottrpal` package is already on the `jhudsl/base_otter` Docker image  so you
 The `cow` package will soon be deprecated. Use `ottrpal::borrow_chapter()` instead of `cow::borrow_chapter()` in new and updated courses.
 :::
 
-To borrow a chapter from another course, create an `.qmd` or `.Rmd` as you normally would, with a `ottrpal::set_knitr_image_path()` in a chunk at the beginning of the file and a [`H1` title](https://www.markdownguide.org/basic-syntax/).
-
 :::{.callout-tip}
 By default, borrow the source `.qmd` or `.Rmd` file rather than the rendered file from `docs/`, such as an `.html` or `.md` file.
 :::
