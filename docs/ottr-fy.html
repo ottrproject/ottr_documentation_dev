@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -114,6 +149,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -132,10 +171,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -223,10 +258,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#requirements-for-ottr-fying-a-repository" id="toc-requirements-for-ottr-fying-a-repository" class="nav-link active" data-scroll-target="#requirements-for-ottr-fying-a-repository">Requirements for OTTR-fying a repository:</a>
   <ul class="collapse">
-  <li><a href="#step-1-add-ottr-files-to-your-current-repository" id="toc-step-1-add-ottr-files-to-your-current-repository" class="nav-link" data-scroll-target="#step-1-add-ottr-files-to-your-current-repository">Step 1: Add OTTR files to your current repository</a></li>
-  <li><a href="#ottr-fying-files" id="toc-ottr-fying-files" class="nav-link" data-scroll-target="#ottr-fying-files">OTTR-fying files:</a></li>
-  <li><a href="#add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file" id="toc-add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file" class="nav-link" data-scroll-target="#add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file">2. Add your Rmd or md files to the <code>_bookdown.yml</code> or <code>_site.yml</code> file</a></li>
-  <li><a href="#set-up-your-repository-with-the-proper-settings" id="toc-set-up-your-repository-with-the-proper-settings" class="nav-link" data-scroll-target="#set-up-your-repository-with-the-proper-settings">3. Set up your repository with the proper settings</a></li>
+  <li><a href="#step-1-choose-your-ottr-flavor" id="toc-step-1-choose-your-ottr-flavor" class="nav-link" data-scroll-target="#step-1-choose-your-ottr-flavor">Step 1: Choose your OTTR flavor</a></li>
+  <li><a href="#step-2-add-ottr-files-to-your-current-repository" id="toc-step-2-add-ottr-files-to-your-current-repository" class="nav-link" data-scroll-target="#step-2-add-ottr-files-to-your-current-repository">Step 2: Add OTTR files to your current repository</a></li>
+  <li><a href="#ottr-fying-files" id="toc-ottr-fying-files" class="nav-link" data-scroll-target="#ottr-fying-files">OTTR-fying files</a></li>
+  <li><a href="#review-and-commit-the-added-files" id="toc-review-and-commit-the-added-files" class="nav-link" data-scroll-target="#review-and-commit-the-added-files">3. Review and commit the added files</a></li>
+  <li><a href="#add-your-content-files-to-the-site-configuration" id="toc-add-your-content-files-to-the-site-configuration" class="nav-link" data-scroll-target="#add-your-content-files-to-the-site-configuration">4. Add your content files to the site configuration</a></li>
+  <li><a href="#set-up-your-repository-with-the-proper-settings" id="toc-set-up-your-repository-with-the-proper-settings" class="nav-link" data-scroll-target="#set-up-your-repository-with-the-proper-settings">5. Set up your repository with the proper settings</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -257,74 +294,211 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>WARNING</strong> This is in the very early stages of testing. You may feel free to try it, but <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">file an issue with OTTR</a> right away if it does not appear to be working as intended (or if you have other suggestions).</p>
-<p>In some cases, if you have R Markdown files, Markdown files, or even better, Bookdown set of files in an existing repository that you would like to OTTR-fy you can do that following these steps. This method is a bit trickier and riskier than creating a repository from scratch and is still under some testing. So we recommend generally avoiding this strategy unless its unavoidable.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>ottrpal::ottrfy()</code> function is still under development. You may feel free to try it, but <a href="https://github.com/ottrproject/OTTR_Template/issues/new/choose">file an issue with OTTR</a> right away if it does not appear to be working as intended (or if you have other suggestions).</p>
+</div>
+</div>
+<p>The <a href="https://github.com/ottrproject/ottrpal"><code>ottrpal</code></a> package includes an <code>ottrfy()</code> function that can help add the OTTR files you need to an existing repository. This is especially useful if you already have Quarto (<code>.qmd</code>) files, R Markdown (<code>.Rmd</code>) files, Markdown files, or a Bookdown set of files that you would like to convert into an OTTR course or website.</p>
+<p>The current function also includes options for Quarto courses and Quarto websites, but this workflow is newer and still being tested. This method is a bit trickier and riskier than creating a repository from scratch, so we recommend generally avoiding this strategy unless it is unavoidable.</p>
 <p>This set of steps also assumes you are more familiar with GitHub.</p>
 <section id="requirements-for-ottr-fying-a-repository" class="level2">
 <h2 class="anchored" data-anchor-id="requirements-for-ottr-fying-a-repository">Requirements for OTTR-fying a repository:</h2>
 <ul>
-<li>Need to have either Markdown or R Markdown documents in the top of your repository that you are seeking to publish.</li>
-<li>Needs to be a public GitHub repository.</li>
+<li><p>Need to have either Quarto, Markdown, or R Markdown documents in the top of your repository that you are seeking to publish.</p></li>
+<li><p>Needs to be a public GitHub repository.</p></li>
+<li><p>Need to have the <a href="https://github.com/ottrproject/ottrpal"><code>ottrpal</code></a> R package installed.</p></li>
 </ul>
-<section id="step-1-add-ottr-files-to-your-current-repository" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-add-ottr-files-to-your-current-repository">Step 1: Add OTTR files to your current repository</h3>
-<p>Navigate to the top of your repository and <a href="https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R">download this file</a>.</p>
-<p>You can do this by using wget, or by just using the link above and saving it as <code>ottr-fy.R</code> in the top of your repository.</p>
-<pre><code>wget 'https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R'</code></pre>
-<p>You’ve downloaded a script that will download the necessary files to run OTTR in your repository. Take a look at the filenames of what will be downloaded to make sure that you won’t accidentally overwrite any of your repository’s existing files.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ottrpal"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If your installed version of <code>ottrpal</code> does not recognize the <code>type</code> options below, install the development version from GitHub:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span>(<span class="st">"remotes"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>())) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ottrproject/ottrpal"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="step-1-choose-your-ottr-flavor" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-choose-your-ottr-flavor">Step 1: Choose your OTTR flavor</h3>
+<p>The <code>ottrfy()</code> function needs to know what kind of OTTR site you want to make. Choose the <code>type</code> that matches your existing files and your final goal:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>type</code></th>
+<th style="text-align: left;">Use this when…</th>
+<th style="text-align: left;">Files added from…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>"quarto"</code></td>
+<td style="text-align: left;">You are making a Quarto course website. This is a good match for existing <code>.qmd</code> course chapters.</td>
+<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Quarto"><code>OTTR_Quarto</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"rmd"</code></td>
+<td style="text-align: left;">You are making an R Markdown / Bookdown course website. This is the best match for existing <code>.Rmd</code> course chapters.</td>
+<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Template"><code>OTTR_Template</code></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>"quarto_web"</code></td>
+<td style="text-align: left;">You are making a Quarto website that is not organized like a course/book.</td>
+<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Quarto_Website"><code>OTTR_Quarto_Website</code></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>"rmd_web"</code></td>
+<td style="text-align: left;">You are making an R Markdown website that is not organized like a course/book.</td>
+<td style="text-align: left;"><a href="https://github.com/ottrproject/OTTR_Template_Website"><code>OTTR_Template_Website</code></a></td>
+</tr>
+</tbody>
+</table>
+<p>Not sure which OTTR template is right for you? Answer <a href="https://www.ottrproject.org/faqs.html#help-me-choose-my-template">two quick questions</a> and we’ll point you to the right setup guide.</p>
+</section>
+<section id="step-2-add-ottr-files-to-your-current-repository" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-add-ottr-files-to-your-current-repository">Step 2: Add OTTR files to your current repository</h3>
+<p>Navigate to the top of your repository and run <code>ottrpal::ottrfy()</code> with the <code>type</code> you chose above.</p>
+<p>For a Quarto course:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">ottrfy</span>(<span class="at">type =</span> <span class="st">"quarto"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>For an R Markdown / Bookdown course:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">ottrfy</span>(<span class="at">type =</span> <span class="st">"rmd"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>For a Quarto website:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">ottrfy</span>(<span class="at">type =</span> <span class="st">"quarto_web"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>For an R Markdown website:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">ottrfy</span>(<span class="at">type =</span> <span class="st">"rmd_web"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>By default, existing files will not be overwritten. If you have reviewed the files and intentionally want to replace existing OTTR setup files, use <code>overwrite = TRUE</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">ottrfy</span>(<span class="at">type =</span> <span class="st">"quarto_web"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can also use <code>path</code> if you are running the function from somewhere other than the repository you want to OTTR-fy.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ottrpal<span class="sc">::</span><span class="fu">ottrfy</span>(<span class="at">path =</span> <span class="st">"path/to/my/repository"</span>, <span class="at">type =</span> <span class="st">"quarto"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="ottr-fying-files" class="level3">
-<h3 class="anchored" data-anchor-id="ottr-fying-files">OTTR-fying files:</h3>
-<section id="files-you-wont-need-to-edit" class="level4">
-<h4 class="anchored" data-anchor-id="files-you-wont-need-to-edit">Files you won’t need to edit</h4>
+<h3 class="anchored" data-anchor-id="ottr-fying-files">OTTR-fying files</h3>
+<p>The function downloads the necessary files to run OTTR in your repository. Every flavor gets the shared automation and checking files below, then <code>ottrfy()</code> adds the template-specific files for the <code>type</code> you choose.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before using <code>overwrite = TRUE</code>, review these filenames carefully so that you do not accidentally replace any files you meant to keep.</p>
+</div>
+</div>
+<section id="shared-files" class="level4">
+<h4 class="anchored" data-anchor-id="shared-files">Shared files</h4>
 <ul>
+<li><code>.github/workflows/check-url.yml</code></li>
 <li><code>.github/workflows/pull_request.yml</code></li>
-<li><code>.github/workflows/render-all.yml</code></li>
 <li><code>.github/workflows/delete-preview.yml</code></li>
-<li><code>.github/workflows/docker-build.yml</code></li>
+<li><code>config_automation.yml</code></li>
+<li><code>resources/dictionary.txt</code></li>
+<li><code>resources/ignore-urls.txt</code></li>
+<li><code>resources/exclude_files.txt</code></li>
 </ul>
 </section>
-<section id="files-youll-need-to-edit-to-customize" class="level4">
-<h4 class="anchored" data-anchor-id="files-youll-need-to-edit-to-customize">Files you’ll need to edit to customize</h4>
-<p>* These files also will not be downloaded if you already have set up your repository as a bookdown website and specify this in the upcoming command.</p>
+<section id="flavor-specific-files" class="level4">
+<h4 class="anchored" data-anchor-id="flavor-specific-files">Flavor-specific files</h4>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Quarto Course</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">R Markdown Course</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Quarto Website</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">R Markdown Website</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
-<li><code>_bookdown.yml</code> or <code>_site.yml</code> for a website/course respectively</li>
+<li><code>index.qmd</code></li>
+<li><code>_quarto.yml</code></li>
+<li><code>references.bib</code></li>
+<li><code>img/favicon.ico</code></li>
+<li><code>img/logo.png</code></li>
+<li><code>.github/workflows/render-all.yml</code></li>
+<li><code>resources/images/figure/</code></li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ul>
+<li><code>index.Rmd</code></li>
+<li><code>_bookdown.yml</code></li>
 <li><code>_output.yml</code></li>
-<li><code>book.bib</code></li>
 <li><code>assets/big-image.html</code></li>
 <li><code>assets/footer.html</code></li>
+<li><code>assets/open-new-tab.html</code></li>
+<li><code>book.bib</code></li>
+<li><code>.github/workflows/render-all.yml</code></li>
 </ul>
-</section>
-<section id="file-you-will-likely-want-to-edit-but-dont-have-to" class="level4">
-<h4 class="anchored" data-anchor-id="file-you-will-likely-want-to-edit-but-dont-have-to">File you will likely want to edit but don’t have to</h4>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <ul>
-<li><code>config_automation.yml</code></li>
-<li><code>assets/style.css</code></li>
+<li><code>_quarto.yml</code></li>
+<li><code>styles.css</code></li>
+<li><code>.github/workflows/render-site.yml</code></li>
 </ul>
-<p>Run this this script from your command line if your repository is not already a bookdown website.</p>
-<pre><code>Rscript ottr-fy.R</code></pre>
-<p>If your repository is already configured as a bookdown website, then run this command (aka use the <code>--bookdown</code> flag):</p>
-<pre><code>Rscript ottr-fy.R --bookdown</code></pre>
-<p>Note if your GitHub repository is not configured, this script will not work.</p>
-<p>This script will automatically:</p>
-<ol type="1">
-<li>Open a new branch called <code>robot/ottrfy</code>.</li>
-<li>Add the OTTR files listed above.</li>
-<li>Add, commit, and push this branch to an <code>origin</code></li>
-</ol>
-<p>After that, you should go to your repository and open up a pull request. The OTTR automation checks should happen on this pull request automatically. <code>Render preview</code> check will almost certainly fail until you complete the next step.</p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<ul>
+<li><code>_site.yml</code></li>
+<li><code>styles.css</code></li>
+<li><code>resources/header.html</code></li>
+<li><code>.github/workflows/render-site.yml</code></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="review-and-commit-the-added-files" class="level3">
+<h3 class="anchored" data-anchor-id="review-and-commit-the-added-files">3. Review and commit the added files</h3>
+<p>After running <code>ottrfy()</code>, check your files and make sure nothing unexpected has happened to your original files. Then create a branch, commit the added files, push the branch to GitHub, and open a pull request.</p>
+<p>The OTTR automation checks should happen on this pull request automatically. <code>Render preview</code> check will almost certainly fail until you complete the next step.</p>
 <p>If they do not automatically start running, you may also want to check in your <code>Settings</code> &gt; <code>Actions</code> that <code>Allow all actions and reusable workflows</code> is chosen.</p>
-<p>Check your files on this pull request your files and that nothing horrible has happened to your original files (like being overwritten or deleted).</p>
 </section>
-</section>
-<section id="add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file" class="level3">
-<h3 class="anchored" data-anchor-id="add-your-rmd-or-md-files-to-the-_bookdown.yml-or-_site.yml-file">2. Add your Rmd or md files to the <code>_bookdown.yml</code> or <code>_site.yml</code> file</h3>
+<section id="add-your-content-files-to-the-site-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="add-your-content-files-to-the-site-configuration">4. Add your content files to the site configuration</h3>
 <p>You will almost certainly find that the <code>Render preview</code> check will fail (and possibly the spelling and URL checks).</p>
-<p>One reason that this will fail is that you will need to edit <code>_bookdown.yml</code> <code>_site.yml</code> to list your Rmds (or mds) in the order they should appear in the course. (<a href="https://www.ottrproject.org/customize-robots.html#Pull_request_checks:">See this section</a> for more information about these checks and what they are)</p>
-<p>Make sure to commit this to your branch. *&nbsp;Note! Don’t merge this pull request before you finish adding a few settings as described in this next step.</p>
+<p>One reason that this will fail is that you will need to edit your site configuration file to list your content files in the order they should appear.</p>
+<ul>
+<li>For <code>type = "rmd"</code>, edit <code>_bookdown.yml</code>.</li>
+<li>For <code>type = "quarto"</code> or <code>type = "quarto_web"</code>, edit <code>_quarto.yml</code>.</li>
+<li>For <code>type = "rmd_web"</code>, edit <code>_site.yml</code>.</li>
+</ul>
+<p><a href="https://www.ottrproject.org/customize-robots.html#pull-request-checks">See this section</a> for more information about these checks and what they are.</p>
+<p>Make sure to commit this to your branch.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t merge this pull request before you finish adding a few settings as described in this next step.</p>
+</div>
+</div>
 </section>
 <section id="set-up-your-repository-with-the-proper-settings" class="level3">
-<h3 class="anchored" data-anchor-id="set-up-your-repository-with-the-proper-settings">3. Set up your repository with the proper settings</h3>
+<h3 class="anchored" data-anchor-id="set-up-your-repository-with-the-proper-settings">5. Set up your repository with the proper settings</h3>
 <p>From here, you can follow the rest of the steps described in the <a href="getting_started.html">Getting Started section</a>.</p>
 <hr>
 <p>← <a href="./getting_started.html">Getting Started</a>   <a href="./next_steps.html">Next Steps</a> →</p>

@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -149,6 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -167,10 +171,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -378,7 +378,7 @@ Warning
 </ul>
 <p>After every edit you make, scroll down and make sure that you choose <code>Commit directly to the new-changes branch.</code>. This will add your changes to the pull request and thus allowing for these changes to be run through the OTTR checks.</p>
 <p>Then click <code>Commit changes</code>. You will need to do this after every change to add them to your branch.</p>
-<p>As an example, we will show a simple change to the file called <code>01-intro.Rmd</code>. Scroll down to the this file and click on this file name.</p>
+<p>As an example, we will show a simple change to a content file. For a Quarto course, use a <code>.qmd</code> file such as <code>setup.qmd</code>; for an R Markdown course, use a <code>.Rmd</code> file such as <code>01-intro.Rmd</code>. Scroll down to the file and click on the file name.</p>
 <p><img src="resources/images/intro_file.png" class="img-fluid"></p>
 <p>Now click on the edit button to make a change. Notice that it shows what branch we are working on.</p>
 <p><img src="resources/images/edit-button.png" class="img-fluid"></p>
@@ -504,7 +504,7 @@ Note
 <h1>Adding new chapters</h1>
 <p>Adding new chapters to your OTTR course requires a few specific steps depending on whether you are using Quarto or R Markdown.</p>
 <div style="margin: 1.5rem 0;">
-<p><iframe src="https://ottrproject.org/cheatsheets/ottr_pr.html" width="100%" height="2820px" style="border: 1.5px solid #ADD8E6; border-radius: 8px;" title="OTTR Pull Request Cheatsheet"> </iframe></p>
+<p><iframe src="https://ottrproject.org/cheatsheets/ottr_pr.html" width="100%" height="2250px" style="border: 1.5px solid #ADD8E6; border-radius: 8px;" title="OTTR Pull Request Cheatsheet"> </iframe></p>
 <div style="text-align: right; margin-top: 0px">
 <a href="https://ottrproject.org/cheatsheets/ottr_pr.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
 </div>
@@ -624,7 +624,7 @@ Warning
 <p>Your Google Slide document must be set to <code>Anyone with a link</code>. See <a href="https://support.wix.com/en/article/setting-permissions-for-google-drive-files-and-folders#:~:text=Settings%20Permissions%20for%20a%20Google,edit%20and%20comment%20as%20well.">this article for more details.</a> The renders will fail if this is not set!</p>
 </div>
 </div>
-<p>Each Rmd file with images that is a part of your Bookdown needs to have the following chunk at the beginning so that images are stored properly for Leanpub conversion.</p>
+<p>For R Markdown/Bookdown courses, each <code>.Rmd</code> file with images needs to have the following chunk at the beginning so that images are stored properly for Leanpub conversion.</p>
 <p><img src="resources/images/set_knitr_image_path.png" width="400"></p>
 <p>If you are unfamiliar with <a href="https://rmarkdown.rstudio.com/lesson-3.html">how R Markdown code chunks work, read this</a>.</p>
 <p>Next, import the appropriate theme (see <a href="https://youtu.be/pNbwF263yY8">this video</a> for assistance).</p>
@@ -642,7 +642,7 @@ Warning
 <h1>Adding media and embedded files in text</h1>
 <section id="adding-images-and-graphics-in-text" class="level2">
 <h2 class="anchored" data-anchor-id="adding-images-and-graphics-in-text">Adding images and graphics in text</h2>
-<p>All images should be included in your Google Slides with the captions we discussed above. To add images in the text in your Rmd, use the <code>ottrpal::include_slide()</code> within an <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">R code chunk</a>.</p>
+<p>All images should be included in your Google Slides with the captions we discussed above. To add images in the text in your <code>.qmd</code> or <code>.Rmd</code> files, use the <code>ottrpal::include_slide()</code> within an <a href="https://bookdown.org/yihui/rmarkdown/r-code.html">R code chunk</a>.</p>
 <p><img src="resources/images/include_slide.png" width="600"></p>
 <p>You can obtain the Google Slide URL by clicking on the slide with the image you want to add and copying the address from the browser search bar:</p>
 <p><img src="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/slide_url.png" class="img-fluid"></p>
@@ -656,14 +656,14 @@ Warning
 <p><em>You must define <code>fig.alt</code> in the code chunk options/parameters to pass to <code>knitr</code>.</em> You can adjust the size(fig.height, fig.width, out.width, out.height), alignment (fig.align), or caption (fig.cap) of the image you can use these arguments in the code chunk tag:</p>
 <p><img src="resources/images/header.png" width="800"></p>
 <p>Google Slides must be <strong>public</strong>. Share settings must be set to “Anyone on the internet with this link can view”. Note that “Private” is the default setting when you make a new presentation.</p>
-<p>See <a href="https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd">Chapter 2</a> of the template course for examples.</p>
+<p>See <a href="https://www.ottrproject.org/OTTR_Quarto/first-section-new-chapter.html#image-example">Chapter 2</a> of the template course for examples.</p>
 </section>
 <section id="adding-videos-in-text" class="level2">
 <h2 class="anchored" data-anchor-id="adding-videos-in-text">Adding videos in text</h2>
-<p>To add a YouTube video to your Rmd files, use the following instructions:</p>
+<p>To add a YouTube video to your <code>.qmd</code> or <code>.Rmd</code> files, use the following instructions:</p>
 <p>To get the appropriate YouTube URL do the following: 1) Click on the <strong>SHARE</strong> button on the lower right corner of the video on YouTube 2) Click on the <strong>Embed</strong> option on the far left 3) Copy just the part after <code>"src ="</code> and paste the url into the <code>knitr::include_url()</code> function.</p>
 <p>Again, it is important to use the <code>echo=FALSE</code> option so that only the video is shown and not the code to generate it.</p>
-<p>See <a href="https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd">Chapter 2</a> of the template course for examples.</p>
+<p>See <a href="https://www.ottrproject.org/OTTR_Quarto/first-section-new-chapter.html#video-examples">Chapter 2</a> of the template course for examples.</p>
 </section>
 <section id="adding-embedded-files-to-text" class="level2">
 <h2 class="anchored" data-anchor-id="adding-embedded-files-to-text">Adding embedded files to text</h2>
@@ -671,10 +671,10 @@ Warning
 <p>To include such a file or website do the following:</p>
 <p><img src="resources/images/include_url.png" width="600"></p>
 <p>Again you will need to include <code>echo = FALSE</code> to ensure that the code to generate the preview of the website or file is not included in your course material.</p>
-<p>If you want to include a file that is not hosted online, consider hosting it on GitHub using the method described for hosting your Bookdown version of the course. See the <a href="https://www.ottrproject.org/getting_started.html#7_Set_up_GitHub_Pages">Set up GitHub pages</a> section.</p>
+<p>If you want to include a file that is not hosted online, consider hosting it on GitHub using the method described for hosting your Bookdown version of the course. See the <a href="https://www.ottrproject.org/getting_started.html#set-up-github-pages">Set up GitHub pages</a> section.</p>
 <p>Then you would do the following, where the url is that of your hosted file:</p>
 <p><img src="resources/images/include_url_3.png" width="600"></p>
-<p>See <a href="https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd">Chapter 2</a> of the template course for examples.</p>
+<p>See <a href="https://github.com/ottrproject/OTTR_Quarto/blob/main/first-section-new-chapter.qmd">Chapter 2</a> of the template course for examples.</p>
 
 
 </section>

@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -149,6 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -167,10 +171,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -330,11 +330,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
   .result-recommended {
     background-color: #e8f6fa;
-    border-left: 4px solid #ADD8E6;
   }
   .result-standard {
     background-color: #f4f4f4;
-    border-left: 4px solid #aaa;
   }
   .result-name {
     font-size: 1.1rem;
@@ -403,20 +401,22 @@ OTTR (Open-source Tools for Training Resources) is a set of tools and templates 
       {
         label: "Website",
         next: {
-          question: "Do you have existing R Markdown / Bookdown files?",
+          question: "Do you already have website files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_web" },
-            { label: "No I'm starting fresh", result: "quarto_web" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
       {
         label: "Online Course",
         next: {
-          question: "Do you have existing R Markdown files?",
+          question: "Do you already have course files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_courses" },
-            { label: "No I'm starting fresh", result: "quarto_courses" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
+            { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
+            { label: "No, I'm starting fresh", result: "quarto_courses" }
           ]
         }
       },
@@ -430,26 +430,26 @@ OTTR (Open-source Tools for Training Resources) is a set of tools and templates 
   const results = {
     rmarkdown_web: {
       name: "R Markdown Websites",
-      description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based website template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-websites",
       recommended: false
     },
     quarto_web: {
       name: "Quarto Websites",
-      description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
+      description: "A Quarto-based website template. The modern standard, recommended for new projects and existing .qmd files.",
       url: "getting_started.html#quarto-websites",
       recommended: true,
       fallback: "rmarkdown_web"
     },
     rmarkdown_courses: {
       name: "R Markdown Courses",
-      description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based course template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-courses",
       recommended: false
     },
     quarto_courses: {
       name: "Quarto Courses",
-      description: "A Quarto-based course template. Recommended for new projects.",
+      description: "A Quarto-based course template. Recommended for new projects and existing .qmd course files.",
       url: "getting_started.html#quarto-courses",
       recommended: true,
       fallback: "rmarkdown_courses"
@@ -542,10 +542,10 @@ OTTR (Open-source Tools for Training Resources) is a set of tools and templates 
 <h3 class="anchored" data-anchor-id="quarto-vs.-r-markdown">Quarto vs.&nbsp;R Markdown</h3>
 <p>OTTR templates come in two flavors based on which document format you use to write content: <strong>R Markdown</strong> (<code>.Rmd</code>) and <strong>Quarto</strong> (<code>.qmd</code>).</p>
 <ul>
-<li><strong>Quarto</strong> is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects.</li>
+<li><strong>Quarto</strong> is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects and existing <code>.qmd</code> files.</li>
 <li><strong>R Markdown</strong> is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have <code>.Rmd</code> files or are following older OTTR tutorials.</li>
 </ul>
-<p>If you’re starting fresh and have no existing <code>.Rmd</code> files, go with a Quarto template. If you have existing <code>.Rmd</code> content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.</p>
+<p>If you’re starting fresh or already have <code>.qmd</code> files, go with a Quarto template. If you have existing <code>.Rmd</code> content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

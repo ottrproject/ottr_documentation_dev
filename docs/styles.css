@@ -381,6 +381,71 @@
   font-size: 1rem;
 }
 
+.ottr-cheatsheet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.ottr-cheatsheet-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--ottr-border);
+  border-radius: 8px;
+}
+
+.ottr-cheatsheet-thumb {
+  display: block;
+  background: #f8fbfc;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.ottr-cheatsheet-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.16s ease;
+}
+
+.ottr-cheatsheet-card:hover .ottr-cheatsheet-thumb img,
+.ottr-cheatsheet-card:focus-within .ottr-cheatsheet-thumb img {
+  transform: scale(1.025);
+}
+
+.ottr-cheatsheet-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem 1rem;
+}
+
+.ottr-cheatsheet-card h2 {
+  margin: 0;
+  padding-bottom: 0;
+  color: var(--ottr-text);
+  border-bottom: 0;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.ottr-cheatsheet-card h2 a {
+  color: var(--ottr-text);
+  text-decoration: none;
+}
+
+.ottr-cheatsheet-card h2 a:hover,
+.ottr-cheatsheet-card h2 a:focus {
+  color: var(--ottr-link);
+  text-decoration: none;
+}
+
 .template-actions {
   display: flex;
   flex-wrap: wrap;

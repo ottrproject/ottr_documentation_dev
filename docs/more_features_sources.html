@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -114,6 +149,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -132,10 +171,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -221,7 +256,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#citing-sources" id="toc-citing-sources" class="nav-link active" data-scroll-target="#citing-sources">Citing sources</a></li>
+  <li><a href="#citing-sources" id="toc-citing-sources" class="nav-link active" data-scroll-target="#citing-sources">Citing sources</a>
+  <ul class="collapse">
+  <li><a href="#add-the-source-to-book.bib" id="toc-add-the-source-to-book.bib" class="nav-link" data-scroll-target="#add-the-source-to-book.bib">1. Add the source to <code>book.bib</code></a></li>
+  <li><a href="#cite-the-source-in-your-writing" id="toc-cite-the-source-in-your-writing" class="nav-link" data-scroll-target="#cite-the-source-in-your-writing">2. Cite the source in your writing</a></li>
+  <li><a href="#keep-the-reference-list-in-place" id="toc-keep-the-reference-list-in-place" class="nav-link" data-scroll-target="#keep-the-reference-list-in-place">3. Keep the reference list in place</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -253,30 +293,171 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="citing-sources" class="level2">
 <h2 class="anchored" data-anchor-id="citing-sources">Citing sources</h2>
-<p>You can generally follow the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">Bookdown instructions about citations</a>, but you don’t need to add the additional bibliography argument at the top of the Rmd.</p>
-<p>To add a new reference source, add to the <code>book.bib</code> file, keeping your new entry in alphabetical order.</p>
-<p>For articles (or anything with a DOI), go to <a href="https://www.doi2bib.org/">doi2bib.org</a> or <a href="https://zbib.org/">ZoteroBib</a> to get a BibTex-formatted reference that you can copy and paste the reference to the <code>book.bib</code> file.</p>
-<p>You can also use programs like Zotero or Endnote to export a .bib file and either combine with the <code>book.bib</code> or manage your references from there.</p>
-<p>Other sources can be added using this template:</p>
-<pre><code>@website{citekey,
-    author = {First Last},
-    title = {Title},
-    url  = {www.website.com},
-}</code></pre>
-<p>To reference the citations in your writing follow the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">bookdown instructions</a>:</p>
+<p>You can generally follow the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">Bookdown instructions about citations</a>, but you <strong>do not</strong> need to add the additional bibliography argument at the top of the <code>.Rmd</code>. For Quarto courses, keep the bibliography setting in <code>_quarto.yml</code>.</p>
+<p><strong>Goal:</strong> Add each source once to <code>book.bib</code>, cite it in your writing with a citation key, and let OTTR automatically build the reference lists.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section explains how to include references and sources <strong>that you cite in your course</strong>, not how you want people to cite your OTTR course or website.</p>
+</div>
+</div>
+<section id="add-the-source-to-book.bib" class="level3">
+<h3 class="anchored" data-anchor-id="add-the-source-to-book.bib">1. Add the source to <code>book.bib</code></h3>
+<p>To add a new reference source:</p>
+<ol type="1">
+<li>Open the <code>book.bib</code> file.</li>
+<li>Add the new BibTeX entry.</li>
+<li>Keep entries in <strong>alphabetical order</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For articles, papers, and other sources with a DOI, use <a href="https://www.doi2bib.org/">doi2bib.org</a> or <a href="https://zbib.org/">ZoteroBib</a> to generate a <strong>BibTeX-formatted reference</strong> that you can copy into <code>book.bib</code>.</p>
+</div>
+</div>
+<p>You can also use reference managers like <em>Zotero</em> or <em>EndNote</em> to export a <code>.bib</code> file. From there, you can either combine that file with <code>book.bib</code> or manage your references separately.</p>
+<p><strong>Other sources</strong> can be added using this template:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">@website{citekey,</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">    author = {First Last},</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    title = {Title},</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    url  = {www.website.com},</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cite-the-source-in-your-writing" class="level3">
+<h3 class="anchored" data-anchor-id="cite-the-source-in-your-writing">2. Cite the source in your writing</h3>
+<p>To reference citations in your writing, follow the <a href="https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html">Bookdown citation syntax</a>.</p>
 <blockquote class="blockquote">
-<p>Items can be cited directly within the documentation using the syntax <span class="citation" data-cites="key">@key</span> where key is the citation key in the first line of the entry, e.g., <span class="citation" data-cites="R-base">@R-base</span>. To put citations in parentheses, use <span class="citation" data-cites="key">[@key]</span>. To cite multiple entries, separate the keys by semicolons, e.g., <span class="citation" data-cites="key-1 key-2 key-3">[@key-1; @key-2; @key-3]</span>. To suppress the mention of the author, add a minus sign before @, e.g., <span class="citation" data-cites="R-base">[-@R-base]</span>.</p>
+<p>Items can be cited directly within the documentation using the syntax <code>@key</code>, where <code>key</code> is the citation key in the first line of the entry, e.g., <code>@R-base</code>. To put citations in parentheses, use <code>[@key]</code>. To cite multiple entries, separate the keys by semicolons, e.g., <code>[@key-1; @key-2; @key-3]</code>. To suppress the mention of the author, add a minus sign before <code>@</code>, e.g., <code>[-@R-base]</code>.</p>
 </blockquote>
-<p>See <a href="https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd">Chapter 2</a> of this template course for examples.</p>
-<p>This will automatically list references at the bottom of each chapter included in your course, as well as at the end of your course. Thus it is important to keep the <code>References.Rmd</code> file and to keep this as the last part of the <code>_bookdown.yml</code> file as it is in the template, so that this full list of references will be listed in a place that makes sense.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Citation style</th>
+<th style="text-align: left;">Use this syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">In-text citation</td>
+<td style="text-align: left;"><code>@key</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Parenthetical citation</td>
+<td style="text-align: left;"><code>[@key]</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Multiple citations</td>
+<td style="text-align: left;"><code>[@key-1; @key-2; @key-3]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Suppress author name</td>
+<td style="text-align: left;"><code>[-@key]</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For multiple citations, separate citation keys with <strong>semicolons</strong>, not commas.</p>
+</div>
+</div>
+<p>For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>We can put citations at the end of a sentence like this <span class="co">[</span><span class="ot">@rmarkdown2021</span><span class="co">]</span>.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Or multiple citations like this <span class="co">[</span><span class="ot">@rmarkdown2021; @Xie2018</span><span class="co">]</span>.</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>In text, we can put citations like this @rmarkdown2021.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The rendered citations will look like this:</p>
+<p><img src="resources/screenshots/citation-example.png" class="img-fluid"></p>
+</section>
+<section id="keep-the-reference-list-in-place" class="level3">
+<h3 class="anchored" data-anchor-id="keep-the-reference-list-in-place">3. Keep the reference list in place</h3>
+<p>Citations will automatically create reference lists:</p>
+<ul>
+<li>at the bottom of each chapter included in your course</li>
+<li>at the end of your course</li>
+</ul>
+<section id="for-quarto-courses" class="level4">
+<h4 class="anchored" data-anchor-id="for-quarto-courses">For Quarto courses</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep the <code>references.qmd</code> file, and keep it as the <strong>last part</strong> of the <code>_quarto.yml</code> file, just as it appears in the <a href="https://github.com/ottrproject/OTTR_Quarto/blob/main/_quarto.yml">template</a>.</p>
+</div>
+</div>
+<p>Make sure your <code>_quarto.yml</code> includes:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>references.qmd</code> file should include a references header. For example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27(3), 379–423. <span class="co">[</span><span class="ot">https://ieeexplore.ieee.org/document/6773024</span><span class="co">](https://ieeexplore.ieee.org/document/6773024)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Turing, A. M. (1950). Computing Machinery and Intelligence. Mind, 59(236), 433–460. <span class="co">[</span><span class="ot">https://mind.oxfordjournals.org/content/LIX/236/433</span><span class="co">](https://mind.oxfordjournals.org/content/LIX/236/433)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="for-bookdown-courses" class="level4">
+<h4 class="anchored" data-anchor-id="for-bookdown-courses">For Bookdown courses</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep the <code>References.Rmd</code> file, and keep it as the <strong>last part</strong> of the <code>_bookdown.yml</code> file, just as it appears in the template. This ensures that the full reference list appears in a place that makes sense.</p>
+</div>
+</div>
 <p><img src="resources/images/references_bookdown.png" class="img-fluid"></p>
-<p>Alternatively, you can add a header for this list of references as the last header in any other Rmd file that is listed as the final file of the <code>_bookdown.yml</code> file.</p>
-<p>If you would like to suppress having references listed at the end of each chapter, you can add a line that says <code>split_bib: false</code> to your <code>_output.yml</code> file.</p>
+<p>Alternatively, you can add a header for this list of references as the <strong>last header</strong> in any other <code>.Rmd</code> file that is listed as the final file in <code>_bookdown.yml</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you would like to suppress references at the end of each chapter, add <code>split_bib: false</code> to your <code>_output.yml</code> file.</p>
+</div>
+</div>
 <p><img src="resources/images/false_split_ref.png" class="img-fluid"></p>
 <hr>
 <p><strong>← Back to:</strong> <a href="./next_steps.html">Next Steps</a> · <strong>Also see:</strong> <a href="./more_features_credits.html">Giving Credits</a> · <a href="./customize-style.html">Customizing Style</a></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

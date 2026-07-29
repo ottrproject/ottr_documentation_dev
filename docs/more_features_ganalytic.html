@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -149,6 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -167,10 +171,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -386,9 +386,10 @@ Full setup guide with screenshots
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">paths</span><span class="kw">:</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'*.Rmd'</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'assets/*'</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'*.yml'</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'GA_Script.html'</span><span class="co">   # &lt;-- triggers render on GA changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'*.qmd'</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'assets/*'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'*.yml'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">'GA_Script.html'</span><span class="co">   # &lt;-- triggers render on GA changes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can verify the Google Analytics code was included by opening any rendered HTML file in <code>docs/</code> and searching for <code>Google Analytics</code>.</p>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> If you are working with an older template, you may need to manually trigger the <code>render_all</code> workflow. Make sure both <code>_output.yml</code> and <code>GA_Script.html</code> are updated with matching file names and the correct code chunk. Occasionally this also requires setting up a <code>GH_PAT</code> for the repo (with <code>actions</code> and <code>repo</code> permissions) — not just the organization.</p>

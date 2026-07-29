@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -114,6 +114,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -132,10 +136,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -224,10 +224,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#search-on-ottr-docs" id="toc-search-on-ottr-docs" class="nav-link active" data-scroll-target="#search-on-ottr-docs">Search on OTTR docs</a></li>
   <li><a href="#most-common-errors" id="toc-most-common-errors" class="nav-link" data-scroll-target="#most-common-errors">Most Common Errors</a>
   <ul>
-  <li><a href="#content-not-rendering-or-updating" id="toc-content-not-rendering-or-updating" class="nav-link" data-scroll-target="#content-not-rendering-or-updating">Content not rendering or updating</a>
-  <ul class="collapse">
-  <li><a href="#you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image." id="toc-you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image." class="nav-link" data-scroll-target="#you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image.">You observe the code for <code>include_slide()</code> or <code>&lt;img src="...", ... &gt;</code> rather than the Google Slide image.</a></li>
-  </ul></li>
+  <li><a href="#content-not-rendering-or-updating" id="toc-content-not-rendering-or-updating" class="nav-link" data-scroll-target="#content-not-rendering-or-updating">Content not rendering or updating</a></li>
+  <li><a href="#google-slide-image-not-showing" id="toc-google-slide-image-not-showing" class="nav-link" data-scroll-target="#google-slide-image-not-showing">Google Slide image not showing</a></li>
   <li><a href="#errors-for-pull-request-check-failures" id="toc-errors-for-pull-request-check-failures" class="nav-link" data-scroll-target="#errors-for-pull-request-check-failures">Errors for pull request check failures</a>
   <ul class="collapse">
   <li><a href="#file-is-not-in-png-format-google-slides-permissions-fail" id="toc-file-is-not-in-png-format-google-slides-permissions-fail" class="nav-link" data-scroll-target="#file-is-not-in-png-format-google-slides-permissions-fail"><code>file is not in PNG format</code>: Google Slides permissions fail</a></li>
@@ -237,10 +235,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" id="toc-error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error" class="nav-link" data-scroll-target="#error-github-action-link-to-download-and-preview-.docx-file-is-returning-a-404-error"><code>404 error</code>: GitHub Action link to download and preview <code>.docx</code> file is returning a 404 error</a></li>
   <li><a href="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" id="toc-error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error" class="nav-link" data-scroll-target="#error-in-if-title-x2-returnhead-the-condition-has-length-1-run-bookdown-render-error"><code>Error in if (title == x2) return(head) : the condition has length &gt; 1</code>: Run bookdown render error</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#content-not-rendering" id="toc-content-not-rendering" class="nav-link" data-scroll-target="#content-not-rendering">Content not rendering</a>
-  <ul>
-  <li><a href="#could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure" id="toc-could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure" class="nav-link" data-scroll-target="#could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure"><code>could not read Username for 'https://github.com': terminal prompts disabled</code>: GitHub authentication failure</a></li>
   </ul></li>
   <li><a href="#help-me-choose-my-template" id="toc-help-me-choose-my-template" class="nav-link" data-scroll-target="#help-me-choose-my-template">Help me choose my template</a>
   <ul>
@@ -277,15 +271,32 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="content-not-rendering-or-updating">Content not rendering or updating</h3>
 <p>This may be a quiet error where the content just doesn’t update and you are not warned that there is a problem.</p>
 <ul>
-<li><p>Check that the GitHub repository <code>GH_PAT</code> is up to date. (An associated GitHub Actions error that suggests the <code>GH_PAT</code> needs to be updated is an <code>exit code 128</code>)</p>
+<li>Check that the GitHub repository <code>GH_PAT</code> is up to date. (An associated GitHub Actions error that suggests the <code>GH_PAT</code> needs to be updated is an <code>exit code 128</code>)</li>
+</ul>
+<div class="cheatsheet-frame">
+<p><iframe width="100%" height="1850px" src="https://ottrproject.org/cheatsheets/ottr_token.html" title="OTTR Token Set Up/Update"> </iframe></p>
+<div style="text-align: right; margin-top: 0px">
+<a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+</div>
+<p><br></p>
+</div>
 <ul>
-<li>Use this <a href="https://www.ottrproject.org/cheatsheets/ottr_token.html">cheatsheet on updating your GH_PAT</a> if you need help.</li>
-</ul></li>
-<li><p>Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).</p></li>
+<li><p>Check that the config file is up-to-date. It should look like this: <code>https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml</code>. Be careful to keep your selections for the configuration you would like.</p></li>
 <li><p>Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.</p></li>
 </ul>
-<section id="you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image." class="level4">
-<h4 class="anchored" data-anchor-id="you-observe-the-code-for-include_slide-or-img-src...-...-rather-than-the-google-slide-image.">You observe the code for <code>include_slide()</code> or <code>&lt;img src="...", ... &gt;</code> rather than the Google Slide image.</h4>
+<div class="cheatsheet-frame">
+<p><iframe width="100%" height="1900px" src="https://www.ottrproject.org/cheatsheets/ottr_sync.html" title="OTTR Enroll for Sync"> </iframe></p>
+<div style="text-align: right; margin-top: 0px">
+<a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+</div>
+<p><br></p>
+</div>
+<ul>
+<li>Push a blank commit/arbitrary change (like a blank space). Make the modification in the PR that the content is not rendering to re-run the workflow.</li>
+</ul>
+</section>
+<section id="google-slide-image-not-showing" class="level3">
+<h3 class="anchored" data-anchor-id="google-slide-image-not-showing">Google Slide image not showing</h3>
 <p>Check the formatting of the code chunk, particularly paying attention to the <code>fig.alt</code> argument.</p>
 <p>Make sure there are:</p>
 <ul>
@@ -307,7 +318,6 @@ Click for more information
 <p>Note: Single quotation marks surrounding the whole argument with double quotation marks around specific phrases within the argument will cause issues that may be not be as obvious at first. It will cause the images to not be properly rendered.</p>
 </details>
 <hr>
-</section>
 </section>
 <section id="errors-for-pull-request-check-failures" class="level3">
 <h3 class="anchored" data-anchor-id="errors-for-pull-request-check-failures">Errors for pull request check failures</h3>
@@ -405,26 +415,6 @@ Error: Process completed with exit code 1.</code></pre>
 <pre><code>  &lt;/body&gt;
   &lt;/html&gt;</code></pre>
 </section>
-</section>
-</section>
-<section id="content-not-rendering" class="level2">
-<h2 class="anchored" data-anchor-id="content-not-rendering">Content not rendering</h2>
-<p>Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).</p>
-<section id="could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure" class="level3">
-<h3 class="anchored" data-anchor-id="could-not-read-username-for-httpsgithub.com-terminal-prompts-disabled-github-authentication-failure"><code>could not read Username for 'https://github.com': terminal prompts disabled</code>: GitHub authentication failure</h3>
-<p><em>Error example:</em></p>
-<pre><code>The process '/usr/bin/git' failed with exit code 128
-could not read Username for 'https://github.com': terminal prompts disabled
-could not read Username for 'https://github.com': terminal prompts disabled
-could not read Username for 'https://github.com': terminal prompts disabled</code></pre>
-<p><em>What does this mean?:</em></p>
-<p>This error occurs when the GitHub Action workflow does not have the necessary permissions to authenticate with GitHub. This is typically caused by missing or insufficient repository permissions for the workflow’s <code>GITHUB_TOKEN</code>.</p>
-<p>To fix this, see the <a href="https://www.ottrproject.org/cheatsheets/ottr_token.html">OTTR token cheatsheet</a> for detailed instructions, or follow these steps:</p>
-<ol type="1">
-<li>Go to your repository’s <strong>Settings</strong> &gt; <strong>Actions</strong> &gt; <strong>General</strong>.</li>
-<li>Under <strong>Workflow permissions</strong>, select <code>Read and write permissions</code>.</li>
-<li>Click <strong>Save</strong>, then re-run the failed workflow.</li>
-</ol>
 </section>
 </section>
 <section id="help-me-choose-my-template" class="level2">
@@ -548,20 +538,22 @@ could not read Username for 'https://github.com': terminal prompts disabled</cod
       {
         label: "Website",
         next: {
-          question: "Do you have existing R Markdown / Bookdown files?",
+          question: "Do you already have website files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_web" },
-            { label: "No I'm starting fresh", result: "quarto_web" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
       {
         label: "Online Course",
         next: {
-          question: "Do you have existing R Markdown files?",
+          question: "Do you already have course files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_courses" },
-            { label: "No I'm starting fresh", result: "quarto_courses" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
+            { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
+            { label: "No, I'm starting fresh", result: "quarto_courses" }
           ]
         }
       },
@@ -575,26 +567,26 @@ could not read Username for 'https://github.com': terminal prompts disabled</cod
   const results = {
     rmarkdown_web: {
       name: "R Markdown Websites",
-      description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based website template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-websites",
       recommended: false
     },
     quarto_web: {
       name: "Quarto Websites",
-      description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
+      description: "A Quarto-based website template. The modern standard, recommended for new projects and existing .qmd files.",
       url: "getting_started.html#quarto-websites",
       recommended: true,
       fallback: "rmarkdown_web"
     },
     rmarkdown_courses: {
       name: "R Markdown Courses",
-      description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based course template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-courses",
       recommended: false
     },
     quarto_courses: {
       name: "Quarto Courses",
-      description: "A Quarto-based course template. Recommended for new projects.",
+      description: "A Quarto-based course template. Recommended for new projects and existing .qmd course files.",
       url: "getting_started.html#quarto-courses",
       recommended: true,
       fallback: "rmarkdown_courses"
@@ -690,7 +682,7 @@ could not read Username for 'https://github.com': terminal prompts disabled</cod
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><a href="getting_started.html#quarto-courses">Quarto Courses</a> ⭐</td>
-<td style="text-align: left;">New courses, starting fresh , existing <code>.qmd</code> course files</td>
+<td style="text-align: left;">New courses, starting fresh, existing <code>.qmd</code> course files</td>
 <td style="text-align: center;"><code>.qmd</code></td>
 <td style="text-align: left;">GitHub Pages · Coursera · Leanpub</td>
 </tr>
@@ -702,7 +694,7 @@ could not read Username for 'https://github.com': terminal prompts disabled</cod
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="getting_started.html#quarto-websites">Quarto Websites</a> ⭐</td>
-<td style="text-align: left;">New websites, starting fresh , existing <code>.qmd</code> course files</td>
+<td style="text-align: left;">New websites, starting fresh, existing <code>.qmd</code> website files</td>
 <td style="text-align: center;"><code>.qmd</code></td>
 <td style="text-align: left;">GitHub Pages</td>
 </tr>
@@ -715,7 +707,7 @@ could not read Username for 'https://github.com': terminal prompts disabled</cod
 <tr class="odd">
 <td style="text-align: left;"><a href="getting_started.html#dashboards">Dashboards</a></td>
 <td style="text-align: left;">Metrics tracking &amp; reporting</td>
-<td style="text-align: center;"><code>.Rmd</code></td>
+<td style="text-align: center;"><code>.Rmd</code> by default; <code>.qmd</code> if adapted to Quarto</td>
 <td style="text-align: left;">GitHub Pages</td>
 </tr>
 </tbody>
@@ -748,7 +740,7 @@ could not read Username for 'https://github.com': terminal prompts disabled</cod
 </ul>
 <p><strong>Quarto vs.&nbsp;R Markdown</strong></p>
 <ul>
-<li>Choose <strong>Quarto</strong> if you are starting a new project. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.</li>
+<li>Choose <strong>Quarto</strong> if you are starting a new project or already have <code>.qmd</code> files. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.</li>
 <li>Choose <strong>R Markdown</strong> if you already have a set of <code>.Rmd</code> files you want to build on, or if your team is already working in R Markdown and a migration isn’t practical right now.</li>
 </ul>
 <p><strong>Dashboards</strong></p>

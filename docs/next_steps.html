@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b24086f6991a35f5f5ba430ba3daabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -114,6 +114,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./examples.html">
  <span class="dropdown-text">Example use cases</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./cheatsheet_gallery.html">
+ <span class="dropdown-text">Cheatsheet gallery</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -132,10 +136,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./ottr-fy.html">
- <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -378,11 +378,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>Necessary Next Steps</h1>
 <section id="changing-the-title" class="level2">
 <h2 class="anchored" data-anchor-id="changing-the-title">Changing the title</h2>
-<p>The title is specified on the <code>index.Rmd</code> page in the yml header. Modify the yaml header to change the title for your course.</p>
+<p>The title is specified on the <code>index.qmd</code>/<code>index.Rmd</code> page in the yml header. Modify the yaml header to change the title for your course.</p>
 <pre><code>---
 title: "Title of Course"
 ---</code></pre>
-<p>Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.</p>
+<p>Note that if one of the chapter <code>.qmd</code> or <code>.Rmd</code> files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.</p>
 </section>
 <section id="customizing-branding-and-style" class="level2">
 <h2 class="anchored" data-anchor-id="customizing-branding-and-style">Customizing branding and style</h2>
@@ -400,7 +400,7 @@ title: "Title of Course"
 <p>OTTR courses include a credits table to acknowledge everyone who contributed. For full instructions, see the <a href="./more_features_credits.html">Giving Credits page</a>.</p>
 <p>Key things to update:</p>
 <ul>
-<li><strong>About.Rmd</strong> — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs.&nbsp;plural).</li>
+<li><strong>About.qmd</strong>/<strong>About.Rmd</strong> — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs.&nbsp;plural).</li>
 <li><strong>Required rows</strong> — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the <a href="more_features_credits.html#credit-role-reference">full credits table reference</a>.</li>
 <li><strong>Coursera</strong> — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.</li>
 <li><strong>Leanpub</strong> — ensure <code>About.md</code> is listed in <code>Book.txt</code> and it will be included automatically.</li>
@@ -617,7 +617,7 @@ Two good approaches:
       twitter: false
       all: []</pre>
 <p>
-Then add a direct link to your form in <code>index.Rmd</code> or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.
+Then add a direct link to your form in <code>index.qmd</code>, <code>index.Rmd</code>, or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.
 </p>
 </div>
 </details>
@@ -645,10 +645,10 @@ OTTR courses use BibTeX-style references managed through a <code>book.bib</code>
 <strong>Cite in text</strong> using <code><span class="citation" data-cites="key">@key</span></code> (inline) or <code><span class="citation" data-cites="key">[@key]</span></code> (parenthetical). Separate multiple citations with semicolons: <code><span class="citation" data-cites="key-1 key-2">[@key-1; @key-2]</span></code>.
 </li>
 <li>
-<strong>References list</strong> — keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code> so the full reference list appears at the end of your course.
+<strong>References list</strong> — for Bookdown, keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code>. For Quarto books, keep <code>references.qmd</code> as the last chapter in <code>_quarto.yml</code>.
 </li>
 <li>
-<strong>Suppress per-chapter references</strong> by adding <code>split_bib: false</code> to <code>_output.yml</code>.
+<strong>Suppress per-chapter references</strong> in Bookdown by adding <code>split_bib: false</code> to <code>_output.yml</code>. Quarto books should use the <code>#refs</code> div in <code>references.qmd</code> for the end-of-book bibliography.
 </li>
 </ul>
 </div>
