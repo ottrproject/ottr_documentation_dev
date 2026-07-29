@@ -16,3 +16,6 @@ https://github.com/YOUR-ORG/YOUR-REPO</pre>
 https://ottrproject.org/cheatsheets/ottr_sync.html
 https://ottrproject.org/cheatsheets/google_analytics.html
 https://ottrproject.org/cheatsheets/ottr_pr.html
+https://ottrproject.org/cheatsheets/ottr_giving_credits.html
+https://www.ottrproject.org/cheatsheets/pngs/ottr_giving_credits.png
+enroll_sync.html

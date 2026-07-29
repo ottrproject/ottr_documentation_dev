@@ -29,13 +29,44 @@ This may be a quiet error where the content just doesn't update and you are not 
 
 -   Check that the GitHub repository `GH_PAT` is up to date. (An associated GitHub Actions error that suggests the `GH_PAT` needs to be updated is an `exit code 128`)
 
-    -   Use this [cheatsheet on updating your GH_PAT](https://www.ottrproject.org/cheatsheets/ottr_token.html) if you need help.
 
--   Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml. (be careful to keep your selections for the configuration you would like).
+  
+<div class="cheatsheet-frame">
+  <iframe 
+    width="100%" 
+    height="1850px" 
+    src="https://ottrproject.org/cheatsheets/ottr_token.html"
+    title="OTTR Token Set Up/Update">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  <br>
+</div>
+
+
+-   Check that the config file is up-to-date. It should look like this: `https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml`. Be careful to keep your selections for the configuration you would like.
 
 -   Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.
 
-#### You observe the code for `include_slide()` or `<img src="...", ... >` rather than the Google Slide image.
+<div class="cheatsheet-frame">
+  <iframe 
+    width="100%" 
+    height="1900px" 
+    src="https://www.ottrproject.org/cheatsheets/ottr_sync.html"
+    title="OTTR Enroll for Sync">
+  </iframe>
+  
+  <div style="text-align: right; margin-top: 0px">
+  <a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  <br>
+</div>
+
+- Push a blank commit/arbitrary change (like a blank space). Make the modification in the PR that the content is not rendering to re-run the workflow. 
+
+### Google Slide image not showing
 
 Check the formatting of the code chunk, particularly paying attention to the `fig.alt` argument.
 
@@ -213,30 +244,6 @@ Then look at the `GA_Script.Rhtml` file and remove the following `html` frontmat
   </body>
   </html>
 ```
-## Content not rendering
-
-Check that the config file is up-to-date. It should look like this: https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml.
-(be careful to keep your selections for the configuration you would like).
-
-### `could not read Username for 'https://github.com': terminal prompts disabled`: GitHub authentication failure
-
-_Error example:_
-```
-The process '/usr/bin/git' failed with exit code 128
-could not read Username for 'https://github.com': terminal prompts disabled
-could not read Username for 'https://github.com': terminal prompts disabled
-could not read Username for 'https://github.com': terminal prompts disabled
-```
-
-_What does this mean?:_
-
-This error occurs when the GitHub Action workflow does not have the necessary permissions to authenticate with GitHub. This is typically caused by missing or insufficient repository permissions for the workflow's `GITHUB_TOKEN`.
-
-To fix this, see the [OTTR token cheatsheet](https://www.ottrproject.org/cheatsheets/ottr_token.html) for detailed instructions, or follow these steps:
-
-1) Go to your repository's **Settings** > **Actions** > **General**.
-2) Under **Workflow permissions**, select `Read and write permissions`.
-3) Click **Save**, then re-run the failed workflow.
 
 ## Help me choose my template
 
@@ -358,20 +365,22 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
       {
         label: "Website",
         next: {
-          question: "Do you have existing R Markdown / Bookdown files?",
+          question: "Do you already have website files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_web" },
-            { label: "No I'm starting fresh", result: "quarto_web" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
       {
         label: "Online Course",
         next: {
-          question: "Do you have existing R Markdown files?",
+          question: "Do you already have course files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_courses" },
-            { label: "No I'm starting fresh", result: "quarto_courses" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
+            { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
+            { label: "No, I'm starting fresh", result: "quarto_courses" }
           ]
         }
       },
@@ -385,26 +394,26 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
   const results = {
     rmarkdown_web: {
       name: "R Markdown Websites",
-      description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based website template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-websites",
       recommended: false
     },
     quarto_web: {
       name: "Quarto Websites",
-      description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
+      description: "A Quarto-based website template. The modern standard, recommended for new projects and existing .qmd files.",
       url: "getting_started.html#quarto-websites",
       recommended: true,
       fallback: "rmarkdown_web"
     },
     rmarkdown_courses: {
       name: "R Markdown Courses",
-      description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based course template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-courses",
       recommended: false
     },
     quarto_courses: {
       name: "Quarto Courses",
-      description: "A Quarto-based course template. Recommended for new projects.",
+      description: "A Quarto-based course template. Recommended for new projects and existing .qmd course files.",
       url: "getting_started.html#quarto-courses",
       recommended: true,
       fallback: "rmarkdown_courses"
@@ -491,11 +500,11 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
 
 | Template | Best for | Write in | Can also publish to |
 |:---|:---|:---:|:---|
-| [Quarto Courses](getting_started.html#quarto-courses) ⭐ | New courses, starting fresh , existing `.qmd` course files | `.qmd` | GitHub Pages · Coursera · Leanpub |
+| [Quarto Courses](getting_started.html#quarto-courses) ⭐ | New courses, starting fresh, existing `.qmd` course files | `.qmd` | GitHub Pages · Coursera · Leanpub |
 | [R Markdown Courses](getting_started.html#r-markdown-courses) | Existing `.Rmd` course files | `.Rmd` | GitHub Pages · Coursera · Leanpub |
-| [Quarto Websites](getting_started.html#quarto-websites) ⭐ | New websites, starting fresh , existing `.qmd` course files| `.qmd` | GitHub Pages |
+| [Quarto Websites](getting_started.html#quarto-websites) ⭐ | New websites, starting fresh, existing `.qmd` website files | `.qmd` | GitHub Pages |
 | [R Markdown Websites](getting_started.html#r-markdown-websites) | Existing `.Rmd` website files | `.Rmd` | GitHub Pages |
-| [Dashboards](getting_started.html#dashboards) | Metrics tracking & reporting | `.Rmd` | GitHub Pages |
+| [Dashboards](getting_started.html#dashboards) | Metrics tracking & reporting | `.Rmd` by default; `.qmd` if adapted to Quarto | GitHub Pages |
 
 ::: {.callout-warning}
 ### R Markdown is no longer being actively updated
@@ -517,7 +526,7 @@ Posit has shifted its focus to Quarto as the next-generation publishing system f
 
 **Quarto vs. R Markdown**
 
-- Choose **Quarto** if you are starting a new project. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.
+- Choose **Quarto** if you are starting a new project or already have `.qmd` files. It is the modern successor to R Markdown, supports R and Python, and is what OTTR recommends for all new content.
 - Choose **R Markdown** if you already have a set of `.Rmd` files you want to build on, or if your team is already working in R Markdown and a migration isn't practical right now.
 
 **Dashboards**

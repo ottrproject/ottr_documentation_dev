@@ -4,87 +4,184 @@ output:
   html_document
 ---
 
-**WARNING** This is in the very early stages of testing. You may feel free to try it, but [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) right away if it does not appear to be working as intended (or if you have other suggestions).
+:::{.callout-warning}
+The `ottrpal::ottrfy()` function is still under development. You may feel free to try it, but [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) right away if it does not appear to be working as intended (or if you have other suggestions).
+:::
 
-In some cases, if you have R Markdown files, Markdown files, or even better, Bookdown set of files in an existing repository that you would like to OTTR-fy you can do that following these steps.
-This method is a bit trickier and riskier than creating a repository from scratch and is still under some testing. So we recommend generally avoiding this strategy unless its unavoidable.
+The [`ottrpal`](https://github.com/ottrproject/ottrpal) package includes an `ottrfy()` function that can help add the OTTR files you need to an existing repository.
+This is especially useful if you already have Quarto (`.qmd`) files, R Markdown (`.Rmd`) files, Markdown files, or a Bookdown set of files that you would like to convert into an OTTR course or website.
+
+The current function also includes options for Quarto courses and Quarto websites, but this workflow is newer and still being tested.
+This method is a bit trickier and riskier than creating a repository from scratch, so we recommend generally avoiding this strategy unless it is unavoidable.
 
 This set of steps also assumes you are more familiar with GitHub.
 
 
 ## Requirements for OTTR-fying a repository:
 
-- Need to have either Markdown or R Markdown documents in the top of your repository that you are seeking to publish.
+- Need to have either Quarto, Markdown, or R Markdown documents in the top of your repository that you are seeking to publish.
+
 - Needs to be a public GitHub repository.
 
-### Step 1: Add OTTR files to your current repository
+- Need to have the [`ottrpal`](https://github.com/ottrproject/ottrpal) R package installed.
 
-Navigate to the top of your repository and [download this file](https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R).
-
-You can do this by using wget, or by just using the link above and saving it as `ottr-fy.R` in the top of your repository.
-```
-wget 'https://github.com/ottrproject/ottrpal/blob/main/R/ottrfy.R'
+```{r, eval = FALSE}
+install.packages("ottrpal")
 ```
 
-You've downloaded a script that will download the necessary files to run OTTR in your repository. Take a look at the filenames of what will be downloaded to make sure that you won't accidentally overwrite any of your repository's existing files.
+If your installed version of `ottrpal` does not recognize the `type` options below, install the development version from GitHub:
 
-### OTTR-fying files:
+```{r, eval = FALSE}
+if (!("remotes" %in% installed.packages())) {
+  install.packages("remotes")
+}
+remotes::install_github("ottrproject/ottrpal")
+```
 
-#### Files you won't need to edit
+### Step 1: Choose your OTTR flavor
 
+The `ottrfy()` function needs to know what kind of OTTR site you want to make.
+Choose the `type` that matches your existing files and your final goal:
+
+| `type` | Use this when... | Files added from... |
+|:---|:---|:---|
+| `"quarto"` | You are making a Quarto course website. This is a good match for existing `.qmd` course chapters. | [`OTTR_Quarto`](https://github.com/ottrproject/OTTR_Quarto) |
+| `"rmd"` | You are making an R Markdown / Bookdown course website. This is the best match for existing `.Rmd` course chapters. | [`OTTR_Template`](https://github.com/ottrproject/OTTR_Template) |
+| `"quarto_web"` | You are making a Quarto website that is not organized like a course/book. | [`OTTR_Quarto_Website`](https://github.com/ottrproject/OTTR_Quarto_Website) |
+| `"rmd_web"` | You are making an R Markdown website that is not organized like a course/book. | [`OTTR_Template_Website`](https://github.com/ottrproject/OTTR_Template_Website) |
+
+Not sure which OTTR template is right for you? Answer [two quick questions](https://www.ottrproject.org/faqs.html#help-me-choose-my-template) and we'll point you to the right setup guide.
+
+### Step 2: Add OTTR files to your current repository
+
+Navigate to the top of your repository and run `ottrpal::ottrfy()` with the `type` you chose above.
+
+For a Quarto course:
+
+```{r, eval = FALSE}
+ottrpal::ottrfy(type = "quarto")
+```
+
+
+For an R Markdown / Bookdown course:
+
+```{r, eval = FALSE}
+ottrpal::ottrfy(type = "rmd")
+```
+
+For a Quarto website:
+
+```{r, eval = FALSE}
+ottrpal::ottrfy(type = "quarto_web")
+```
+
+For an R Markdown website:
+
+```{r, eval = FALSE}
+ottrpal::ottrfy(type = "rmd_web")
+```
+
+
+By default, existing files will not be overwritten.
+If you have reviewed the files and intentionally want to replace existing OTTR setup files, use `overwrite = TRUE`.
+
+```{r, eval = FALSE}
+ottrpal::ottrfy(type = "quarto_web", overwrite = TRUE)
+```
+
+You can also use `path` if you are running the function from somewhere other than the repository you want to OTTR-fy.
+
+```{r, eval = FALSE}
+ottrpal::ottrfy(path = "path/to/my/repository", type = "quarto")
+```
+
+### OTTR-fying files
+
+The function downloads the necessary files to run OTTR in your repository. Every flavor gets the shared automation and checking files below, then `ottrfy()` adds the template-specific files for the `type` you choose.
+
+:::{.callout-note}
+Before using `overwrite = TRUE`, review these filenames carefully so that you do not accidentally replace any files you meant to keep.
+:::
+
+#### Shared files
+
+- `.github/workflows/check-url.yml`
 - `.github/workflows/pull_request.yml`
-- `.github/workflows/render-all.yml`
 - `.github/workflows/delete-preview.yml`
-- `.github/workflows/docker-build.yml`
+- `config_automation.yml`
+- `resources/dictionary.txt`
+- `resources/ignore-urls.txt`
+- `resources/exclude_files.txt`
 
-#### Files you'll need to edit to customize
-\* These files also will not be downloaded if you already have set up your repository as a bookdown website and specify this in the upcoming command.
+#### Flavor-specific files
 
-- `_bookdown.yml` or `_site.yml` for a website/course respectively
+::: {.panel-tabset}
+
+### Quarto Course
+
+- `index.qmd`
+- `_quarto.yml`
+- `references.bib`
+- `img/favicon.ico`
+- `img/logo.png`
+- `.github/workflows/render-all.yml`
+- `resources/images/figure/`
+
+### R Markdown Course
+
+- `index.Rmd`
+- `_bookdown.yml`
 - `_output.yml`
-- `book.bib`
 - `assets/big-image.html`
 - `assets/footer.html`
+- `assets/open-new-tab.html`
+- `book.bib`
+- `.github/workflows/render-all.yml`
 
-#### File you will likely want to edit but don't have to
+### Quarto Website
 
-- `config_automation.yml`
-- `assets/style.css`
+- `_quarto.yml`
+- `styles.css`
+- `.github/workflows/render-site.yml`
 
-Run this this script from your command line if your repository is not already a bookdown website.
-```
-Rscript ottr-fy.R
-```
-If your repository is already configured as a bookdown website, then run this command (aka use the `--bookdown` flag):
-```
-Rscript ottr-fy.R --bookdown
-```
-Note if your GitHub repository is not configured, this script will not work.
+### R Markdown Website
 
-This script will automatically:
+- `_site.yml`
+- `styles.css`
+- `resources/header.html`
+- `.github/workflows/render-site.yml`
 
-1. Open a new branch called `robot/ottrfy`.
-2. Add the OTTR files listed above.
-3. Add, commit, and push this branch to an `origin`
+:::
 
-After that, you should go to your repository and open up a pull request.
+### 3. Review and commit the added files
+
+After running `ottrfy()`, check your files and make sure nothing unexpected has happened to your original files.
+Then create a branch, commit the added files, push the branch to GitHub, and open a pull request.
+
 The OTTR automation checks should happen on this pull request automatically.
 `Render preview` check will almost certainly fail until you complete the next step.
 
 If they do not automatically start running, you may also want to check in your `Settings` > `Actions` that `Allow all actions and reusable workflows` is chosen.
 
-Check your files on this pull request your files and that nothing horrible has happened to your original files (like being overwritten or deleted).
-
-### 2. Add your Rmd or md files to the `_bookdown.yml` or `_site.yml` file
+### 4. Add your content files to the site configuration
 
 You will almost certainly find that the `Render preview` check will fail (and possibly the spelling and URL checks).
 
-One reason that this will fail is that you will need to edit `_bookdown.yml` `_site.yml` to list your Rmds (or mds) in the order they should appear in the course. ([See this section](https://www.ottrproject.org/customize-robots.html#Pull_request_checks:) for more information about these checks and what they are)
+One reason that this will fail is that you will need to edit your site configuration file to list your content files in the order they should appear.
+
+- For `type = "rmd"`, edit `_bookdown.yml`.
+- For `type = "quarto"` or `type = "quarto_web"`, edit `_quarto.yml`.
+- For `type = "rmd_web"`, edit `_site.yml`.
+
+[See this section](https://www.ottrproject.org/customize-robots.html#pull-request-checks) for more information about these checks and what they are.
 
 Make sure to commit this to your branch.
-*\ Note! Don't merge this pull request before you finish adding a few settings as described in this next step.
 
-### 3. Set up your repository with the proper settings
+:::{.callout-note}
+Don't merge this pull request before you finish adding a few settings as described in this next step.
+:::
+
+### 5. Set up your repository with the proper settings
 
 From here, you can follow the rest of the steps described in the [Getting Started section](getting_started.html).
 

@@ -4,7 +4,28 @@ output:
   html_document
 ---
 
-## Giving credits to contributors
+ <div style="text-align: right; margin-top: 0px">
+  <a href="https://ottrproject.org/cheatsheets/ottr_giving_credits.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+  </div>
+  
+
+<div style="margin: 1.5rem 0;">
+  <iframe 
+    src="https://ottrproject.org/cheatsheets/ottr_giving_credits.html"
+    width="100%" 
+    height="1940px" 
+    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
+    title="OTTR Giving Credits Cheatsheet">
+  </iframe>
+  
+</div>
+
+<details>
+
+<summary style="cursor: pointer; color: #2a7a9a; font-weight: 600; margin: 1rem 0;">
+  More details
+</summary>
+
 
 Since so many individuals contribute to our courses in so many ways, we decided to make a table of credits to make it clear who did what.
 
@@ -16,7 +37,7 @@ Here is an example:
 
 Please see the [About section](https://ottrproject.org/OTTR_Template/about-the-authors.html) of the template for descriptions of how credits should be attributed for the course.
 
-This is generated from the About.Rmd file. **An About.Rmd file will already be in your course from using our template**. You will need to do the following steps to update it for your course:
+This is generated from the `About.qmd` or `About.Rmd` file. **An About file will already be in your course from using our template**. You will need to do the following steps to update it for your course:
 
 1) Fill out author names for the various roles where applicable.
 2) Delete lines for roles that are not applicable.
@@ -130,6 +151,9 @@ In Coursera, you can add the credits table URL as an ungraded plugin ([the same 
 In Leanpub, make sure that your About.md file in your manuscript folder is listed in your Book.txt file and this Credits table will automatically be incorporated into your Leanpub course.
 
 <br>
+
+</details>
+
 
 ---
 

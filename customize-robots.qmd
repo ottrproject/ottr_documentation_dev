@@ -6,10 +6,15 @@ output:
 
 By default, all automation steps and checks will run. Based on the requirements of your course, you have the flexibility to enable or disable specific features by modifying the settings in the `config_automation.yml` file. Simply adjust the options to "true" or "false" accordingly.
 
+
+:::{.callout-note}
+Most options are controlled with `true` or `false`. The website renderer is the main exception: `render-website` should be set to one of `rmd`, `rmd_web`, `quarto`, or `quarto_web`.
+:::
+
 The `config_automation.yml` file looks like this:
 
-```
-### Render preview of content with changes (Rmd's and md's are checked)
+```yaml
+### Render preview of content with changes (qmds, Rmds, and mds are checked)
 render-preview: true
 
 ##### Checks run at pull request #####
@@ -19,7 +24,7 @@ quiz_error_min: 0
 # Check that urls in the content are not broken
 url-checker: true
 url_error_min: 0
-# Spell check Rmds and quizzes
+# Spell check qmds/Rmds and quizzes
 spell-check: true
 spell_error_min: 0
 
@@ -50,91 +55,113 @@ make-book-txt: true
 rendering-docker-image: 'jhudsl/base_ottr:main'
 ```
 
-There are three main sets of automation steps and checks run:
+## Pull Request Checks
 
-- `.github/workflows/pull-request.yml` : Run upon opening a pull request
-- `.github/workflows/render-all.yml`: Run upon any changes merged to the `main` branch
-- `.github/workflows/check-url.yml`: Run checks of URLs in a OTTR repo periodically to see if any are no longer valid
+These actions are triggered when a pull request is opened or updated. They are set up in `.github/workflows/pull-request.yml`.
 
-## Pull Request Checks:
-
-These actions are triggered upon a pull request being opened. They are set up in this file: `.github/workflows/pull-request.yml`
+:::{.callout-tip}
+Use pull request checks to catch issues **before** they are merged into `main`.
+:::
 
 ### Check Quiz Formatting
 
-In the `config_automation.yml` file it is set by:
+In `config_automation.yml`, quiz checks are controlled by:
 
-```
+```yaml
 check-quizzes: false
 ```
 
-By default, it is set to `false`. But if you wish to [create quizzes on Leanpub](https://www.ottrproject.org/course_publishing.html#publishing-with-leanpub), you should set this to `true`. This is not necessary if you only want quizzes for Coursera.
-Leanpub needs a particular format for it to upload correctly. This action will look for quizzes in the `quizzes` directory and check for these items. The outcome of these quiz checks will be printed to a GitHub comment on your pull request.
+By default, this is set to `false`.
+
+Set `check-quizzes: true` if you plan to [create quizzes on Leanpub](https://www.ottrproject.org/course_publishing.html#publishing-with-leanpub). This is **not necessary** if you only want quizzes for Coursera.
+
+Leanpub requires a particular quiz format for uploads. This action checks quizzes in the `quizzes` directory and prints the results in a GitHub comment on your pull request.
 
 ### Check for broken URLs
 
-In the `config_automation.yml` file there are two different URL checkers.
+There are **two different URL checkers** in `config_automation.yml`.
 
-1) One that is run during pull requests. It is set by:
+| URL checker | Config option | When it runs |
+|:---|:---|:---|
+| Pull request URL checker | `url-checker: true` | When a pull request is opened or updated |
+| Periodic URL checker | `url-check-periodically: true` | On a set interval |
 
-```
+The pull request URL checker is set by:
+
+```yaml
 url-checker: true
 ```
 
-GitHub Actions runs a check on all the URLs upon creating a pull request to the `main` branch.
-If it fails, you can click on the output comment on your pull request that says "Click here to download detailed error reports". This will download a zip file containing a list of the broken URLs it found.
+GitHub Actions checks all URLs when you create a pull request to the `main` branch.
 
-If you don't set the additional error threshold option in the config_automation file, the check summary may still report that the URL check failed, even if 0 errors were found.
+If the check fails, click the pull request comment that says **"Click here to download detailed error reports"**. This downloads a zip file with the broken URLs it found.
 
-```
+:::{.callout-warning}
+If you do not set the additional error threshold option, the check summary may still report that the URL check failed, even when **0 errors** were found.
+:::
+
+```yaml
 url_error_min: 0
 ```
 
-2) The other URL check runs on a set interval to see if any URLs referenced are no longer valid. This one is set by:
+The periodic URL checker runs on a set interval to see whether any referenced URLs are no longer valid. It is set by:
 
-```
+```yaml
 url-check-periodically: true
 ```
 
-If either URL checker is failing on something that isn't really a URL or doesn't need to be checked, open the `resources/ignore-urls.txt` file and add that URL exactly as it is specified in the error print out. After committing the changes to `resources/ignore-urls.txt` on your branch, the url check status check should be successfully passed.
+:::{.callout-tip}
+If either URL checker fails on something that is not really a URL or does not need to be checked, add the exact URL from the error output to `resources/ignore-urls.txt`.
+:::
+
+After committing the change to `resources/ignore-urls.txt` on your branch, the URL check should pass.
 
 ### Preview rendering
 
-In the `config_automation.yml` file it is set by:
+In `config_automation.yml`, preview rendering is controlled by:
 
-```
+```yaml
 render-preview: true
 ```
-After you open a pull request, a preview of the renders will be linked in an automatic comment on the pull request. Upon each commit these previews will re-render and edit the comment with the latest render.
+
+After you open a pull request, an automatic comment will link to a preview render. Each new commit re-renders the preview and updates the comment with the latest version.
 
 ![](https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results.png)
 
-These Github Actions are located in `render-preview` section of the `pull-request.yml`.
-These previews do NOT incorporate any changes influenced by any changes to the Docker image if the Dockerfile is also updated in the same pull request.
+These GitHub Actions are located in the `render-preview` section of `pull-request.yml`.
 
+:::{.callout-warning}
+Preview renders do **not** incorporate changes caused by Docker image updates if the Dockerfile is also changed in the same pull request.
+:::
 
 ### Spell checking
 
-In the `config_automation.yml` file it is set by:
+In `config_automation.yml`, spell checking is controlled by:
 
-```
+```yaml
 spell-check: true
 ```
-Github Actions will automatically run a spell check on all Rmds and mds whenever a pull request to the `main` branch is filed.
+
+GitHub Actions will automatically run a spell check on all `.qmd`, `.Rmd`, and `.md` files whenever a pull request to the `main` branch is filed.
 
 The error threshold option controls how many errors are allowed before the check will fail.
 
-```
+```yaml
 spell_error_min: 0
 ```
 
-You'll need to resolve those before being able to merge your pull request. Errors are displayed in much the same way as PR URL check errors with a summary of how many errors are found. Click on the output comment on your pull request that says "Click here to download detailed error reports". This will download a zip file containing a list of the spelling errors it found.
+You will need to resolve spelling errors before merging your pull request. Errors are displayed much like PR URL check errors, with a summary of how many errors were found.
+
+To review spelling errors, click the pull request comment that says **"Click here to download detailed error reports"**. This downloads a zip file with the spelling errors it found.
 
 Some of these errors may be things that the spell check doesn't recognize for example: `ITCR` or `DaSL`.
 If it's a 'word' the spell check should recognize, you'll need to add this to the dictionary.
 
-Go to the `resources/dictionary.txt` file. Open the file and add the new 'word' to its appropriate place (the words are in alphabetical order).
-After committing the changes to `resources/dictionary.txt` on your branch, the spell check status check should be successfully passed.
+:::{.callout-tip}
+If the spell checker flags a word that should be allowed, add it to `resources/dictionary.txt` in alphabetical order.
+:::
+
+After committing the change to `resources/dictionary.txt` on your branch, the spell check should pass.
 
 The PR comment included below shows an example of a check that passed (spell check), and a check that failed (the URL check) with the option to download detailed error report(s).
 
@@ -146,59 +173,74 @@ When all checks pass, the option to download error reports is no longer included
 
 ### Style code
 
-In the `config_automation.yml` file it is set by:
+In `config_automation.yml`, R code styling is controlled by:
 
-```
+```yaml
 style-code: true
 ```
 
-The `styler` package will style R code in all Rmds. Style changes will automatically be committed back to your branch.
+The `styler` package will style R code in all `.qmd` and `.Rmd` files. Style changes are automatically committed back to your branch.
 
 ### Docker testing
 
-In the config_automation.yml file it looks like:
+In `config_automation.yml`, Docker testing is controlled by:
 
-```
+```yaml
 docker-test: false
 ```
-By default it is set to `false` which means it won't run automatically unless you change this to `true`.
-This is only relevant if you have [your own Docker image you are managing for your course](https://www.ottrproject.org/customize-docker.html). If changes are made to Docker-relevant files: `Dockerfile`, `install_github.R`, or `github_package_list.tsv`, this will test re-build the Docker image. If it is successfully built, then it makes sense to merge it to `main` but the Docker Image will not be pushed to `Dockerhub` automatically. [Follow these instructions to push your Docker image to Dockerhub](https://www.ottrproject.org/customize-docker.html#Testing_a_modified_Docker_image).
+
+By default, this is set to `false`, which means Docker testing will not run automatically unless you change it to `true`.
+
+This is only relevant if you have [your own Docker image you are managing for your course](https://www.ottrproject.org/customize-docker.html). If changes are made to Docker-relevant files, this check will test rebuild the Docker image.
+
+**Docker-relevant files include:**
+
+- `Dockerfile`
+- `install_github.R`
+- `github_package_list.tsv`
+
+If the image builds successfully, then it makes sense to merge the pull request to `main`. However, the Docker image will **not** be pushed to Docker Hub automatically. [Follow these instructions to push your Docker image to Docker Hub](https://www.ottrproject.org/customize-docker.html#Testing_a_modified_Docker_image).
 
 <br>
 
 ## Rendering actions
 
-Upon merging changes to any `Rmd` or `assets/` folder to `main`, the course material will be automatically re-rendered.
+Upon merging changes to any `.qmd`, `.Rmd`, or `assets/` folder to `main`, the course material will be automatically re-rendered.
 
-For rendering a website version of the course (or your website), rather than `true` or `false`, the options are `rmd`, `rmd_web`, `quarto` or `quarto_web`.
+By default, all rendering steps run. Depending on the needs of your course, you can turn renderers on or off in `config_automation.yml`.
 
-  * If rendering a course with RMarkdown files, use `rmd`.
-  * If rendering a course with quarto files, use `quarto`.
-  * If rendering a website with RMarkdown files, use `rmd_web`.
-  * If rendering a website with quarto files, use `quarto_web`.
-
-```
-render-website: rmd
-```
-
-By default, all rendering steps will be run. But depending on the needs of your course, you can turn these on and off by going to the `config_automation.yml` file and switching options to `true` or `false`.
-
-```
+```yaml
 render-leanpub: true
 render-coursera: true
 ```
 
-For publishing to Leanpub, make sure that the render Leanpub option is set to true: `render-leanpub: true`.  See more details about publishing to Leanpub [here](https://www.ottrproject.org/course_publishing.html#publishing-with-leanpub).
+For publishing to Leanpub, make sure that the Leanpub renderer is enabled:
 
-If render-leanpub is true, the `make-book-txt` option is also relevant. This option controls whether you'd like to manually specify the order of your chapters and quizzes by creating the [Book.txt file](https://leanpub.com/lfm/read#leanpub-auto-the-booktxt-file) by hand or whether you'd like this to be [automatically generated based on file and quiz numbering.](https://ottrproject.org/ottrpal/#about-the-booktxt-file). Read more about this [in the upcoming section](https://www.ottrproject.org/examples.html#Setting_up_quizzes).
-
-By default, `make-book-txt: true` will use the numbering in the names of the documents for chapters and quizzes to order them, but if you'd like to specify the order for the chapters and quizzes to be different on Leanpub, then set this to `make-book-txt: false`, so as not to override the book.txt file that you would make manually.
-
+```yaml
+render-leanpub: true
 ```
+
+See more details about publishing to Leanpub [here](https://www.ottrproject.org/course_publishing.html#publishing-with-leanpub).
+
+If `render-leanpub` is `true`, the `make-book-txt` option is also relevant. This option controls whether you manually specify the order of chapters and quizzes with a [Book.txt file](https://leanpub.com/lfm/read#leanpub-auto-the-booktxt-file), or whether the file is [automatically generated based on file and quiz numbering](https://ottrproject.org/ottrpal/#about-the-booktxt-file). Read more about this [in the upcoming section](https://www.ottrproject.org/examples.html#Setting_up_quizzes).
+
+:::{.callout-note}
+By default, `make-book-txt: true` uses the numbering in chapter and quiz filenames to set the order.
+:::
+
+If you want a different chapter or quiz order in Leanpub, set `make-book-txt: false` so the manually created `Book.txt` file is not overwritten.
+
+```yaml
 make-book-txt: true
 ```
 
-For publishing to Coursera, make sure render Coursera option is set to true: `render-coursera: true`. See more details about publishing to Coursera [here](https://www.ottrproject.org/course_publishing.html#publishing-with-coursera).
+For publishing to Coursera, make sure that the Coursera renderer is enabled:
+
+```yaml
+render-coursera: true
+```
+
+See more details about publishing to Coursera [here](https://www.ottrproject.org/course_publishing.html#publishing-with-coursera).
 
 <br>
 
@@ -213,7 +255,9 @@ From time to time, it may be useful to manually re-trigger a particular GitHub A
 GitHub action rendering or other GitHub actions may fail sometimes if the input is unexpected or for a number of other reasons.
 To investigate why a GitHub action has failed, go to `Actions` and click on the failed action. [See this article for how to find this information](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#viewing-the-workflows-activity).
 
-See our [FAQ's section](./faqs.html) for the most commonly encountered errors and how to address them.
+:::{.callout-tip}
+Start with the failed action's logs, then check the [FAQ's section](./faqs.html) for common errors and fixes.
+:::
 
 If you are unsure what the error message means and have trouble addressing it, please [file an issue on the OTTR_Template repository to get help](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=cansavvy&labels=bug&template=course-template-problem-report.md).
 

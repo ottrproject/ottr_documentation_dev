@@ -139,6 +139,7 @@ on:
   push:
     paths:
       - '*.Rmd'
+      - '*.qmd'
       - 'assets/*'
       - '*.yml'
       - 'GA_Script.html'   # <-- triggers render on GA changes

@@ -131,7 +131,7 @@ Now that you've set up a shell for your OTTR repository, there are some next ste
 
 ## Changing the title
 
-The title is specified on the `index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
+The title is specified on the `index.qmd`/`index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
 
 ```
 ---
@@ -139,7 +139,7 @@ title: "Title of Course"
 ---
 ```
 
-Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.
+Note that if one of the chapter `.qmd` or `.Rmd` files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.
 
 ## Customizing branding and style
 
@@ -159,7 +159,7 @@ OTTR courses include a credits table to acknowledge everyone who contributed. Fo
 
 Key things to update:
 
-- **About.Rmd** — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).
+- **About.qmd**/**About.Rmd** — already included in the template. Fill in author names for each role, remove inapplicable rows, and make sure role names grammatically match (singular vs. plural).
 - **Required rows** — all courses should include rows for Template Publishing Engineers, Publishing Maintenance Engineer, Technical Publishing Stylists, and Package Developers. See the [full credits table reference](more_features_credits.html#credit-role-reference).
 - **Coursera** — add the credits table URL as an ungraded plugin at the start of your course, right after the introduction.
 - **Leanpub** — ensure `About.md` is listed in `Book.txt` and it will be included automatically.
@@ -259,7 +259,7 @@ cards <- list(
       facebook: false
       twitter: false
       all: []</pre>
-<p>Then add a direct link to your form in <code>index.Rmd</code> or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.</p>'
+<p>Then add a direct link to your form in <code>index.qmd</code>, <code>index.Rmd</code>, or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.</p>'
   ),
   list(
     title = "Cite your sources",
@@ -269,8 +269,8 @@ cards <- list(
 <ul>
   <li><strong>Add references</strong> to <code>book.bib</code> in alphabetical order. For articles with a DOI, use <a href="https://www.doi2bib.org/">doi2bib.org</a> or <a href="https://zbib.org/">ZoteroBib</a> to generate a BibTeX entry to copy in.</li>
   <li><strong>Cite in text</strong> using <code>@key</code> (inline) or <code>[@key]</code> (parenthetical). Separate multiple citations with semicolons: <code>[@key-1; @key-2]</code>.</li>
-  <li><strong>References list</strong> — keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code> so the full reference list appears at the end of your course.</li>
-  <li><strong>Suppress per-chapter references</strong> by adding <code>split_bib: false</code> to <code>_output.yml</code>.</li>
+  <li><strong>References list</strong> — for Bookdown, keep <code>References.Rmd</code> as the last file in <code>_bookdown.yml</code>. For Quarto books, keep <code>references.qmd</code> as the last chapter in <code>_quarto.yml</code>.</li>
+  <li><strong>Suppress per-chapter references</strong> in Bookdown by adding <code>split_bib: false</code> to <code>_output.yml</code>. Quarto books should use the <code>#refs</code> div in <code>references.qmd</code> for the end-of-book bibliography.</li>
 </ul>'
   ),
   list(

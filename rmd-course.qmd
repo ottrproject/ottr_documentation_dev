@@ -2,7 +2,7 @@
 title: "Getting started: R Markdown Courses"
 ---
 
-An R Markdown / Bookdown-based course template with a table of contents on the side. Supports publishing to Coursera and Leanpub. Best choice when you have existing `.Rmd` files to build on.
+An R Markdown / Bookdown-based course template with a table of contents on the side. Supports publishing to Coursera and Leanpub. Best choice when you have existing `.Rmd` files to build on. If you are starting fresh or already have `.qmd` files, use the [Quarto course setup guide](quarto-course.qmd).
 
 <img src="resources/images/ottr-course-example.png" width="400">
 
@@ -87,7 +87,7 @@ If you're **not** a member of the jhudsl GitHub organization, you can:
 | Repository | Issue Links |
 |:---:|:---|
 | OTTR_Template | [General issue](https://github.com/ottrproject/OTTR_Template/issues/new/choose) · [Add new repo to sync](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&labels=&projects=&template=new-course-add-to-sync.md&title=) · [Update repo info in sync](https://github.com/ottrproject/OTTR_Template/issues/new?assignees=kweav&labels=&projects=&template=update-course-info-for-sync.md&title=) |
-| OTTR_Quizzes | [Open an issue](https://github.com/jhudsl/OTTR_Quizzes/issues/new/choose) |
+| OTTR_Quizzes | [Open an issue](https://github.com/ottrproject/OTTR_Quizzes/issues/new/choose) |
 
 <p class="comment">
 _If you have any questions about these updates or files, please tag `@kweav` or `@carriewright11`._

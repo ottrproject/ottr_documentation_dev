@@ -17,6 +17,8 @@ website:
             href: next_steps.qmd
           - text: "Example use cases"
             href: examples.qmd
+          - text: "Cheatsheet gallery"
+            href: cheatsheet_gallery.qmd
       - text: "Build with OTTR"
         menu:
           - text: "Template"
@@ -25,8 +27,8 @@ website:
             href: writing_content_courses.qmd
           - text: "Enroll for sync updates"
             href: enroll_sync.qmd
-          - text: "OTTR-fy existing repo"
-            href: ottr-fy.qmd
+         # - text: "OTTR-fy existing repo"
+         #   href: ottr-fy.qmd
           - text: "Giving credits {{< fa award title='An award' >}}"
             href: more_features_credits.qmd
           - text: "---"
@@ -73,4 +75,3 @@ format:
     include-after-body: resources/footer.html
     page-layout: article
     link-external-newwindow: true
-

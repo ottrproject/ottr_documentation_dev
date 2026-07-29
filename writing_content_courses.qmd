@@ -144,9 +144,7 @@ through the OTTR checks.
 Then click `Commit changes`. You will need to do this after every change
 to add them to your branch.
 
-As an example, we will show a simple change to the file called
-`01-intro.Rmd`. Scroll down to the this file and click on this file
-name.
+As an example, we will show a simple change to a content file. For a Quarto course, use a `.qmd` file such as `setup.qmd`; for an R Markdown course, use a `.Rmd` file such as `01-intro.Rmd`. Scroll down to the file and click on the file name.
 
 ![](resources/images/intro_file.png)
 
@@ -413,7 +411,7 @@ Adding new chapters to your OTTR course requires a few specific steps depending 
   <iframe 
     src="https://ottrproject.org/cheatsheets/ottr_pr.html"
     width="100%" 
-    height="2820px" 
+    height="2250px" 
     style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
     title="OTTR Pull Request Cheatsheet">
   </iframe>
@@ -529,7 +527,7 @@ The renders will fail if this is not set!
 :::
 
 
-Each Rmd file with images that is a part of your Bookdown needs to have
+For R Markdown/Bookdown courses, each `.Rmd` file with images needs to have
 the following chunk at the beginning so that images are stored properly for
 Leanpub conversion.
 
@@ -563,7 +561,7 @@ There are two things to check for each slide:
 ## Adding images and graphics in text
 
 All images should be included in your Google Slides with the captions we
-discussed above. To add images in the text in your Rmd, use the
+discussed above. To add images in the text in your `.qmd` or `.Rmd` files, use the
 `ottrpal::include_slide()` within an [R code
 chunk](https://bookdown.org/yihui/rmarkdown/r-code.html).
 
@@ -598,14 +596,14 @@ on the internet with this link can view". Note that "Private" is the
 default setting when you make a new presentation.
 
 See [Chapter
-2](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd)
+2](https://www.ottrproject.org/OTTR_Quarto/first-section-new-chapter.html#image-example)
 of the template course for examples.
 
 
 
 ## Adding videos in text
 
-To add a YouTube video to your Rmd files, use the following instructions:
+To add a YouTube video to your `.qmd` or `.Rmd` files, use the following instructions:
 
 To get the appropriate YouTube URL do the following: 1) Click on the
 **SHARE** button on the lower right corner of the video on YouTube 2)
@@ -617,7 +615,7 @@ Again, it is important to use the `echo=FALSE` option so that only the
 video is shown and not the code to generate it.
 
 See [Chapter
-2](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd)
+2](https://www.ottrproject.org/OTTR_Quarto/first-section-new-chapter.html#video-examples)
 of the template course for examples.
 
 
@@ -637,7 +635,7 @@ course material.
 If you want to include a file that is not hosted online, consider
 hosting it on GitHub using the method described for hosting your
 Bookdown version of the course. See the [Set up GitHub
-pages](https://www.ottrproject.org/getting_started.html#7_Set_up_GitHub_Pages)
+pages](https://www.ottrproject.org/getting_started.html#set-up-github-pages)
 section.
 
 Then you would do the following, where the url is that of your hosted
@@ -646,5 +644,5 @@ file:
 <img src="resources/images/include_url_3.png" width="600"/>
 
 See [Chapter
-2](https://github.com/ottrproject/OTTR_Template/blob/main/02-chapter_of_course.Rmd)
+2](https://github.com/ottrproject/OTTR_Quarto/blob/main/first-section-new-chapter.qmd)
 of the template course for examples.

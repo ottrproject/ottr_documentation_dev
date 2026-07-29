@@ -54,11 +54,9 @@ toc: false
   }
   .result-recommended {
     background-color: #e8f6fa;
-    border-left: 4px solid #ADD8E6;
   }
   .result-standard {
     background-color: #f4f4f4;
-    border-left: 4px solid #aaa;
   }
   .result-name {
     font-size: 1.1rem;
@@ -128,20 +126,22 @@ toc: false
       {
         label: "Website",
         next: {
-          question: "Do you have existing R Markdown / Bookdown files?",
+          question: "Do you already have website files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_web" },
-            { label: "No I'm starting fresh", result: "quarto_web" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
       {
         label: "Online Course",
         next: {
-          question: "Do you have existing R Markdown files?",
+          question: "Do you already have course files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_courses" },
-            { label: "No I'm starting fresh", result: "quarto_courses" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
+            { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
+            { label: "No, I'm starting fresh", result: "quarto_courses" }
           ]
         }
       },
@@ -155,26 +155,26 @@ toc: false
   const results = {
     rmarkdown_web: {
       name: "R Markdown Websites",
-      description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based website template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-websites",
       recommended: false
     },
     quarto_web: {
       name: "Quarto Websites",
-      description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
+      description: "A Quarto-based website template. The modern standard, recommended for new projects and existing .qmd files.",
       url: "getting_started.html#quarto-websites",
       recommended: true,
       fallback: "rmarkdown_web"
     },
     rmarkdown_courses: {
       name: "R Markdown Courses",
-      description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based course template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-courses",
       recommended: false
     },
     quarto_courses: {
       name: "Quarto Courses",
-      description: "A Quarto-based course template. Recommended for new projects.",
+      description: "A Quarto-based course template. Recommended for new projects and existing .qmd course files.",
       url: "getting_started.html#quarto-courses",
       recommended: true,
       fallback: "rmarkdown_courses"
@@ -272,10 +272,10 @@ toc: false
 
 OTTR templates come in two flavors based on which document format you use to write content: **R Markdown** (`.Rmd`) and **Quarto** (`.qmd`).
 
-- **Quarto** is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects.
+- **Quarto** is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects and existing `.qmd` files.
 - **R Markdown** is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have `.Rmd` files or are following older OTTR tutorials.
 
-If you're starting fresh and have no existing `.Rmd` files, go with a Quarto template. If you have existing `.Rmd` content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.
+If you're starting fresh or already have `.qmd` files, go with a Quarto template. If you have existing `.Rmd` content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.
 
 ::: {.callout-warning}
 ## R Markdown is no longer being actively updated
