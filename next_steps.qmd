@@ -139,7 +139,7 @@ title: "Title of Course"
 ---
 ```
 
-Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.
+Note that if one of the chapter `.qmd` or `.Rmd` files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence, avoid having yml header titles for the chapter files.
 
 ## Customizing branding and style
 
@@ -259,7 +259,7 @@ cards <- list(
       facebook: false
       twitter: false
       all: []</pre>
-<p>Then add a direct link to your form in <code>index.Rmd</code> or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.</p>'
+<p>Then add a direct link to your form in <code>index.qmd</code>, <code>index.Rmd</code>, or your course footer. For automated responses, <a href="https://zapier.com">Zapier</a> can connect Google Form submissions to email notifications, Slack alerts, or GitHub issues.</p>'
   ),
   list(
     title = "Cite your sources",

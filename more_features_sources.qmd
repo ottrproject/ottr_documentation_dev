@@ -6,7 +6,7 @@ output:
 
 ## Citing sources
 
-You can generally follow the [Bookdown instructions about citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), but you **do not** need to add the additional bibliography argument at the top of the Rmd.
+You can generally follow the [Bookdown instructions about citations](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html), but you **do not** need to add the additional bibliography argument at the top of the `.Rmd`. For Quarto courses, keep the bibliography setting in `_quarto.yml`.
 
 **Goal:** Add each source once to `book.bib`, cite it in your writing with a citation key, and let OTTR automatically build the reference lists.
 
@@ -106,7 +106,7 @@ Keep the `References.Rmd` file, and keep it as the **last part** of the `_bookdo
 
 ![](resources/images/references_bookdown.png)
 
-Alternatively, you can add a header for this list of references as the **last header** in any other Rmd file that is listed as the final file in `_bookdown.yml`.
+Alternatively, you can add a header for this list of references as the **last header** in any other `.Rmd` file that is listed as the final file in `_bookdown.yml`.
 
 :::{.callout-note}
 If you would like to suppress references at the end of each chapter, add `split_bib: false` to your `_output.yml` file.

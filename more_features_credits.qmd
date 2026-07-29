@@ -37,7 +37,7 @@ Here is an example:
 
 Please see the [About section](https://ottrproject.org/OTTR_Template/about-the-authors.html) of the template for descriptions of how credits should be attributed for the course.
 
-This is generated from the About.Rmd file. **An About.Rmd file will already be in your course from using our template**. You will need to do the following steps to update it for your course:
+This is generated from the `About.qmd` or `About.Rmd` file. **An About file will already be in your course from using our template**. You will need to do the following steps to update it for your course:
 
 1) Fill out author names for the various roles where applicable.
 2) Delete lines for roles that are not applicable.

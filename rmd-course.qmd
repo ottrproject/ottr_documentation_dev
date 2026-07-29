@@ -2,7 +2,7 @@
 title: "Getting started: R Markdown Courses"
 ---
 
-An R Markdown / Bookdown-based course template with a table of contents on the side. Supports publishing to Coursera and Leanpub. Best choice when you have existing `.Rmd` files to build on.
+An R Markdown / Bookdown-based course template with a table of contents on the side. Supports publishing to Coursera and Leanpub. Best choice when you have existing `.Rmd` files to build on. If you are starting fresh or already have `.qmd` files, use the [Quarto course setup guide](quarto-course.qmd).
 
 <img src="resources/images/ottr-course-example.png" width="400">
 

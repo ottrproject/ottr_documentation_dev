@@ -120,20 +120,22 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
       {
         label: "Website",
         next: {
-          question: "Do you have existing R Markdown / Bookdown files?",
+          question: "Do you already have website files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_web" },
-            { label: "No I'm starting fresh", result: "quarto_web" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
       {
         label: "Online Course",
         next: {
-          question: "Do you have existing R Markdown files?",
+          question: "Do you already have course files to build on?",
           options: [
-            { label: "Yes", result: "rmarkdown_courses" },
-            { label: "No I'm starting fresh", result: "quarto_courses" }
+            { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
+            { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
+            { label: "No, I'm starting fresh", result: "quarto_courses" }
           ]
         }
       },
@@ -147,26 +149,26 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
   const results = {
     rmarkdown_web: {
       name: "R Markdown Websites",
-      description: "An R Markdown / Bookdown-based website template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based website template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-websites",
       recommended: false
     },
     quarto_web: {
       name: "Quarto Websites",
-      description: "A Quarto-based website template. The modern standard, recommended for all new projects.",
+      description: "A Quarto-based website template. The modern standard, recommended for new projects and existing .qmd files.",
       url: "getting_started.html#quarto-websites",
       recommended: true,
       fallback: "rmarkdown_web"
     },
     rmarkdown_courses: {
       name: "R Markdown Courses",
-      description: "An R Markdown / Bookdown-based course template. Best choice when you have existing .Rmd files to build on.",
+      description: "An R Markdown / Bookdown-based course template. Use this when you have existing .Rmd files to build on.",
       url: "getting_started.html#r-markdown-courses",
       recommended: false
     },
     quarto_courses: {
       name: "Quarto Courses",
-      description: "A Quarto-based course template. Recommended for new projects.",
+      description: "A Quarto-based course template. Recommended for new projects and existing .qmd course files.",
       url: "getting_started.html#quarto-courses",
       recommended: true,
       fallback: "rmarkdown_courses"
@@ -259,7 +261,7 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
 | [R Markdown Courses](getting_started.html#r-markdown-courses) | Existing `.Rmd` course files | `.Rmd` | GitHub Pages · Coursera · Leanpub |
 | [Quarto Websites](getting_started.html#quarto-websites) ⭐ | New websites, starting fresh, existing `.qmd` website files | `.qmd` | GitHub Pages |
 | [R Markdown Websites](getting_started.html#r-markdown-websites) | Existing `.Rmd` website files | `.Rmd` | GitHub Pages |
-| [Dashboards](getting_started.html#dashboards) | Metrics tracking & reporting | `.Rmd` | GitHub Pages |
+| [Dashboards](getting_started.html#dashboards) | Metrics tracking & reporting | `.Rmd` by default; `.qmd` if adapted to Quarto | GitHub Pages |
 
 ::: {.callout-warning}
 ## R Markdown is no longer being actively updated
@@ -284,7 +286,7 @@ Websites
 Flexible pages with top navigation
 :::
 ::: {.benefit-copy}
-Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use [Quarto](https://quarto.org/) for new projects, or R Markdown/bookdown if you already have `.Rmd` files.
+Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use [Quarto](https://quarto.org/) for new projects or existing `.qmd` files, or R Markdown/bookdown if you already have `.Rmd` files.
 :::
 :::
 
@@ -296,7 +298,7 @@ Courses
 Chapter-based learning content
 :::
 ::: {.benefit-copy}
-Choose a course template when you need a sidebar table of contents, chapter-by-chapter navigation, and optional publishing to [Coursera](https://www.coursera.org/) or [Leanpub](https://leanpub.com/). Use Quarto for new courses, or R Markdown for existing `.Rmd` course files.
+Choose a course template when you need a sidebar table of contents, chapter-by-chapter navigation, and optional publishing to [Coursera](https://www.coursera.org/) or [Leanpub](https://leanpub.com/). Use Quarto for new courses or existing `.qmd` course files, or R Markdown for existing `.Rmd` course files.
 :::
 :::
 

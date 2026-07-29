@@ -3,7 +3,7 @@ title: "Getting Started: R Markdown Websites"
 ---
 
 
-An R Markdown / Bookdown-based website template with a nav bar on top. Best choice if you have existing `.Rmd` files to build on.
+An R Markdown / Bookdown-based website template with a nav bar on top. Best choice if you have existing `.Rmd` files to build on. If you are starting fresh or already have `.qmd` files, use the [Quarto website setup guide](quarto-website.qmd).
 
 #### 1. Create a repository from the template
 

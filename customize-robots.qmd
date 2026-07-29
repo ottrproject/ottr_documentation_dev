@@ -14,7 +14,7 @@ Most options are controlled with `true` or `false`. The website renderer is the 
 The `config_automation.yml` file looks like this:
 
 ```yaml
-### Render preview of content with changes (Rmd's and md's are checked)
+### Render preview of content with changes (qmds, Rmds, and mds are checked)
 render-preview: true
 
 ##### Checks run at pull request #####
@@ -24,7 +24,7 @@ quiz_error_min: 0
 # Check that urls in the content are not broken
 url-checker: true
 url_error_min: 0
-# Spell check Rmds and quizzes
+# Spell check qmds/Rmds and quizzes
 spell-check: true
 spell_error_min: 0
 
@@ -142,7 +142,7 @@ In `config_automation.yml`, spell checking is controlled by:
 spell-check: true
 ```
 
-GitHub Actions will automatically run a spell check on all qmds/Rmds and mds whenever a pull request to the `main` branch is filed.
+GitHub Actions will automatically run a spell check on all `.qmd`, `.Rmd`, and `.md` files whenever a pull request to the `main` branch is filed.
 
 The error threshold option controls how many errors are allowed before the check will fail.
 
@@ -179,7 +179,7 @@ In `config_automation.yml`, R code styling is controlled by:
 style-code: true
 ```
 
-The `styler` package will style R code in all qmds/Rmds. Style changes are automatically committed back to your branch.
+The `styler` package will style R code in all `.qmd` and `.Rmd` files. Style changes are automatically committed back to your branch.
 
 ### Docker testing
 
@@ -205,7 +205,7 @@ If the image builds successfully, then it makes sense to merge the pull request 
 
 ## Rendering actions
 
-Upon merging changes to any `qmd`,`Rmd` or `assets/` folder to `main`, the course material will be automatically re-rendered.
+Upon merging changes to any `.qmd`, `.Rmd`, or `assets/` folder to `main`, the course material will be automatically re-rendered.
 
 By default, all rendering steps run. Depending on the needs of your course, you can turn renderers on or off in `config_automation.yml`.
 

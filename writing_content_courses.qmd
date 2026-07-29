@@ -144,9 +144,7 @@ through the OTTR checks.
 Then click `Commit changes`. You will need to do this after every change
 to add them to your branch.
 
-As an example, we will show a simple change to the file called
-`01-intro.Rmd`. Scroll down to the this file and click on this file
-name.
+As an example, we will show a simple change to a content file. For a Quarto course, use a `.qmd` file such as `setup.qmd`; for an R Markdown course, use a `.Rmd` file such as `01-intro.Rmd`. Scroll down to the file and click on the file name.
 
 ![](resources/images/intro_file.png)
 
@@ -529,7 +527,7 @@ The renders will fail if this is not set!
 :::
 
 
-Each Rmd file with images that is a part of your Bookdown needs to have
+For R Markdown/Bookdown courses, each `.Rmd` file with images needs to have
 the following chunk at the beginning so that images are stored properly for
 Leanpub conversion.
 
@@ -563,7 +561,7 @@ There are two things to check for each slide:
 ## Adding images and graphics in text
 
 All images should be included in your Google Slides with the captions we
-discussed above. To add images in the text in your qmd/Rmd, use the
+discussed above. To add images in the text in your `.qmd` or `.Rmd` files, use the
 `ottrpal::include_slide()` within an [R code
 chunk](https://bookdown.org/yihui/rmarkdown/r-code.html).
 
@@ -605,7 +603,7 @@ of the template course for examples.
 
 ## Adding videos in text
 
-To add a YouTube video to your qmd/Rmd files, use the following instructions:
+To add a YouTube video to your `.qmd` or `.Rmd` files, use the following instructions:
 
 To get the appropriate YouTube URL do the following: 1) Click on the
 **SHARE** button on the lower right corner of the video on YouTube 2)

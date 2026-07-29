@@ -21,17 +21,17 @@ The `cow` package will soon be deprecated. Use `ottrpal::borrow_chapter()` inste
 By default, borrow the source `.qmd` or `.Rmd` file rather than the rendered file from `docs/`, such as an `.html` or `.md` file.
 :::
 
-Then, wherever you would like the borrowed chapter to appear, put an R chunk with this; where `{r, echo = FALSE, results='asis'}` is included in your chunk arguments.
+Then, wherever you would like the borrowed chapter to appear, put an R chunk with this; where `{r, echo = FALSE, results='asis'}` is included in your chunk arguments. Use a `.qmd` path for Quarto content or a `.Rmd` path for R Markdown/Bookdown content.
 
 ```
 ottrpal::borrow_chapter(
-  doc_path = "02-chapter_of_course.Rmd",
-  repo_name = "ottrproject/OTTR_Template"
+  doc_path = "setup.qmd",
+  repo_name = "ottrproject/OTTR_Quarto"
 )
 ```
 
 The magic of this function is that whenever the course is re-rendered it will knit the latest version of the chapter you are borrowing.
-Note that this chunk cannot be run interactively, just include it in your Rmd and render your course as usual.
+Note that this chunk cannot be run interactively, just include it in your `.qmd` or `.Rmd` file and render your course as usual.
 
 ### Borrowing from a local file
 
@@ -40,7 +40,7 @@ If for some reason you would like a local file incorporated, just leave off the 
 Have your chunk arguments include `{r, echo = FALSE, results='asis'}`.
 ```
 ottrpal::borrow_chapter(
-  doc_path = "02-chapter_of_course.Rmd"
+  doc_path = "setup.qmd"
 )
 ```
 
@@ -65,7 +65,15 @@ If you don't want the material from another chapter completely copied over, you 
 
 You might want your course available for download as a docx. For example, you might be running a "train-the-trainer" workshop where trainees don't feel comfortable using Github to edit the lessons for their own use.
 
-The following yml in `index.Rmd` allows you to render the docx with a table of contents:
+For Quarto, configure Word output in `index.qmd` or `_quarto.yml`:
+
+```
+format:
+  docx:
+    toc: true
+```
+
+For R Markdown/Bookdown, the following yml in `index.Rmd` allows you to render the docx with a table of contents:
 
 ```
 output:

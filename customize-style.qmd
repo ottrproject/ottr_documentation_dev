@@ -6,7 +6,7 @@ output:
 
 ### Changing title
 
-The title is specified on the `index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
+The title is specified on the `index.qmd`/`index.Rmd` page in the yml header. Modify the yaml header to change the title for your course.
 
 ```
 ---
@@ -14,7 +14,7 @@ title: "Title of Course"
 ---
 ```
 
-Note that if one of the chapter Rmd files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence avoid having yml header titles for the chapter files.
+Note that if one of the chapter `.qmd` or `.Rmd` files has a title in the yml that comes first alphabetically, it will be shown as the title of the course. Hence avoid having yml header titles for the chapter files.
 
 ## Customizing the Style
 
@@ -26,7 +26,7 @@ By default this course template will use the JHU Data Science Lab style. However
 
 For example, if you are creating an ITCR course, you will need the files in `style-sets/itcr` or if you are making a DataTrail course, the files in `style-sets/data-trail`. For these instructions,let's refer to `data-trail` or `itcr` as the `<set-name>`.
 
-1. On a new branch, copy the `style-sets/<set-name>/index.Rmd` and `style-sets/<set-name>/_output.yml` to the top of the repository to overwrite the default `index.Rmd` and `_output.yml`.
+1. On a new branch, copy the files for your template type. For R Markdown/Bookdown courses, copy `style-sets/<set-name>/index.Rmd` and `style-sets/<set-name>/_output.yml` to the top of the repository to overwrite the default `index.Rmd` and `_output.yml`. For Quarto courses, update `index.qmd`, `_quarto.yml`, and `styles.css` to match the style set you are using.
 1. Copy over all the files in the `style-sets/<set-name>/copy-to-assets` to the `assets` folder in the top of the repository.
 1. [Create a pull request](https://www.ottrproject.org/writing_content_courses.html#about-ottr-and-pull-requests) with these changes, and double check the rendered preview to make sure that the style is what you are looking for.
 
@@ -40,7 +40,7 @@ Here are the instructions to change the aesthetic aspects about your course if y
 
 ### Changing the favicon
 
-Favicons are small icons that appear on your browser tab. To change the favicon, first take the image you would like to use to this [website](https://favicon.io/favicon-converter/) to convert it into a favicon. Then save this file in the `assets/` directory. On the `index.Rmd` file, make sure that the correct favicon is referenced to in the yaml header, so that the correct favicon will be used.
+Favicons are small icons that appear on your browser tab. To change the favicon, first take the image you would like to use to this [website](https://favicon.io/favicon-converter/) to convert it into a favicon. Then save this file in the `assets/` directory. On the `index.qmd` or `index.Rmd` file, make sure that the correct favicon is referenced to in the yaml header, so that the correct favicon will be used.
 
 Here you can see that by default the Data Science Lab (dasl) favicon will be used.
 
@@ -78,7 +78,7 @@ If you are creating a DaSL course for a project other than [ITN](https://www.itc
 <br>
 
 ## Adding sections that aren't numbered
-You may notice that currently the References page and about pages are not numbered like the other chapters. If you want additional sections like this add an Rmd file and type the name of the page after a single hashtag `#` followed by this: `{-}`. This will exclude this page from being numbered.
+You may notice that currently the References page and about pages are not numbered like the other chapters. If you want additional sections like this, add a `.qmd` or `.Rmd` file and type the name of the page after a single hashtag `#` followed by this: `{-}`. This will exclude this page from being numbered.
 
 Thus as example the reference page looks like this:
 

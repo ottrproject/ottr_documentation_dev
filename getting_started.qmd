@@ -249,7 +249,7 @@ Click **Save**, then check **Enforce HTTPS** at the bottom of the page.
 **Warning**: If you visit your URL before pushing any file changes, you may see a 404 error. Check after filing your first pull request.
 </p>
 
-Edit the `.Rmd` files in the repository to configure which metrics to display and how to arrange them. See [metricminer.org](https://www.metricminer.org/) for full documentation.
+Edit the template's `.Rmd` files to configure which metrics to display and how to arrange them. If you adapt the dashboard into a Quarto site, use `.qmd` files with the same project-specific metric code. See [metricminer.org](https://www.metricminer.org/) for full documentation.
 
 </details>
 
