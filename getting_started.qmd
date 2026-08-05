@@ -132,7 +132,7 @@ Need more help? Check out the [full setup guide here](rmd-course.qmd).
   <span class="choice-note">Best for new websites</span>
 </summary>
 
-**Template repository:** [ottrproject/OTTR_Quarto](https://github.com/ottrproject/OTTR_Quarto)
+**Template repository:** [ottrproject/OTTR_Quarto_Website](https://github.com/ottrproject/OTTR_Quarto_Website)
 
 
   <div style="text-align: right; margin-top: 0px">
