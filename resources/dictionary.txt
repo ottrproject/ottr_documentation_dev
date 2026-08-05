@@ -126,3 +126,4 @@ EndNote
 ottrpal
 renderer
 renderers
+canva
