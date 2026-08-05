@@ -1,13 +1,27 @@
 ---
 title: "**<img src='./resources/images/basic_otter_water.PNG' width = 100px> OTTR - Website and Online Course Tools**"
 toc: false
+page-layout: full
 ---
 
 <style>
+  .wizard-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 920px);
+    gap: 0.9rem;
+    align-items: start;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .wizard-main,
+  .wizard-margin {
+    min-width: 0;
+    width: 100%;
+  }
   #ottr-wizard {
     font-family: inherit;
     width: 100%;
-    margin: 1.5rem auto;
+    margin: 0 auto;
     text-align: center;
   }
   #wizard-breadcrumb {
@@ -102,6 +116,87 @@ toc: false
     text-decoration: underline;
   }
   .restart-btn:hover { color: #85C1D4; }
+  .wizard-help-link {
+    text-align: center;
+    margin: 0.5rem 0 0;
+  }
+  .wizard-help-link a {
+    display: inline-block;
+    background-color: #f0fafd;
+    color: #2a7a9a;
+    border: 1.5px solid #ADD8E6;
+    border-radius: 20px;
+    padding: 7px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .wizard-margin .callout {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.92rem;
+    line-height: 1.42;
+  }
+  .wizard-margin .callout .callout {
+    margin-top: 0.9rem;
+  }
+  .overview-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    align-items: start;
+    margin: 1.5rem 0 2rem;
+  }
+  .overview-layout > div {
+    min-width: 0;
+  }
+  .canva-frame {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 77.2727%;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    margin-top: 0;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+  }
+  .canva-frame iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .overview-layout .ottr-feature-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0 0;
+  }
+  .overview-layout .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+  }
+  .overview-layout .benefit-item {
+    min-height: 0;
+  }
+  .overview-layout .ottr-feature-image img {
+    width: min(100%, 220px);
+  }
+  @media (max-width: 900px) {
+    .overview-layout {
+      grid-template-columns: 1fr;
+    }
+    .wizard-layout {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 
@@ -113,10 +208,44 @@ toc: false
 <p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
 
 
+::: {.wizard-layout}
+::: {.wizard-main}
 <div id="ottr-wizard">
   <div id="wizard-breadcrumb"></div>
   <div id="wizard-content"></div>
 </div>
+
+<div class="wizard-help-link">
+  <a href="choose_template.html">
+    Not sure? Help me choose →
+  </a>
+</div>
+:::
+
+::: {.wizard-margin}
+:::: {.callout-note collapse="true"}
+## Quarto vs. R Markdown
+
+OTTR templates come in two flavors based on which document format you use to write content: **R Markdown** (`.Rmd`) and **Quarto** (`.qmd`).
+
+- **Quarto** is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects and existing `.qmd` files.
+- **R Markdown** is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have `.Rmd` files or are following older OTTR tutorials.
+
+If you're starting fresh or already have `.qmd` files, go with a Quarto template. If you have existing `.Rmd` content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.
+
+::: {.callout-warning}
+## R Markdown is no longer being actively updated
+
+Posit has shifted its focus to Quarto as the next-generation publishing system. R Markdown remains functional but **will not receive new features**. For any new project, start with a Quarto template.
+
+**Resources for Quarto-fying your content:**
+
+- [quartify](https://ddotta.github.io/quartify/articles/getting-started.html): an R package that automates conversion of R Markdown files to Quarto
+- [Transitioning from R Markdown to Quarto](https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd): a practical guide from Openscapes
+:::
+::::
+:::
+:::
 
 <script>
 (function () {
@@ -261,44 +390,19 @@ toc: false
 })();
 </script>
 
-<div style="text-align: center; margin: 0.5rem 0 1.5rem;">
-  <a href="choose_template.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;">
-    Not sure? Help me choose →
-  </a>
-</div>
-
-
-### Quarto vs. R Markdown
-
-OTTR templates come in two flavors based on which document format you use to write content: **R Markdown** (`.Rmd`) and **Quarto** (`.qmd`).
-
-- **Quarto** is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects and existing `.qmd` files.
-- **R Markdown** is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have `.Rmd` files or are following older OTTR tutorials.
-
-If you're starting fresh or already have `.qmd` files, go with a Quarto template. If you have existing `.Rmd` content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.
-
-::: {.callout-warning}
-## R Markdown is no longer being actively updated
-
-Posit has shifted its focus to Quarto as the next-generation publishing system. R Markdown remains functional but **will not receive new features**. For any new project, start with a Quarto template.
-
-**Resources for Quarto-fying your content:**
-
-- [quartify](https://ddotta.github.io/quartify/articles/getting-started.html): an R package that automates conversion of R Markdown files to Quarto
-- [Transitioning from R Markdown to Quarto](https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd): a practical guide from Openscapes
-:::
-
 ---
 
-<div style="position: relative; width: 100%; height: 0; padding-top: 77.2727%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+::: {.overview-layout}
+::: {.canva-overview}
+<div class="canva-frame">
+  <iframe loading="lazy"
     src="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" alt = "OTTR Flavors and their uses">
   </iframe>
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGwn4eF5mk&#x2F;2RhR8mbSJxGL7XiaHSXPHg&#x2F;view?utm_content=DAGwn4eF5mk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">OTTR at a Glance</a> by ITN
+:::
 
+::: {.why-overview}
 ### Why Use OTTR?
 
 ::: {.ottr-feature-section}
@@ -333,7 +437,9 @@ Customize branding, include code, and avoid version differences with Docker cont
 :::
 
 ::: {.ottr-feature-image}
-![OTTR helps build GitHub-based websites with less hassle. Catch potential mistakes before they go live.](./resources/images/why-ottr.png)
+![ ](./resources/images/why-ottr.png)
+:::
+:::
 :::
 :::
 
