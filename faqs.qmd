@@ -27,44 +27,16 @@ This guide will describe the most common OTTR errors and pitfalls and how to add
 
 This may be a quiet error where the content just doesn't update and you are not warned that there is a problem.
 
--   Check that the GitHub repository `GH_PAT` is up to date. (An associated GitHub Actions error that suggests the `GH_PAT` needs to be updated is an `exit code 128`)
-
-
-  
-<div class="cheatsheet-frame">
-  <iframe 
-    width="100%" 
-    height="1850px" 
-    src="https://ottrproject.org/cheatsheets/ottr_token.html"
-    title="OTTR Token Set Up/Update">
-  </iframe>
-  
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-  </div>
-  <br>
-</div>
+-   Check that the GitHub repository `GH_PAT` is up to date. (An associated GitHub Actions error that suggests the `GH_PAT` needs to be updated is an `exit code 128`). Check out how to do this on the [cheatsheet](https://ottrproject.org/cheatsheets/ottr_token.html).
 
 
 -   Check that the config file is up-to-date. It should look like this: `https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml`. Be careful to keep your selections for the configuration you would like.
 
--   Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.
-
-<div class="cheatsheet-frame">
-  <iframe 
-    width="100%" 
-    height="1900px" 
-    src="https://www.ottrproject.org/cheatsheets/ottr_sync.html"
-    title="OTTR Enroll for Sync">
-  </iframe>
-  
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-  </div>
-  <br>
-</div>
+-   Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository. See steps for this on the [cheatsheet](https://www.ottrproject.org/cheatsheets/ottr_sync.html).
 
 - Push a blank commit/arbitrary change (like a blank space). Make the modification in the PR that the content is not rendering to re-run the workflow. 
+
+- Check the [status of GitHub](https://www.githubstatus.com/) when GitHub Actions are not running or there is a startup failure. 
 
 ### Google Slide image not showing
 
