@@ -343,12 +343,9 @@
 }
 
 .troubleshooting-divider {
-  height: 0.4rem;
+  height: 0;
   margin: 1.75rem 0;
-  background: #f0fafd;
-  border-top: 1px solid var(--ottr-border);
-  border-bottom: 1px solid var(--ottr-border);
-  border-radius: 8px;
+  border-top: 6px solid var(--ottr-soft);
 }
 
 .use-case-grid {
