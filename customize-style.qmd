@@ -20,6 +20,144 @@ Note that if one of the chapter `.qmd` or `.Rmd` files has a title in the yml th
 
 There are styles/brandings that are available in our library of style sets. However, there are also instructions to customize your own course style following these instructions in the next section.
 
+### Changing course text colors
+
+:::: {.panel-tabset}
+
+#### Course
+
+##### **How Colors Are Controlled**
+
+Two CSS files work together to separate OTTR defaults from your customizations:
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em;">
+
+<div>
+
+**`style_config_default.css`**
+
+**Gets synced** from OTTR
+
+- Defines all default CSS variables
+- Ensures new variables exist before `style.css` references them
+- Do not edit, changes will be overwritten on sync
+
+</div>
+
+<div>
+
+**`style_config_custom.css`**
+
+**Not synced**
+
+- Overrides defaults
+- Set your custom colors here
+- Changes are safe from future syncs
+
+</div>
+
+</div>
+
+##### **Customizing Your Colors**
+
+Edit `style_config_custom.css` to override any default variable:
+
+```css
+:root {
+  --link-color: #your-color-here;
+  --heading-color: #your-color-here;
+}
+```
+
+- Open `style_config_custom.css` in your repository
+- Override only the variables you want to change
+- Commit changes to a new branch and open a pull request
+
+<p class="comment">
+<em>You only need to set the variables you want to change. Anything not set in <code>style_config_custom.css</code> will fall back to the defaults in <code>style_config_default.css</code>.</em>
+</p>
+
+For example, within your `assets/style_config_custom.css` file, you would add:
+
+```css
+:root {
+    --link-color: #a1005a;              /* deep magenta for links */
+    --accent-color: #6e0040;            /* dark rose (headings, emphasis) */
+    --highlight-color: #e754a6;         /* vibrant pink for UI highlights */
+    --caption-color: #4a4a4a;           /* neutral dark gray */
+    --background-color: #ffffff;
+    --callout-background-color: #f6e9f1; /* soft pink-tinted gray */
+}
+```
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em;">
+
+<div>
+
+```{r, echo=FALSE, fig.cap="Default colors", fig.align='center'}
+knitr::include_graphics("resources/images/style_default.png")
+```
+
+</div>
+
+<div>
+
+```{r, echo=FALSE, fig.cap="Changed colors", fig.align='center'}
+knitr::include_graphics("resources/images/style_change.png")
+```
+
+</div>
+
+</div>
+
+##### **Recommended Resources**
+
+1. Venngage Color Accessibility Tool: <https://venngage.com/tools/accessible-color-palette-generator>
+
+2. ColorBuddy: <https://color-buddy.netlify.app/>
+
+##### Receiving CSS Updates via Sync
+
+If your repo is enrolled in OTTR sync, future CSS improvements will be updated automatically via your pull request.
+
+- Confirm you have enrolled for [sync updates](ottr_sync.html)
+- `style_config_default.css` will update on sync. **Do not customize this file**.
+- Your customizations in `style_config_custom.css` will not be touched
+
+#### Website
+
+To customize colors for an OTTR website, change the variables in [`assets/style_config_default.css`](https://github.com/ottrproject/OTTR_Template_Website/blob/main/assets/style_config_default.css) in your website repository.
+
+For example, you can update color variables such as:
+
+```css
+:root {
+  --link-color: #your-color-here;
+  --heading-color: #your-color-here;
+}
+```
+
+- Open `assets/style_config_default.css` in your website repository
+- Update the color variables you want to change
+- Commit changes to a new branch and open a pull request
+
+
+##### **Recommended Resources**
+
+1. Venngage Color Accessibility Tool: <https://venngage.com/tools/accessible-color-palette-generator>
+
+2. ColorBuddy: <https://color-buddy.netlify.app/>
+
+##### Receiving CSS Updates via Sync
+
+If your repo is enrolled in OTTR sync, future CSS improvements will be updated automatically via your pull request.
+
+- Confirm you have enrolled for [sync updates](ottr_sync.html)
+- `style_config_default.css` will update on sync. **Do not customize this file**.
+- Your customizations in `style_config_custom.css` will not be touched
+
+::::
+
 ### Using a style set
 
 By default this course template will use the JHU Data Science Lab style. However, you can switch this to another style set by moving some files. Take a look at the `style-sets` for the other styles available.
@@ -88,32 +226,12 @@ Thus as example the reference page looks like this:
 
 <br>
 
-## Changing course text colors
-
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_style.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-  </div>
-  
-<div style="margin: 1.5rem 0;">
-  <iframe 
-    src="https://ottrproject.org/cheatsheets/ottr_style.html"
-    width="100%" 
-    height="2050px" 
-    style="border: 1.5px solid #ADD8E6; border-radius: 8px;"
-    title="OTTR CSS Cheatsheet">
-  </iframe>
-  
-  
-</div>
-
-
-<br>
-
 ## Modifying the image at the top of the course
 
 If you would like to change the image at the top of the Bookdown version of the course, you need to do the following steps:
-* Add a new image file to the `assets` directory
-* Modify the `assets/big-image.html` file on line 11. Change out `src = "assets/dasl_thin_main_image.png"` so that `dasl_thin_main_image.png` is replaced with the name of your image file.
+
+- Add a new image file to the `assets` directory
+- Modify the `assets/big-image.html` file on line 11. Change out `src = "assets/dasl_thin_main_image.png"` so that `dasl_thin_main_image.png` is replaced with the name of your image file.
 
 ---
 
