@@ -118,17 +118,6 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
     question: "What do you want to create?",
     options: [
       {
-        label: "Website",
-        next: {
-          question: "Do you already have website files to build on?",
-          options: [
-            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
-            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
-            { label: "No, I'm starting fresh", result: "quarto_web" }
-          ]
-        }
-      },
-      {
         label: "Online Course",
         next: {
           question: "Do you already have course files to build on?",
@@ -136,6 +125,17 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
             { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
             { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
             { label: "No, I'm starting fresh", result: "quarto_courses" }
+          ]
+        }
+      },
+      {
+        label: "Website",
+        next: {
+          question: "Do you already have website files to build on?",
+          options: [
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
@@ -280,18 +280,6 @@ Posit has shifted its focus to Quarto as the next-generation publishing system f
 ::: {.benefit-grid .use-case-grid}
 ::: {.benefit-item}
 ::: {.benefit-kicker}
-Websites
-:::
-::: {.benefit-title}
-Flexible pages with top navigation
-:::
-::: {.benefit-copy}
-Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use [Quarto](https://quarto.org/) for new projects or existing `.qmd` files, or R Markdown/bookdown if you already have `.Rmd` files.
-:::
-:::
-
-::: {.benefit-item}
-::: {.benefit-kicker}
 Courses
 :::
 ::: {.benefit-title}
@@ -299,6 +287,18 @@ Chapter-based learning content
 :::
 ::: {.benefit-copy}
 Choose a course template when you need a sidebar table of contents, chapter-by-chapter navigation, and optional publishing to [Coursera](https://www.coursera.org/) or [Leanpub](https://leanpub.com/). Use Quarto for new courses or existing `.qmd` course files, or R Markdown for existing `.Rmd` course files.
+:::
+:::
+
+::: {.benefit-item}
+::: {.benefit-kicker}
+Websites
+:::
+::: {.benefit-title}
+Flexible pages with top navigation
+:::
+::: {.benefit-copy}
+Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use [Quarto](https://quarto.org/) for new projects or existing `.qmd` files, or R Markdown/bookdown if you already have `.Rmd` files.
 :::
 :::
 
