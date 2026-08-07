@@ -50,6 +50,10 @@ You do not need to be an expert to get started. A few basics will help:
 **Use this path when:** you are building chaptered learning materials, modules, or a course website.
 :::
 
+::: {.callout-warning}
+Do not start an OTTR course setup from a forked repository if you plan to use OTTRfy. OTTRfy works with regular repositories, so use a template-generated repository or a new repository instead.
+:::
+
 ### Quarto Courses
 
 <details class="template-choice" open>
@@ -123,6 +127,10 @@ Need more help? Check out the [full setup guide here](rmd-course.qmd).
 
 ::: {.path-header}
 **Use this path when:** you want a project website, documentation site, resource hub, or public-facing guide without course-style chapters.
+:::
+
+::: {.callout-warning}
+Do not start an OTTR website setup from a forked repository if you plan to use OTTRfy. OTTRfy works with regular repositories, so use a template-generated repository or a new repository instead.
 :::
 
 ### Quarto Websites
