@@ -17,7 +17,7 @@ This method is a bit trickier and riskier than creating a repository from scratc
 This set of steps also assumes you are more familiar with GitHub.
 
 :::{.callout-warning}
-You cannot OTTR-fy a repository that was created as a fork.
+You cannot OTTR-fy a repository that was created as a fork, even if you detach the fork.
 The OTTR GitHub Actions workflows are set up to work from a regular repository, so start from a new repository instead of a fork.
 :::
 
