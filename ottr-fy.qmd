@@ -5,7 +5,7 @@ output:
 ---
 
 :::{.callout-warning}
-The `ottrpal::ottrfy()` function is still under development. You may feel free to try it, but [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) right away if it does not appear to be working as intended (or if you have other suggestions).
+The `ottrpal::ottrfy()` function is still under development. You may feel free to try it, but please [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) if it does not appear to be working as intended (or if you have other suggestions).
 :::
 
 The [`ottrpal`](https://github.com/ottrproject/ottrpal) package includes an `ottrfy()` function that can help add the OTTR files you need to an existing repository.
