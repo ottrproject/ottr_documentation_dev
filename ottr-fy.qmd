@@ -5,7 +5,7 @@ output:
 ---
 
 :::{.callout-warning}
-The `ottrpal::ottrfy()` function is still under development. You may feel free to try it, but [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) right away if it does not appear to be working as intended (or if you have other suggestions).
+The `ottrpal::ottrfy()` function is still under development. You may feel free to try it, but please [file an issue with OTTR](https://github.com/ottrproject/OTTR_Template/issues/new/choose) if it does not appear to be working as intended (or if you have other suggestions).
 :::
 
 The [`ottrpal`](https://github.com/ottrproject/ottrpal) package includes an `ottrfy()` function that can help add the OTTR files you need to an existing repository.
@@ -15,6 +15,11 @@ The current function also includes options for Quarto courses and Quarto website
 This method is a bit trickier and riskier than creating a repository from scratch, so we recommend generally avoiding this strategy unless it is unavoidable.
 
 This set of steps also assumes you are more familiar with GitHub.
+
+:::{.callout-warning}
+You cannot OTTR-fy a repository that was created as a fork, even if you detach the fork.
+The OTTR GitHub Actions workflows are set up to work from a regular repository, so start from a new repository instead of a fork.
+:::
 
 
 ## Requirements for OTTR-fying a repository:
@@ -52,7 +57,24 @@ Choose the `type` that matches your existing files and your final goal:
 
 Not sure which OTTR template is right for you? Answer [two quick questions](https://www.ottrproject.org/faqs.html#help-me-choose-my-template) and we'll point you to the right setup guide.
 
-### Step 2: Add OTTR files to your current repository
+### Step 2: Set up your repository settings
+
+Before you run `ottrfy()`, set up the repository permissions and `GH_PAT` secret that the OTTR GitHub Actions workflows will need.
+This is important because `ottrfy()` adds the workflow files and then you will open a pull request that should trigger those workflows.
+
+Go to **Settings** > **Actions** > **General**. Make sure you have:
+
+1. Given **Read and write permissions**.
+2. Checked **Allow GitHub Actions to create and approve pull requests**.
+
+Then click **Save**.
+
+Go to **Settings** > **Secrets and variables** > **Actions** > **Repository secrets** and click **New repository secret**. Add:
+
+- **Name**: `GH_PAT` (this exact name is required)
+- **Secret**: create a [classic personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with `repo` and `workflow` scopes checked.
+
+### Step 3: Add OTTR files to your current repository
 
 Navigate to the top of your repository and run `ottrpal::ottrfy()` with the `type` you chose above.
 
@@ -88,6 +110,10 @@ If you have reviewed the files and intentionally want to replace existing OTTR s
 ```{r, eval = FALSE}
 ottrpal::ottrfy(type = "quarto_web", overwrite = TRUE)
 ```
+
+:::{.callout-note}
+Before using `overwrite = TRUE`, review these filenames carefully so that you do not accidentally replace any files you meant to keep.
+:::
 
 You can also use `path` if you are running the function from somewhere other than the repository you want to OTTR-fy.
 
@@ -153,7 +179,7 @@ Before using `overwrite = TRUE`, review these filenames carefully so that you do
 
 :::
 
-### 3. Review and commit the added files
+### Step 4: Review and commit the added files
 
 After running `ottrfy()`, check your files and make sure nothing unexpected has happened to your original files.
 Then create a branch, commit the added files, push the branch to GitHub, and open a pull request.
@@ -163,7 +189,7 @@ The OTTR automation checks should happen on this pull request automatically.
 
 If they do not automatically start running, you may also want to check in your `Settings` > `Actions` that `Allow all actions and reusable workflows` is chosen.
 
-### 4. Add your content files to the site configuration
+### Step 5: Add your content files to the site configuration
 
 You will almost certainly find that the `Render preview` check will fail (and possibly the spelling and URL checks).
 
@@ -175,15 +201,27 @@ One reason that this will fail is that you will need to edit your site configura
 
 [See this section](https://www.ottrproject.org/customize-robots.html#pull-request-checks) for more information about these checks and what they are.
 
-Make sure to commit this to your branch.
-
 :::{.callout-note}
-Don't merge this pull request before you finish adding a few settings as described in this next step.
+For Quarto repositories, make sure `_quarto.yml` includes `output-dir: docs`.
+The OTTR workflows expect the rendered site to be written to the `docs` directory, so this setting is required for the workflow to run correctly.
+
+For example:
+
+```{yaml}
+project:
+  type: website # or the project type already used by your site
+  output-dir: docs
+```
 :::
 
-### 5. Set up your repository with the proper settings
+:::{.callout-note}
+For Quarto preview rendering, use only HTML format while you are getting the OTTR workflow running.
+Some preview-rendering workflows can fail when `_quarto.yml` includes more than one output format, such as both `html` and `pdf`.
+:::
 
-From here, you can follow the rest of the steps described in the [Getting Started section](getting_started.html).
+:::{.callout-note}
+Don't merge this pull request until the preview, spelling, and URL checks pass or you have reviewed and accepted the remaining failures.
+:::
 
 ---
 

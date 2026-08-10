@@ -27,8 +27,8 @@ website:
             href: writing_content_courses.qmd
           - text: "Enroll for sync updates"
             href: enroll_sync.qmd
-         # - text: "OTTR-fy existing repo"
-         #   href: ottr-fy.qmd
+         - text: "OTTR-fy existing repo"
+           href: ottr-fy.qmd
           - text: "Giving credits {{< fa award title='An award' >}}"
             href: more_features_credits.qmd
           - text: "---"
