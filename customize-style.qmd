@@ -2,6 +2,7 @@
 title: "Customizing Style"
 output:
   html_document
+page-layout: full
 ---
 
 ### Changing title
@@ -18,7 +19,7 @@ Note that if one of the chapter `.qmd` or `.Rmd` files has a title in the yml th
 
 ## Customizing the Style
 
-There are styles/brandings that are available in our library of style sets. However, there are also instructions to customize your own course style following these instructions in the next section.
+There are styles/brandings that are available in our library of style sets. These style sets are an alternative to customizing colors with `style_config_default.css` or `style_config_custom.css`. Changes to `style_config_default.css` will not influence a style set.
 
 ### Changing course text colors
 
@@ -126,14 +127,40 @@ If your repo is enrolled in OTTR sync, future CSS improvements will be updated a
 
 #### Website
 
+##### Navigation bar
+
+To change the part of the navigation bar that says "OTTR Quarto", modify the title within the `_quarto.yml` file.
+
+```{r, fig.align='center', fig.alt= "Change nav bar", echo = FALSE, out.width="40%"}
+knitr::include_graphics("resources/images/navbar.png")
+```
+
+##### Overall theme
+
+To change the color scheme/fonts of the website modify the `theme` in the `_quarto.yml` file (see [here](https://quarto.org/docs/output-formats/html-themes.html) for options):
+
+```{r, fig.align='center', fig.alt= "Change theme", echo = FALSE, out.width="40%"}
+knitr::include_graphics("resources/images/theme.png")
+```
+
+##### Change the favicon
+
+The small image that shows up on the browser can also be changed.
+
+You can make a small image to replace the existing one by going to <https://favicon.io/favicon-converter/> and uploading an image that you would like.
+
+Next, simply replace the image called `favicon.ico` in the `images` directory within the `resources` directory with the image you just created and downloaded from the favicon converter website.
+
+##### Changing website colors
+
 To customize colors for an OTTR website, change the variables in [`assets/style_config_default.css`](https://github.com/ottrproject/OTTR_Template_Website/blob/main/assets/style_config_default.css) in your website repository.
 
 For example, you can update color variables such as:
 
 ```css
 :root {
-  --link-color: #your-color-here;
-  --heading-color: #your-color-here;
+  --banner-color: #your-color-here;
+  --button-color: #your-color-here;
 }
 ```
 
@@ -162,6 +189,9 @@ If your repo is enrolled in OTTR sync, future CSS improvements will be updated a
 
 By default this course template will use the JHU Data Science Lab style. However, you can switch this to another style set by moving some files. Take a look at the `style-sets` for the other styles available.
 
+:::{.callout-note}
+Style sets are an alternative to using `style_config_default.css` to control colors and branding. If you use a style set, changes to `style_config_default.css` will not influence the style set.
+:::
 For example, if you are creating an ITCR course, you will need the files in `style-sets/itcr` or if you are making a DataTrail course, the files in `style-sets/data-trail`. For these instructions,let's refer to `data-trail` or `itcr` as the `<set-name>`.
 
 1. On a new branch, copy the files for your template type. For R Markdown/Bookdown courses, copy `style-sets/<set-name>/index.Rmd` and `style-sets/<set-name>/_output.yml` to the top of the repository to overwrite the default `index.Rmd` and `_output.yml`. For Quarto courses, update `index.qmd`, `_quarto.yml`, and `styles.css` to match the style set you are using.
