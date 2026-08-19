@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -41,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-883ad16e2c5c5fde9b8f7ae0c5ecc4a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -138,6 +173,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Enroll for sync updates</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./more_features_credits.html">
  <span class="dropdown-text">Giving credits <i class="fa-solid fa-award" title="An award" aria-label="award"></i></span></a>
   </li>  
@@ -214,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
@@ -224,6 +263,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#changing-title" id="toc-changing-title" class="nav-link active" data-scroll-target="#changing-title">Changing title</a></li>
   <li><a href="#customizing-the-style" id="toc-customizing-the-style" class="nav-link" data-scroll-target="#customizing-the-style">Customizing the Style</a>
   <ul class="collapse">
+  <li><a href="#changing-course-text-colors" id="toc-changing-course-text-colors" class="nav-link" data-scroll-target="#changing-course-text-colors">Changing course text colors</a></li>
   <li><a href="#using-a-style-set" id="toc-using-a-style-set" class="nav-link" data-scroll-target="#using-a-style-set">Using a style set</a></li>
   </ul></li>
   <li><a href="#creating-your-own-style" id="toc-creating-your-own-style" class="nav-link" data-scroll-target="#creating-your-own-style">Creating your own style</a>
@@ -232,7 +272,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#adding-logos" id="toc-adding-logos" class="nav-link" data-scroll-target="#adding-logos">Adding logos</a></li>
   </ul></li>
   <li><a href="#adding-sections-that-arent-numbered" id="toc-adding-sections-that-arent-numbered" class="nav-link" data-scroll-target="#adding-sections-that-arent-numbered">Adding sections that aren’t numbered</a></li>
-  <li><a href="#changing-course-text-colors" id="toc-changing-course-text-colors" class="nav-link" data-scroll-target="#changing-course-text-colors">Changing course text colors</a></li>
   <li><a href="#modifying-the-image-at-the-top-of-the-course" id="toc-modifying-the-image-at-the-top-of-the-course" class="nav-link" data-scroll-target="#modifying-the-image-at-the-top-of-the-course">Modifying the image at the top of the course</a></li>
   </ul>
 </nav>
@@ -242,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -251,7 +290,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-right">
 
     
   
@@ -273,10 +312,188 @@ title: "Title of Course"
 </section>
 <section id="customizing-the-style" class="level2">
 <h2 class="anchored" data-anchor-id="customizing-the-style">Customizing the Style</h2>
-<p>There are styles/brandings that are available in our library of style sets. However, there are also instructions to customize your own course style following these instructions in the next section.</p>
+<p>There are styles/brandings that are available in our library of style sets. These style sets are an alternative to customizing colors with <code>style_config_default.css</code> or <code>style_config_custom.css</code>. Changes to <code>style_config_default.css</code> will not influence a style set.</p>
+<section id="changing-course-text-colors" class="level3">
+<h3 class="anchored" data-anchor-id="changing-course-text-colors">Changing course text colors</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Course</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Website</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="how-colors-are-controlled" class="level5">
+<h5 class="anchored" data-anchor-id="how-colors-are-controlled"><strong>How Colors Are Controlled</strong></h5>
+<p>Two CSS files work together to separate OTTR defaults from your customizations:</p>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em;">
+<div>
+<p><strong><code>style_config_default.css</code></strong></p>
+<p><strong>Gets synced</strong> from OTTR</p>
+<ul>
+<li>Defines all default CSS variables</li>
+<li>Ensures new variables exist before <code>style.css</code> references them</li>
+<li>Do not edit, changes will be overwritten on sync</li>
+</ul>
+</div>
+<div>
+<p><strong><code>style_config_custom.css</code></strong></p>
+<p><strong>Not synced</strong></p>
+<ul>
+<li>Overrides defaults</li>
+<li>Set your custom colors here</li>
+<li>Changes are safe from future syncs</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="customizing-your-colors" class="level5">
+<h5 class="anchored" data-anchor-id="customizing-your-colors"><strong>Customizing Your Colors</strong></h5>
+<p>Edit <code>style_config_custom.css</code> to override any default variable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">:root</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">--link-color</span><span class="ch">:</span> #<span class="dv">your-color-here</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">--heading-color</span><span class="ch">:</span> #<span class="dv">your-color-here</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Open <code>style_config_custom.css</code> in your repository</li>
+<li>Override only the variables you want to change</li>
+<li>Commit changes to a new branch and open a pull request</li>
+</ul>
+<p class="comment">
+<em>You only need to set the variables you want to change. Anything not set in <code>style_config_custom.css</code> will fall back to the defaults in <code>style_config_default.css</code>.</em>
+</p>
+<p>For example, within your <code>assets/style_config_custom.css</code> file, you would add:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">:root</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">--link-color</span><span class="ch">:</span> <span class="cn">#a1005a</span><span class="op">;</span>              <span class="co">/* deep magenta for links */</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">--accent-color</span><span class="ch">:</span> <span class="cn">#6e0040</span><span class="op">;</span>            <span class="co">/* dark rose (headings, emphasis) */</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">--highlight-color</span><span class="ch">:</span> <span class="cn">#e754a6</span><span class="op">;</span>         <span class="co">/* vibrant pink for UI highlights */</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">--caption-color</span><span class="ch">:</span> <span class="cn">#4a4a4a</span><span class="op">;</span>           <span class="co">/* neutral dark gray */</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">--background-color</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">--callout-background-color</span><span class="ch">:</span> <span class="cn">#f6e9f1</span><span class="op">;</span> <span class="co">/* soft pink-tinted gray */</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em;">
+<div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/style_default.png" class="img-fluid figure-img" width="381"></p>
+<figcaption>Default colors</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/style_change.png" class="img-fluid figure-img" width="390"></p>
+<figcaption>Changed colors</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="recommended-resources" class="level5">
+<h5 class="anchored" data-anchor-id="recommended-resources"><strong>Recommended Resources</strong></h5>
+<ol type="1">
+<li><p>Venngage Color Accessibility Tool: <a href="https://venngage.com/tools/accessible-color-palette-generator" class="uri">https://venngage.com/tools/accessible-color-palette-generator</a></p></li>
+<li><p>ColorBuddy: <a href="https://color-buddy.netlify.app/" class="uri">https://color-buddy.netlify.app/</a></p></li>
+</ol>
+</section>
+<section id="receiving-css-updates-via-sync" class="level5">
+<h5 class="anchored" data-anchor-id="receiving-css-updates-via-sync">Receiving CSS Updates via Sync</h5>
+<p>If your repo is enrolled in OTTR sync, future CSS improvements will be updated automatically via your pull request.</p>
+<ul>
+<li>Confirm you have enrolled for <a href="ottr_sync.html">sync updates</a></li>
+<li><code>style_config_default.css</code> will update on sync. <strong>Do not customize this file</strong>.</li>
+<li>Your customizations in <code>style_config_custom.css</code> will not be touched</li>
+</ul>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="navigation-bar" class="level5">
+<h5 class="anchored" data-anchor-id="navigation-bar">Navigation bar</h5>
+<p>To change the part of the navigation bar that says “OTTR Quarto”, modify the title within the <code>_quarto.yml</code> file.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/navbar.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Change nav bar"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="overall-theme" class="level5">
+<h5 class="anchored" data-anchor-id="overall-theme">Overall theme</h5>
+<p>To change the color scheme/fonts of the website modify the <code>theme</code> in the <code>_quarto.yml</code> file (see <a href="https://quarto.org/docs/output-formats/html-themes.html">here</a> for options):</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="resources/images/theme.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Change theme"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="change-the-favicon" class="level5">
+<h5 class="anchored" data-anchor-id="change-the-favicon">Change the favicon</h5>
+<p>The small image that shows up on the browser can also be changed.</p>
+<p>You can make a small image to replace the existing one by going to <a href="https://favicon.io/favicon-converter/" class="uri">https://favicon.io/favicon-converter/</a> and uploading an image that you would like.</p>
+<p>Next, simply replace the image called <code>favicon.ico</code> in the <code>images</code> directory within the <code>resources</code> directory with the image you just created and downloaded from the favicon converter website.</p>
+</section>
+<section id="changing-website-colors" class="level5">
+<h5 class="anchored" data-anchor-id="changing-website-colors">Changing website colors</h5>
+<p>To customize colors for an OTTR website, change the variables in <a href="https://github.com/ottrproject/OTTR_Template_Website/blob/main/assets/style_config_default.css"><code>assets/style_config_default.css</code></a> in your website repository.</p>
+<p>For example, you can update color variables such as:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">:root</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">--banner-color</span><span class="ch">:</span> #<span class="dv">your-color-here</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">--button-color</span><span class="ch">:</span> #<span class="dv">your-color-here</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Open <code>assets/style_config_default.css</code> in your website repository</li>
+<li>Update the color variables you want to change</li>
+<li>Commit changes to a new branch and open a pull request</li>
+</ul>
+</section>
+<section id="recommended-resources-1" class="level5">
+<h5 class="anchored" data-anchor-id="recommended-resources-1"><strong>Recommended Resources</strong></h5>
+<ol type="1">
+<li><p>Venngage Color Accessibility Tool: <a href="https://venngage.com/tools/accessible-color-palette-generator" class="uri">https://venngage.com/tools/accessible-color-palette-generator</a></p></li>
+<li><p>ColorBuddy: <a href="https://color-buddy.netlify.app/" class="uri">https://color-buddy.netlify.app/</a></p></li>
+</ol>
+</section>
+<section id="receiving-css-updates-via-sync-1" class="level5">
+<h5 class="anchored" data-anchor-id="receiving-css-updates-via-sync-1">Receiving CSS Updates via Sync</h5>
+<p>If your repo is enrolled in OTTR sync, future CSS improvements will be updated automatically via your pull request.</p>
+<ul>
+<li>Confirm you have enrolled for <a href="ottr_sync.html">sync updates</a></li>
+<li><code>style_config_default.css</code> will update on sync. <strong>Do not customize this file</strong>.</li>
+<li>Your customizations in <code>style_config_custom.css</code> will not be touched</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</section>
 <section id="using-a-style-set" class="level3">
 <h3 class="anchored" data-anchor-id="using-a-style-set">Using a style set</h3>
 <p>By default this course template will use the JHU Data Science Lab style. However, you can switch this to another style set by moving some files. Take a look at the <code>style-sets</code> for the other styles available.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Style sets are an alternative to using <code>style_config_default.css</code> to control colors and branding. If you use a style set, changes to <code>style_config_default.css</code> will not influence the style set.</p>
+</div>
+</div>
 <p>For example, if you are creating an ITCR course, you will need the files in <code>style-sets/itcr</code> or if you are making a DataTrail course, the files in <code>style-sets/data-trail</code>. For these instructions,let’s refer to <code>data-trail</code> or <code>itcr</code> as the <code>&lt;set-name&gt;</code>.</p>
 <ol type="1">
 <li>On a new branch, copy the files for your template type. For R Markdown/Bookdown courses, copy <code>style-sets/&lt;set-name&gt;/index.Rmd</code> and <code>style-sets/&lt;set-name&gt;/_output.yml</code> to the top of the repository to overwrite the default <code>index.Rmd</code> and <code>_output.yml</code>. For Quarto courses, update <code>index.qmd</code>, <code>_quarto.yml</code>, and <code>styles.css</code> to match the style set you are using.</li>
@@ -296,7 +513,7 @@ title: "Title of Course"
 <p>Here you can see that by default the Data Science Lab (dasl) favicon will be used.</p>
 <pre><code>---
 title: "Course Name "
-date: "`r format(Sys.time(), '%B, %Y')`"
+date: "August, 2026"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -329,19 +546,13 @@ favicon: assets/dasl_favicon.ico
 <pre><code># References {-}</code></pre>
 <p><br></p>
 </section>
-<section id="changing-course-text-colors" class="level2">
-<h2 class="anchored" data-anchor-id="changing-course-text-colors">Changing course text colors</h2>
-<div style="text-align: right; margin-top: 0px">
-<a href="https://ottrproject.org/cheatsheets/ottr_style.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-</div>
-<div style="margin: 1.5rem 0;">
-<p><iframe src="https://ottrproject.org/cheatsheets/ottr_style.html" width="100%" height="2050px" style="border: 1.5px solid #ADD8E6; border-radius: 8px;" title="OTTR CSS Cheatsheet"> </iframe></p>
-</div>
-<p><br></p>
-</section>
 <section id="modifying-the-image-at-the-top-of-the-course" class="level2">
 <h2 class="anchored" data-anchor-id="modifying-the-image-at-the-top-of-the-course">Modifying the image at the top of the course</h2>
-<p>If you would like to change the image at the top of the Bookdown version of the course, you need to do the following steps: * Add a new image file to the <code>assets</code> directory * Modify the <code>assets/big-image.html</code> file on line 11. Change out <code>src = "assets/dasl_thin_main_image.png"</code> so that <code>dasl_thin_main_image.png</code> is replaced with the name of your image file.</p>
+<p>If you would like to change the image at the top of the Bookdown version of the course, you need to do the following steps:</p>
+<ul>
+<li>Add a new image file to the <code>assets</code> directory</li>
+<li>Modify the <code>assets/big-image.html</code> file on line 11. Change out <code>src = "assets/dasl_thin_main_image.png"</code> so that <code>dasl_thin_main_image.png</code> is replaced with the name of your image file.</li>
+</ul>
 <hr>
 <p>← <a href="./next_steps.html">Next Steps</a>   <a href="./customize-robots.html">Customizing Checks</a> →</p>
 

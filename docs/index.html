@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-883ad16e2c5c5fde9b8f7ae0c5ecc4a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed fullcontent quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -171,6 +171,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -249,16 +253,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
-</nav>
+  
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -267,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -280,10 +282,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <style>
+  .wizard-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 920px);
+    gap: 0.9rem;
+    align-items: start;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .wizard-main,
+  .wizard-margin {
+    min-width: 0;
+    width: 100%;
+  }
   #ottr-wizard {
     font-family: inherit;
     width: 100%;
-    margin: 1.5rem auto;
+    margin: 0 auto;
     text-align: center;
   }
   #wizard-breadcrumb {
@@ -378,6 +393,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     text-decoration: underline;
   }
   .restart-btn:hover { color: #85C1D4; }
+  .wizard-help-link {
+    text-align: center;
+    margin: 0.5rem 0 0;
+  }
+  .wizard-help-link a {
+    display: inline-block;
+    background-color: #f0fafd;
+    color: #2a7a9a;
+    border: 1.5px solid #ADD8E6;
+    border-radius: 20px;
+    padding: 7px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .wizard-margin .callout {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.92rem;
+    line-height: 1.42;
+  }
+  .wizard-margin .callout .callout {
+    margin-top: 0.9rem;
+  }
+  .overview-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    align-items: start;
+    margin: 1.5rem 0 2rem;
+  }
+  .overview-layout > div {
+    min-width: 0;
+  }
+  .canva-overview > p {
+    margin: 0;
+  }
+  .canva-overview img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .canva-overview .glance-link {
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+  .canva-frame {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 77.2727%;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    margin-top: 0;
+    margin-bottom: 0.9em;
+    overflow: hidden;
+    border-radius: 8px;
+    will-change: transform;
+  }
+  .canva-frame iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .overview-layout .ottr-feature-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0 0;
+  }
+  .overview-layout .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+  }
+      .overview-layout .benefit-item {
+        min-height: 0;
+      }
+      .overview-layout .ottr-feature-image img {
+        width: min(100%, 220px);
+      }
+      .overview-layout .ottr-glance {
+        grid-template-columns: 1fr;
+        margin-top: 0.75rem;
+      }
+      .overview-layout .glance-step {
+        min-height: 0;
+      }
+      .overview-layout .glance-link {
+        margin-bottom: 0;
+      }
+      @media (max-width: 900px) {
+        .overview-layout {
+          grid-template-columns: 1fr;
+        }
+        .wizard-layout {
+          grid-template-columns: 1fr;
+    }
+  }
 </style>
 <div class="banner_color">
 <p><br></p>
@@ -385,6 +503,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p style="font-size: 16px;">
 OTTR (Open-source Tools for Training Resources) is a set of tools and templates to help you make <strong>websites, online courses, and dashboards</strong> more easily (and for free)!
 </p>
+<div class="wizard-layout">
+<div class="wizard-main">
 <div id="ottr-wizard">
 <div id="wizard-breadcrumb">
 
@@ -393,22 +513,57 @@ OTTR (Open-source Tools for Training Resources) is a set of tools and templates 
 
 </div>
 </div>
+<div class="wizard-help-link">
+<p><a href="choose_template.html"> Not sure? Help me choose → </a></p>
+</div>
+</div>
+<div class="wizard-margin">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Quarto vs.&nbsp;R Markdown
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>OTTR templates come in two flavors based on which document format you use to write content: <strong>R Markdown</strong> (<code>.Rmd</code>) and <strong>Quarto</strong> (<code>.qmd</code>).</p>
+<ul>
+<li><strong>Quarto</strong> is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects and existing <code>.qmd</code> files.</li>
+<li><strong>R Markdown</strong> is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have <code>.Rmd</code> files or are following older OTTR tutorials.</li>
+</ul>
+<p>If you’re starting fresh or already have <code>.qmd</code> files, go with a Quarto template. If you have existing <code>.Rmd</code> content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>R Markdown is no longer being actively updated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Posit has shifted its focus to Quarto as the next-generation publishing system. R Markdown remains functional but <strong>will not receive new features</strong>. For any new project, start with a Quarto template.</p>
+<p><strong>Resources for Quarto-fying your content:</strong></p>
+<ul>
+<li><a href="https://ddotta.github.io/quartify/articles/getting-started.html">quartify</a>: an R package that automates conversion of R Markdown files to Quarto</li>
+<li><a href="https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd">Transitioning from R Markdown to Quarto</a>: a practical guide from Openscapes</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <script>
 (function () {
   const tree = {
     question: "What do you want to create?",
     options: [
-      {
-        label: "Website",
-        next: {
-          question: "Do you already have website files to build on?",
-          options: [
-            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
-            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
-            { label: "No, I'm starting fresh", result: "quarto_web" }
-          ]
-        }
-      },
       {
         label: "Online Course",
         next: {
@@ -417,6 +572,17 @@ OTTR (Open-source Tools for Training Resources) is a set of tools and templates 
             { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
             { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
             { label: "No, I'm starting fresh", result: "quarto_courses" }
+          ]
+        }
+      },
+      {
+        label: "Website",
+        next: {
+          question: "Do you already have website files to build on?",
+          options: [
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
@@ -535,77 +701,64 @@ OTTR (Open-source Tools for Training Resources) is a set of tools and templates 
   render();
 })();
 </script>
-<div style="text-align: center; margin: 0.5rem 0 1.5rem;">
-<p><a href="choose_template.html" style="display: inline-block; background-color: #f0fafd; color: #2a7a9a; border: 1.5px solid #ADD8E6; border-radius: 20px; padding: 7px 20px; font-size: 0.9rem; font-weight: 600; text-decoration: none;"> Not sure? Help me choose → </a></p>
-</div>
-<section id="quarto-vs.-r-markdown" class="level3">
-<h3 class="anchored" data-anchor-id="quarto-vs.-r-markdown">Quarto vs.&nbsp;R Markdown</h3>
-<p>OTTR templates come in two flavors based on which document format you use to write content: <strong>R Markdown</strong> (<code>.Rmd</code>) and <strong>Quarto</strong> (<code>.qmd</code>).</p>
-<ul>
-<li><strong>Quarto</strong> is the next-generation successor to R Markdown, developed by Posit. It supports R, Python, Julia, and Observable JS, and offers a more consistent syntax and better cross-language support. It is the recommended choice for new projects and existing <code>.qmd</code> files.</li>
-<li><strong>R Markdown</strong> is a widely used format that combines plain text, Markdown formatting, and R code chunks into a single document. It has a large ecosystem and is a solid choice if you already have <code>.Rmd</code> files or are following older OTTR tutorials.</li>
-</ul>
-<p>If you’re starting fresh or already have <code>.qmd</code> files, go with a Quarto template. If you have existing <code>.Rmd</code> content or are working with a team already using R Markdown, the R Markdown templates are a fine choice.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>R Markdown is no longer being actively updated
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Posit has shifted its focus to Quarto as the next-generation publishing system. R Markdown remains functional but <strong>will not receive new features</strong>. For any new project, start with a Quarto template.</p>
-<p><strong>Resources for Quarto-fying your content:</strong></p>
-<ul>
-<li><a href="https://ddotta.github.io/quartify/articles/getting-started.html">quartify</a>: an R package that automates conversion of R Markdown files to Quarto</li>
-<li><a href="https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd">Transitioning from R Markdown to Quarto</a>: a practical guide from Openscapes</li>
-</ul>
-</div>
-</div>
 <hr>
-<div style="position: relative; width: 100%; height: 0; padding-top: 77.2727%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-<p><iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen" alt="OTTR Flavors and their uses"> </iframe></p>
+<div class="overview-layout">
+<div class="canva-overview">
+<p><img src="./resources/images/ottr_glance.png" class="img-fluid"></p>
+<div class="glance-link">
+<p><a href="./examples.html">Browse OTTR examples</a></p>
 </div>
-<p><a href="https://www.canva.com/design/DAGwn4eF5mk/2RhR8mbSJxGL7XiaHSXPHg/view?utm_content=DAGwn4eF5mk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">OTTR at a Glance</a> by ITN</p>
-</section>
-<section id="why-use-ottr" class="level3">
+</div>
+<section id="why-use-ottr" class="level3 why-overview">
 <h3 class="anchored" data-anchor-id="why-use-ottr">Why Use OTTR?</h3>
 <div class="ottr-feature-section">
 <section id="benefits-for-all-ottr-options" class="level4 ottr-feature-copy">
 <h4 class="anchored" data-anchor-id="benefits-for-all-ottr-options">Benefits for all OTTR options</h4>
 <div class="benefit-grid">
 <div class="benefit-item">
+<div class="benefit-heading">
+<div class="benefit-icon">
+<p><i class="fa-solid fa-laptop-code" title="A laptop with code" aria-label="laptop-code"></i></p>
+</div>
 <p><strong>No software installation</strong></p>
+</div>
 <p>Work in GitHub without installing a local publishing tool.</p>
 </div>
 <div class="benefit-item">
+<div class="benefit-heading">
+<div class="benefit-icon">
+<p><i class="fa-solid fa-eye" title="An eye" aria-label="eye"></i></p>
+</div>
 <p><strong>Preview before publishing</strong></p>
+</div>
 <p>Automatically preview content on <a href="https://github.com/">GitHub</a> before it goes live.</p>
 </div>
 <div class="benefit-item">
+<div class="benefit-heading">
+<div class="benefit-icon">
+<p><i class="fa-solid fa-spell-check" title="A spell check mark" aria-label="spell-check"></i></p>
+</div>
 <p><strong>Built-in checks</strong></p>
+</div>
 <p>Automatically check spelling, customize your dictionary, and periodically check for broken links.</p>
 </div>
 <div class="benefit-item">
+<div class="benefit-heading">
+<div class="benefit-icon">
+<p><i class="fa-solid fa-palette" title="A palette" aria-label="palette"></i></p>
+</div>
 <p><strong>Flexible publishing</strong></p>
+</div>
 <p>Customize branding, include code, and avoid version differences with Docker containers.</p>
 </div>
 </div>
 </section>
 <div class="ottr-feature-image">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./resources/images/why-ottr.png" class="img-fluid figure-img"></p>
-<figcaption>OTTR helps build GitHub-based websites with less hassle. Catch potential mistakes before they go live.</figcaption>
-</figure>
-</div>
+<p><img src="./resources/images/why-ottr.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
+</div>
 <section id="ottr-in-action" class="level3">
 <h3 class="anchored" data-anchor-id="ottr-in-action">OTTR in Action</h3>
 <div class="video-frame">

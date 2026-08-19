@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-883ad16e2c5c5fde9b8f7ae0c5ecc4a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -136,6 +136,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -369,17 +373,6 @@ ul.task-list li input[type="checkbox"] {
     question: "What do you want to create?",
     options: [
       {
-        label: "Website",
-        next: {
-          question: "Do you already have website files to build on?",
-          options: [
-            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
-            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
-            { label: "No, I'm starting fresh", result: "quarto_web" }
-          ]
-        }
-      },
-      {
         label: "Online Course",
         next: {
           question: "Do you already have course files to build on?",
@@ -387,6 +380,17 @@ ul.task-list li input[type="checkbox"] {
             { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
             { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
             { label: "No, I'm starting fresh", result: "quarto_courses" }
+          ]
+        }
+      },
+      {
+        label: "Website",
+        next: {
+          question: "Do you already have website files to build on?",
+          options: [
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
@@ -570,17 +574,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="benefit-grid use-case-grid">
 <div class="benefit-item">
 <div class="benefit-kicker">
-<p>Websites</p>
-</div>
-<div class="benefit-title">
-<p>Flexible pages with top navigation</p>
-</div>
-<div class="benefit-copy">
-<p>Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use <a href="https://quarto.org/">Quarto</a> for new projects or existing <code>.qmd</code> files, or R Markdown/bookdown if you already have <code>.Rmd</code> files.</p>
-</div>
-</div>
-<div class="benefit-item">
-<div class="benefit-kicker">
 <p>Courses</p>
 </div>
 <div class="benefit-title">
@@ -588,6 +581,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="benefit-copy">
 <p>Choose a course template when you need a sidebar table of contents, chapter-by-chapter navigation, and optional publishing to <a href="https://www.coursera.org/">Coursera</a> or <a href="https://leanpub.com/">Leanpub</a>. Use Quarto for new courses or existing <code>.qmd</code> course files, or R Markdown for existing <code>.Rmd</code> course files.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-kicker">
+<p>Websites</p>
+</div>
+<div class="benefit-title">
+<p>Flexible pages with top navigation</p>
+</div>
+<div class="benefit-copy">
+<p>Choose a website template for documentation sites, resource hubs, or other materials that need flexible page organization. Use <a href="https://quarto.org/">Quarto</a> for new projects or existing <code>.qmd</code> files, or R Markdown/bookdown if you already have <code>.Rmd</code> files.</p>
 </div>
 </div>
 <div class="benefit-item">

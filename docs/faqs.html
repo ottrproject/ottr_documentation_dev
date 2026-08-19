@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5368200b79f2df0af721147f0a18dcd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-883ad16e2c5c5fde9b8f7ae0c5ecc4a8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -136,6 +136,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./enroll_sync.html">
  <span class="dropdown-text">Enroll for sync updates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ottr-fy.html">
+ <span class="dropdown-text">OTTR-fy existing repo</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./more_features_credits.html">
@@ -267,33 +271,35 @@ ul.task-list li input[type="checkbox"] {
 <section id="most-common-errors" class="level2">
 <h2 class="anchored" data-anchor-id="most-common-errors">Most Common Errors</h2>
 <p>This guide will describe the most common OTTR errors and pitfalls and how to address them.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Forked repositories and OTTRfy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>OTTRfy does not work on repositories that were created as forks. If you need to OTTRfy existing content, start from a regular new repository instead of a forked repository.</p>
+</div>
+</div>
+<div class="troubleshooting-divider" aria-hidden="true">
+
+</div>
 <section id="content-not-rendering-or-updating" class="level3">
 <h3 class="anchored" data-anchor-id="content-not-rendering-or-updating">Content not rendering or updating</h3>
 <p>This may be a quiet error where the content just doesn’t update and you are not warned that there is a problem.</p>
 <ul>
-<li>Check that the GitHub repository <code>GH_PAT</code> is up to date. (An associated GitHub Actions error that suggests the <code>GH_PAT</code> needs to be updated is an <code>exit code 128</code>)</li>
-</ul>
-<div class="cheatsheet-frame">
-<p><iframe width="100%" height="1850px" src="https://ottrproject.org/cheatsheets/ottr_token.html" title="OTTR Token Set Up/Update"> </iframe></p>
-<div style="text-align: right; margin-top: 0px">
-<a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-</div>
-<p><br></p>
-</div>
-<ul>
+<li><p>Check that the GitHub repository <code>GH_PAT</code> is up to date. (An associated GitHub Actions error that suggests the <code>GH_PAT</code> needs to be updated is an <code>exit code 128</code>). Check out how to do this on the <a href="https://ottrproject.org/cheatsheets/ottr_token.html">cheatsheet</a>.</p></li>
 <li><p>Check that the config file is up-to-date. It should look like this: <code>https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml</code>. Be careful to keep your selections for the configuration you would like.</p></li>
-<li><p>Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.</p></li>
+<li><p>Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository. See steps for this on the <a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html">cheatsheet</a>.</p></li>
+<li><p>Push a blank commit/arbitrary change (like a blank space). Make the modification in the PR that the content is not rendering to re-run the workflow.</p></li>
+<li><p>Check <a href="https://www.githubstatus.com/">GitHub Status</a> if GitHub Actions failures look widespread or unusual. If GitHub Actions status is failing, wait until GitHub reports that it has recovered, then re-trigger your actions.</p></li>
 </ul>
-<div class="cheatsheet-frame">
-<p><iframe width="100%" height="1900px" src="https://www.ottrproject.org/cheatsheets/ottr_sync.html" title="OTTR Enroll for Sync"> </iframe></p>
-<div style="text-align: right; margin-top: 0px">
-<a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
+<div class="troubleshooting-divider" aria-hidden="true">
+
 </div>
-<p><br></p>
-</div>
-<ul>
-<li>Push a blank commit/arbitrary change (like a blank space). Make the modification in the PR that the content is not rendering to re-run the workflow.</li>
-</ul>
 </section>
 <section id="google-slide-image-not-showing" class="level3">
 <h3 class="anchored" data-anchor-id="google-slide-image-not-showing">Google Slide image not showing</h3>
@@ -317,7 +323,9 @@ Click for more information
     - Double quotation marks surrounding the whole argument with single quotation marks around any specific phrases within the argument (this will also work)</code></pre>
 <p>Note: Single quotation marks surrounding the whole argument with double quotation marks around specific phrases within the argument will cause issues that may be not be as obvious at first. It will cause the images to not be properly rendered.</p>
 </details>
-<hr>
+<div class="troubleshooting-divider" aria-hidden="true">
+
+</div>
 </section>
 <section id="errors-for-pull-request-check-failures" class="level3">
 <h3 class="anchored" data-anchor-id="errors-for-pull-request-check-failures">Errors for pull request check failures</h3>
@@ -414,6 +422,9 @@ Error: Process completed with exit code 1.</code></pre>
 <p>(at the end of the file)</p>
 <pre><code>  &lt;/body&gt;
   &lt;/html&gt;</code></pre>
+<div class="troubleshooting-divider" aria-hidden="true">
+
+</div>
 </section>
 </section>
 </section>
@@ -536,17 +547,6 @@ Error: Process completed with exit code 1.</code></pre>
     question: "What do you want to create?",
     options: [
       {
-        label: "Website",
-        next: {
-          question: "Do you already have website files to build on?",
-          options: [
-            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
-            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
-            { label: "No, I'm starting fresh", result: "quarto_web" }
-          ]
-        }
-      },
-      {
         label: "Online Course",
         next: {
           question: "Do you already have course files to build on?",
@@ -554,6 +554,17 @@ Error: Process completed with exit code 1.</code></pre>
             { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
             { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
             { label: "No, I'm starting fresh", result: "quarto_courses" }
+          ]
+        }
+      },
+      {
+        label: "Website",
+        next: {
+          question: "Do you already have website files to build on?",
+          options: [
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
