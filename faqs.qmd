@@ -23,48 +23,30 @@ Search on the OTTR docs for what you are looking for. Note that first few entrie
 
 This guide will describe the most common OTTR errors and pitfalls and how to address them.
 
+::: {.callout-warning}
+### Forked repositories and OTTRfy
+
+OTTRfy does not work on repositories that were created as forks. If you need to OTTRfy existing content, start from a regular new repository instead of a forked repository.
+:::
+
+<div class="troubleshooting-divider" aria-hidden="true"></div>
+
 ### Content not rendering or updating
 
 This may be a quiet error where the content just doesn't update and you are not warned that there is a problem.
 
--   Check that the GitHub repository `GH_PAT` is up to date. (An associated GitHub Actions error that suggests the `GH_PAT` needs to be updated is an `exit code 128`)
-
-
-  
-<div class="cheatsheet-frame">
-  <iframe 
-    width="100%" 
-    height="1850px" 
-    src="https://ottrproject.org/cheatsheets/ottr_token.html"
-    title="OTTR Token Set Up/Update">
-  </iframe>
-  
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://ottrproject.org/cheatsheets/ottr_token.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-  </div>
-  <br>
-</div>
+-   Check that the GitHub repository `GH_PAT` is up to date. (An associated GitHub Actions error that suggests the `GH_PAT` needs to be updated is an `exit code 128`). Check out how to do this on the [cheatsheet](https://ottrproject.org/cheatsheets/ottr_token.html).
 
 
 -   Check that the config file is up-to-date. It should look like this: `https://github.com/ottrproject/OTTR_Template/blob/main/config_automation.yml`. Be careful to keep your selections for the configuration you would like.
 
--   Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository.
-
-<div class="cheatsheet-frame">
-  <iframe 
-    width="100%" 
-    height="1900px" 
-    src="https://www.ottrproject.org/cheatsheets/ottr_sync.html"
-    title="OTTR Enroll for Sync">
-  </iframe>
-  
-  <div style="text-align: right; margin-top: 0px">
-  <a href="https://www.ottrproject.org/cheatsheets/ottr_sync.html" target="_blank" style="font-size: 1rem; color: #2a7a9a;">↗ Open in new tab</a>
-  </div>
-  <br>
-</div>
+-   Your workflow files may be out of date compared to the template and you may need to request a sync by opening an issue in the template repository. See steps for this on the [cheatsheet](https://www.ottrproject.org/cheatsheets/ottr_sync.html).
 
 - Push a blank commit/arbitrary change (like a blank space). Make the modification in the PR that the content is not rendering to re-run the workflow. 
+
+- Check [GitHub Status](https://www.githubstatus.com/) if GitHub Actions failures look widespread or unusual. If GitHub Actions status is failing, wait until GitHub reports that it has recovered, then re-trigger your actions.
+
+<div class="troubleshooting-divider" aria-hidden="true"></div>
 
 ### Google Slide image not showing
 
@@ -99,7 +81,7 @@ Note: Single quotation marks surrounding the whole argument with double quotatio
 
 </details>
 
-------------------------------------------------------------------------
+<div class="troubleshooting-divider" aria-hidden="true"></div>
 
 ### Errors for pull request check failures
 
@@ -245,6 +227,8 @@ Then look at the `GA_Script.Rhtml` file and remove the following `html` frontmat
   </html>
 ```
 
+<div class="troubleshooting-divider" aria-hidden="true"></div>
+
 ## Help me choose my template
 
 Not sure which OTTR template is right for you? Answer two quick questions and we'll point you to the right setup guide.
@@ -363,17 +347,6 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
     question: "What do you want to create?",
     options: [
       {
-        label: "Website",
-        next: {
-          question: "Do you already have website files to build on?",
-          options: [
-            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
-            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
-            { label: "No, I'm starting fresh", result: "quarto_web" }
-          ]
-        }
-      },
-      {
         label: "Online Course",
         next: {
           question: "Do you already have course files to build on?",
@@ -381,6 +354,17 @@ Not sure which OTTR template is right for you? Answer two quick questions and we
             { label: "Yes, Quarto (.qmd)", result: "quarto_courses" },
             { label: "Yes, R Markdown (.Rmd)", result: "rmarkdown_courses" },
             { label: "No, I'm starting fresh", result: "quarto_courses" }
+          ]
+        }
+      },
+      {
+        label: "Website",
+        next: {
+          question: "Do you already have website files to build on?",
+          options: [
+            { label: "Yes, Quarto (.qmd)", result: "quarto_web" },
+            { label: "Yes, R Markdown / Bookdown (.Rmd)", result: "rmarkdown_web" },
+            { label: "No, I'm starting fresh", result: "quarto_web" }
           ]
         }
       },
