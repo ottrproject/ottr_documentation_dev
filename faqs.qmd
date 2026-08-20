@@ -48,6 +48,12 @@ This may be a quiet error where the content just doesn't update and you are not 
 
 <div class="troubleshooting-divider" aria-hidden="true"></div>
 
+### Spell check showing outdated results
+
+If the spell check is showing old results, delete the old files in `check_reports/` and re-run the check by pushing a new commit to the pull request.
+
+<div class="troubleshooting-divider" aria-hidden="true"></div>
+
 ### Google Slide image not showing
 
 Check the formatting of the code chunk, particularly paying attention to the `fig.alt` argument.
