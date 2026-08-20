@@ -18,9 +18,6 @@ page-layout: full
     min-width: 0;
     width: 100%;
   }
-  .wizard-margin {
-    grid-column: 1;
-  }
   #ottr-wizard {
     font-family: inherit;
     width: 100%;
@@ -136,10 +133,26 @@ page-layout: full
   }
   .wizard-margin .callout {
     width: 100%;
-    margin-top: 0;
+    margin-top: 1rem;
     margin-bottom: 0;
     font-size: 0.92rem;
     line-height: 1.42;
+  }
+  .wizard-margin .callout-header {
+    position: relative;
+    justify-content: center;
+  }
+  .wizard-margin .callout-title-container {
+    flex: 0 1 auto !important;
+    text-align: center;
+  }
+  .wizard-margin .callout-icon-container {
+    position: absolute;
+    left: 1rem;
+  }
+  .wizard-margin .callout-btn-toggle {
+    position: absolute;
+    right: 1rem;
   }
   .wizard-margin .callout .callout {
     margin-top: 0.9rem;
@@ -175,9 +188,6 @@ page-layout: full
     .wizard-layout {
       grid-template-columns: 1fr;
     }
-    .wizard-margin {
-      grid-column: auto;
-    }
     .why-overview .benefit-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -210,15 +220,6 @@ page-layout: full
     Not sure? Help me choose →
   </a>
 </div>
-:::
-
-::: {.wizard-glance}
-![](./resources/images/ottr_glance.png)
-
-::: {.glance-link}
-[Browse OTTR examples](examples.qmd)
-:::
-:::
 
 ::: {.wizard-margin}
 :::: {.callout-note collapse="true"}
@@ -242,6 +243,15 @@ Posit has shifted its focus to Quarto as the next-generation publishing system. 
 - [Transitioning from R Markdown to Quarto](https://github.com/Openscapes/quarto-website-tutorial/blob/main/transition-from-rmarkdown.qmd): a practical guide from Openscapes
 :::
 ::::
+:::
+:::
+
+::: {.wizard-glance}
+![](./resources/images/ottr_glance.png)
+
+::: {.glance-link}
+[Browse OTTR examples](examples.qmd)
+:::
 :::
 :::
 
