@@ -126,7 +126,7 @@ render-preview: true
 
 After you open a pull request, an automatic comment will link to a preview render. Each new commit re-renders the preview and updates the comment with the latest version.
 
-![](https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results.png)
+![](resources/screenshots/check_results.png)
 
 These GitHub Actions are located in the `render-preview` section of `pull-request.yml`.
 
@@ -165,11 +165,11 @@ After committing the change to `resources/dictionary.txt` on your branch, the sp
 
 The PR comment included below shows an example of a check that passed (spell check), and a check that failed (the URL check) with the option to download detailed error report(s).
 
-![](https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results.png)
+![](resources/screenshots/check_results.png)
 
 When all checks pass, the option to download error reports is no longer included, instead displaying a message that the URL and spell checks passed.
 
-![](https://raw.githubusercontent.com/ottrproject/ottrproject.github.io/main/resources/screenshots/check_results_pass.png)
+![](resources/screenshots/check_results_pass.png)
 
 ### Style code
 

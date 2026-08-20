@@ -203,6 +203,7 @@ One reason that this will fail is that you will need to edit your site configura
 
 :::{.callout-note}
 For Quarto repositories, make sure `_quarto.yml` includes `output-dir: docs`.
+For R Markdown websites, make sure `_site.yml` includes `output_dir: "docs"`.
 The OTTR workflows expect the rendered site to be written to the `docs` directory, so this setting is required for the workflow to run correctly.
 
 For example:
@@ -211,6 +212,12 @@ For example:
 project:
   type: website # or the project type already used by your site
   output-dir: docs
+```
+
+For an R Markdown website, add this to `_site.yml`:
+
+```{yaml}
+output_dir: "docs"
 ```
 :::
 

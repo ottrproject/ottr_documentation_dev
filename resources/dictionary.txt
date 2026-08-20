@@ -128,3 +128,5 @@ yml
 Zapier
 Zotero
 ZoteroBib
+gha
+png

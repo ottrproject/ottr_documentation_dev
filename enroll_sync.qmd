@@ -41,7 +41,7 @@ To enable the full functionality of GitHub Actions, add `jhudsl-robot` as a coll
 2. Search for and add `jhudsl-robot`.
 3. If prompted, choose the **Write** option, then click **Add jhudsl-robot to this repository**.
 
-<img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/add-jhudsl-robot.png" width="400">
+<img src="resources/screenshots/add-jhudsl-robot.png" width="400">
 
 ### Which sync file should you edit?
 
@@ -67,7 +67,7 @@ If you are part of the  <code>jhudsl</code> or <code>fhdsl</code> GitHub organiz
 1. Open the relevant sync file above and click the pencil icon to edit.
 2. Add your repository name where it says `#NEW REPO HERE#`, indented to match the other entries.
 
-![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/edit-sync.yml.png)
+![](resources/screenshots/edit-sync.yml.png)
 
 3. Click **Commit changes...**, type `Add new repository to sync` as the commit message, and choose **Create a new branch**.
 4. Click **Propose changes**, then open a pull request and request `@kweav` as a reviewer.
