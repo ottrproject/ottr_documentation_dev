@@ -19,7 +19,7 @@ page-layout: full
     width: 100%;
   }
   .wizard-margin {
-    grid-column: 1 / -1;
+    grid-column: 1;
   }
   #ottr-wizard {
     font-family: inherit;
