@@ -1,0 +1,15 @@
+{
+  "hash": "b7587250d883689dcc2b7021d06f8fec",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Publishing with Bookdown\"\nformat:\n  html:\n    toc: true\n    toc-depth: 4\n    toc-location: right \n---\n\nTo publish your content using Bookdown, utilize GitHub Pages by following the [repository setup instructions](getting_started.html). Note that Bookdown is a prerequisite for Coursera and Leanpub publishing. You must publish with Bookdown before using those platforms.\n\nAs you add or rename chapters, update `_bookdown.yml` accordingly. For example, after adding `03-new_chapter_of_course.Rmd`:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nbook_filename: \"Course_Name\"\nchapter_name: \"Chapter \"\nrepo: https://github.com/ottrproject/OTTR_Template/ ##Make sure you update this to your GitHub Repo!!\nrmd_files: [\"index.Rmd\",\n            \"01-intro.Rmd\",\n            \"02-chapter_of_course.Rmd\",\n            \"03-new_chapter_of_course.Rmd\",  ## This is the only new line!\n            \"about.Rmd\"]\nnew_session: yes\ndelete_merged_file: true\nlanguage:\n  ui:\n    chapter_name: \"Chapter \"\noutput_dir: \"docs\"\n```\n:::\n\n\nOnly a single line changes. Be careful with quotation marks (`\"\"`) and commas (`,`).\n\nPreview the book by running `bookdown::serve_book()` in the RStudio Console. This generates an `.rds` file you can ignore. The live preview will appear in your RStudio Viewer.\n\nWhen a pull request is merged to main, [GitHub Actions](#github-actions) will re-run `bookdown::render_book()` and add the results to `main`.\n\n## Examples \n\nBelow are some examples of courses created using the [OTTR Template](https://github.com/ottrproject/OTTR_Template) and published:\n\n*Introduction to Reproducibility in Cancer Informatics:*\n\n- [GitHub repository and source code](https://github.com/jhudsl/Reproducibility_in_Cancer_Informatics)\n  - [Bookdown website](https://jhudatascience.org/Reproducibility_in_Cancer_Informatics/introduction.html)\n\n*Computing for Cancer Informatics:*\n\n- [GitHub repository and source code](https://github.com/jhudsl/Computing_for_Cancer_Informatics)\n  - [Bookdown website](https://jhudatascience.org/Computing_for_Cancer_Informatics/)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

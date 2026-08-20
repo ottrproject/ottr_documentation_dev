@@ -1,0 +1,92 @@
+{
+  "more_features_gdoc.qmd": {
+    "more_features_gdoc.html": "6ca3e9be"
+  },
+  "enroll_sync.qmd": {
+    "enroll_sync.html": "e8df171e"
+  },
+  "more_features_ganalytic.qmd": {
+    "more_features_ganalytic.html": "1d2aac35"
+  },
+  "more_features_sources.qmd": {
+    "more_features_sources.html": "2167d74d"
+  },
+  "setup.qmd": {
+    "setup.html": "49487f9a"
+  },
+  "publishing.qmd": {
+    "publishing.html": "ae131b4b"
+  },
+  "contact.qmd": {
+    "contact.html": "ecebf0a3"
+  },
+  "more_features_borrowing.qmd": {
+    "more_features_borrowing.html": "e750ad2a"
+  },
+  "rmd-course.qmd": {
+    "rmd-course.html": "eba27942"
+  },
+  "writing_content_courses.qmd": {
+    "writing_content_courses.html": "a42459bf"
+  },
+  "style.qmd": {
+    "style.html": "c3bf5f7e"
+  },
+  "index.qmd": {
+    "index.html": "df54c3db"
+  },
+  "more_features_credits.qmd": {
+    "more_features_credits.html": "17290bfa"
+  },
+  "publishing_bookdown.qmd": {
+    "publishing_bookdown.html": "0d40e7ef"
+  },
+  "git_actions.qmd": {
+    "git_actions.html": "4e92739c"
+  },
+  "choose_template.qmd": {
+    "choose_template.html": "1cd42205"
+  },
+  "getting_started.qmd": {
+    "getting_started.html": "fdedbccc"
+  },
+  "quarto-course.qmd": {
+    "quarto-course.html": "1e23a15c"
+  },
+  "next_steps.qmd": {
+    "next_steps.html": "fd08d566"
+  },
+  "cheatsheet_gallery.qmd": {
+    "cheatsheet_gallery.html": "360faa06"
+  },
+  "rmd-website.qmd": {
+    "rmd-website.html": "0a075ea4"
+  },
+  "customize-robots.qmd": {
+    "customize-robots.html": "9b2a7a11"
+  },
+  "quarto-website.qmd": {
+    "quarto-website.html": "de1ee18e"
+  },
+  "examples.qmd": {
+    "examples.html": "d79bdeab"
+  },
+  "ottr-fy.qmd": {
+    "ottr-fy.html": "a9a185ec"
+  },
+  "customize-docker.qmd": {
+    "customize-docker.html": "c306006a"
+  },
+  "publishing_coursera.qmd": {
+    "publishing_coursera.html": "be020d45"
+  },
+  "publishing_leanpub.qmd": {
+    "publishing_leanpub.html": "69a0297a"
+  },
+  "faqs.qmd": {
+    "faqs.html": "29cdc7fe"
+  },
+  "customize-style.qmd": {
+    "customize-style.html": "ac4c930f"
+  }
+}
