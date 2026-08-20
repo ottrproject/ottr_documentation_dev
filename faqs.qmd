@@ -93,7 +93,7 @@ Note: Single quotation marks surrounding the whole argument with double quotatio
 
 When you open a pull request, you should see a report like this:
 
-![](https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/gha-actions-error.png)
+![](resources/screenshots/gha-actions-error.png)
 
 When you see an ❌ , click on the `Details` button to see the error message. We'll discuss the most common error messages here.
 
