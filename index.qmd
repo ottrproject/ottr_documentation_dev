@@ -7,16 +7,19 @@ page-layout: full
 <style>
   .wizard-layout {
     display: grid;
-    grid-template-columns: minmax(280px, 920px);
-    gap: 0.9rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
     align-items: start;
-    justify-content: center;
     margin: 1.5rem 0;
   }
   .wizard-main,
-  .wizard-margin {
+  .wizard-margin,
+  .wizard-glance {
     min-width: 0;
     width: 100%;
+  }
+  .wizard-margin {
+    grid-column: 1 / -1;
   }
   #ottr-wizard {
     font-family: inherit;
@@ -141,82 +144,47 @@ page-layout: full
   .wizard-margin .callout .callout {
     margin-top: 0.9rem;
   }
-  .overview-layout {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem;
-    align-items: start;
-    margin: 1.5rem 0 2rem;
-  }
-  .overview-layout > div {
-    min-width: 0;
-  }
-  .canva-overview > p {
+  .wizard-glance > p {
     margin: 0;
   }
-  .canva-overview img {
+  .wizard-glance img {
     display: block;
     width: 100%;
     height: auto;
   }
-  .canva-overview .glance-link {
+  .wizard-glance .glance-link {
     margin-top: 0.75rem;
     text-align: center;
   }
-  .canva-frame {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 77.2727%;
-    padding-bottom: 0;
-    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
-    margin-top: 0;
-    margin-bottom: 0.9em;
-    overflow: hidden;
-    border-radius: 8px;
-    will-change: transform;
+  .why-overview {
+    margin: 1.5rem 0 2rem;
   }
-  .canva-frame iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  .overview-layout .ottr-feature-section {
+  .why-overview .ottr-feature-section {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin: 1rem 0 0;
   }
-  .overview-layout .benefit-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .why-overview .benefit-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem 1.25rem;
   }
-	  .overview-layout .benefit-item {
-	    min-height: 0;
-	  }
-	  .overview-layout .ottr-feature-image img {
-	    width: min(100%, 220px);
-	  }
-	  .overview-layout .ottr-glance {
-	    grid-template-columns: 1fr;
-	    margin-top: 0.75rem;
-	  }
-	  .overview-layout .glance-step {
-	    min-height: 0;
-	  }
-	  .overview-layout .glance-link {
-	    margin-bottom: 0;
-	  }
-	  @media (max-width: 900px) {
-	    .overview-layout {
-	      grid-template-columns: 1fr;
-	    }
-	    .wizard-layout {
-	      grid-template-columns: 1fr;
+  .why-overview .benefit-item {
+    min-height: 0;
+  }
+  @media (max-width: 900px) {
+    .wizard-layout {
+      grid-template-columns: 1fr;
+    }
+    .wizard-margin {
+      grid-column: auto;
+    }
+    .why-overview .benefit-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 560px) {
+    .why-overview .benefit-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -242,6 +210,14 @@ page-layout: full
     Not sure? Help me choose →
   </a>
 </div>
+:::
+
+::: {.wizard-glance}
+![](./resources/images/ottr_glance.png)
+
+::: {.glance-link}
+[Browse OTTR examples](examples.qmd)
+:::
 :::
 
 ::: {.wizard-margin}
@@ -275,7 +251,7 @@ Posit has shifted its focus to Quarto as the next-generation publishing system. 
     question: "What do you want to create?",
     options: [
       {
-        label: "Online Course",
+        label: "Course",
         next: {
           question: "Do you already have course files to build on?",
           options: [
@@ -414,15 +390,6 @@ Posit has shifted its focus to Quarto as the next-generation publishing system. 
 
 ---
 
-::: {.overview-layout}
-::: {.canva-overview}
-![](./resources/images/ottr_glance.png)
-
-::: {.glance-link}
-[Browse OTTR examples](examples.qmd)
-:::
-:::
-
 ::: {.why-overview}
 ### Why Use OTTR?
 
@@ -473,12 +440,6 @@ Automatically check spelling, customize your dictionary, and periodically check 
 :::
 
 Customize branding, include code, and avoid version differences with Docker containers.
-:::
-:::
-:::
-
-::: {.ottr-feature-image}
-![ ](./resources/images/why-ottr.png)
 :::
 :::
 :::
