@@ -229,6 +229,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#most-common-errors" id="toc-most-common-errors" class="nav-link" data-scroll-target="#most-common-errors">Most Common Errors</a>
   <ul>
   <li><a href="#content-not-rendering-or-updating" id="toc-content-not-rendering-or-updating" class="nav-link" data-scroll-target="#content-not-rendering-or-updating">Content not rendering or updating</a></li>
+  <li><a href="#spell-check-showing-outdated-results" id="toc-spell-check-showing-outdated-results" class="nav-link" data-scroll-target="#spell-check-showing-outdated-results">Spell check showing outdated results</a></li>
   <li><a href="#google-slide-image-not-showing" id="toc-google-slide-image-not-showing" class="nav-link" data-scroll-target="#google-slide-image-not-showing">Google Slide image not showing</a></li>
   <li><a href="#errors-for-pull-request-check-failures" id="toc-errors-for-pull-request-check-failures" class="nav-link" data-scroll-target="#errors-for-pull-request-check-failures">Errors for pull request check failures</a>
   <ul class="collapse">
@@ -301,6 +302,13 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </section>
+<section id="spell-check-showing-outdated-results" class="level3">
+<h3 class="anchored" data-anchor-id="spell-check-showing-outdated-results">Spell check showing outdated results</h3>
+<p>If the spell check is showing old results, delete the old files in <code>check_reports/</code> and re-run the check by pushing a new commit to the pull request.</p>
+<div class="troubleshooting-divider" aria-hidden="true">
+
+</div>
+</section>
 <section id="google-slide-image-not-showing" class="level3">
 <h3 class="anchored" data-anchor-id="google-slide-image-not-showing">Google Slide image not showing</h3>
 <p>Check the formatting of the code chunk, particularly paying attention to the <code>fig.alt</code> argument.</p>
@@ -330,7 +338,7 @@ Click for more information
 <section id="errors-for-pull-request-check-failures" class="level3">
 <h3 class="anchored" data-anchor-id="errors-for-pull-request-check-failures">Errors for pull request check failures</h3>
 <p>When you open a pull request, you should see a report like this:</p>
-<p><img src="https://github.com/ottrproject/OTTR_Template/raw/main/resources/screenshots/gha-actions-error.png" class="img-fluid"></p>
+<p><img src="resources/screenshots/gha-actions-error.png" class="img-fluid"></p>
 <p>When you see an ❌ , click on the <code>Details</code> button to see the error message. We’ll discuss the most common error messages here.</p>
 <hr>
 <section id="file-is-not-in-png-format-google-slides-permissions-fail" class="level4">
