@@ -359,7 +359,7 @@ steps.
 
 Once your pull request is open, the OTTR GitHub Actions checks will begin. These checks will generate reports as comments on your pull request.
 
-<img src ="https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/gha-checks.png" width=400px">
+<img src="resources/screenshots/gha-checks.png" width=400px">
 
 Read these comments to begin addressing the problems with more commits
 to your branch.
@@ -571,7 +571,7 @@ You can obtain the Google Slide URL by clicking on the slide with the
 image you want to add and copying the address from the browser search
 bar:
 
-![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/slide_url.png)
+![](resources/screenshots/slide_url.png)
 
 Additionally, include notes (similar to the fig.alt text) for each slide in the Google Slides presentation, describing the content and images of the slide. This will enable accessibility for individuals with visual impairments, as the notes can be converted into audio.
 

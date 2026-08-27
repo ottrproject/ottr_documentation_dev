@@ -31,7 +31,7 @@ Since so many individuals contribute to our courses in so many ways, we decided 
 
 Here is an example:
 
-![](https://raw.githubusercontent.com/ottrproject/OTTR_Template/main/resources/screenshots/example_credits.png)
+![](resources/screenshots/example_credits.png)
 
 :::{.callout-tip}
 
