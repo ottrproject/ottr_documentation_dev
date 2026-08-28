@@ -205,9 +205,6 @@ page-layout: full
 </div>
 
 
-<p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
-
-
 ::: {.wizard-layout}
 ::: {.wizard-main}
 <div id="ottr-wizard">
@@ -220,6 +217,8 @@ page-layout: full
     Not sure? Help me choose →
   </a>
 </div>
+
+<p style="font-size: 16px;">OTTR (Open-source Tools for Training Resources) is a set of tools and templates to help you make **websites, online courses, and dashboards** more easily (and for free)!</p>
 
 ::: {.wizard-margin}
 :::: {.callout-note collapse="true"}
